@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register for Mrs Universe 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(1140px,92%);margin:0 auto}
+
+@keyframes slideInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes shimmerWave{0%{background-position:-1000px 0}100%{background-position:1000px 0}}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+
+header{background:#fff;border-bottom:2px solid var(--blush);position:sticky;top:0;z-index:60;box-shadow:0 2px 8px rgba(166,9,61,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;animation:slideInDown .6s ease-out}
+.logo img{width:50px}
+.nav a{color:var(--ink-soft);margin-right:1.5rem;transition:color .2s;font-size:.9rem}
+.nav a:hover{color:var(--blush)}
+.btn{background:linear-gradient(120deg,var(--blush),var(--crimson));color:#fff;padding:.7rem 1.5rem;border:none;border-radius:999px;cursor:pointer;font-weight:600;transition:all .3s;box-shadow:0 4px 12px rgba(242,196,207,.3)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(242,196,207,.4)}
+
+.hero{background:linear-gradient(135deg,var(--blush-soft) 0%,var(--blush) 50%,#FFF0F6 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden;animation:fadeIn .8s ease-out}
+.hero::before{content:'';position:absolute;top:-50%;right:-10%;width:300px;height:300px;background:radial-gradient(circle,rgba(212,175,55,.1) 0%,transparent 70%);border-radius:50%;animation:floatUp 4s ease-in-out infinite}
+.hero h1{font-size:3.2rem;color:var(--crimson);margin-bottom:.5rem;animation:slideInDown .7s ease-out;position:relative;z-index:1}
+.hero h1 em{font-style:italic;color:var(--blush)}
+.hero p{color:var(--ink-soft);font-size:1.1rem;max-width:600px;margin:0 auto;animation:slideInDown .8s ease-out 0.1s both;position:relative;z-index:1}
+
+.content{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;padding:60px 0;align-items:start}
+.info h2{font-size:1.8rem;color:var(--crimson);margin-bottom:1.5rem;animation:slideInDown .7s ease-out}
+.info-card{background:#fff;padding:1.8rem;border-radius:16px;margin-bottom:1.5rem;border-left:5px solid var(--blush);box-shadow:0 4px 16px rgba(242,196,207,.15);animation:scaleIn .6s ease-out;transition:transform .3s}
+.info-card:hover{transform:translateY(-5px)}
+.info-card h3{color:var(--blush);font-size:1.15rem;margin-bottom:1rem}
+.info-card ul{list-style:none}
+.info-card li{padding:.5rem 0;color:var(--ink-soft);padding-left:1.5rem;position:relative}
+.info-card li:before{content:'💎';position:absolute;left:0}
+
+.form-box{background:#fff;border-radius:20px;padding:2.5rem;box-shadow:0 12px 50px rgba(242,196,207,.2);animation:scaleIn .7s ease-out 0.2s both}
+.form-box h2{font-size:1.6rem;color:var(--crimson);margin-bottom:.5rem;text-align:center}
+.form-box p{color:var(--ink-soft);text-align:center;margin-bottom:2rem;font-size:.95rem}
+
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:.6rem;font-weight:600;color:var(--ink);font-size:.95rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:1rem;border:2px solid var(--blush-soft);border-radius:12px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s;background:#fafafa}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blush);box-shadow:0 0 0 4px rgba(242,196,207,.2);background:#fff}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+.success-msg{display:none;background:rgba(76,175,80,.1);border:2px solid #4CAF50;color:#2e7d32;padding:1.5rem;border-radius:12px;margin-bottom:1.5rem;text-align:center;font-weight:600;animation:slideInDown .5s ease-out}
+
+.submit-btn{width:100%;background:linear-gradient(120deg,var(--blush),var(--crimson));color:#fff;padding:1.2rem;font-size:1rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(242,196,207,.3);margin-top:1rem}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(242,196,207,.4)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+
+footer{background:#fff;border-top:2px solid var(--blush-soft);padding:2rem 0;margin-top:60px;text-align:center;color:var(--ink-soft);font-size:.85rem}
+
+@media(max-width:860px){.content{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.2rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Register</button></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Forever <em>Mrs India 2026</em></h1>
+    <p>Celebrate Strength, Grace & Beauty</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;width:100%">
+    <div class="info">
+      <h2>About This Pageant</h2>
+      <div class="info-card">
+        <h3>👑 Forever Mrs India</h3>
+        <p style="color:var(--ink-soft);margin:0">Celebrating married women across India. Two age groups: Group 1 (18-35) & Group 2 (36-50). Over 800 winners crowned.</p>
+      </div>
+      <div class="info-card">
+        <h3>✓ Eligibility</h3>
+        <ul>
+          <li>Age: 18-50 years</li>
+          <li>Marital Status: Married</li>
+          <li>Min height: 5 feet</li>
+          <li>Weight: Less than 85 kg</li>
+          <li>Indian citizen</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>🏆 Rewards</h3>
+        <ul>
+          <li>National recognition</li>
+          <li>Professional training</li>
+          <li>Cash prizes & sponsorships</li>
+          <li>Brand collaborations</li>
+          <li>Media exposure</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-box">
+        <h2>Register Now</h2>
+        <p>Join the celebration of married women achievers</p>
+        <div class="success-msg" id="successMsg">✓ Registration successful! Our team will contact you within 24 hours.</div>
+        <form id="registrationForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>First Name <span style="color:var(--crimson)">*</span></label><input type="text" name="firstName" required></div>
+            <div class="form-group"><label>Last Name <span style="color:var(--crimson)">*</span></label><input type="text" name="lastName"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Age Group <span style="color:var(--crimson)">*</span></label><select name="ageGroup"><option>Select group</option><option>Group 1 (18-35)</option><option>Group 2 (36-50)</option></select></div>
+            <div class="form-group"><label>Height (feet) <span style="color:var(--crimson)">*</span></label><input type="text" name="height" placeholder="e.g. 5.5"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Weight (kg) <span style="color:var(--crimson)">*</span></label><input type="number" name="weight"></div>
+            <div class="form-group"><label>City <span style="color:var(--crimson)">*</span></label><input type="text" name="city"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>WhatsApp <span style="color:var(--crimson)">*</span></label><input type="tel" name="phone" maxlength="10" required></div>
+            <div class="form-group"><label>Email <span style="color:var(--crimson)">*</span></label><input type="email" name="email" required></div>
+          </div>
+          <div class="form-group"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourprofile"></div>
+          <div class="form-group"><label>Spouse Name (optional)</label><input type="text" name="spouse"></div>
+          <div class="form-group"><label><input type="checkbox" name="agree" style="width:auto;margin-right:.5rem">I agree to terms <span style="color:var(--crimson)">*</span></label></div>
+          <button type="submit" class="submit-btn">Register Now - ₹2,999</button>
+        </form>
+        <p style="text-align:center;margin-top:1.5rem;color:var(--ink-soft);font-size:.85rem">Limited entries · Closes Aug 31, 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>📞 +91-99832-86999 | ✉️ starindiaaward@gmail.com | 💬 <a href="https://wa.me/919983286999">WhatsApp</a></p>
+    <p style="margin-top:1rem">© 2026 Forever Star India Pvt. Ltd.</p>
+  </div>
+</footer>
+
+<script>
+function submitForm(event){event.preventDefault();const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));const reg=JSON.parse(localStorage.getItem('fsia_reg')||'[]');reg.push({...data,category:'Mrs Universe 2026',timestamp:new Date().toLocaleString(),id:Date.now()});localStorage.setItem('fsia_reg',JSON.stringify(reg));document.getElementById('successMsg').style.display='block';document.getElementById('registrationForm').reset();setTimeout(()=>{document.getElementById('successMsg').style.display='none'},5000)}
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register for Bharat National Award 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none}
+.container{width:min(1140px,92%);margin:0 auto}
+
+@keyframes slideInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(166,9,61,.6)}50%{box-shadow:0 0 0 15px rgba(166,9,61,0)}}
+@keyframes glide{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+
+header{background:#fff;border-bottom:3px solid var(--crimson);position:sticky;top:0;z-index:60;box-shadow:0 4px 12px rgba(166,9,61,.15)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;animation:slideInDown .6s ease-out}
+.logo img{width:50px}
+.nav a{color:var(--ink-soft);margin-right:1.5rem;transition:color .2s;font-size:.9rem}
+.nav a:hover{color:var(--crimson);font-weight:600}
+.btn{background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;padding:.8rem 1.8rem;border:none;border-radius:999px;cursor:pointer;font-weight:700;transition:all .3s;box-shadow:0 6px 20px rgba(166,9,61,.3)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(166,9,61,.4)}
+
+.hero{background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-deep) 50%,var(--gold) 100%);color:#fff;padding:100px 0;text-align:center;position:relative;overflow:hidden;animation:slideInDown .8s ease-out}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%,rgba(255,255,255,.1) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(255,255,255,.1) 0%,transparent 50%)}
+.hero h1{font-size:3.5rem;margin-bottom:.5rem;animation:slideInDown .7s ease-out;position:relative;z-index:1;text-shadow:2px 2px 4px rgba(0,0,0,.2)}
+.hero h1 em{font-style:italic}
+.hero p{font-size:1.2rem;max-width:700px;margin:0 auto;animation:slideInDown .8s ease-out 0.1s both;position:relative;z-index:1;opacity:.95}
+
+.content{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;padding:60px 0;align-items:start}
+.info h2{font-size:1.9rem;color:var(--crimson);margin-bottom:1.5rem;animation:slideInDown .7s ease-out}
+.info-card{background:#fff;padding:2rem;border-radius:16px;margin-bottom:1.5rem;border:3px solid var(--crimson);box-shadow:0 6px 20px rgba(166,9,61,.15);animation:scaleIn .6s ease-out;transition:all .3s;position:relative}
+.info-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(166,9,61,.25)}
+.info-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--crimson),var(--gold));border-radius:16px 16px 0 0}
+.info-card h3{color:var(--crimson);font-size:1.2rem;margin-bottom:1rem;font-weight:700}
+.info-card ul{list-style:none}
+.info-card li{padding:.6rem 0;color:var(--ink-soft);padding-left:1.8rem;position:relative;line-height:1.6}
+.info-card li:before{content:'✨';position:absolute;left:0;animation:glide 2s infinite}
+
+.form-box{background:#fff;border-radius:20px;padding:2.8rem;box-shadow:0 15px 60px rgba(166,9,61,.2);animation:scaleIn .7s ease-out 0.2s both;border:2px solid var(--crimson)}
+.form-box h2{font-size:1.8rem;color:var(--crimson);margin-bottom:.5rem;text-align:center;animation:slideInDown .6s ease-out}
+.form-box p{color:var(--ink-soft);text-align:center;margin-bottom:2rem;font-size:1rem}
+
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:.6rem;font-weight:700;color:var(--crimson);font-size:.95rem;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:1.1rem;border:2px solid var(--crimson);border-radius:12px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s;background:#fafafa}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 5px rgba(166,9,61,.1);background:#fff}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+.success-msg{display:none;background:linear-gradient(135deg,rgba(76,175,80,.1),rgba(76,175,80,.05));border:3px solid #4CAF50;color:#2e7d32;padding:2rem;border-radius:12px;margin-bottom:1.5rem;text-align:center;font-weight:700;animation:slideInDown .5s ease-out;font-size:1.1rem}
+
+.submit-btn{width:100%;background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;padding:1.3rem;font-size:1.1rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(166,9,61,.3);margin-top:1.5rem;text-transform:uppercase;letter-spacing:1px;animation:slideInDown .7s ease-out 0.4s both}
+.submit-btn:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(166,9,61,.4)}
+.submit-btn:disabled{opacity:.6}
+
+footer{background:#fff;border-top:3px solid var(--crimson);padding:2.5rem 0;margin-top:60px;text-align:center;color:var(--ink-soft);font-size:.85rem}
+
+@media(max-width:860px){.content{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Register</button></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Super <em>Woman</em> Award 2026</h1>
+    <p>Celebrate Excellence Across 70+ Categories of Achievement</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;width:100%">
+    <div class="info">
+      <h2>About This Award</h2>
+      <div class="info-card">
+        <h3>🏆 Bharat National Award</h3>
+        <p style="color:var(--ink-soft);margin:0">Honoring extraordinary individuals across 70+ categories including entrepreneurship, healthcare, education, sports, arts, social work, and more. Season 8 has recognized 50,000+ achievers!</p>
+      </div>
+      <div class="info-card">
+        <h3>✓ Eligibility</h3>
+        <ul>
+          <li>Age: 18+ years</li>
+          <li>Any field/profession</li>
+          <li>Noteworthy achievements</li>
+          <li>Positive social impact</li>
+          <li>Indian citizen</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>🎖️ Categories</h3>
+        <ul>
+          <li>Business & Entrepreneurship</li>
+          <li>Healthcare & Medicine</li>
+          <li>Education & Teaching</li>
+          <li>Sports & Fitness</li>
+          <li>Arts & Entertainment</li>
+          <li>Social Work & Community</li>
+          <li>And 65+ more!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-box">
+        <h2>Nominate Yourself</h2>
+        <p>Celebrate your achievements and inspire others</p>
+        <div class="success-msg" id="successMsg">✓ Nomination received! You'll be contacted within 48 hours.</div>
+        <form id="registrationForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name <span style="color:var(--crimson)">*</span></label><input type="text" name="firstName" required></div>
+            <div class="form-group"><label>Age <span style="color:var(--crimson)">*</span></label><input type="number" name="age" min="18"></div>
+          </div>
+          <div class="form-group"><label>Profession/Field <span style="color:var(--crimson)">*</span></label><input type="text" name="profession" placeholder="e.g., Entrepreneur, Doctor, Teacher, Athlete"></div>
+          <div class="form-group"><label>Category (Best Fit) <span style="color:var(--crimson)">*</span></label><select name="category"><option>Select category</option><option>Business & Entrepreneurship</option><option>Healthcare & Medicine</option><option>Education & Teaching</option><option>Sports & Fitness</option><option>Arts & Entertainment</option><option>Social Work</option><option>Technology & Innovation</option><option>Other</option></select></div>
+          <div class="form-group"><label>Years of Experience <span style="color:var(--crimson)">*</span></label><input type="number" name="experience" min="1"></div>
+          <div class="form-row">
+            <div class="form-group"><label>City <span style="color:var(--crimson)">*</span></label><input type="text" name="city"></div>
+            <div class="form-group"><label>WhatsApp <span style="color:var(--crimson)">*</span></label><input type="tel" name="phone" maxlength="10" required></div>
+          </div>
+          <div class="form-group"><label>Email <span style="color:var(--crimson)">*</span></label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Your Achievements <span style="color:var(--crimson)">*</span></label><textarea name="achievements" placeholder="Tell us about your major achievements and contributions..."></textarea></div>
+          <div class="form-group"><label>Website/LinkedIn (optional)</label><input type="text" name="website" placeholder="https://..."></div>
+          <div class="form-group"><label><input type="checkbox" name="agree" style="width:auto;margin-right:.5rem">I agree to terms <span style="color:var(--crimson)">*</span></label></div>
+          <button type="submit" class="submit-btn">Submit Nomination</button>
+        </form>
+        <p style="text-align:center;margin-top:1.5rem;color:var(--ink-soft);font-size:.85rem">Free nomination · No entry fee</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>📞 +91-99832-86999 | ✉️ starindiaaward@gmail.com | 💬 <a href="https://wa.me/919983286999">WhatsApp</a></p>
+    <p style="margin-top:1rem">© 2026 Forever Star India Pvt. Ltd.</p>
+  </div>
+</footer>
+
+<script>
+function submitForm(event){event.preventDefault();const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));const reg=JSON.parse(localStorage.getItem('fsia_reg')||'[]');reg.push({...data,category:'Bharat National Award 2026',timestamp:new Date().toLocaleString(),id:Date.now()});localStorage.setItem('fsia_reg',JSON.stringify(reg));document.getElementById('successMsg').style.display='block';document.getElementById('registrationForm').reset();setTimeout(()=>{document.getElementById('successMsg').style.display='none'},5000)}
+</script>
+</body>
+</html>

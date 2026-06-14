@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Successful - Forever Star India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--ink:#3A2226;--ink-soft:#7A5E63;--success:#27ae60}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--blush-soft),var(--ivory));color:var(--ink);min-height:100vh}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(900px,92%);margin:0 auto}
+
+@keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+@keyframes checkmark{0%{transform:scale(0) rotate(-45deg)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(39,174,96,.7)}70%{box-shadow:0 0 0 20px rgba(39,174,96,0)}100%{box-shadow:0 0 0 0 rgba(39,174,96,0)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes confetti{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(600px) rotate(720deg)}}
+
+header{background:#fff;border-bottom:2px solid var(--gold);padding:1rem 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700}
+.logo img{width:45px}
+
+.success-container{padding:60px 0;animation:slideDown .8s ease-out}
+
+.success-card{background:#fff;border-radius:20px;padding:3rem;box-shadow:0 20px 60px rgba(39,174,96,.15);text-align:center;animation:scaleIn .6s ease-out}
+
+.checkmark-circle{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--success),#2ecc71);margin:0 auto 2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(39,174,96,.3);animation:pulse 2s infinite}
+
+.checkmark{width:50px;height:50px;position:relative;animation:checkmark .6s ease-out 0.3s both}
+
+.checkmark::after{content:'';position:absolute;width:15px;height:30px;border:solid white;border-width:0 3px 3px 0;transform:rotate(45deg);left:17px;top:5px}
+
+.success-title{font-size:2.2rem;color:var(--success);margin-bottom:.5rem;animation:slideDown .7s ease-out}
+
+.success-subtitle{font-size:1.05rem;color:var(--ink-soft);margin-bottom:3rem;animation:slideDown .8s ease-out 0.1s both}
+
+.app-summary{background:var(--blush-soft);border-radius:16px;padding:2.5rem;margin:2rem 0;text-align:left;animation:slideDown .8s ease-out 0.2s both}
+
+.app-summary h3{color:var(--crimson);font-size:1.2rem;margin-bottom:1.5rem;text-align:center}
+
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+.summary-item{background:#fff;padding:1.5rem;border-radius:12px;border-left:4px solid var(--gold)}
+
+.summary-item label{color:var(--ink-soft);font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:.5rem;font-weight:600}
+
+.summary-item .value{color:var(--ink);font-size:1.1rem;font-weight:700}
+
+.next-steps{background:#f0f8f5;border-left:5px solid var(--success);padding:2rem;border-radius:12px;margin:2rem 0;text-align:left;animation:slideDown .8s ease-out 0.3s both}
+
+.next-steps h3{color:var(--success);font-size:1.15rem;margin-bottom:1.5rem}
+
+.next-steps ol{list-style:none;counter-reset:step;padding:0}
+
+.next-steps li{counter-increment:step;padding:1rem 0;padding-left:2.5rem;position:relative;color:var(--ink-soft);line-height:1.6}
+
+.next-steps li:before{content:counter(step);position:absolute;left:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--success),#2ecc71);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
+
+.cta-buttons{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:3rem 0;animation:slideDown .8s ease-out 0.4s both}
+
+.btn{padding:1.2rem 2rem;border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;text-align:center;letter-spacing:.5px}
+
+.btn-primary{background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;box-shadow:0 8px 24px rgba(166,9,61,.3);animation:bounce 2s infinite}
+
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(166,9,61,.4)}
+
+.btn-secondary{background:linear-gradient(120deg,var(--success),#2ecc71);color:#fff;box-shadow:0 8px 24px rgba(39,174,96,.3)}
+
+.btn-secondary:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(39,174,96,.4)}
+
+.info-box{background:linear-gradient(135deg,var(--blush-soft),var(--ivory));border-radius:12px;padding:2rem;margin:2rem 0;text-align:center;animation:slideDown .8s ease-out 0.5s both}
+
+.info-box h4{color:var(--crimson);margin-bottom:1rem;font-size:1.1rem}
+
+.info-box p{color:var(--ink-soft);margin-bottom:.5rem;line-height:1.6}
+
+.info-box a{color:var(--crimson);font-weight:700;transition:color .2s}
+
+.info-box a:hover{color:var(--gold)}
+
+.confetti-piece{position:fixed;pointer-events:none;animation:confetti 3s ease-in forwards}
+
+footer{background:#fff;border-top:2px solid var(--blush);padding:2rem 0;margin-top:4rem;text-align:center;color:var(--ink-soft);font-size:.85rem}
+
+@media(max-width:768px){
+  .summary-grid{grid-template-columns:1fr}
+  .cta-buttons{grid-template-columns:1fr}
+  .success-card{padding:2rem}
+  .success-title{font-size:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html" style="color:var(--ink-soft);font-size:.9rem">← Back to Home</a></div>
+  </div>
+</header>
+
+<section class="success-container">
+  <div class="container">
+    <div class="success-card">
+      
+      <div class="checkmark-circle">
+        <div class="checkmark"></div>
+      </div>
+
+      <h1 class="success-title">✓ Registration Received! 🎉</h1>
+      <p class="success-subtitle">Your application has been submitted successfully</p>
+
+      <!-- APPLICATION SUMMARY -->
+      <div class="app-summary">
+        <h3>📋 Your Application Summary</h3>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <label>Full Name</label>
+            <div class="value" id="summaryName">-</div>
+          </div>
+          <div class="summary-item">
+            <label>Category</label>
+            <div class="value" id="summaryCategory">-</div>
+          </div>
+          <div class="summary-item">
+            <label>City</label>
+            <div class="value" id="summaryCity">-</div>
+          </div>
+          <div class="summary-item">
+            <label>Phone</label>
+            <div class="value" id="summaryPhone">-</div>
+          </div>
+          <div class="summary-item">
+            <label>Email</label>
+            <div class="value" id="summaryEmail">-</div>
+          </div>
+          <div class="summary-item">
+            <label>Application ID</label>
+            <div class="value" id="summaryId">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEXT STEPS -->
+      <div class="next-steps">
+        <h3>ℹ️ What Happens Next?</h3>
+        <ol>
+          <li><strong>WhatsApp Contact (24 Hours):</strong> Our team will reach out on WhatsApp with audition details and training schedule</li>
+          <li><strong>Payment Confirmation:</strong> Complete payment of ₹2,999 to secure your spot and receive registration certificate</li>
+          <li><strong>Confirmation & Instructions:</strong> You'll get audition schedule, grooming session dates, and official confirmation</li>
+          <li><strong>Auditions & Training:</strong> Participate in online auditions and receive professional training from our experts</li>
+        </ol>
+      </div>
+
+      <!-- INFO BOX -->
+      <div class="info-box">
+        <h4>💬 Questions or Need Help?</h4>
+        <p>📞 <a href="tel:+919983286999">Call: +91-99832-86999</a></p>
+        <p>✉️ <a href="mailto:starindiaaward@gmail.com">Email: starindiaaward@gmail.com</a></p>
+        <p>💬 <a href="#" id="whatsappLink">Chat on WhatsApp</a></p>
+      </div>
+
+      <!-- CTA BUTTONS -->
+      <div class="cta-buttons">
+        <a href="payment.html" class="btn btn-primary" id="paymentBtn">
+          💳 Step 2 — Complete Payment
+        </a>
+        <a href="#" id="whatsappShareBtn" class="btn btn-secondary" onclick="shareOnWhatsApp(); return false">
+          💬 Share Update on WhatsApp
+        </a>
+      </div>
+
+      <!-- IMPORTANT NOTICE -->
+      <div style="background:#fff3cd;border-left:5px solid #ffc107;padding:1.5rem;border-radius:8px;margin:2rem 0;text-align:left">
+        <p style="color:#856404;margin:0;font-weight:600;margin-bottom:.5rem">⏰ Important Reminder:</p>
+        <p style="color:#856404;margin:0;line-height:1.6">Payment must be completed within 48 hours to confirm your registration. After that, your slot may be released.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Forever Star India Pvt. Ltd. - All Rights Reserved</p>
+  <p style="margin-top:.5rem">Secure Registration | Trusted by 50,000+ Contestants</p>
+</footer>
+
+<script>
+function loadSummary(){
+  const params=new URLSearchParams(window.location.search);
+  const data={
+    name:params.get('name')||localStorage.getItem('lastRegName')||'Guest',
+    category:params.get('category')||localStorage.getItem('lastRegCategory')||'Forever Miss India 2026',
+    city:params.get('city')||localStorage.getItem('lastRegCity')||'City Name',
+    phone:params.get('phone')||localStorage.getItem('lastRegPhone')||'9999999999',
+    email:params.get('email')||localStorage.getItem('lastRegEmail')||'email@example.com',
+    id:params.get('id')||localStorage.getItem('lastRegId')||'REG'+Date.now()
+  };
+
+  document.getElementById('summaryName').textContent=data.name;
+  document.getElementById('summaryCategory').textContent=data.category;
+  document.getElementById('summaryCity').textContent=data.city;
+  document.getElementById('summaryPhone').textContent='+91 '+data.phone;
+  document.getElementById('summaryEmail').textContent=data.email;
+  document.getElementById('summaryId').textContent=data.id;
+
+  document.getElementById('whatsappLink').href='https://wa.me/919983286999?text=Hi! I registered for '+data.category;
+  document.getElementById('whatsappShareBtn').href='https://wa.me/?text=I just registered for '+data.category+' on Forever Star India!';
+}
+
+function shareOnWhatsApp(){
+  const name=document.getElementById('summaryName').textContent;
+  const category=document.getElementById('summaryCategory').textContent;
+  window.open('https://wa.me/?text=I just registered for '+category+' on Forever Star India! 🎉','_blank');
+}
+
+function createConfetti(){
+  const colors=['#A6093D','#D4AF37','#F2C4CF','#FFFCF6'];
+  for(let i=0;i<30;i++){
+    setTimeout(()=>{
+      const confetti=document.createElement('div');
+      confetti.className='confetti-piece';
+      confetti.style.left=Math.random()*100+'%';
+      confetti.style.top='-10px';
+      confetti.innerHTML='✨';
+      confetti.style.color=colors[Math.floor(Math.random()*colors.length)];
+      confetti.style.fontSize=(Math.random()*20+15)+'px';
+      document.body.appendChild(confetti);
+      setTimeout(()=>confetti.remove(),3000);
+    },i*50);
+  }
+}
+
+loadSummary();
+createConfetti();
+</script>
+</body>
+</html>

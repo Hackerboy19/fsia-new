@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register for Business Awards 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--navy:#1a3a52;--slate:#475569;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#f0f4f8;color:var(--ink)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none}
+.container{width:min(1140px,92%);margin:0 auto}
+
+@keyframes slideInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes growIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+
+header{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:60;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;animation:slideInDown .6s ease-out}
+.logo img{width:50px}
+.nav a{color:var(--slate);margin-right:1.5rem;transition:color .2s;font-size:.9rem;font-weight:500}
+.nav a:hover{color:var(--navy);font-weight:600}
+.btn{background:linear-gradient(120deg,var(--navy),var(--crimson));color:#fff;padding:.8rem 1.8rem;border:none;border-radius:8px;cursor:pointer;font-weight:700;transition:all .3s;box-shadow:0 4px 12px rgba(26,58,82,.2)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,58,82,.3)}
+
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--crimson) 100%);color:#fff;padding:100px 0;text-align:center;position:relative;overflow:hidden;animation:slideInDown .8s ease-out}
+.hero::before{content:'';position:absolute;top:-50%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);border-radius:50%}
+.hero h1{font-size:3.5rem;margin-bottom:.5rem;animation:slideInDown .7s ease-out;position:relative;z-index:1;font-weight:700}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:1.2rem;max-width:800px;margin:0 auto;animation:slideInDown .8s ease-out 0.1s both;position:relative;z-index:1;opacity:.95}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;padding:40px 0;text-align:center}
+.stat{animation:growIn .6s ease-out}
+.stat .number{font-size:2.5rem;color:var(--gold);font-weight:700}
+.stat .label{color:var(--ink-soft);font-size:.95rem;margin-top:.5rem}
+
+.content{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;padding:60px 0;align-items:start}
+.info h2{font-size:1.9rem;color:var(--navy);margin-bottom:1.5rem;animation:slideInDown .7s ease-out}
+.info-card{background:#fff;padding:2rem;border-radius:12px;margin-bottom:1.5rem;border-left:5px solid var(--gold);box-shadow:0 2px 8px rgba(0,0,0,.06);animation:slideInRight .6s ease-out;transition:all .3s}
+.info-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1);transform:translateX(5px)}
+.info-card h3{color:var(--navy);font-size:1.15rem;margin-bottom:1rem;font-weight:700}
+.info-card ul{list-style:none}
+.info-card li{padding:.5rem 0;color:var(--ink-soft);padding-left:1.8rem;position:relative}
+.info-card li:before{content:'→';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+.form-box{background:#fff;border-radius:12px;padding:2.8rem;box-shadow:0 10px 40px rgba(0,0,0,.1);animation:growIn .7s ease-out 0.2s both;border:1px solid #e2e8f0}
+.form-box h2{font-size:1.8rem;color:var(--navy);margin-bottom:.5rem;text-align:center;animation:slideInDown .6s ease-out}
+.form-box p{color:var(--slate);text-align:center;margin-bottom:2rem;font-size:1rem}
+
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:.6rem;font-weight:600;color:var(--navy);font-size:.95rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:1.1rem;border:1px solid #e2e8f0;border-radius:8px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s;background:#f8fafc}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(26,58,82,.1);background:#fff}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+.success-msg{display:none;background:#ecf0f1;border-left:4px solid #27ae60;color:#1e5631;padding:1.5rem;border-radius:8px;margin-bottom:1.5rem;text-align:center;font-weight:600;animation:slideInDown .5s ease-out}
+
+.submit-btn{width:100%;background:linear-gradient(120deg,var(--navy),var(--crimson));color:#fff;padding:1.3rem;font-size:1rem;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(26,58,82,.2);margin-top:1.5rem;text-transform:uppercase;letter-spacing:.5px;animation:slideInDown .7s ease-out 0.4s both}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(26,58,82,.3)}
+
+footer{background:#fff;border-top:1px solid #e2e8f0;padding:2.5rem 0;margin-top:60px;text-align:center;color:var(--slate);font-size:.85rem}
+
+@media(max-width:860px){.content{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Register</button></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Business <em>Awards 2026</em></h1>
+    <p>Recognizing Entrepreneurial Excellence & Innovation</p>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;width:100%;text-align:center">
+    <div class="stat">
+      <div class="number">₹50L+</div>
+      <div class="label">Total Prize Money</div>
+    </div>
+    <div class="stat">
+      <div class="number">500+</div>
+      <div class="label">Winners Recognized</div>
+    </div>
+    <div class="stat">
+      <div class="number">20+</div>
+      <div class="label">Business Categories</div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;width:100%">
+    <div class="info">
+      <h2>About Awards</h2>
+      <div class="info-card">
+        <h3>💼 Business Awards</h3>
+        <p style="color:var(--ink-soft);margin:0">Recognition for successful entrepreneurs, startup founders, business owners, and corporate innovators who have achieved excellence.</p>
+      </div>
+      <div class="info-card">
+        <h3>✓ Eligibility</h3>
+        <ul>
+          <li>Business owner/Entrepreneur</li>
+          <li>Registered company</li>
+          <li>Turnover minimum ₹10L</li>
+          <li>Tax compliance</li>
+          <li>Indian registered entity</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>🎯 Categories</h3>
+        <ul>
+          <li>Startup of the Year</li>
+          <li>Women Entrepreneur</li>
+          <li>Manufacturing Excellence</li>
+          <li>Service Industry</li>
+          <li>And 16+ more!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-box">
+        <h2>Register Your Business</h2>
+        <p>Submit for recognition in Business Excellence</p>
+        <div class="success-msg" id="successMsg">✓ Application received! Our team will review and contact you within 5 business days.</div>
+        <form id="registrationForm" onsubmit="submitForm(event)">
+          <div class="form-group"><label>Company Name <span style="color:var(--crimson)">*</span></label><input type="text" name="companyName"></div>
+          <div class="form-row">
+            <div class="form-group"><label>Founder/CEO Name <span style="color:var(--crimson)">*</span></label><input type="text" name="founderName" required></div>
+            <div class="form-group"><label>Gender <span style="color:var(--crimson)">*</span></label><select name="gender"><option>Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+          </div>
+          <div class="form-group"><label>Industry/Category <span style="color:var(--crimson)">*</span></label><select name="category"><option>Select category</option><option>Startup of the Year</option><option>Women Entrepreneur</option><option>Manufacturing</option><option>Services</option><option>Technology</option><option>Retail</option><option>Other</option></select></div>
+          <div class="form-row">
+            <div class="form-group"><label>Annual Turnover <span style="color:var(--crimson)">*</span></label><input type="text" name="turnover" placeholder="₹ amount"></div>
+            <div class="form-group"><label>Employees <span style="color:var(--crimson)">*</span></label><input type="number" name="employees" min="1"></div>
+          </div>
+          <div class="form-group"><label>Registration Number <span style="color:var(--crimson)">*</span></label><input type="text" name="regNumber"></div>
+          <div class="form-row">
+            <div class="form-group"><label>City <span style="color:var(--crimson)">*</span></label><input type="text" name="city"></div>
+            <div class="form-group"><label>WhatsApp <span style="color:var(--crimson)">*</span></label><input type="tel" name="phone" maxlength="10" required></div>
+          </div>
+          <div class="form-group"><label>Email <span style="color:var(--crimson)">*</span></label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Business Impact <span style="color:var(--crimson)">*</span></label><textarea name="impact" placeholder="Tell us about your business achievements and impact..."></textarea></div>
+          <div class="form-group"><label><input type="checkbox" name="agree" style="width:auto;margin-right:.5rem">I agree to terms <span style="color:var(--crimson)">*</span></label></div>
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+        <p style="text-align:center;margin-top:1.5rem;color:var(--slate);font-size:.85rem">Application fee: ₹2,999</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>📞 +91-99832-86999 | ✉️ starindiaaward@gmail.com | 💬 <a href="https://wa.me/919983286999" style="color:var(--navy)">WhatsApp</a></p>
+    <p style="margin-top:1rem">© 2026 Forever Star India Pvt. Ltd.</p>
+  </div>
+</footer>
+
+<script>
+function submitForm(event){event.preventDefault();const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));const reg=JSON.parse(localStorage.getItem('fsia_reg')||'[]');reg.push({...data,category:'Business Awards 2026',timestamp:new Date().toLocaleString(),id:Date.now()});localStorage.setItem('fsia_reg',JSON.stringify(reg));document.getElementById('successMsg').style.display='block';document.getElementById('registrationForm').reset();setTimeout(()=>{document.getElementById('successMsg').style.display='none'},5000)}
+</script>
+</body>
+</html>

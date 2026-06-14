@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register for Forever Fashion Designers 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--luxury:#2c1810;--rose:#d4a5a5;--cream:#f5f1ee;--ink:#3A2226}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#f9f6f3;color:var(--ink)}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none}
+.container{width:min(1140px,92%);margin:0 auto}
+
+@keyframes slideInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes zoomIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+header{background:#fff;border-bottom:2px solid var(--rose);position:sticky;top:0;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;animation:slideInDown .6s ease-out}
+.logo img{width:50px}
+.nav a{color:#7a5e63;margin-right:1.5rem;transition:color .2s;font-size:.9rem;font-weight:500}
+.nav a:hover{color:var(--luxury);font-weight:700}
+.btn{background:linear-gradient(120deg,var(--luxury),var(--rose));color:#fff;padding:.8rem 1.8rem;border:none;border-radius:4px;cursor:pointer;font-weight:700;transition:all .3s;box-shadow:0 4px 12px rgba(44,24,16,.15);letter-spacing:.5px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(44,24,16,.25)}
+
+.hero{background:linear-gradient(135deg,#f5f1ee 0%,#ede5df 100%);padding:100px 0;position:relative;overflow:hidden;animation:fadeIn .8s ease-out}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:2px solid rgba(212,165,165,.1);border-radius:50%;animation:slideUp 1s ease-out 0.2s both}
+.content-wrapper{text-align:center;position:relative;z-index:1;animation:slideInDown .7s ease-out}
+.hero h1{font-size:3.2rem;color:var(--luxury);margin-bottom:.5rem}
+.hero h1 em{color:var(--rose);font-style:italic}
+.hero p{font-size:1.15rem;color:#7a5e63;max-width:700px;margin:0 auto;animation:slideInDown .8s ease-out 0.1s both}
+
+.content{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;padding:60px 0;align-items:start}
+.info h2{font-size:1.9rem;color:var(--luxury);margin-bottom:1.5rem;animation:slideInDown .7s ease-out;letter-spacing:.5px}
+.info-card{background:#fff;padding:2rem;border-radius:4px;margin-bottom:1.5rem;border-left:6px solid var(--rose);box-shadow:0 2px 8px rgba(44,24,16,.08);animation:slideUp .6s ease-out;transition:all .3s}
+.info-card:hover{box-shadow:0 8px 24px rgba(44,24,16,.15);transform:translateY(-3px)}
+.info-card h3{color:var(--luxury);font-size:1.2rem;margin-bottom:1rem;letter-spacing:.5px}
+.info-card ul{list-style:none}
+.info-card li{padding:.6rem 0;color:#7a5e63;padding-left:1.8rem;position:relative}
+.info-card li:before{content:'✦';position:absolute;left:0;color:var(--rose)}
+
+.form-box{background:#fff;border-radius:4px;padding:3rem;box-shadow:0 10px 40px rgba(44,24,16,.12);animation:zoomIn .7s ease-out 0.2s both;border:1px solid rgba(212,165,165,.2)}
+.form-box h2{font-size:1.8rem;color:var(--luxury);margin-bottom:.5rem;text-align:center;letter-spacing:1px}
+.form-box p{color:#7a5e63;text-align:center;margin-bottom:2rem;font-size:1rem}
+
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:.6rem;font-weight:600;color:var(--luxury);font-size:.95rem;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:1.1rem;border:1px solid rgba(212,165,165,.3);border-radius:4px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s;background:#faf8f6}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 4px rgba(212,165,165,.1);background:#fff}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+.success-msg{display:none;background:rgba(212,165,165,.1);border-left:4px solid var(--rose);color:var(--luxury);padding:2rem;border-radius:4px;margin-bottom:1.5rem;text-align:center;font-weight:600;animation:slideUp .5s ease-out}
+
+.submit-btn{width:100%;background:linear-gradient(120deg,var(--luxury),var(--rose));color:#fff;padding:1.4rem;font-size:1rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;transition:all .3s;box-shadow:0 6px 20px rgba(44,24,16,.2);margin-top:2rem;text-transform:uppercase;letter-spacing:1.5px;animation:slideUp .7s ease-out 0.4s both}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(44,24,16,.3)}
+
+footer{background:#fff;border-top:2px solid var(--rose);padding:2.5rem 0;margin-top:60px;text-align:center;color:#7a5e63;font-size:.85rem}
+
+@media(max-width:860px){.content{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Register</button></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container content-wrapper">
+    <h1>Forever <em>Fashion Designers</em> 2026</h1>
+    <p>Platform for Creative Excellence in Fashion Design</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;width:100%">
+    <div class="info">
+      <h2>About Program</h2>
+      <div class="info-card">
+        <h3>👗 Fashion Designers Platform</h3>
+        <p style="color:#7a5e63;margin:0">Showcase your design talent, get industry recognition, collaborate with brands, and participate in exclusive fashion weeks and shows.</p>
+      </div>
+      <div class="info-card">
+        <h3>✓ Requirements</h3>
+        <ul>
+          <li>Professional fashion designer</li>
+          <li>Design student (final year)</li>
+          <li>Portfolio of 10+ designs</li>
+          <li>Years of experience (varies)</li>
+          <li>Registration</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>✨ Opportunities</h3>
+        <ul>
+          <li>Bharat Couture Week feature</li>
+          <li>Industry networking</li>
+          <li>Brand collaborations</li>
+          <li>Media coverage</li>
+          <li>International exposure</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-box">
+        <h2>Register Your Portfolio</h2>
+        <p>Showcase your design excellence to industry leaders</p>
+        <div class="success-msg" id="successMsg">✓ Portfolio received! We'll review within 7 business days and contact you.</div>
+        <form id="registrationForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name <span style="color:var(--rose)">*</span></label><input type="text" name="fullName" required></div>
+            <div class="form-group"><label>Age <span style="color:var(--rose)">*</span></label><input type="number" name="age" min="18"></div>
+          </div>
+          <div class="form-group"><label>Design Specialty <span style="color:var(--rose)">*</span></label><select name="specialty"><option>Select specialty</option><option>Ethnic Wear</option><option>Western Wear</option><option>Bridal</option><option>Fusion</option><option>Sustainable Fashion</option><option>Other</option></select></div>
+          <div class="form-row">
+            <div class="form-group"><label>Experience (Years) <span style="color:var(--rose)">*</span></label><input type="number" name="experience" min="0"></div>
+            <div class="form-group"><label>Current Status <span style="color:var(--rose)">*</span></label><select name="status"><option>Select</option><option>Student</option><option>Freelancer</option><option>Employed</option><option>Own Label</option></select></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>City <span style="color:var(--rose)">*</span></label><input type="text" name="city"></div>
+            <div class="form-group"><label>WhatsApp <span style="color:var(--rose)">*</span></label><input type="tel" name="phone" maxlength="10" required></div>
+          </div>
+          <div class="form-group"><label>Email <span style="color:var(--rose)">*</span></label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Portfolio Link <span style="color:var(--rose)">*</span></label><input type="text" name="portfolio" placeholder="https://yourportfolio.com"></div>
+          <div class="form-group"><label>Instagram Profile <span style="color:var(--rose)">*</span></label><input type="text" name="instagram" placeholder="@yourprofile"></div>
+          <div class="form-group"><label>Design Philosophy</label><textarea name="philosophy" placeholder="Tell us about your design approach and inspiration..."></textarea></div>
+          <div class="form-group"><label><input type="checkbox" name="agree" style="width:auto;margin-right:.5rem">I agree to terms <span style="color:var(--rose)">*</span></label></div>
+          <button type="submit" class="submit-btn">Submit Portfolio</button>
+        </form>
+        <p style="text-align:center;margin-top:1.5rem;color:#7a5e63;font-size:.85rem">Registration fee: ₹1,999</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>📞 +91-99832-86999 | ✉️ starindiaaward@gmail.com | 💬 <a href="https://wa.me/919983286999" style="color:var(--luxury)">WhatsApp</a></p>
+    <p style="margin-top:1rem">© 2026 Forever Star India Pvt. Ltd.</p>
+  </div>
+</footer>
+
+<script>
+function submitForm(event){event.preventDefault();const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));const reg=JSON.parse(localStorage.getItem('fsia_reg')||'[]');reg.push({...data,category:'Forever Fashion Designers 2026',timestamp:new Date().toLocaleString(),id:Date.now()});localStorage.setItem('fsia_reg',JSON.stringify(reg));document.getElementById('successMsg').style.display='block';document.getElementById('registrationForm').reset();setTimeout(()=>{document.getElementById('successMsg').style.display='none'},5000)}
+</script>
+</body>
+</html>

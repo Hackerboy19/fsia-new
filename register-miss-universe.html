@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register for Miss Universe 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--champagne:#F8EDD8;--cosmic:#0a0e27;--star:#ffd700;--ink:#3A2226;--ink-soft:#7A5E63;--shadow:0 10px 30px rgba(166,9,61,.10);--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0a0e27,#1a1f3a,#2d1b4e);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2;color:#fff}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+.container{width:min(1140px,92%);margin:0 auto}
+.section{padding:64px 0}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@keyframes starTwinkle{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes slideInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+
+header{background:rgba(10,14,39,.95);border-bottom:2px solid var(--star);padding:.6rem 0;position:sticky;top:0;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;animation:slideInDown .6s ease-out}
+.logo img{width:50px}
+.logo span{color:var(--star)}
+.nav a{color:#fff;margin-right:1.5rem;transition:color .2s;font-size:.9rem}
+.nav a:hover{color:var(--star)}
+.btn{background:linear-gradient(120deg,var(--star),#ffed4e);color:#000;padding:.8rem 1.8rem;border:none;border-radius:12px;cursor:pointer;font-weight:700;transition:all .3s;box-shadow:0 6px 20px rgba(255,215,0,.3)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(255,215,0,.4)}
+
+.hero{background:linear-gradient(160deg,var(--cosmic) 0%,#1a1f3a 50%,#2d1b4e 100%);padding:100px 0;text-align:center;position:relative;overflow:hidden;animation:slideInDown .8s ease-out}
+.hero::before{content:'✨✨✨';position:absolute;top:10%;left:5%;font-size:2rem;opacity:.3;animation:starTwinkle 3s infinite}
+.hero::after{content:'✨✨✨';position:absolute;bottom:15%;right:5%;font-size:2rem;opacity:.3;animation:starTwinkle 4s infinite}
+.hero h1{font-size:3.5rem;margin-bottom:.5rem;background:linear-gradient(90deg,var(--star),#ffed4e);-webkit-background-clip:text;background-clip:text;color:transparent;animation:slideInDown .7s ease-out;position:relative;z-index:1}
+.hero p{font-size:1.15rem;max-width:700px;margin:0 auto;animation:slideInDown .8s ease-out 0.1s both;position:relative;z-index:1;color:#e0e0e0}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:center}
+.grid-img{border-radius:20px;overflow:hidden;box-shadow:0 10px 40px rgba(255,215,0,.2);height:300px;background:linear-gradient(135deg,#1a1f3a,#2d1b4e);display:flex;align-items:center;justify-content:center;font-size:5rem}
+.grid-content h2{font-size:2rem;margin-bottom:1rem;color:#fff}
+.grid-content p{color:#b0b0b0;margin-bottom:1rem;line-height:1.8}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,215,0,.2);border-radius:20px;padding:2rem;text-align:center;box-shadow:0 4px 12px rgba(255,215,0,.1);transition:all .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--star);box-shadow:0 10px 30px rgba(255,215,0,.2)}
+.card .icon{font-size:2.8rem;margin-bottom:.8rem}
+.card h3{font-size:1.1rem;margin-bottom:.6rem;color:var(--star)}
+.card p{font-size:.85rem;color:#b0b0b0}
+
+.eligibility{background:rgba(255,215,0,.05);border-left:4px solid var(--star);padding:1.8rem;border-radius:12px;margin:2rem 0}
+.eligibility h3{color:var(--star);margin-bottom:1rem}
+.eligibility ul{list-style:none;padding-left:0}
+.eligibility li{padding:.6rem 0;padding-left:1.8rem;position:relative;font-size:.95rem;color:#b0b0b0}
+.eligibility li:before{content:'✓';position:absolute;left:0;color:var(--star);font-weight:700}
+
+.form-box{background:rgba(255,255,255,.02);border:1px solid rgba(255,215,0,.1);border-radius:20px;padding:2.8rem;box-shadow:0 10px 40px rgba(255,215,0,.1)}
+.form-box h2{font-size:1.8rem;color:var(--star);margin-bottom:.5rem;text-align:center}
+.form-box p{color:#b0b0b0;text-align:center;margin-bottom:2rem;font-size:1rem}
+
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:.6rem;font-weight:600;color:#fff;font-size:.95rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:1rem;border:1px solid rgba(255,215,0,.2);border-radius:10px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s;background:rgba(255,255,255,.05);color:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--star);box-shadow:0 0 0 3px rgba(255,215,0,.1);background:rgba(255,255,255,.08)}
+.form-group input::placeholder{color:#888}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+.success-msg{display:none;background:rgba(39,174,96,.1);border:2px solid #4CAF50;color:#2ecc71;padding:1.5rem;border-radius:12px;margin-bottom:1.5rem;text-align:center;font-weight:600}
+
+.submit-btn{width:100%;background:linear-gradient(120deg,var(--star),#ffed4e);color:#000;padding:1.3rem;font-size:1.1rem;font-weight:700;border:none;border-radius:12px;cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(255,215,0,.3);margin-top:1.5rem;text-transform:uppercase;letter-spacing:1px}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,215,0,.4)}
+
+footer{background:rgba(10,14,39,.95);border-top:2px solid var(--star);padding:2.5rem 0;margin-top:60px;text-align:center;color:#b0b0b0;font-size:.85rem}
+
+@media(max-width:860px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Register</button></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Miss Universe 2026 ✨</h1>
+    <p>Compete on the Global Stage - 139 Countries United</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid reveal">
+      <div><div class="grid-img">🌍</div></div>
+      <div class="grid-content">
+        <h2>About Miss Universe</h2>
+        <p>Miss Universe is the world's most prestigious beauty pageant connecting 139 countries. Compete globally, represent India internationally, and gain worldwide recognition.</p>
+        <p>Winners receive international modeling contracts, media exposure across the globe, and the opportunity to represent India at world stage.</p>
+        <button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Apply Now →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:rgba(255,215,0,.02)">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:2rem;font-size:2rem;color:#fff">Who Can Apply?</h2>
+    <div style="max-width:800px;margin:0 auto">
+      <div class="eligibility">
+        <h3>✓ Eligibility Criteria</h3>
+        <ul>
+          <li>Age: 18-35 years</li>
+          <li>Marital Status: Single/Unmarried</li>
+          <li>Height: Minimum 5 feet 2 inches</li>
+          <li>Weight: Less than 80 kg</li>
+          <li>Open to Indian & International applicants</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:3rem;font-size:2rem;color:#fff">What You Get</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon">🌟</div>
+        <h3>Global Recognition</h3>
+        <p>Featured internationally, media across 139 countries, worldwide social media exposure</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">💼</div>
+        <h3>International Contracts</h3>
+        <p>Global modeling deals, international brand partnerships, worldwide opportunities</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">👑</div>
+        <h3>Prestige & Status</h3>
+        <p>Most prestigious pageant worldwide, representing India globally, lifetime recognition</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;width:100%;align-items:start">
+    <div style="color:#fff"></div>
+    <div>
+      <div class="form-box">
+        <h2>Register Now</h2>
+        <p>Join the global competition for Miss Universe 2026</p>
+        <div class="success-msg" id="successMsg">✓ Registration successful! Our team will contact you within 24 hours.</div>
+        <form id="registrationForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group"><label>First Name <span style="color:var(--star)">*</span></label><input type="text" name="firstName" required></div>
+            <div class="form-group"><label>Last Name <span style="color:var(--star)">*</span></label><input type="text" name="lastName"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Age <span style="color:var(--star)">*</span></label><input type="number" name="age" min="18" max="35"></div>
+            <div class="form-group"><label>Height (feet) <span style="color:var(--star)">*</span></label><input type="text" name="height" placeholder="e.g. 5.5"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Weight (kg)</label><input type="number" name="weight"></div>
+            <div class="form-group"><label>Country <span style="color:var(--star)">*</span></label><input type="text" name="country"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>City</label><input type="text" name="city"></div>
+            <div class="form-group"><label>WhatsApp <span style="color:var(--star)">*</span></label><input type="tel" name="phone" maxlength="10" required></div>
+          </div>
+          <div class="form-group"><label>Email <span style="color:var(--star)">*</span></label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Instagram Handle</label><input type="text" name="instagram" placeholder="@yourprofile"></div>
+          <div class="form-group"><label>Why Miss Universe? (optional)</label><textarea name="message" placeholder="Tell us about your dreams..."></textarea></div>
+          <div class="form-group"><label><input type="checkbox" name="agree" required style="width:auto;margin-right:.5rem">I agree to terms <span style="color:var(--star)">*</span></label></div>
+          <button type="submit" class="submit-btn">Register Now - ₹2,999</button>
+        </form>
+        <p style="text-align:center;margin-top:1.5rem;color:#888;font-size:.85rem">Limited entries · Global competition</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>📞 +91-99832-86999 | ✉️ starindiaaward@gmail.com | 💬 <a href="https://wa.me/919983286999" style="color:var(--star)">WhatsApp</a></p>
+  <p style="margin-top:1rem">© 2026 Forever Star India Pvt. Ltd.</p>
+</footer>
+
+<script>
+function submitForm(event){
+  event.preventDefault();
+  const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));
+  const regId='REG'+Date.now();
+  localStorage.setItem('lastRegName',data.firstName);
+  localStorage.setItem('lastRegCategory','Miss Universe 2026');
+  localStorage.setItem('lastRegPhone',data.phone);
+  localStorage.setItem('lastRegEmail',data.email);
+  localStorage.setItem('lastRegId',regId);
+  const params=new URLSearchParams({name:data.firstName,category:'Miss Universe 2026',city:data.country,phone:data.phone,email:data.email,id:regId});
+  window.location.href='registration-success.html?'+params.toString();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team – Forever Star India</title>
+<meta name="description" content="Meet the team behind Forever Star India — leadership and management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--gold-deep:#B8962E;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--champagne:#F8EDD8;--ink:#3A2226;--ink-soft:#7A5E63;--shadow:0 10px 30px rgba(166,9,61,.10);--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+.container{width:min(1140px,92%);margin:0 auto}
+.section{padding:64px 0}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+header{background:#fff;border-bottom:1px solid rgba(166,9,61,.12);padding:.6rem 0 0;position:sticky;top:0;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;gap:1.5rem;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.5rem;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;flex-shrink:0}
+.logo img{width:50px;height:50px;object-fit:contain}
+.logo span{color:var(--crimson)}
+.logo small{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+.nav-links{display:flex;gap:1.5rem;font-size:.85rem;font-weight:500}
+.nav-links a{color:var(--ink-soft);transition:color .25s}
+.nav-links a:hover{color:var(--crimson)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;justify-content:center;background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-deep) 45%,var(--gold-deep) 130%);background-size:180% 100%;color:#fff;font-weight:600;font-size:.9rem;padding:.78rem 1.7rem;border-radius:999px;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(166,9,61,.32);transition:transform .25s,background-position .4s}
+.btn:hover{transform:translateY(-2px);background-position:100% 0}
+.hamburger{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);cursor:pointer}
+.page-hero{background:linear-gradient(160deg,var(--blush-soft),var(--champagne) 70%,var(--ivory));text-align:center;padding:66px 0 56px}
+.page-hero h1{font-size:clamp(2rem,4.5vw,3rem)}
+.page-hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--crimson),var(--gold-deep),var(--crimson));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 5s linear infinite}
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
+.crumb{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:.8rem;display:block}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.team-card{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+.team-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(166,9,61,.18)}
+.team-avatar{height:220px;background:linear-gradient(135deg,var(--blush-soft),var(--champagne));display:flex;align-items:center;justify-content:center;font-size:3rem}
+.team-body{padding:1.6rem}
+.team-body h3{font-size:1.1rem;margin-bottom:.2rem}
+.team-body .role{font-size:.8rem;color:var(--crimson);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;display:block}
+.team-body p{font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+footer{background:#fff;border-top:1px solid rgba(166,9,61,.14);padding:2.6rem 0 1.6rem;margin-top:60px;text-align:center}
+footer img{width:60px;margin:0 auto .7rem}
+footer p{font-size:.8rem;color:var(--ink-soft)}
+footer .flinks{display:flex;gap:1.2rem;justify-content:center;margin:.9rem 0 1.2rem;font-size:.84rem;flex-wrap:wrap}
+footer .flinks a:hover{color:var(--crimson)}
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:70;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 24px rgba(37,211,102,.4)}
+@media(max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.team-grid{grid-template-columns:1fr}.nav-links{display:none}.hamburger{display:block}.nav .btn{display:none}.section{padding:48px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img src="logo.gif" alt="Forever Star India">
+      <span>Forever<br><small>Star India</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="our-team.html" style="color:var(--crimson);font-weight:600">Our Team</a>
+    </nav>
+    <button class="btn" onclick="window.location.href='index.html#form'">Register Now</button>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="crumb">Home / Our Team</span>
+    <h1>Meet the <em>Team</em></h1>
+    <p>The passionate people behind India's biggest beauty pageant platform</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.6rem">
+      <h2 style="font-size:2rem;margin-bottom:.5rem">Leadership</h2>
+      <p style="color:var(--ink-soft);max-width:600px;margin:0 auto">The visionary team leading Forever Star India</p>
+    </div>
+    
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar">👨‍💼</div>
+        <div class="team-body">
+          <h3>Rajesh Agarwal</h3>
+          <span class="role">Founder & CEO</span>
+          <p>Visionary entrepreneur who founded Forever Star India with a mission to discover and nurture talent from every corner of India. With decades of experience in event management and brand building.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">👩‍💼</div>
+        <div class="team-body">
+          <h3>Jaya Chauhan</h3>
+          <span class="role">Director</span>
+          <p>Strategic director overseeing operations and growth. Brings expertise in pageant management, contestant grooming, and community building. Passionate about creating opportunities for women.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">👩‍🏫</div>
+        <div class="team-body">
+          <h3>[Team Member Name]</h3>
+          <span class="role">Replace with your team</span>
+          <p>Add your team members here. Include their name, role, and a brief description of their responsibilities and background at FSIA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.png" alt="FSIA" style="width:60px">
+  <div class="flinks">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="our-team.html">Our Team</a>
+  </div>
+  <p>📞 +91-99832-86999 · ✉️ starindiaaward@gmail.com</p>
+  <p style="margin-top:.6rem">© 2026 Forever Star India Pvt. Ltd.</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919983286999" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

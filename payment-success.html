@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Successful - Forever Star India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--success:#27ae60}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,rgba(39,174,96,.08),rgba(212,175,55,.08));color:#3A2226;min-height:100vh}
+h1,h2{font-family:'Playfair Display',serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(900px,92%);margin:0 auto}
+
+@keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+@keyframes checkmark{0%{transform:scale(0) rotate(-45deg)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes confetti{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(600px) rotate(720deg)}}
+
+header{background:#fff;border-bottom:2px solid var(--gold);padding:1rem 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700}
+.logo img{width:45px}
+
+.success-container{padding:60px 0}
+
+.success-card{background:#fff;border-radius:20px;padding:3rem;box-shadow:0 20px 60px rgba(39,174,96,.15);text-align:center;animation:scaleIn .6s ease-out}
+
+.success-icon{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--success),#2ecc71);margin:0 auto 2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(39,174,96,.3);animation:scaleIn .6s ease-out}
+
+.checkmark{width:60px;height:60px;position:relative;animation:checkmark .6s ease-out 0.3s both}
+
+.checkmark::after{content:'';position:absolute;width:18px;height:36px;border:solid white;border-width:0 4px 4px 0;transform:rotate(45deg);left:20px;top:8px}
+
+.success-title{font-size:2.5rem;color:var(--success);margin-bottom:.5rem;animation:slideDown .7s ease-out}
+
+.success-subtitle{font-size:1.1rem;color:#7A5E63;margin-bottom:2rem;animation:slideDown .8s ease-out 0.1s both}
+
+.confirmation-box{background:linear-gradient(135deg,rgba(39,174,96,.05),rgba(39,174,96,.02));border:2px solid rgba(39,174,96,.2);border-radius:16px;padding:2rem;margin:2rem 0;text-align:left;animation:slideDown .8s ease-out 0.2s both}
+
+.confirmation-item{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(39,174,96,.1)}
+
+.confirmation-item:last-child{border-bottom:none}
+
+.confirm-label{color:#7A5E63;font-weight:600}
+
+.confirm-value{color:#3A2226;font-weight:700;font-size:1.05rem}
+
+.next-steps{background:#f0f8f5;border-left:5px solid var(--success);padding:2rem;border-radius:12px;margin:2rem 0;text-align:left;animation:slideDown .8s ease-out 0.3s both}
+
+.next-steps h3{color:var(--success);font-size:1.15rem;margin-bottom:1.5rem}
+
+.next-steps ol{counter-reset:step;padding:0;list-style:none}
+
+.next-steps li{counter-increment:step;padding:1rem 0;padding-left:2.5rem;position:relative;color:#7A5E63;line-height:1.6}
+
+.next-steps li:before{content:counter(step);position:absolute;left:0;width:30px;height:30px;border-radius:50%;background:var(--success);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
+
+.action-buttons{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:3rem 0;animation:slideDown .8s ease-out 0.4s both}
+
+.btn{padding:1.2rem 2rem;border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;text-align:center}
+
+.btn-primary{background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;box-shadow:0 8px 24px rgba(166,9,61,.3)}
+
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(166,9,61,.4)}
+
+.btn-secondary{background:#f0f4f8;color:var(--crimson);border:2px solid var(--crimson)}
+
+.btn-secondary:hover{background:var(--crimson);color:#fff}
+
+.info-banner{background:linear-gradient(135deg,var(--gold),#e6b800);color:#fff;padding:1.5rem;border-radius:12px;margin:2rem 0;text-align:center;animation:slideDown .8s ease-out 0.5s both}
+
+.info-banner h4{margin-bottom:.5rem;font-size:1.1rem}
+
+.download-area{background:#f9f6f3;border:2px dashed var(--gold);border-radius:12px;padding:2rem;text-align:center;margin:2rem 0;animation:slideDown .8s ease-out 0.6s both}
+
+.download-area h4{color:var(--crimson);margin-bottom:1rem}
+
+.download-btn{display:inline-block;background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;padding:.8rem 1.5rem;border-radius:8px;font-weight:700;text-decoration:none;transition:all .3s}
+
+.download-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(166,9,61,.3)}
+
+footer{background:#fff;border-top:2px solid #e9ecef;padding:2rem 0;margin-top:4rem;text-align:center;color:#7A5E63;font-size:.85rem}
+
+.confetti-piece{position:fixed;pointer-events:none;animation:confetti 3s ease-in forwards}
+
+@media(max-width:768px){
+  .action-buttons{grid-template-columns:1fr}
+  .success-card{padding:1.5rem}
+  .success-title{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="index.html" style="color:#7A5E63;font-size:.9rem">Home</a></div>
+  </div>
+</header>
+
+<section class="success-container">
+  <div class="container">
+    <div class="success-card">
+      
+      <div class="success-icon">
+        <div class="checkmark"></div>
+      </div>
+
+      <h1 class="success-title">Payment Successful! ✓</h1>
+      <p class="success-subtitle">Your registration is now complete</p>
+
+      <!-- PAYMENT CONFIRMATION -->
+      <div class="confirmation-box">
+        <div class="confirmation-item">
+          <span class="confirm-label">Transaction ID:</span>
+          <span class="confirm-value" id="txnId">TXN1234567890</span>
+        </div>
+        <div class="confirmation-item">
+          <span class="confirm-label">Amount Paid:</span>
+          <span class="confirm-value">₹2,999</span>
+        </div>
+        <div class="confirmation-item">
+          <span class="confirm-label">Payment Method:</span>
+          <span class="confirm-value" id="payMethod">UPI</span>
+        </div>
+        <div class="confirmation-item">
+          <span class="confirm-label">Date & Time:</span>
+          <span class="confirm-value" id="payDate">-</span>
+        </div>
+        <div class="confirmation-item">
+          <span class="confirm-label">Status:</span>
+          <span class="confirm-value" style="color:var(--success)">✓ Confirmed</span>
+        </div>
+      </div>
+
+      <!-- NEXT STEPS -->
+      <div class="next-steps">
+        <h3>What Happens Next?</h3>
+        <ol>
+          <li><strong>Confirmation Email:</strong> Check your email for receipt & registration certificate (sent within 1 hour)</li>
+          <li><strong>WhatsApp Contact:</strong> Our team will reach out on WhatsApp with audition details and training schedule</li>
+          <li><strong>Grooming Sessions:</strong> Professional training begins immediately after registration confirmation</li>
+          <li><strong>Audition Schedule:</strong> You'll receive detailed audition schedule for your city/online auditions</li>
+        </ol>
+      </div>
+
+      <!-- GOLD BANNER -->
+      <div class="info-banner">
+        <h4>🎉 Welcome to Forever Star India!</h4>
+        <p>You are now officially registered. Your journey to success begins now!</p>
+      </div>
+
+      <!-- CERTIFICATE/RECEIPT -->
+      <div class="download-area">
+        <h4>📄 Download Your Registration Certificate</h4>
+        <p style="color:#7A5E63;margin-bottom:1.5rem">Save your registration proof for your records</p>
+        <a href="#" class="download-btn" onclick="downloadCertificate(); return false">📥 Download Certificate</a>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-buttons">
+        <a href="index.html" class="btn btn-primary">🏠 Back to Home</a>
+        <a href="https://wa.me/919983286999?text=Hi! I just completed payment for my registration." class="btn btn-secondary">💬 Message on WhatsApp</a>
+      </div>
+
+      <!-- SUPPORT INFO -->
+      <div style="background:#f9f9f9;border-radius:12px;padding:1.5rem;margin-top:2rem;text-align:center">
+        <p style="color:#7A5E63;margin-bottom:1rem"><strong>Need Help?</strong></p>
+        <p><a href="tel:+919983286999" style="color:var(--crimson);font-weight:700;display:block;margin:.5rem 0">📞 Call: +91-99832-86999</a></p>
+        <p><a href="mailto:starindiaaward@gmail.com" style="color:var(--crimson);font-weight:700;display:block;margin:.5rem 0">✉️ Email: starindiaaward@gmail.com</a></p>
+        <p><a href="https://wa.me/919983286999" style="color:var(--crimson);font-weight:700;display:block;margin:.5rem 0">💬 WhatsApp Support</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Forever Star India Pvt. Ltd. - All Rights Reserved</p>
+  <p style="margin-top:.5rem">Thank you for registering with us!</p>
+</footer>
+
+<script>
+function downloadCertificate(){
+  alert('Certificate download feature would integrate with your document generation system.\n\nFor now, the confirmation email contains the certificate.');
+  // In real implementation, this would generate and download a PDF certificate
+}
+
+function createConfetti(){
+  const colors=['#A6093D','#D4AF37','#27ae60','#FFFCF6'];
+  for(let i=0;i<40;i++){
+    setTimeout(()=>{
+      const confetti=document.createElement('div');
+      confetti.className='confetti-piece';
+      confetti.style.left=Math.random()*100+'%';
+      confetti.style.top='-10px';
+      confetti.innerHTML='🎉';
+      confetti.style.fontSize=(Math.random()*20+15)+'px';
+      document.body.appendChild(confetti);
+      setTimeout(()=>confetti.remove(),3000);
+    },i*50);
+  }
+}
+
+window.addEventListener('load',()=>{
+  const params=new URLSearchParams(window.location.search);
+  const txn=params.get('txn')||'TXN'+Date.now();
+  const method=(params.get('method')||'upi').toUpperCase();
+  
+  document.getElementById('txnId').textContent=txn;
+  document.getElementById('payMethod').textContent=method;
+  document.getElementById('payDate').textContent=new Date().toLocaleString();
+  
+  createConfetti();
+});
+</script>
+</body>
+</html>

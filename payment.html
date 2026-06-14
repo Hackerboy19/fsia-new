@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment - Forever Star India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--ink:#3A2226;--ink-soft:#7A5E63;--success:#27ae60}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--blush-soft),var(--ivory));color:var(--ink);min-height:100vh}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none;color:inherit}
+.container{width:min(900px,92%);margin:0 auto}
+
+@keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+@keyframes lockAnimation{0%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}100%{transform:rotate(0deg)}}
+
+header{background:#fff;border-bottom:2px solid var(--gold);padding:1rem 0;position:sticky;top:0;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:700}
+.logo img{width:45px}
+.nav a{color:var(--ink-soft);font-size:.9rem;transition:color .2s}
+.nav a:hover{color:var(--crimson)}
+
+.payment-container{padding:60px 0;animation:slideDown .8s ease-out}
+
+.payment-card{background:#fff;border-radius:20px;padding:3rem;box-shadow:0 20px 60px rgba(166,9,61,.15);animation:scaleIn .6s ease-out}
+
+.lock-icon{font-size:3rem;text-align:center;margin-bottom:1rem;animation:lockAnimation 1s ease-in-out}
+
+.payment-title{font-size:2.2rem;color:var(--crimson);text-align:center;margin-bottom:.5rem;animation:slideDown .7s ease-out}
+
+.payment-subtitle{font-size:1rem;color:var(--ink-soft);text-align:center;margin-bottom:2rem;animation:slideDown .8s ease-out 0.1s both}
+
+.payment-summary{background:var(--blush-soft);border-radius:16px;padding:2rem;margin:2rem 0;animation:slideDown .8s ease-out 0.2s both}
+
+.summary-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(166,9,61,.1)}
+
+.summary-row:last-child{border-bottom:none}
+
+.summary-label{color:var(--ink-soft);font-weight:600}
+
+.summary-value{color:var(--ink);font-weight:700;font-size:1.05rem}
+
+.amount-box{background:linear-gradient(135deg,var(--crimson),var(--gold));color:#fff;padding:2rem;border-radius:16px;text-align:center;margin:2rem 0;animation:slideDown .8s ease-out 0.3s both}
+
+.amount-label{font-size:.95rem;opacity:.9;margin-bottom:.5rem}
+
+.amount-value{font-size:2.8rem;font-weight:700;font-family:'Playfair Display',serif}
+
+.payment-methods{margin:2.5rem 0;animation:slideDown .8s ease-out 0.4s both}
+
+.payment-methods h3{color:var(--crimson);margin-bottom:1.5rem;font-size:1.2rem}
+
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+.payment-method{background:#f8f9fa;border:2px solid #e9ecef;border-radius:12px;padding:1.5rem;text-align:center;cursor:pointer;transition:all .3s;position:relative}
+
+.payment-method:hover{border-color:var(--crimson);background:#fff;box-shadow:0 4px 12px rgba(166,9,61,.15)}
+
+.payment-method.selected{border-color:var(--crimson);background:var(--blush-soft)}
+
+.method-icon{font-size:2.5rem;margin-bottom:.5rem}
+
+.method-name{font-weight:700;color:var(--ink);margin-bottom:.3rem}
+
+.method-desc{font-size:.8rem;color:var(--ink-soft)}
+
+.form-group{margin-bottom:1.5rem}
+
+.form-group label{display:block;margin-bottom:.6rem;font-weight:600;color:var(--ink)}
+
+.form-group input{width:100%;padding:1rem;border:2px solid #e9ecef;border-radius:8px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s}
+
+.form-group input:focus{outline:none;border-color:var(--crimson);box-shadow:0 0 0 3px rgba(166,9,61,.1)}
+
+.form-row{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+
+.security-info{background:#f0f8f5;border-left:4px solid var(--success);padding:1.5rem;border-radius:8px;margin:2rem 0;font-size:.9rem;color:#1e5631}
+
+.security-info p{margin:0.5rem 0}
+
+.cta-button{width:100%;background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;padding:1.5rem;border:none;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 8px 24px rgba(166,9,61,.3);margin-top:2rem;text-transform:uppercase;letter-spacing:.5px}
+
+.cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(166,9,61,.4)}
+
+.cta-button:disabled{opacity:.6;cursor:not-allowed}
+
+.payment-guarantee{background:var(--blush-soft);border-radius:12px;padding:1.5rem;text-align:center;margin:2rem 0;font-size:.9rem;color:var(--ink-soft)}
+
+.guarantee-icon{font-size:2rem;margin-bottom:.5rem}
+
+footer{background:#fff;border-top:2px solid var(--blush);padding:2rem 0;margin-top:4rem;text-align:center;color:var(--ink-soft);font-size:.85rem}
+
+@media(max-width:768px){
+  .method-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .payment-card{padding:1.5rem}
+  .payment-title{font-size:1.8rem}
+  .amount-value{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <div><a href="registration-success.html">← Back</a></div>
+  </div>
+</header>
+
+<section class="payment-container">
+  <div class="container">
+    <div class="payment-card">
+      
+      <div class="lock-icon">🔒</div>
+      <h1 class="payment-title">Secure Payment</h1>
+      <p class="payment-subtitle">Complete your registration with a secure payment</p>
+
+      <!-- PAYMENT SUMMARY -->
+      <div class="payment-summary">
+        <div class="summary-row">
+          <span class="summary-label">Registration Type:</span>
+          <span class="summary-value" id="regType">Forever Miss India 2026</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Registration ID:</span>
+          <span class="summary-value" id="regId">REG1234567890</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Registration Fee:</span>
+          <span class="summary-value">₹2,999</span>
+        </div>
+      </div>
+
+      <!-- AMOUNT BOX -->
+      <div class="amount-box">
+        <div class="amount-label">Total Amount Payable</div>
+        <div class="amount-value">₹2,999</div>
+        <p style="margin-top:1rem;font-size:.9rem;opacity:.9">One-time payment to secure your spot</p>
+      </div>
+
+      <!-- PAYMENT METHODS -->
+      <div class="payment-methods">
+        <h3>Select Payment Method</h3>
+        <div class="method-grid">
+          <div class="payment-method selected" onclick="selectMethod(this,'upi')">
+            <div class="method-icon">📱</div>
+            <div class="method-name">UPI</div>
+            <div class="method-desc">Google Pay, PhonePe, Paytm</div>
+          </div>
+          <div class="payment-method" onclick="selectMethod(this,'card')">
+            <div class="method-icon">💳</div>
+            <div class="method-name">Credit/Debit Card</div>
+            <div class="method-desc">Visa, Mastercard, RuPay</div>
+          </div>
+          <div class="payment-method" onclick="selectMethod(this,'netbanking')">
+            <div class="method-icon">🏦</div>
+            <div class="method-name">Net Banking</div>
+            <div class="method-desc">All major banks</div>
+          </div>
+          <div class="payment-method" onclick="selectMethod(this,'wallet')">
+            <div class="method-icon">💰</div>
+            <div class="method-name">Digital Wallet</div>
+            <div class="method-desc">Amazon Pay, Airtel</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAYMENT FORM -->
+      <form id="paymentForm" onsubmit="processPayment(event)">
+        
+        <div id="upiFields" style="display:block">
+          <div class="form-group">
+            <label>UPI ID <span style="color:var(--crimson)">*</span></label>
+            <input type="text" id="upiId" placeholder="yourname@upi" name="upi">
+          </div>
+        </div>
+
+        <div id="cardFields" style="display:none">
+          <div class="form-group">
+            <label>Full Name on Card <span style="color:var(--crimson)">*</span></label>
+            <input type="text" id="cardName" placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label>Card Number <span style="color:var(--crimson)">*</span></label>
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiry Date <span style="color:var(--crimson)">*</span></label>
+              <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+            </div>
+            <div class="form-group">
+              <label>CVV <span style="color:var(--crimson)">*</span></label>
+              <input type="text" id="cardCvv" placeholder="123" maxlength="3">
+            </div>
+          </div>
+        </div>
+
+        <div id="netBankingFields" style="display:none">
+          <div class="form-group">
+            <label>Select Your Bank <span style="color:var(--crimson)">*</span></label>
+            <select style="width:100%;padding:1rem;border:2px solid #e9ecef;border-radius:8px;font-family:'Poppins',sans-serif;font-size:.95rem">
+              <option>Choose bank</option>
+              <option>State Bank of India</option>
+              <option>HDFC Bank</option>
+              <option>ICICI Bank</option>
+              <option>Axis Bank</option>
+              <option>Other Banks</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address <span style="color:var(--crimson)">*</span></label>
+          <input type="email" id="paymentEmail" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number <span style="color:var(--crimson)">*</span></label>
+          <input type="tel" id="paymentPhone" placeholder="9999999999" maxlength="10" required>
+        </div>
+
+        <!-- SECURITY INFO -->
+        <div class="security-info">
+          <p>🔒 <strong>Your payment is 100% secure</strong></p>
+          <p>We use industry-leading encryption to protect your payment information. Your data is never shared with third parties.</p>
+        </div>
+
+        <!-- TERMS -->
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="agreeTerms" required style="width:auto;margin-right:.5rem">
+            I agree to the payment terms and registration policy <span style="color:var(--crimson)">*</span>
+          </label>
+        </div>
+
+        <button type="submit" class="cta-button">Complete Payment - ₹2,999</button>
+      </form>
+
+      <!-- PAYMENT GUARANTEE -->
+      <div class="payment-guarantee">
+        <div class="guarantee-icon">✓</div>
+        <p><strong>30-Day Money Back Guarantee</strong></p>
+        <p>Not satisfied? Get 100% refund within 30 days, no questions asked.</p>
+      </div>
+
+      <!-- HELP -->
+      <div style="background:#f0f4f8;border-radius:12px;padding:1.5rem;margin-top:2rem;text-align:center">
+        <p style="color:var(--ink-soft);margin-bottom:1rem"><strong>Payment Issues?</strong></p>
+        <p><a href="tel:+919983286999" style="color:var(--crimson);font-weight:700">Call: +91-99832-86999</a></p>
+        <p><a href="https://wa.me/919983286999" style="color:var(--crimson);font-weight:700">WhatsApp Support</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Forever Star India Pvt. Ltd. - All Rights Reserved</p>
+  <p style="margin-top:.5rem">Secure Payment Gateway | PCI DSS Compliant</p>
+</footer>
+
+<script>
+let selectedMethod='upi';
+
+function selectMethod(elem,method){
+  document.querySelectorAll('.payment-method').forEach(e=>e.classList.remove('selected'));
+  elem.classList.add('selected');
+  selectedMethod=method;
+  
+  document.getElementById('upiFields').style.display=method==='upi'?'block':'none';
+  document.getElementById('cardFields').style.display=method==='card'?'block':'none';
+  document.getElementById('netBankingFields').style.display=method==='netbanking'?'block':'none';
+}
+
+function processPayment(event){
+  event.preventDefault();
+  
+  const email=document.getElementById('paymentEmail').value;
+  const phone=document.getElementById('paymentPhone').value;
+  
+  if(!document.getElementById('agreeTerms').checked){
+    alert('Please agree to terms and conditions');
+    return;
+  }
+  
+  // Simulate payment processing
+  document.querySelector('.cta-button').disabled=true;
+  document.querySelector('.cta-button').textContent='Processing Payment...';
+  
+  setTimeout(()=>{
+    // Save payment info
+    const paymentData={
+      method:selectedMethod,
+      amount:2999,
+      email:email,
+      phone:phone,
+      timestamp:new Date().toLocaleString(),
+      status:'success',
+      transactionId:'TXN'+Date.now()
+    };
+    
+    localStorage.setItem('lastPayment',JSON.stringify(paymentData));
+    
+    // Redirect to payment success
+    window.location.href='payment-success.html?txn='+paymentData.transactionId+'&method='+selectedMethod;
+  },2000);
+}
+
+// Load summary from previous page
+window.addEventListener('load',()=>{
+  const regType=localStorage.getItem('lastRegCategory')||'Forever Miss India 2026';
+  const regId=localStorage.getItem('lastRegId')||'REG1234567890';
+  
+  document.getElementById('regType').textContent=regType;
+  document.getElementById('regId').textContent=regId;
+});
+</script>
+</body>
+</html>
