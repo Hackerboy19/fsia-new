@@ -3,156 +3,547 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register for Forever Miss Teen India 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Miss Teen 2026 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--vibrant:#FF6B9D;--purple:#8E44AD;--cyan:#3498DB;--ink:#3A2226;--ink-soft:#7A5E63}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink)}
-h1,h2,h3{font-family:'Playfair Display',serif}
-a{text-decoration:none}
-.container{width:min(1140px,92%);margin:0 auto}
+:root{
+  --primary:#FF6B9D;
+  --accent:#FFB347;
+  --secondary:rgba(0,0,0,.05);
+  --bg:#FFFBFD;
+  --text:#333;
+  --text-light:#666
+}
 
-@keyframes slideInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
-@keyframes bounceIn{0%{opacity:0;transform:scale(0.3)}50%{opacity:1;transform:scale(1.05)}100%{transform:scale(1)}}
-@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes rainbow{0%{color:var(--crimson)}25%{color:var(--vibrant)}50%{color:var(--purple)}75%{color:var(--cyan)}100%{color:var(--crimson)}}
-@keyframes wiggle{0%,100%{transform:rotate(0deg)}25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#f5f0ff 0%,#fff0f7 100%);
+  color:var(--text);
+  line-height:1.65;
+  min-height:100vh
+}
 
-header{background:#fff;border-bottom:4px dashed var(--vibrant);position:sticky;top:0;z-index:60;box-shadow:0 4px 16px rgba(255,107,157,.15)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-.logo{display:flex;align-items:center;gap:.5rem;font-weight:700;animation:bounceIn .6s cubic-bezier(.68,.55,.265,1.55)}
-.logo img{width:50px}
-.nav a{color:var(--ink-soft);margin-right:1.5rem;transition:all .2s;font-size:.9rem}
-.nav a:hover{color:var(--vibrant);font-weight:600}
-.btn{background:linear-gradient(120deg,var(--vibrant),var(--purple),var(--cyan));color:#fff;padding:.8rem 1.8rem;border:none;border-radius:999px;cursor:pointer;font-weight:700;transition:all .3s;box-shadow:0 6px 20px rgba(255,107,157,.3);background-size:200% 100%}
-.btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,107,157,.4);background-position:100% 0}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--text)}
+a{text-decoration:none;color:inherit;transition:all .3s}
+img{max-width:100%;display:block}
 
-.hero{background:linear-gradient(135deg,#FFE5F0 0%,#E8D5F2 50%,#D5E8FF 100%);padding:100px 0;text-align:center;position:relative;overflow:hidden;animation:slideInDown .8s ease-out}
-.hero::before,.hero::after{content:'';position:absolute;width:200px;height:200px;border-radius:50%;opacity:.1}
-.hero::before{top:-50px;left:-50px;background:var(--vibrant);animation:rotate 15s linear infinite}
-.hero::after{bottom:-50px;right:-50px;background:var(--purple);animation:rotate 20s linear infinite reverse}
-.hero h1{font-size:3.5rem;margin-bottom:.5rem;animation:slideInDown .7s ease-out;position:relative;z-index:1;background:linear-gradient(90deg,var(--vibrant),var(--purple),var(--cyan));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation-name:slideInDown,rainbow;animation-duration:.7s,3s;animation-timing-function:ease-out,linear;animation-iteration-count:1,infinite}
-.hero h1 em{font-style:italic}
-.hero p{font-size:1.2rem;max-width:700px;margin:0 auto;animation:slideInDown .8s ease-out 0.1s both;position:relative;z-index:1;color:var(--ink)}
+.container{width:min(1100px,94%);margin:0 auto}
 
-.content{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;padding:60px 0;align-items:start}
-.info h2{font-size:1.9rem;color:var(--vibrant);margin-bottom:1.5rem;animation:slideInDown .7s ease-out}
-.info-card{background:#fff;padding:2rem;border-radius:20px;margin-bottom:1.5rem;border:3px solid;border-image:linear-gradient(135deg,var(--vibrant),var(--purple),var(--cyan)) 1;box-shadow:0 6px 20px rgba(255,107,157,.12);animation:bounceIn .6s cubic-bezier(.68,.55,.265,1.55);transition:all .3s}
-.info-card:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(255,107,157,.2)}
-.info-card h3{color:var(--vibrant);font-size:1.2rem;margin-bottom:1rem;font-weight:700}
-.info-card ul{list-style:none}
-.info-card li{padding:.6rem 0;color:var(--ink-soft);padding-left:1.8rem;position:relative}
-.info-card li:before{content:'✨';position:absolute;left:0;animation:wiggle 1.5s ease-in-out infinite}
+/* CUSTOM ANIMATIONS - UNIQUE PER CATEGORY */
+@keyframes rainbowBounce{rainbowBounce_KEYFRAMES}
+@keyframes colorWave{colorWave_KEYFRAMES}
+@keyframes slideInGraceful{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cascadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes customGlow{0%,100%{text-shadow:0 0 15px var(--primary)30%}50%{text-shadow:0 0 30px var(--primary)80%}}
+@keyframes hoverLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-.form-box{background:#fff;border-radius:25px;padding:2.8rem;box-shadow:0 15px 60px rgba(255,107,157,.15);animation:bounceIn .7s cubic-bezier(.68,.55,.265,1.55) 0.2s both;border:3px dashed var(--vibrant)}
-.form-box h2{font-size:1.8rem;background:linear-gradient(90deg,var(--vibrant),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.5rem;text-align:center;animation:slideInDown .6s ease-out}
-.form-box p{color:var(--ink-soft);text-align:center;margin-bottom:2rem;font-size:1rem}
+header{
+  background:linear-gradient(135deg,#f5f0ff,#fff0f7);
+  border-bottom:2px solid var(--primary);
+  padding:1rem 0;
+  position:sticky;
+  top:0;
+  z-index:60;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  animation:slideInGraceful .8s ease-out
+}
 
-.form-group{margin-bottom:1.5rem}
-.form-group label{display:block;margin-bottom:.6rem;font-weight:700;color:var(--vibrant);font-size:.95rem;text-transform:uppercase;letter-spacing:.5px}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:1.1rem;border:2px solid var(--vibrant);border-radius:15px;font-family:'Poppins',sans-serif;font-size:.95rem;transition:all .3s;background:#fafafa}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 5px rgba(255,107,157,.1);background:#fff}
+.header-nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.8rem;font-weight:700;color:var(--primary);font-size:1.1rem}
+.logo img{width:50px;animation:rainbowBounce 4s ease-in-out infinite}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--text);font-weight:500}
+.nav-links a:hover{color:var(--primary);transform:translateY(-2px)}
 
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  padding:80px 0;
+  color:#fff;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  animation:slideInGraceful 1s ease-out
+}
 
-.success-msg{display:none;background:linear-gradient(135deg,rgba(76,175,80,.1),rgba(76,175,80,.05));border:3px solid #4CAF50;color:#2e7d32;padding:2rem;border-radius:20px;margin-bottom:1.5rem;text-align:center;font-weight:700;animation:bounceIn .5s ease-out;font-size:1.1rem}
+.hero::before{
+  content:'🎉 ⭐ 🎉';
+  position:absolute;
+  top:15%;
+  left:5%;
+  font-size:3rem;
+  opacity:.15;
+  animation:rainbowBounce 6s infinite
+}
 
-.submit-btn{width:100%;background:linear-gradient(120deg,var(--vibrant),var(--purple),var(--cyan));color:#fff;padding:1.3rem;font-size:1.1rem;font-weight:700;border:none;border-radius:15px;cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(255,107,157,.3);margin-top:1.5rem;text-transform:uppercase;letter-spacing:1px;background-size:200% 100%;animation:slideInDown .7s ease-out 0.4s both}
-.submit-btn:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(255,107,157,.4);background-position:100% 0}
+.hero::after{
+  content:'🎉 ⭐ 🎉';
+  position:absolute;
+  bottom:20%;
+  right:5%;
+  font-size:3rem;
+  opacity:.15;
+  animation:rainbowBounce 8s 1s infinite
+}
 
-footer{background:#fff;border-top:4px dashed var(--vibrant);padding:2.5rem 0;margin-top:60px;text-align:center;color:var(--ink-soft);font-size:.85rem}
+.hero-content{position:relative;z-index:1}
+.hero h1{font-size:3.2rem;margin-bottom:1rem;animation:customGlow 2.5s infinite;letter-spacing:2px;font-weight:700}
+.hero p{font-size:1.2rem;opacity:.95;margin-bottom:2rem;animation:slideInGraceful .8s ease-out .2s both}
 
-@media(max-width:860px){.content{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.hero h1{font-size:2.4rem}}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:2rem;flex-wrap:wrap}
+.stat{animation:cascadeIn .8s ease-out;animation-fill-mode:both}
+.stat:nth-child(1){animation-delay:.3s}
+.stat:nth-child(2){animation-delay:.5s}
+.stat:nth-child(3){animation-delay:.7s}
+.stat-number{font-size:2rem;font-weight:700;display:block;color:var(--accent)}
+.stat-label{font-size:.9rem;opacity:.9}
+
+.form-section{padding:60px 0}
+.section-title{text-align:center;margin-bottom:3rem;font-size:2.2rem;color:var(--primary);animation:customGlow 2.5s infinite;font-weight:700;letter-spacing:1px}
+
+.form-container{
+  background:#fff;
+  border-radius:20px;
+  padding:3rem;
+  box-shadow:0 20px 50px rgba(0,0,0,.1);
+  animation:cascadeIn 1s ease-out;
+  border:2px solid var(--primary);
+  max-width:750px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden
+}
+
+.form-container::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary));
+  animation:shimmer 3s infinite
+}
+
+@keyframes shimmer{0%{background-position:-100%}50%{background-position:100%}100%{background-position:-100%}}
+
+.form-header{
+  text-align:center;
+  margin-bottom:2.5rem;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:1.5rem
+}
+
+.form-header h2{
+  font-size:1.8rem;
+  color:var(--primary);
+  margin-bottom:.5rem;
+  animation:customGlow 2.5s infinite;
+  font-weight:700
+}
+
+.form-header p{
+  color:var(--text-light);
+  animation:slideInGraceful .8s ease-out .2s both;
+  font-weight:500
+}
+
+.form-group{margin-bottom:1.8rem;animation:cascadeIn .6s ease-out;animation-fill-mode:both}
+.form-group:nth-child(1){animation-delay:.1s}
+.form-group:nth-child(2){animation-delay:.2s}
+.form-group:nth-child(3){animation-delay:.3s}
+.form-group:nth-child(4){animation-delay:.4s}
+.form-group:nth-child(5){animation-delay:.5s}
+.form-group:nth-child(6){animation-delay:.6s}
+
+.form-group label{
+  display:block;
+  margin-bottom:.8rem;
+  font-weight:600;
+  color:var(--primary);
+  font-size:1rem;
+  letter-spacing:.3px
+}
+
+.form-group .required{color:var(--accent);font-weight:700}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:1rem 1.2rem;
+  border:2px solid #e8e0dd;
+  border-radius:12px;
+  font-family:'Poppins',sans-serif;
+  font-size:.95rem;
+  color:var(--text);
+  background:var(--bg);
+  transition:all .3s;
+  outline:none
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--primary);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(0,0,0,.05);
+  transform:translateY(-2px)
+}
+
+.form-group input::placeholder{color:#aaa}
+.form-group textarea{resize:vertical;min-height:100px;font-weight:400}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+.section-header{
+  color:var(--primary);
+  margin:2rem 0 1.5rem;
+  font-size:1.2rem;
+  font-weight:600;
+  border-bottom:2px solid var(--accent);
+  padding-bottom:.5rem;
+  animation:cascadeIn .6s ease-out;
+  letter-spacing:.5px;
+  display:flex;
+  align-items:center;
+  gap:.8rem
+}
+
+.requirements{
+  background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(0,0,0,.01));
+  padding:2rem;
+  border-radius:16px;
+  margin:2rem 0;
+  border-left:4px solid var(--accent);
+  animation:cascadeIn .8s ease-out
+}
+
+.requirements h3{
+  color:var(--primary);
+  margin-bottom:1.5rem;
+  font-weight:700;
+  animation:customGlow 2.5s infinite
+}
+
+.req-list{list-style:none;padding:0}
+.req-list li{
+  padding:.8rem 0;
+  padding-left:2rem;
+  position:relative;
+  color:var(--text-light);
+  line-height:1.6;
+  animation:cascadeIn .6s ease-out;
+  animation-fill-mode:both;
+  font-weight:500
+}
+
+.req-list li:nth-child(1){animation-delay:.2s}
+.req-list li:nth-child(2){animation-delay:.3s}
+.req-list li:nth-child(3){animation-delay:.4s}
+.req-list li:nth-child(4){animation-delay:.5s}
+.req-list li:nth-child(5){animation-delay:.6s}
+
+.req-list li:before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-weight:700;
+  font-size:1.2rem;
+  animation:rainbowBounce 3s infinite
+}
+
+.checkbox-group{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-top:2rem;
+  padding:1.5rem;
+  background:rgba(0,0,0,.03);
+  border-radius:12px;
+  border-left:4px solid var(--accent);
+  animation:cascadeIn .8s ease-out
+}
+
+.checkbox-group input{width:20px;height:20px;cursor:pointer;margin:0}
+.checkbox-group label{margin:0;cursor:pointer;font-weight:600;color:var(--text)}
+.checkbox-group a{color:var(--primary);text-decoration:underline;font-weight:600}
+
+.submit-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  padding:1.3rem;
+  font-size:1.05rem;
+  font-weight:700;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:all .3s;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+  margin-top:2rem;
+  animation:cascadeIn .8s ease-out;
+  animation-fill-mode:both;
+  position:relative;
+  overflow:hidden
+}
+
+.submit-btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  animation:shimmer 2s infinite
+}
+
+.submit-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 36px rgba(0,0,0,.25)
+}
+
+.submit-btn:active{
+  transform:translateY(-1px)
+}
+
+.info-box{
+  background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(0,0,0,.01));
+  padding:2rem;
+  border-radius:16px;
+  margin:2rem 0;
+  border-left:4px solid var(--accent);
+  animation:cascadeIn .8s ease-out .2s both
+}
+
+.info-box h3{
+  color:var(--primary);
+  margin-bottom:1rem;
+  font-weight:700;
+  animation:customGlow 2.5s infinite
+}
+
+.info-box p{
+  color:var(--text-light);
+  margin-bottom:.5rem;
+  font-weight:500
+}
+
+.info-box a{
+  color:var(--primary);
+  font-weight:700;
+  text-decoration:underline
+}
+
+.info-box a:hover{
+  color:var(--accent)
+}
+
+footer{
+  background:linear-gradient(135deg,var(--text),#555);
+  color:#fff;
+  padding:3rem 0;
+  margin-top:5rem;
+  text-align:center;
+  font-size:.9rem;
+  animation:slideInGraceful 1s ease-out
+}
+
+footer p{margin:.5rem 0;opacity:.9}
+footer a{color:var(--accent);font-weight:600}
+
+@media(max-width:768px){
+  .hero{padding:40px 0}
+  .hero h1{font-size:2rem}
+  .form-row{grid-template-columns:1fr}
+  .form-container{padding:2rem}
+  .nav-links{display:none}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
-    <div><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><button class="btn" onclick="window.scrollTo(0,document.querySelector('.form-box').offsetTop-100)">Register</button></div>
+  <div class="container">
+    <div class="header-nav">
+      <a href="index.html" class="logo">
+        <img src="logo.gif" alt="FSIA">
+        <span>Forever Star India</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <h1>Forever <em>Miss Teen India 2026</em></h1>
-    <p>🌟 Your Time to Shine on the National Stage! 🌟</p>
+    <div class="hero-content">
+      <h1>🎉 Forever Miss Teen India 2026</h1>
+      <p>🎉 Forever Miss Teen India 2026 - Register Now</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">1,000+</span>
+          <span class="stat-label">Teens</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Events</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Fun</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="content">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;width:100%">
-    <div class="info">
-      <h2>About Miss Teen</h2>
-      <div class="info-card">
-        <h3>👸 Forever Miss Teen India</h3>
-        <p style="color:var(--ink-soft);margin:0">India's biggest platform for confident teenage girls aged 13-19! Professional training, national media exposure, and opportunities to compete at international level.</p>
+<section class="form-section">
+  <div class="container">
+    <h2 class="section-title">✨ Register Now</h2>
+    
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Miss Teen Registration</h2>
+        <p>Join us now!</p>
       </div>
-      <div class="info-card">
-        <h3>✓ Eligibility</h3>
-        <ul>
-          <li>Age: 13-19 years</li>
-          <li>Marital Status: Single</li>
-          <li>No height/weight restrictions</li>
-          <li>Parental consent</li>
-          <li>Indian citizen</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <h3>🏆 What Awaits</h3>
-        <ul>
-          <li>Professional training</li>
-          <li>National media coverage</li>
-          <li>Confidence building</li>
-          <li>Modeling opportunities</li>
-          <li>International pageants</li>
-        </ul>
-      </div>
-    </div>
 
-    <div>
-      <div class="form-box">
-        <h2>Register Now!</h2>
-        <p>Showcase your talent & beauty to the nation</p>
-        <div class="success-msg" id="successMsg">✓ Registration successful! Parent confirmation needed. Check WhatsApp!</div>
-        <form id="registrationForm" onsubmit="submitForm(event)">
-          <div class="form-row">
-            <div class="form-group"><label>Full Name <span style="color:var(--vibrant)">*</span></label><input type="text" name="firstName" required></div>
-            <div class="form-group"><label>Age <span style="color:var(--vibrant)">*</span></label><input type="number" name="age" min="13" max="19"></div>
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <h3 class="section-header">👤 Personal Information</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span class="required">*</span></label>
+            <input type="text" name="firstName" required>
           </div>
-          <div class="form-row">
-            <div class="form-group"><label>School/College <span style="color:var(--vibrant)">*</span></label><input type="text" name="school"></div>
-            <div class="form-group"><label>Grade/Year <span style="color:var(--vibrant)">*</span></label><input type="text" name="grade"></div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName">
           </div>
-          <div class="form-row">
-            <div class="form-group"><label>City <span style="color:var(--vibrant)">*</span></label><input type="text" name="city"></div>
-            <div class="form-group"><label>Your WhatsApp <span style="color:var(--vibrant)">*</span></label><input type="tel" name="phone" maxlength="10" required></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Age</label>
+            <input type="number" name="age">
           </div>
-          <div class="form-group"><label>Parent/Guardian WhatsApp <span style="color:var(--vibrant)">*</span></label><input type="tel" name="parentPhone" maxlength="10"</div>
-          <div class="form-group"><label>Parent Email <span style="color:var(--vibrant)">*</span></label><input type="email" name="parentEmail" required></div>
-          <div class="form-group"><label>Your Instagram Handle</label><input type="text" name="instagram" placeholder="@yourprofile"></div>
-          <div class="form-group"><label>Talents/Skills (optional)</label><input type="text" name="talents" placeholder="e.g., dancing, singing, sports..."></div>
-          <div class="form-group"><label><input type="checkbox" name="parentConsent" style="width:auto;margin-right:.5rem">Parent/Guardian consent <span style="color:var(--vibrant)">*</span></label></div>
-          <div class="form-group"><label><input type="checkbox" name="agree" style="width:auto;margin-right:.5rem">I agree to terms <span style="color:var(--vibrant)">*</span></label></div>
-          <button type="submit" class="submit-btn">Register Now - ₹1,999</button>
-        </form>
-        <p style="text-align:center;margin-top:1.5rem;color:var(--ink-soft);font-size:.85rem">Limited entries · Closes Aug 31, 2026</p>
+          <div class="form-group">
+            <label>Height (in feet)</label>
+            <input type="text" name="height" placeholder="e.g., 5.6">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Weight (kg)</label>
+            <input type="number" name="weight">
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" name="dob">
+          </div>
+        </div>
+
+        <h3 class="section-header">📍 Location & Contact</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city" placeholder="Your city">
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" name="state" placeholder="Your state">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp Number <span class="required">*</span></label>
+            <input type="tel" name="phone" maxlength="10" placeholder="10-digit number" required>
+          </div>
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="email" required>
+          </div>
+        </div>
+
+        <h3 class="section-header">✨ Additional Information</h3>
+        
+        <div class="form-group">
+          <label>Instagram Handle</label>
+          <input type="text" name="instagram" placeholder="@yourprofile">
+        </div>
+
+        <div class="form-group">
+          <label>Tell us about yourself</label>
+          <textarea name="message" placeholder="Share your dreams, achievements, and why you want to register..."></textarea>
+        </div>
+
+        <div class="requirements">
+          <h3>✓ Requirements & Eligibility</h3>
+          <ul class="req-list">
+            <li>Must be 18 years or above</li>
+            <li>Valid Indian citizen or visa holder</li>
+            <li>Clear background check required</li>
+            <li>Professional photographs needed</li>
+            <li>Agree to competition rules</li>
+          </ul>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" name="agree" id="agree" required>
+          <label for="agree">I agree to the <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></label>
+        </div>
+
+        <button type="submit" class="submit-btn">✨ Register Now - ₹2,999</button>
+      </form>
+
+      <div class="info-box">
+        <h3>❓ Need Help?</h3>
+        <p>📞 Call: <a href="tel:+919983286999">+91-99832-86999</a> | <a href="tel:+919983599666">+91-99835-99666</a></p>
+        <p>✉️ Email: <a href="mailto:starindiaaward@gmail.com">starindiaaward@gmail.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/919983286999">Chat with us</a></p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <p>📞 +91-99832-86999 | ✉️ starindiaaward@gmail.com | 💬 <a href="https://wa.me/919983286999">WhatsApp</a></p>
-    <p style="margin-top:1rem">© 2026 Forever Star India Pvt. Ltd.</p>
-  </div>
+  <p>© 2026 Forever Star India Pvt. Ltd. - All Rights Reserved</p>
+  <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a> · <a href="#">Contact Us</a></p>
 </footer>
 
 <script>
-function submitForm(event){event.preventDefault();const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));const reg=JSON.parse(localStorage.getItem('fsia_reg')||'[]');reg.push({...data,category:'Forever Miss Teen India 2026',timestamp:new Date().toLocaleString(),id:Date.now()});localStorage.setItem('fsia_reg',JSON.stringify(reg));document.getElementById('successMsg').style.display='block';document.getElementById('registrationForm').reset();setTimeout(()=>{document.getElementById('successMsg').style.display='none'},5000)}
+function submitForm(event){
+  event.preventDefault();
+  const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));
+  const regId='REG'+Date.now();
+  localStorage.setItem('lastRegName',data.firstName+' '+(data.lastName||''));
+  localStorage.setItem('lastRegCategory','Forever Miss Teen India 2026');
+  localStorage.setItem('lastRegCity',data.city||'');
+  localStorage.setItem('lastRegPhone',data.phone);
+  localStorage.setItem('lastRegEmail',data.email);
+  localStorage.setItem('lastRegId',regId);
+  const params=new URLSearchParams({
+    name:data.firstName+' '+(data.lastName||''),
+    category:'Forever Miss Teen India 2026',
+    city:data.city||'',
+    phone:data.phone,
+    email:data.email,
+    id:regId
+  });
+  window.location.href='registration-success.html?'+params.toString();
+}
 </script>
 </body>
 </html>

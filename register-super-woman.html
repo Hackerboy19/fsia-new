@@ -3,110 +3,545 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Super Woman Award 2026</title>
+<title>Super Woman 2026 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#D4336B;--primary-dark:#A6093D;--accent:#FFD700;--secondary:#FF1493;--bg:#FFF5F7;--text:#222}
+:root{
+  --primary:#D4336B;
+  --accent:#FFD700;
+  --secondary:rgba(0,0,0,.05);
+  --bg:#FFFBFD;
+  --text:#333;
+  --text-light:#666
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#fff5f7 0%,#ffe6f0 100%);color:var(--text);min-height:100vh}
-h1,h2,h3{font-family:'Playfair Display',serif;color:var(--primary-dark)}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#f5f0ff 0%,#fff0f7 100%);
+  color:var(--text);
+  line-height:1.65;
+  min-height:100vh
+}
+
+h1,h2,h3,h4{font-family:'Playfair Display',serif;color:var(--text)}
+a{text-decoration:none;color:inherit;transition:all .3s}
+img{max-width:100%;display:block}
+
 .container{width:min(1100px,94%);margin:0 auto}
 
-/* SUPER WOMAN - BOLD POWER FLEX ANIMATION */
-@keyframes powerFlex{0%{transform:scaleX(1)}25%{transform:scaleX(1.05)}50%{transform:scaleX(1.1)}75%{transform:scaleX(1.05)}100%{transform:scaleX(1)}}
-@keyframes energyBurst{0%{opacity:0;transform:scale(0.5) rotate(-180deg)}50%{opacity:1;transform:scale(1.2) rotate(0deg)}100%{opacity:.3;transform:scale(1) rotate(180deg)}}
-@keyframes powerGlow{0%,100%{text-shadow:0 0 20px rgba(255,20,147,.4),0 0 40px rgba(212,51,107,.2)}50%{text-shadow:0 0 40px rgba(255,20,147,.8),0 0 80px rgba(212,51,107,.5)}}
-@keyframes punchPulse{0%{box-shadow:0 0 0 0 rgba(255,20,147,.7)}50%{box-shadow:0 0 0 30px rgba(255,20,147,.3)}100%{box-shadow:0 0 0 0 rgba(255,20,147,0)}}
-@keyframes boldSlideIn{from{opacity:0;transform:translateX(-60px) rotate(-10deg)}to{opacity:1;transform:translateX(0) rotate(0deg)}}
-@keyframes starBurst{0%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1.3)}100%{opacity:.5;transform:scale(1)}}
-@keyframes militantBounce{0%{transform:translateY(-50px)}50%{transform:translateY(0)}100%{transform:translateY(-30px)}}
+/* CUSTOM ANIMATIONS - UNIQUE PER CATEGORY */
+@keyframes powerFlex{powerFlex_KEYFRAMES}
+@keyframes powerPulse{powerPulse_KEYFRAMES}
+@keyframes slideInGraceful{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
+@keyframes cascadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes customGlow{0%,100%{text-shadow:0 0 15px var(--primary)30%}50%{text-shadow:0 0 30px var(--primary)80%}}
+@keyframes hoverLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-header{background:linear-gradient(135deg,var(--bg),#fff);border-bottom:3px solid var(--secondary);padding:1rem 0;position:sticky;top:0;z-index:60;box-shadow:0 4px 12px rgba(212,51,107,.1);animation:boldSlideIn .8s ease-out}
-.logo{display:flex;align-items:center;gap:.8rem;font-weight:900;color:var(--primary-dark);font-size:1.1rem;text-transform:uppercase;letter-spacing:2px}
-.logo img{width:50px;animation:militantBounce 2s ease-in-out infinite}
+header{
+  background:linear-gradient(135deg,#f5f0ff,#fff0f7);
+  border-bottom:2px solid var(--primary);
+  padding:1rem 0;
+  position:sticky;
+  top:0;
+  z-index:60;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  animation:slideInGraceful .8s ease-out
+}
 
-.hero{background:linear-gradient(135deg,var(--primary-dark),var(--primary),var(--secondary));padding:80px 0;color:#fff;text-align:center;position:relative;overflow:hidden;animation:boldSlideIn 1s ease-out}
-.hero::before{content:'💪 ⭐ 💪 ⭐ 💪';position:absolute;top:10%;left:5%;font-size:3rem;opacity:.2;animation:starBurst 2s ease-in-out infinite}
-.hero::after{content:'💪 ⭐ 💪 ⭐ 💪';position:absolute;bottom:15%;right:5%;font-size:3rem;opacity:.2;animation:starBurst 2.5s ease-in-out 0.5s infinite}
+.header-nav{display:flex;align-items:center;justify-content:space-between;padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.8rem;font-weight:700;color:var(--primary);font-size:1.1rem}
+.logo img{width:50px;animation:powerFlex 4s ease-in-out infinite}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--text);font-weight:500}
+.nav-links a:hover{color:var(--primary);transform:translateY(-2px)}
+
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  padding:80px 0;
+  color:#fff;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  animation:slideInGraceful 1s ease-out
+}
+
+.hero::before{
+  content:'💪 ⭐ 💪';
+  position:absolute;
+  top:15%;
+  left:5%;
+  font-size:3rem;
+  opacity:.15;
+  animation:powerFlex 6s infinite
+}
+
+.hero::after{
+  content:'💪 ⭐ 💪';
+  position:absolute;
+  bottom:20%;
+  right:5%;
+  font-size:3rem;
+  opacity:.15;
+  animation:powerFlex 8s 1s infinite
+}
+
 .hero-content{position:relative;z-index:1}
-.hero h1{font-size:3.5rem;margin-bottom:1rem;animation:powerGlow 2s ease-in-out infinite;letter-spacing:3px;font-weight:900;text-transform:uppercase}
-.hero p{font-size:1.2rem;opacity:.95;margin-bottom:2rem;animation:boldSlideIn .8s ease-out .2s both;font-weight:600}
+.hero h1{font-size:3.2rem;margin-bottom:1rem;animation:customGlow 2.5s infinite;letter-spacing:2px;font-weight:700}
+.hero p{font-size:1.2rem;opacity:.95;margin-bottom:2rem;animation:slideInGraceful .8s ease-out .2s both}
+
 .hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:2rem;flex-wrap:wrap}
-.stat{animation:energyBurst .8s ease-out;animation-fill-mode:both}
-.stat:nth-child(1){animation-delay:.2s}
-.stat:nth-child(2){animation-delay:.4s}
-.stat:nth-child(3){animation-delay:.6s}
-.stat-number{font-size:2.5rem;font-weight:900;display:block}
+.stat{animation:cascadeIn .8s ease-out;animation-fill-mode:both}
+.stat:nth-child(1){animation-delay:.3s}
+.stat:nth-child(2){animation-delay:.5s}
+.stat:nth-child(3){animation-delay:.7s}
+.stat-number{font-size:2rem;font-weight:700;display:block;color:var(--accent)}
+.stat-label{font-size:.9rem;opacity:.9}
 
 .form-section{padding:60px 0}
-.section-title{text-align:center;margin-bottom:3rem;font-size:2.5rem;color:var(--primary-dark);animation:powerGlow 2s infinite;text-transform:uppercase;font-weight:900;letter-spacing:2px}
+.section-title{text-align:center;margin-bottom:3rem;font-size:2.2rem;color:var(--primary);animation:customGlow 2.5s infinite;font-weight:700;letter-spacing:1px}
 
-.form-container{background:#fff;border-radius:20px;padding:3rem;box-shadow:0 20px 60px rgba(212,51,107,.2);animation:boldSlideIn 1s ease-out;border:3px solid var(--secondary);max-width:700px;margin:0 auto;position:relative;overflow:hidden}
-.form-container::before{content:'';position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,var(--primary-dark),var(--secondary),var(--accent));animation:powerFlex 2s infinite}
+.form-container{
+  background:#fff;
+  border-radius:20px;
+  padding:3rem;
+  box-shadow:0 20px 50px rgba(0,0,0,.1);
+  animation:cascadeIn 1s ease-out;
+  border:2px solid var(--primary);
+  max-width:750px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden
+}
 
-.form-header{text-align:center;margin-bottom:2.5rem;border-bottom:3px solid var(--secondary);padding-bottom:1.5rem;animation:boldSlideIn .8s ease-out}
-.form-header h2{font-size:2rem;color:var(--primary-dark);margin-bottom:.5rem;animation:powerGlow 2s infinite;text-transform:uppercase;font-weight:900}
-.form-header p{color:#666;font-weight:600;animation:boldSlideIn .8s ease-out .2s both;text-transform:uppercase;letter-spacing:1px}
+.form-container::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary));
+  animation:shimmer 3s infinite
+}
 
-.form-group{margin-bottom:1.8rem;animation:boldSlideIn .6s ease-out;animation-fill-mode:both}
+@keyframes shimmer{0%{background-position:-100%}50%{background-position:100%}100%{background-position:-100%}}
+
+.form-header{
+  text-align:center;
+  margin-bottom:2.5rem;
+  border-bottom:2px solid var(--primary);
+  padding-bottom:1.5rem
+}
+
+.form-header h2{
+  font-size:1.8rem;
+  color:var(--primary);
+  margin-bottom:.5rem;
+  animation:customGlow 2.5s infinite;
+  font-weight:700
+}
+
+.form-header p{
+  color:var(--text-light);
+  animation:slideInGraceful .8s ease-out .2s both;
+  font-weight:500
+}
+
+.form-group{margin-bottom:1.8rem;animation:cascadeIn .6s ease-out;animation-fill-mode:both}
 .form-group:nth-child(1){animation-delay:.1s}
 .form-group:nth-child(2){animation-delay:.2s}
 .form-group:nth-child(3){animation-delay:.3s}
+.form-group:nth-child(4){animation-delay:.4s}
+.form-group:nth-child(5){animation-delay:.5s}
+.form-group:nth-child(6){animation-delay:.6s}
 
-.form-group label{display:block;margin-bottom:.8rem;font-weight:900;color:var(--primary-dark);font-size:1rem;text-transform:uppercase;letter-spacing:1px}
-.form-group .required{color:var(--secondary)}
+.form-group label{
+  display:block;
+  margin-bottom:.8rem;
+  font-weight:600;
+  color:var(--primary);
+  font-size:1rem;
+  letter-spacing:.3px
+}
 
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:1rem 1.2rem;border:2px solid var(--accent);border-radius:12px;font-family:'Poppins';font-size:.95rem;color:var(--text);background:#fafafa;transition:all .3s;outline:none;font-weight:600}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--secondary);background:#fff;box-shadow:0 0 0 4px rgba(255,20,147,.15);transform:translateY(-2px);animation:punchPulse .6s}
+.form-group .required{color:var(--accent);font-weight:700}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:1rem 1.2rem;
+  border:2px solid #e8e0dd;
+  border-radius:12px;
+  font-family:'Poppins',sans-serif;
+  font-size:.95rem;
+  color:var(--text);
+  background:var(--bg);
+  transition:all .3s;
+  outline:none
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--primary);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(0,0,0,.05);
+  transform:translateY(-2px)
+}
+
+.form-group input::placeholder{color:#aaa}
+.form-group textarea{resize:vertical;min-height:100px;font-weight:400}
 
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 
-.section-header{color:var(--primary-dark);margin:2rem 0 1.5rem;font-size:1.3rem;font-weight:900;text-transform:uppercase;border-bottom:3px solid var(--secondary);padding-bottom:.5rem;animation:boldSlideIn .6s ease-out;letter-spacing:2px}
+.section-header{
+  color:var(--primary);
+  margin:2rem 0 1.5rem;
+  font-size:1.2rem;
+  font-weight:600;
+  border-bottom:2px solid var(--accent);
+  padding-bottom:.5rem;
+  animation:cascadeIn .6s ease-out;
+  letter-spacing:.5px;
+  display:flex;
+  align-items:center;
+  gap:.8rem
+}
 
-.requirements{background:linear-gradient(135deg,#ffe6f0,var(--bg));padding:2rem;border-radius:16px;margin:2rem 0;border-left:5px solid var(--secondary)}
-.requirements h3{color:var(--primary-dark);margin-bottom:1.5rem;font-weight:900;animation:powerGlow 2s infinite;text-transform:uppercase}
+.requirements{
+  background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(0,0,0,.01));
+  padding:2rem;
+  border-radius:16px;
+  margin:2rem 0;
+  border-left:4px solid var(--accent);
+  animation:cascadeIn .8s ease-out
+}
+
+.requirements h3{
+  color:var(--primary);
+  margin-bottom:1.5rem;
+  font-weight:700;
+  animation:customGlow 2.5s infinite
+}
+
 .req-list{list-style:none;padding:0}
-.req-list li{padding:.8rem 0;padding-left:2rem;position:relative;color:#666;line-height:1.6;animation:boldSlideIn .6s ease-out;animation-fill-mode:both;font-weight:600}
+.req-list li{
+  padding:.8rem 0;
+  padding-left:2rem;
+  position:relative;
+  color:var(--text-light);
+  line-height:1.6;
+  animation:cascadeIn .6s ease-out;
+  animation-fill-mode:both;
+  font-weight:500
+}
+
 .req-list li:nth-child(1){animation-delay:.2s}
 .req-list li:nth-child(2){animation-delay:.3s}
 .req-list li:nth-child(3){animation-delay:.4s}
-.req-list li:before{content:'✓';position:absolute;left:0;color:var(--secondary);font-weight:900;font-size:1.4rem;animation:energyBurst 2s infinite}
+.req-list li:nth-child(4){animation-delay:.5s}
+.req-list li:nth-child(5){animation-delay:.6s}
 
-.checkbox-group{display:flex;align-items:center;gap:1rem;margin-top:2rem;padding:1.5rem;background:#ffe6f0;border-radius:12px;border-left:4px solid var(--secondary);animation:boldSlideIn .8s ease-out}
+.req-list li:before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:var(--accent);
+  font-weight:700;
+  font-size:1.2rem;
+  animation:powerFlex 3s infinite
+}
 
-.submit-btn{width:100%;background:linear-gradient(135deg,var(--primary-dark),var(--secondary));color:#fff;padding:1.4rem;font-size:1.1rem;font-weight:900;border:none;border-radius:12px;cursor:pointer;transition:all .3s;text-transform:uppercase;letter-spacing:2px;box-shadow:0 8px 24px rgba(212,51,107,.3);margin-top:2rem;position:relative;animation:boldSlideIn .8s ease-out;animation-fill-mode:both}
-.submit-btn:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(212,51,107,.5);animation:punchPulse .6s}
-.submit-btn:active{transform:translateY(-1px)}
+.checkbox-group{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-top:2rem;
+  padding:1.5rem;
+  background:rgba(0,0,0,.03);
+  border-radius:12px;
+  border-left:4px solid var(--accent);
+  animation:cascadeIn .8s ease-out
+}
 
-.info-box{background:linear-gradient(135deg,#ffe6f0,var(--bg));padding:2rem;border-radius:16px;margin:2rem 0;border-left:4px solid var(--accent);animation:boldSlideIn .8s ease-out .2s both}
+.checkbox-group input{width:20px;height:20px;cursor:pointer;margin:0}
+.checkbox-group label{margin:0;cursor:pointer;font-weight:600;color:var(--text)}
+.checkbox-group a{color:var(--primary);text-decoration:underline;font-weight:600}
 
-footer{background:linear-gradient(135deg,var(--primary-dark),var(--primary));color:#fff;padding:3rem 0;margin-top:5rem;text-align:center;animation:boldSlideIn 1s ease-out}
+.submit-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  padding:1.3rem;
+  font-size:1.05rem;
+  font-weight:700;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:all .3s;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+  margin-top:2rem;
+  animation:cascadeIn .8s ease-out;
+  animation-fill-mode:both;
+  position:relative;
+  overflow:hidden
+}
 
-@media(max-width:768px){.hero{padding:40px 0}.hero h1{font-size:2.2rem}.form-row{grid-template-columns:1fr}.nav-links{display:none}}
+.submit-btn::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  animation:shimmer 2s infinite
+}
+
+.submit-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 36px rgba(0,0,0,.25)
+}
+
+.submit-btn:active{
+  transform:translateY(-1px)
+}
+
+.info-box{
+  background:linear-gradient(135deg,rgba(0,0,0,.03),rgba(0,0,0,.01));
+  padding:2rem;
+  border-radius:16px;
+  margin:2rem 0;
+  border-left:4px solid var(--accent);
+  animation:cascadeIn .8s ease-out .2s both
+}
+
+.info-box h3{
+  color:var(--primary);
+  margin-bottom:1rem;
+  font-weight:700;
+  animation:customGlow 2.5s infinite
+}
+
+.info-box p{
+  color:var(--text-light);
+  margin-bottom:.5rem;
+  font-weight:500
+}
+
+.info-box a{
+  color:var(--primary);
+  font-weight:700;
+  text-decoration:underline
+}
+
+.info-box a:hover{
+  color:var(--accent)
+}
+
+footer{
+  background:linear-gradient(135deg,var(--text),#555);
+  color:#fff;
+  padding:3rem 0;
+  margin-top:5rem;
+  text-align:center;
+  font-size:.9rem;
+  animation:slideInGraceful 1s ease-out
+}
+
+footer p{margin:.5rem 0;opacity:.9}
+footer a{color:var(--accent);font-weight:600}
+
+@media(max-width:768px){
+  .hero{padding:40px 0}
+  .hero h1{font-size:2rem}
+  .form-row{grid-template-columns:1fr}
+  .form-container{padding:2rem}
+  .nav-links{display:none}
+}
 </style>
 </head>
 <body>
 
-<header><div class="container"><div style="display:flex;align-items:center;justify-content:space-between"><a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star</span></a></div></div></header>
+<header>
+  <div class="container">
+    <div class="header-nav">
+      <a href="index.html" class="logo">
+        <img src="logo.gif" alt="FSIA">
+        <span>Forever Star India</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
-<section class="hero"><div class="container"><div class="hero-content"><h1>💪 Super Woman Award 2026</h1><p>Celebrate Extraordinary Women</p><div class="hero-stats"><div class="stat"><span class="stat-number">70+</span><span class="stat-label">Categories</span></div><div class="stat"><span class="stat-number">5000+</span><span class="stat-label">Winners</span></div><div class="stat"><span class="stat-number">₹50L+</span><span class="stat-label">Prizes</span></div></div></div></div></section>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>💪 Super Woman Award 2026</h1>
+      <p>💪 Super Woman Award 2026 - Register Now</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">70+</span>
+          <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">5000+</span>
+          <span class="stat-label">Winners</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">₹50L+</span>
+          <span class="stat-label">Prizes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="form-section"><div class="container"><h2 class="section-title">⭐ Apply Now</h2><div class="form-container"><div class="form-header"><h2>Super Woman Award</h2><p>Be The Inspiration!</p></div><form id="registrationForm" onsubmit="submitForm(event)"><h3 class="section-header">👤 Personal</h3><div class="form-row"><div class="form-group"><label>Full Name <span class="required">*</span></label><input type="text" name="firstName" required></div><div class="form-group"><label>Age</label><input type="number" name="age"></div></div><h3 class="section-header">🎯 Professional</h3><div class="form-group"><label>Profession</label><input type="text" name="profession"></div><div class="form-group"><label>Category <span class="required">*</span></label><select name="category" required><option>Select</option><option>Entrepreneur</option><option>Doctor</option><option>Teacher</option><option>Sports</option></select></div><h3 class="section-header">⭐ Achievements</h3><div class="form-group"><label>Achievements</label><textarea name="achievements" placeholder="Your story..."></textarea></div><h3 class="section-header">📱 Contact</h3><div class="form-row"><div class="form-group"><label>Phone <span class="required">*</span></label><input type="tel" name="phone" maxlength="10" required></div><div class="form-group"><label>Email <span class="required">*</span></label><input type="email" name="email" required></div></div><div class="requirements"><h3>✓ Eligibility</h3><ul class="req-list"><li>18 years or above</li><li>Indian citizen</li><li>Outstanding contribution</li><li>No criminal background</li></ul></div><div class="checkbox-group"><input type="checkbox" name="agree" id="agree" required><label for="agree">I agree</label></div><button type="submit" class="submit-btn">🎉 Register - ₹2,999</button></form><div class="info-box"><h3>📞 Questions?</h3><p>📲 <a href="https://wa.me/919983286999">WhatsApp</a></p></div></div></div></section>
+<section class="form-section">
+  <div class="container">
+    <h2 class="section-title">✨ Register Now</h2>
+    
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Super Woman Registration</h2>
+        <p>Join us now!</p>
+      </div>
 
-<footer><p>© 2026 Forever Star India</p></footer>
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <h3 class="section-header">👤 Personal Information</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span class="required">*</span></label>
+            <input type="text" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastName">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Age</label>
+            <input type="number" name="age">
+          </div>
+          <div class="form-group">
+            <label>Height (in feet)</label>
+            <input type="text" name="height" placeholder="e.g., 5.6">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Weight (kg)</label>
+            <input type="number" name="weight">
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" name="dob">
+          </div>
+        </div>
+
+        <h3 class="section-header">📍 Location & Contact</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city" placeholder="Your city">
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" name="state" placeholder="Your state">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp Number <span class="required">*</span></label>
+            <input type="tel" name="phone" maxlength="10" placeholder="10-digit number" required>
+          </div>
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="email" required>
+          </div>
+        </div>
+
+        <h3 class="section-header">✨ Additional Information</h3>
+        
+        <div class="form-group">
+          <label>Instagram Handle</label>
+          <input type="text" name="instagram" placeholder="@yourprofile">
+        </div>
+
+        <div class="form-group">
+          <label>Tell us about yourself</label>
+          <textarea name="message" placeholder="Share your dreams, achievements, and why you want to register..."></textarea>
+        </div>
+
+        <div class="requirements">
+          <h3>✓ Requirements & Eligibility</h3>
+          <ul class="req-list">
+            <li>Must be 18 years or above</li>
+            <li>Valid Indian citizen or visa holder</li>
+            <li>Clear background check required</li>
+            <li>Professional photographs needed</li>
+            <li>Agree to competition rules</li>
+          </ul>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" name="agree" id="agree" required>
+          <label for="agree">I agree to the <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></label>
+        </div>
+
+        <button type="submit" class="submit-btn">✨ Register Now - ₹2,999</button>
+      </form>
+
+      <div class="info-box">
+        <h3>❓ Need Help?</h3>
+        <p>📞 Call: <a href="tel:+919983286999">+91-99832-86999</a> | <a href="tel:+919983599666">+91-99835-99666</a></p>
+        <p>✉️ Email: <a href="mailto:starindiaaward@gmail.com">starindiaaward@gmail.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/919983286999">Chat with us</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Forever Star India Pvt. Ltd. - All Rights Reserved</p>
+  <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a> · <a href="#">Contact Us</a></p>
+</footer>
 
 <script>
 function submitForm(event){
   event.preventDefault();
   const data=Object.fromEntries(new FormData(document.getElementById('registrationForm')));
   const regId='REG'+Date.now();
-  localStorage.setItem('lastRegName',data.firstName);
+  localStorage.setItem('lastRegName',data.firstName+' '+(data.lastName||''));
   localStorage.setItem('lastRegCategory','Super Woman Award 2026');
+  localStorage.setItem('lastRegCity',data.city||'');
   localStorage.setItem('lastRegPhone',data.phone);
   localStorage.setItem('lastRegEmail',data.email);
   localStorage.setItem('lastRegId',regId);
-  const params=new URLSearchParams({name:data.firstName,category:'Super Woman Award 2026',phone:data.phone,email:data.email,id:regId});
+  const params=new URLSearchParams({
+    name:data.firstName+' '+(data.lastName||''),
+    category:'Super Woman Award 2026',
+    city:data.city||'',
+    phone:data.phone,
+    email:data.email,
+    id:regId
+  });
   window.location.href='registration-success.html?'+params.toString();
 }
 </script>
