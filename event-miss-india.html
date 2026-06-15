@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever Miss India 2026 – Register Now</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush-soft:#FCEFF2;--champagne:#F8EDD8;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.65}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+a{text-decoration:none;color:inherit}
+.container{width:min(1140px,92%);margin:0 auto}
+.section{padding:64px 0}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+header{background:#fff;border-bottom:1px solid rgba(166,9,61,.12);padding:.6rem 0;position:sticky;top:0;z-index:60}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;font-family:'Playfair Display',serif;font-weight:700}
+.logo img{width:50px;height:50px}
+.nav-links{display:flex;gap:1.5rem;font-size:.85rem;font-weight:500}
+.nav-links a{color:var(--ink-soft);transition:color .25s}
+.nav-links a:hover{color:var(--crimson)}
+.btn{background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;font-weight:600;padding:.78rem 1.7rem;border-radius:999px;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(166,9,61,.32);transition:transform .25s}
+.btn:hover{transform:translateY(-2px)}
+
+.hero{background:linear-gradient(160deg,var(--blush-soft),var(--champagne));text-align:center;padding:80px 0 60px}
+.hero h1{font-size:3rem;margin-bottom:1rem;color:var(--ink)}
+.hero h1 em{color:var(--crimson);font-style:italic}
+.hero .lead{font-size:1.1rem;color:var(--ink-soft);max-width:700px;margin:0 auto 2rem}
+.crumb{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.8rem}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:center}
+.grid-img{border-radius:20px;height:300px;background:linear-gradient(135deg,var(--blush-soft),var(--champagne));display:flex;align-items:center;justify-content:center;font-size:5rem}
+.grid-content h2{font-size:2rem;margin-bottom:1rem}
+.grid-content p{color:var(--ink-soft);margin-bottom:1rem;line-height:1.8}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+.card{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:20px;padding:2rem;text-align:center;box-shadow:0 10px 30px rgba(166,9,61,.10);transition:transform .3s}
+.card:hover{transform:translateY(-6px)}
+.card .icon{font-size:2.8rem;margin-bottom:.8rem}
+.card h3{color:var(--crimson);margin-bottom:.6rem}
+.card p{font-size:.85rem;color:var(--ink-soft)}
+
+.eligibility{background:var(--blush-soft);border-left:4px solid var(--crimson);padding:1.8rem;border-radius:12px;margin:2rem 0}
+.eligibility h3{color:var(--crimson);margin-bottom:1rem}
+.eligibility li{padding:.6rem 0;padding-left:1.8rem;position:relative;font-size:.95rem;color:var(--ink-soft);list-style:none}
+.eligibility li:before{content:'✓';position:absolute;left:0;color:var(--crimson);font-weight:700}
+
+.faq-item{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:12px;margin-bottom:1rem;overflow:hidden}
+.faq-q{padding:1.4rem;cursor:pointer;font-weight:600;background:rgba(212,175,55,.05);display:flex;justify-content:space-between;align-items:center;transition:.2s}
+.faq-q:hover{background:rgba(212,175,55,.1)}
+.faq-item.open .faq-q{background:rgba(166,9,61,.08);color:var(--crimson)}
+.faq-a{display:none;padding:0 1.4rem 1.4rem;color:var(--ink-soft)}
+.faq-item.open .faq-a{display:block}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin:2rem 0}
+.step{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:20px;padding:1.8rem;text-align:center;box-shadow:0 10px 30px rgba(166,9,61,.10)}
+.step .num{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--crimson),var(--gold));color:#fff;font-weight:700;font-size:1.4rem;margin:0 auto 1rem}
+.step h3{margin-bottom:.6rem}
+.step p{font-size:.85rem;color:var(--ink-soft)}
+
+.cta-band{background:linear-gradient(135deg,var(--crimson),var(--crimson-deep));color:#fff;padding:3rem;border-radius:20px;text-align:center;margin:3rem 0}
+.cta-band h2{margin-bottom:1rem}
+.cta-band p{font-size:1.05rem;margin-bottom:2rem;opacity:.95}
+
+footer{background:#fff;border-top:1px solid rgba(166,9,61,.14);padding:2.6rem 0 1.6rem;margin-top:60px;text-align:center}
+footer img{width:60px;margin:0 auto .7rem}
+footer p{font-size:.8rem;color:var(--ink-soft)}
+footer .flinks{display:flex;gap:1.2rem;justify-content:center;margin:.9rem 0 1.2rem;font-size:.84rem;flex-wrap:wrap}
+footer .flinks a:hover{color:var(--crimson)}
+
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:70;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 24px rgba(37,211,102,.4)}
+
+@media(max-width:860px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.nav-links{display:none}.nav .btn{display:none}.section{padding:48px 0}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+    <nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></nav>
+    <button class="btn" onclick="registerNow()">Register Now</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="crumb">Home / Beauty Pageants</span>
+    <h1>Forever <em>Miss India 2026</em></h1>
+    <p class="lead">India's premier beauty pageant for unmarried women. Celebrate your beauty, confidence, and talent on the national stage.</p>
+    <button class="btn" onclick="registerNow()" style="font-size:1rem;padding:1rem 2rem;margin-top:1rem">Register on FSIA →</button>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid reveal">
+      <div><div class="grid-img">👑</div></div>
+      <div class="grid-content">
+        <h2>About Forever Miss India 2026</h2>
+        <p>Forever Miss India is India's most prestigious beauty pageant for unmarried women aged 18-35. Season 6 has crowned over 1,500 winners across city, state, and national levels.</p>
+        <p>This is your opportunity to showcase your talent, gain national recognition, be featured on major media platforms, and be part of India's premier pageant platform with professional training.</p>
+        <button class="btn" onclick="registerNow()">Apply Now →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--blush-soft)">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:2rem;font-size:2rem">Who Can Apply?</h2>
+    <div style="max-width:800px;margin:0 auto">
+      <div class="eligibility">
+        <h3>✓ Eligibility Criteria</h3>
+        <ul>
+          <li>Age: 18-35 years</li>
+          <li>Marital Status: Single/Unmarried</li>
+          <li>Height: Minimum 5 feet</li>
+          <li>Weight: Less than 80 kg</li>
+          <li>Indian citizen</li>
+        </ul>
+      </div>
+      <div class="eligibility" style="border-left-color:var(--gold)">
+        <h3 style="color:var(--gold)">📋 Documents Required</h3>
+        <ul>
+          <li>Valid ID proof</li>
+          <li>Recent photograph</li>
+          <li>Contact information</li>
+          <li>Any certificates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:3rem;font-size:2rem">What You Get</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon">🏆</div>
+        <h3>National Recognition</h3>
+        <p>Featured on TV, newspapers, social media & websites across India</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🎓</div>
+        <h3>Professional Training</h3>
+        <p>Expert grooming, personality development & ramp walk training</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">💰</div>
+        <h3>Prizes & Opportunities</h3>
+        <p>Cash prizes, sponsorships, modeling contracts & brand deals</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--champagne)">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:3rem;font-size:2rem">Your Journey</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h3>Register Online</h3><p>Fill form in 2 minutes. Team contacts you within 24 hours.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>Auditions</h3><p>Online video submission. Professional judges evaluate.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>Grooming</h3><p>Professional training & personality development.</p></div>
+      <div class="step reveal"><div class="num">4</div><h3>Grand Finale</h3><p>Compete at national stage, December 2026.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:2rem;font-size:2rem">FAQ</h2>
+    <div style="max-width:800px;margin:0 auto">
+      <div class="faq-item open">
+        <div class="faq-q">What is the registration fee? <span>▼</span></div>
+        <div class="faq-a">₹2,999 includes auditions, grooming sessions, training materials & team support.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">When are auditions? <span>▼</span></div>
+        <div class="faq-a">Throughout 2026. Our team schedules your slot after registration within 24 hours.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What do winners get? <span>▼</span></div>
+        <div class="faq-a">Crown, cash prize, media coverage, sponsorship deals & opportunities for international pageants.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I apply from abroad? <span>▼</span></div>
+        <div class="faq-a">Forever Miss India is for Indian citizens in India. Apply to Miss Universe/Miss World if abroad.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I don't win nationally? <span>▼</span></div>
+        <div class="faq-a">You gain training, media exposure, and opportunities in modeling, acting & brand collaborations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to Begin Your Journey?</h2>
+    <p>Join thousands who have transformed their dreams into reality with Forever Star India</p>
+    <button class="btn" onclick="registerNow()" style="background:#fff;color:var(--crimson);font-weight:700;font-size:1rem;padding:1rem 2.2rem">Register Now on FSIA →</button>
+    <p style="margin-top:1.5rem;font-size:.9rem">Limited entries · Closes: August 31, 2026</p>
+  </div>
+</section>
+
+<footer>
+  <img src="logo.gif" alt="FSIA" style="width:60px">
+  <div class="flinks"><a href="index.html">Home</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
+  <p>📞 +91-99832-86999 · ✉️ starindiaaward@gmail.com</p>
+  <p style="margin-top:.6rem">© 2026 Forever Star India Pvt. Ltd.</p>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919983286999" target="_blank"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.83 1.47 5.5L4.9 27.2l6.84-1.79c1.61.88 3.43 1.34 5.28 1.34h.01c6.08 0 11.02-4.94 11.02-11.02C28.05 8.94 23.11 4 16.04 4zm0 20.2h-.01c-1.65 0-3.27-.44-4.68-1.28l-.34-.2-3.55.93.95-3.46-.22-.36a9.13 9.13 0 0 1-1.4-4.86c0-5.05 4.11-9.16 9.17-9.16 2.45 0 4.75.96 6.48 2.69a9.1 9.1 0 0 1 2.68 6.48c0 5.05-4.11 9.16-9.16 9.16zm5.03-6.86c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.74.35-.25.28-.96.94-.96 2.3 0 1.36.99 2.67 1.12 2.85.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z"/></svg></a>
+
+<script>
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+function registerNow(){window.open('https://www.fsia.in/forever-miss-india-new.php','_blank')}
+</script>
+</body>
+</html>

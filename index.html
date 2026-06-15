@@ -293,14 +293,71 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
   .celeb-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
-  .sticky-reg{display:block}
-  .section{padding:60px 0}
-  .cat-grid{grid-template-columns:1fr 1fr;gap:.9rem}
+  /* --- tighter section rhythm so content comes faster --- */
+  .section{padding:48px 0}
+  .section-sub{margin-bottom:1.8rem;font-size:.92rem}
+  .container{width:90%}
+
+  /* --- readable typography on small screens --- */
+  body{font-size:15px}
+  .hero h1{font-size:clamp(1.7rem,8vw,2.2rem);line-height:1.22}
+  .hero p.lead{font-size:.96rem}
+  .section-title{font-size:clamp(1.5rem,6vw,1.9rem)}
+
+  /* --- hero: trim height, full-width tappable CTA --- */
+  .hero{padding:46px 0 60px}
+  .trustline{font-size:.7rem;margin-bottom:1.4rem}
+  .hero .btn.big{width:100%;justify-content:center;font-size:1rem;padding:1.05rem 1rem}
+  .cta-tail{display:none}
+
+  /* --- compact one-row countdown --- */
+  .countdown-wrap{margin-top:1.8rem}
+  .countdown{gap:.5rem;flex-wrap:nowrap}
+  .count-box{min-width:0;flex:1;padding:.65rem .3rem;border-radius:12px}
+  .count-box b{font-size:1.35rem}
+  .count-box span{font-size:.58rem;letter-spacing:.08em}
+
+  /* --- comfortable tap targets (44px min) --- */
+  .nav-links a,.dropdown-wrap>a{min-height:46px;display:flex;align-items:center}
+  .nav-links .dropdown-menu a{min-height:42px;display:flex;align-items:center}
+  .faq-q{padding:1.15rem 1.2rem;min-height:54px}
+  .socials a{width:46px;height:46px;font-size:1.05rem}
+
+  /* --- single-column grids for easy scanning --- */
+  .cat-grid{grid-template-columns:1fr;gap:1rem}
+  .steps{grid-template-columns:1fr;gap:1rem}
+  .stats{grid-template-columns:1fr 1fr;padding:2.2rem 1.4rem;gap:1.4rem}
   .choice-grid{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr}
-  .float-wa{bottom:84px}
-  .form-card{padding:1.5rem 1.2rem 1.8rem}
+  .foot-grid{grid-template-columns:1fr;gap:1.8rem;text-align:center}
+  .socials{justify-content:center}
+  .final-cta{padding:3rem 1.4rem;border-radius:22px}
+
+  /* --- modal/form breathing room --- */
+  .form-card{padding:1.5rem 1.15rem 1.7rem;border-radius:18px}
+
+  /* --- stacked bottom buttons: WhatsApp ABOVE the register bar --- */
+  .sticky-reg{display:block;left:1rem;right:1rem;transform:translateY(120px);width:auto;font-size:1.02rem;padding:.95rem 1rem;box-shadow:0 8px 26px rgba(166,9,61,.4)}
+  .sticky-reg.show{transform:translateY(0)}
+  .float-wa{right:1rem;bottom:80px;width:52px;height:52px;font-size:1.45rem}
+
+  /* --- announcement bar: keep clear of close button --- */
+  .announce{font-size:.74rem;padding:.55rem 2.6rem;line-height:1.35}
 }
+
+/* avoid iOS auto-zoom on form inputs (<16px triggers zoom) */
+@media(max-width:640px){
+  input,select,textarea{font-size:16px!important}
+}
+
+/* very small phones (≤360px): keep countdown on one row */
+@media(max-width:360px){
+  .count-box b{font-size:1.15rem}
+  .count-box span{font-size:.52rem}
+  .hero h1{font-size:1.55rem}
+}
+
+/* offset sticky-header so in-page anchor links don't hide content */
+section[id],div[id]{scroll-margin-top:84px}
 </style>
 </head>
 <body>
@@ -403,7 +460,7 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
     <h1>India's Biggest <em>Beauty Pageant</em> &amp; Awards Platform</h1>
     <p class="lead">From city auditions to the national crown — your journey to the spotlight starts here.</p>
     <div class="trustline">10,000+ Participants · 4,000+ City Auditions · Winners from Every City</div>
-    <button class="btn big" onclick="openForm()">✨ Register Now — Limited Entries</button>
+    <button class="btn big" onclick="openForm()">✨ Register Now<span class="cta-tail"> — Limited Entries</span></button>
     <div class="countdown-wrap">
       <div class="countdown-label">Registrations close in</div>
       <div class="countdown" id="countdown">
@@ -615,7 +672,7 @@ footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0
 </footer>
 
 <!-- floating buttons -->
-<a class="float-wa" href="https://wa.me/919983286999" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<a class="float-wa" href="https://wa.me/919983286999" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.83 1.47 5.5L4.9 27.2l6.84-1.79c1.61.88 3.43 1.34 5.28 1.34h.01c6.08 0 11.02-4.94 11.02-11.02C28.05 8.94 23.11 4 16.04 4zm0 20.2h-.01c-1.65 0-3.27-.44-4.68-1.28l-.34-.2-3.55.93.95-3.46-.22-.36a9.13 9.13 0 0 1-1.4-4.86c0-5.05 4.11-9.16 9.17-9.16 2.45 0 4.75.96 6.48 2.69a9.1 9.1 0 0 1 2.68 6.48c0 5.05-4.11 9.16-9.16 9.16zm5.03-6.86c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.74.35-.25.28-.96.94-.96 2.3 0 1.36.99 2.67 1.12 2.85.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z"/></svg></a>
 <button class="btn sticky-reg" id="stickyReg" onclick="openForm()">✨ Register Now</button>
 
 <!-- ============ SMART FORM MODAL ============ -->
