@@ -385,6 +385,32 @@ footer a{color:var(--accent);font-weight:600}
   .form-container{padding:1.3rem 1rem}
   .hero-stats{gap:1rem;flex-wrap:wrap}
 }
+
+/* ===== themed hero emblem (added) ===== */
+.hero-emblem{width:118px;height:118px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.18),inset 0 0 0 2px rgba(255,255,255,.35);color:var(--accent);animation:emblemPop .8s cubic-bezier(.34,1.56,.64,1) both}
+.hero-emblem svg{filter:drop-shadow(0 4px 8px rgba(0,0,0,.2))}
+@keyframes emblemPop{0%{opacity:0;transform:scale(.4) translateY(-10px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@media(max-width:640px){.hero-emblem{width:88px;height:88px;margin-bottom:.9rem}.hero-emblem svg{width:84px;height:84px}}
+
+
+/* ===== FSIA site footer v2 ===== */
+.site-footer{background:#fff;border-top:3px solid #D4AF37;padding:3rem 0 1.4rem;margin-top:4rem;font-family:'Poppins',sans-serif}
+.site-footer .ft-wrap{width:min(1140px,92%);margin:0 auto}
+.site-footer .ft-grid{display:grid;grid-template-columns:1.4fr 1.1fr 1fr 1.1fr;gap:2rem;margin-bottom:2rem}
+.site-footer h4{font-family:'Playfair Display',serif;color:#A6093D;margin-bottom:1rem;font-size:1.04rem}
+.site-footer a,.site-footer p{display:block;font-size:.82rem;color:#7A5E63;margin-bottom:.5rem;text-decoration:none;line-height:1.5}
+.site-footer .ft-grid a:hover{color:#B8962E}
+.site-footer .ft-brand img{width:66px;height:66px;border-radius:50%;background:#fff;padding:5px;margin-bottom:.8rem;display:block;box-shadow:0 4px 14px rgba(166,9,61,.16),0 0 0 3px rgba(166,9,61,.1)}
+.site-footer .ft-reglist a{margin-bottom:.34rem;font-size:.8rem}
+.site-footer .ft-contact{margin-top:1.1rem}
+.site-footer .ft-social{display:flex;gap:.55rem;margin-top:.9rem;flex-wrap:wrap}
+.site-footer .ft-social a{width:38px;height:38px;border-radius:50%;border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;color:#B8962E;margin:0;font-size:.92rem;font-weight:700}
+.site-footer .ft-social a:hover{background:#D4AF37;color:#fff}
+.site-footer .ft-copy{text-align:center;border-top:1px solid rgba(212,175,55,.3);padding-top:1.3rem;font-size:.8rem;color:#7A5E63}
+.site-footer .ft-copy a{display:inline;color:#A6093D;font-weight:600}
+@media(max-width:880px){.site-footer .ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.site-footer .ft-grid{grid-template-columns:1fr;text-align:center}.site-footer .ft-social{justify-content:center}.site-footer .ft-brand img{margin-left:auto;margin-right:auto}}
+
 </style>
 </head>
 <body>
@@ -409,8 +435,9 @@ footer a{color:var(--accent);font-weight:600}
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>👑 International Award 2026</h1>
-      <p>👑 International Award 2026 - Register Now</p>
+      <div class="hero-emblem"><svg viewBox="0 0 120 120" width="118" height="118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M44 18l16 30 16-30" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="60" cy="74" r="26" fill="#fff"/><circle cx="60" cy="74" r="15" stroke="currentColor" stroke-width="4" fill="none" opacity=".35"/></svg></div>
+      <h1>🌟 International Award 2026</h1>
+      <p>Fill in the form below to begin your registration.</p>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-number">10,000+</span>
@@ -539,9 +566,76 @@ footer a{color:var(--accent);font-weight:600}
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Forever Star India Pvt. Ltd. - All Rights Reserved</p>
-  <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a> · <a href="#">Contact Us</a></p>
+<footer class="site-footer">
+  <div class="ft-wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <img src="logo.gif" alt="Forever Star India" onerror="this.style.display='none'">
+        <p>India's most prestigious platform for beauty pageants and award shows — empowering talent from every city to the national and international stage.</p>
+        <div class="ft-social">
+          <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://twitter.com/FsiaAward" target="_blank" rel="noopener" aria-label="Twitter">&#120143;</a>
+          <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram">&#9678;</a>
+          <a href="https://in.pinterest.com/fsiaaward/" target="_blank" rel="noopener" aria-label="Pinterest">P</a>
+          <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube">&#9654;</a>
+        </div>
+      </div>
+      <div>
+        <h4>Registration</h4>
+        <div class="ft-reglist">
+        <a href="register-super-hero.html">Super Hero Award 2026</a>
+        <a href="register-super-woman.html">Super Woman Award 2026</a>
+        <a href="register-business.html">Business Awards 2026</a>
+        <a href="register-miss-india.html">Forever Miss India 2026</a>
+        <a href="register-mrs-india.html">Forever Mrs India 2026</a>
+        <a href="register-miss-teen.html">Forever Miss Teen India 2026</a>
+        <a href="register-miss-fsia-intl.html">Miss FSIA International 2026</a>
+        <a href="register-mrs-fsia-intl.html">Mrs FSIA International 2026</a>
+        <a href="register-star-kids.html">Forever Star Kids 2026</a>
+        <a href="register-designer.html">Forever Fashion Designers 2026</a>
+        <a href="register-makeup.html">Forever Makeup Artist 2026</a>
+        <a href="register-partner.html">Channel Partner</a>
+        <a href="register-intl-award.html">International Award 2026</a>
+        <a href="register-intl-achievers.html">International Achievers Award</a>
+        <a href="register-miss-world.html">Miss World 2026</a>
+        <a href="register-mrs-world.html">Mrs World 2026</a>
+        <a href="register-miss-universe.html">Miss Universe 2026</a>
+        <a href="register-mrs-universe.html">Mrs Universe 2026</a>
+        <a href="register-bharat-couture.html">Bharat Couture Week 2026</a>
+        <a href="register-bharat-national.html">Bharat National Awards 2026</a>
+        <a href="register-forever-achievers.html">Forever Achievers 2026</a>
+        <a href="register-nominate.html">Nominate Yourself 2026</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="https://www.fsia.in/special-news-coverage.php" target="_blank" rel="noopener">Special News Coverage</a>
+        <a href="https://www.fsia.in/termscondition.php" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+        <a href="https://www.fsia.in/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://www.fsia.in/refund-policy" target="_blank" rel="noopener">Refund Policy</a>
+        <a href="https://www.fsia.in/sponsors.php" target="_blank" rel="noopener">Sponsors</a>
+        <a href="https://www.fsia.in/sitemap.php" target="_blank" rel="noopener">Sitemap</a>
+        <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Apply for Franchise</a>
+        <a href="https://www.fsia.in/quickapply" target="_blank" rel="noopener">Quick Apply</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About FSIA</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="our-team.html">Our Team</a>
+        <a href="news.html">News Coverage</a>
+        <div class="ft-contact">
+          <h4>Get In Touch</h4>
+          <a href="tel:+919983286999">&#128222; +91-99832-86999</a>
+          <a href="tel:+919983599666">&#128222; +91-99835-99666</a>
+          <a href="mailto:starindiaaward@gmail.com">&#9993; starindiaaward@gmail.com</a>
+          <a href="https://wa.me/919983286999" target="_blank" rel="noopener">&#128172; WhatsApp us</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-copy">&copy; 2026 <a href="index.html">Forever Star India Pvt. Ltd.</a> All rights reserved.</div>
+  </div>
 </footer>
 
 <script>
