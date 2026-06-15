@@ -88,7 +88,34 @@ header{background:linear-gradient(135deg,#e6f2ff,#f0f8ff);border-bottom:3px soli
 
 footer{background:linear-gradient(135deg,var(--text),#333);color:#fff;padding:3rem 0;margin-top:5rem;text-align:center}
 
-@media(max-width:768px){.hero{padding:40px 0}.hero h1{font-size:2rem}.form-row{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .hero{padding:44px 0 36px}
+  .hero h1{font-size:clamp(1.6rem,7vw,2rem);line-height:1.22;padding:0 .4rem}
+  .hero p{font-size:.96rem;padding:0 .6rem}
+  .hero-stats{gap:1.4rem}
+  .form-row{grid-template-columns:1fr;gap:0}
+  .form-container{padding:1.6rem 1.2rem;border-radius:16px}
+  .section-title{font-size:1.6rem}
+  .form-header h2{font-size:1.45rem}
+  .section-header{font-size:1.1rem;margin:1.6rem 0 1.1rem}
+  .form-group{margin-bottom:1.3rem}
+  .form-group label{font-size:.95rem;margin-bottom:.55rem}
+  .submit-btn{width:100%;padding:1.15rem;font-size:1.02rem}
+  .checkbox-group{padding:1.1rem;align-items:flex-start}
+  .checkbox-group input{margin-top:.15rem;flex-shrink:0}
+  .requirements,.info-box{padding:1.4rem}
+  .nav-links{display:none}
+}
+/* 16px inputs stop iOS Safari from auto-zooming when a field is tapped */
+@media(max-width:768px){
+  .form-group input,.form-group select,.form-group textarea{font-size:16px!important;padding:.95rem 1rem}
+}
+/* very small phones */
+@media(max-width:380px){
+  .hero h1{font-size:1.5rem}
+  .form-container{padding:1.3rem 1rem}
+  .hero-stats{gap:1rem;flex-wrap:wrap}
+}
 </style>
 </head>
 <body>
