@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSIA Admin — Content Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--crimson:#A6093D;--crimson-deep:#7E0B30;--gold:#D4AF37;--gold-deep:#B8962E;--ivory:#FFFCF6;--ink:#3A2226;--ink-soft:#7A5E63;--line:rgba(166,9,61,.14);--ok:#1d9e75;--bad:#d8453f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f6f1ee;color:var(--ink);line-height:1.55}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+input,select,textarea,button{font-family:inherit;font-size:16px}
+a{color:var(--crimson)}
+.hide{display:none!important}
+
+/* ---------- LOGIN ---------- */
+#login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.2rem;background:linear-gradient(150deg,#fce9ef,#f8edd8)}
+.login-card{background:#fff;width:min(400px,100%);border-radius:18px;box-shadow:0 20px 50px rgba(166,9,61,.16);padding:2.2rem 1.8rem;text-align:center}
+.login-card img{width:64px;height:64px;border-radius:50%;margin:0 auto 1rem;box-shadow:0 4px 14px rgba(166,9,61,.2);background:#fff}
+.login-card h1{color:var(--crimson);font-size:1.5rem;margin-bottom:.2rem}
+.login-card p{color:var(--ink-soft);font-size:.9rem;margin-bottom:1.6rem}
+.field{text-align:left;margin-bottom:1rem}
+.field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.4rem;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;border:2px solid #e8e0dd;border-radius:10px;background:var(--ivory);outline:none;transition:border .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:linear-gradient(120deg,var(--crimson),var(--crimson-deep));color:#fff;font-weight:600;padding:.85rem 1.5rem;border:none;border-radius:999px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 20px rgba(166,9,61,.28)}
+.btn:hover{transform:translateY(-2px)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn.full{width:100%}
+.btn.ghost{background:none;color:var(--crimson);border:1.5px solid var(--crimson);box-shadow:none}
+.btn.gold{background:linear-gradient(120deg,var(--gold),var(--gold-deep));box-shadow:0 8px 20px rgba(184,150,46,.3)}
+.btn.danger{background:none;color:var(--bad);border:1.5px solid var(--bad);box-shadow:none}
+.btn.sm{padding:.5rem .9rem;font-size:.82rem}
+
+/* ---------- APP SHELL ---------- */
+#app{min-height:100vh;display:flex;flex-direction:column}
+.topbar{background:#fff;border-bottom:1px solid var(--line);padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;position:sticky;top:0;z-index:30}
+.topbar .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;color:var(--crimson);font-family:'Playfair Display',serif}
+.topbar .brand img{width:38px;height:38px;border-radius:50%}
+.topbar .who{font-size:.8rem;color:var(--ink-soft)}
+.wrap{flex:1;display:flex;max-width:1100px;width:100%;margin:0 auto;gap:1.2rem;padding:1.2rem;align-items:flex-start}
+
+/* ---------- TABS (side on desktop, top-scroll on mobile) ---------- */
+.tabs{display:flex;flex-direction:column;gap:.3rem;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.6rem;min-width:190px;position:sticky;top:70px}
+.tab{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;border-radius:10px;border:none;background:none;color:var(--ink);font-weight:500;cursor:pointer;text-align:left;width:100%;font-size:.92rem}
+.tab.active{background:linear-gradient(120deg,var(--crimson),var(--crimson-deep));color:#fff}
+.tab .ic{font-size:1.1rem}
+
+.panel{flex:1;min-width:0}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.4rem;margin-bottom:1.2rem}
+.card h2{color:var(--crimson);font-size:1.3rem;margin-bottom:.3rem}
+.card .sub{color:var(--ink-soft);font-size:.88rem;margin-bottom:1.2rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.toolbar-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap}
+
+/* ---------- LISTS ---------- */
+.list-item{display:flex;align-items:center;gap:1rem;padding:.9rem;border:1px solid var(--line);border-radius:12px;margin-bottom:.7rem;background:#fff}
+.list-item .thumb{width:54px;height:54px;border-radius:10px;object-fit:cover;background:#f0e8e5;flex-shrink:0}
+.list-item .meta{flex:1;min-width:0}
+.list-item .meta b{display:block;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.list-item .meta small{color:var(--ink-soft);font-size:.78rem}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;padding:.2rem .6rem;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
+.badge.pub{background:rgba(29,158,117,.14);color:var(--ok)}
+.badge.draft{background:rgba(122,94,99,.14);color:var(--ink-soft)}
+.actions{display:flex;gap:.4rem;flex-shrink:0}
+
+/* ---------- RICH EDITOR ---------- */
+.rt-toolbar{display:flex;flex-wrap:wrap;gap:.3rem;border:2px solid #e8e0dd;border-bottom:none;border-radius:10px 10px 0 0;padding:.5rem;background:#faf6f4}
+.rt-toolbar button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:.4rem .7rem;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--ink)}
+.rt-toolbar button:hover{background:var(--ivory)}
+.rt-editor{min-height:240px;border:2px solid #e8e0dd;border-radius:0 0 10px 10px;padding:1rem;background:#fff;outline:none;font-size:15px;line-height:1.7}
+.rt-editor:focus{border-color:var(--gold)}
+.rt-editor img{max-width:100%;border-radius:8px;margin:.5rem 0}
+.rt-editor h2{font-size:1.4rem;margin:.8rem 0 .4rem;color:var(--crimson)}
+.rt-editor h3{font-size:1.15rem;margin:.7rem 0 .3rem}
+.rt-editor p{margin-bottom:.7rem}
+
+/* ---------- MEDIA GRID ---------- */
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.9rem}
+.media-tile{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;position:relative}
+.media-tile img{width:100%;height:120px;object-fit:cover;display:block}
+.media-tile .mt-body{padding:.5rem .6rem}
+.media-tile .mt-body small{font-size:.72rem;color:var(--ink-soft);word-break:break-all}
+.media-tile .mt-actions{display:flex;gap:.3rem;padding:0 .6rem .6rem}
+.copy-url{font-size:.72rem;background:var(--ivory);border:1px solid var(--line);border-radius:6px;padding:.3rem .5rem;cursor:pointer;width:100%;text-align:center;color:var(--crimson);font-weight:600}
+
+/* ---------- DROPZONE ---------- */
+.dropzone{border:2px dashed var(--gold);border-radius:12px;padding:1.6rem;text-align:center;color:var(--ink-soft);background:#fffaf0;cursor:pointer;transition:background .2s}
+.dropzone:hover{background:#fff4dd}
+.dropzone b{color:var(--crimson)}
+
+/* ---------- TOAST ---------- */
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:#fff;padding:.9rem 1.4rem;border-radius:12px;font-size:.9rem;font-weight:500;box-shadow:0 12px 30px rgba(0,0,0,.3);z-index:100;transition:transform .35s;max-width:90%}
+#toast.show{transform:translateX(-50%) translateY(0)}
+#toast.ok{background:var(--ok)}
+#toast.bad{background:var(--bad)}
+
+/* ---------- MODAL EDITOR ---------- */
+.sheet{position:fixed;inset:0;background:rgba(58,34,38,.5);display:none;align-items:flex-start;justify-content:center;padding:1rem;z-index:50;overflow-y:auto}
+.sheet.open{display:flex}
+.sheet-card{background:var(--ivory);width:min(720px,100%);border-radius:16px;padding:1.6rem;margin:1.5rem 0;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.sheet-card h2{color:var(--crimson);margin-bottom:1.2rem}
+.muted{color:var(--ink-soft);font-size:.85rem}
+.center{text-align:center}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.empty{text-align:center;color:var(--ink-soft);padding:2.5rem 1rem;font-size:.9rem}
+
+@media(max-width:760px){
+  .wrap{flex-direction:column;padding:.8rem}
+  .tabs{flex-direction:row;overflow-x:auto;width:100%;min-width:0;position:static;padding:.4rem}
+  .tab{white-space:nowrap;flex-shrink:0}
+  .tab span.lbl{font-size:.85rem}
+  .row{grid-template-columns:1fr}
+  .card{padding:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login">
+  <div class="login-card">
+    <img src="../logo.gif" alt="FSIA" onerror="this.style.display='none'">
+    <h1>FSIA Admin</h1>
+    <p>Sign in to manage your website content</p>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="you@email.com" autocomplete="username">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button class="btn full" id="loginBtn">Sign In</button>
+    <p class="muted" id="loginMsg" style="margin-top:1rem"></p>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" class="hide">
+  <div class="topbar">
+    <div class="brand"><img src="../logo.gif" alt="" onerror="this.style.display='none'"> FSIA Content Manager</div>
+    <div style="display:flex;align-items:center;gap:.8rem">
+      <span class="who" id="whoami"></span>
+      <button class="btn ghost sm" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <nav class="tabs">
+      <button class="tab active" data-view="posts"><span class="ic">📝</span><span class="lbl">Blog / News</span></button>
+      <button class="tab" data-view="pages"><span class="ic">📄</span><span class="lbl">Page Text</span></button>
+      <button class="tab" data-view="media"><span class="ic">🖼️</span><span class="lbl">Images</span></button>
+      <button class="tab" data-view="settings"><span class="ic">⚙️</span><span class="lbl">Settings</span></button>
+    </nav>
+
+    <div class="panel">
+
+      <!-- ===== POSTS ===== -->
+      <section id="view-posts">
+        <div class="card">
+          <div class="toolbar-row">
+            <div><h2>Blog &amp; News</h2><div class="sub">Write posts that appear on your blog page instantly.</div></div>
+            <button class="btn" id="newPostBtn">＋ New Post</button>
+          </div>
+          <div id="postList"><div class="empty">Loading…</div></div>
+        </div>
+      </section>
+
+      <!-- ===== PAGES ===== -->
+      <section id="view-pages" class="hide">
+        <div class="card">
+          <h2>Page Text Blocks</h2>
+          <div class="sub">Edit the editable text areas across your site. Changes save to your live site.</div>
+          <div id="blockList"><div class="empty">Loading…</div></div>
+        </div>
+      </section>
+
+      <!-- ===== MEDIA ===== -->
+      <section id="view-media" class="hide">
+        <div class="card">
+          <h2>Image Library</h2>
+          <div class="sub">Upload photos (winners, gallery, blog covers). Copy a URL to use it anywhere.</div>
+          <div class="dropzone" id="dropzone">
+            <b>Tap to upload</b> or drop images here<br>
+            <small class="muted">JPG, PNG, WebP · up to ~5MB each</small>
+            <input type="file" id="fileInput" accept="image/*" multiple class="hide">
+          </div>
+          <div style="height:1rem"></div>
+          <div class="media-grid" id="mediaGrid"><div class="empty">Loading…</div></div>
+        </div>
+      </section>
+
+      <!-- ===== SETTINGS ===== -->
+      <section id="view-settings" class="hide">
+        <div class="card">
+          <h2>Site Settings</h2>
+          <div class="sub">Global details used across the site.</div>
+          <div id="settingsForm"><div class="empty">Loading…</div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== POST EDITOR SHEET ===== -->
+<div class="sheet" id="postSheet">
+  <div class="sheet-card">
+    <h2 id="postSheetTitle">New Post</h2>
+    <div class="field"><label>Title</label><input type="text" id="p_title" placeholder="e.g. Miss India 2026 Grand Finale Announced"></div>
+    <div class="row">
+      <div class="field"><label>Category</label>
+        <select id="p_category"><option>News</option><option>Events</option><option>Winners</option><option>Press</option><option>Blog</option></select>
+      </div>
+      <div class="field"><label>Author</label><input type="text" id="p_author" value="Forever Star India"></div>
+    </div>
+    <div class="field"><label>Short summary (shown on blog list)</label><textarea id="p_excerpt" rows="2" placeholder="One or two lines…"></textarea></div>
+    <div class="field">
+      <label>Cover image</label>
+      <div style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+        <img id="p_cover_preview" src="" alt="" style="width:90px;height:60px;object-fit:cover;border-radius:8px;background:#f0e8e5;display:none">
+        <button class="btn gold sm" id="p_cover_btn" type="button">Upload cover</button>
+        <span class="muted" id="p_cover_name"></span>
+      </div>
+    </div>
+    <div class="field">
+      <label>Content</label>
+      <div class="rt-toolbar" id="rtToolbar">
+        <button type="button" data-cmd="bold"><b>B</b></button>
+        <button type="button" data-cmd="italic"><i>I</i></button>
+        <button type="button" data-cmd="h2">H2</button>
+        <button type="button" data-cmd="h3">H3</button>
+        <button type="button" data-cmd="insertUnorderedList">• List</button>
+        <button type="button" data-cmd="createLink">🔗 Link</button>
+        <button type="button" data-cmd="image">🖼️ Image</button>
+        <button type="button" data-cmd="removeFormat">✕ Clear</button>
+      </div>
+      <div class="rt-editor" id="p_body" contenteditable="true"></div>
+    </div>
+    <div class="toolbar-row" style="margin-top:1.2rem">
+      <button class="btn danger sm" id="p_delete">Delete</button>
+      <div style="display:flex;gap:.5rem">
+        <button class="btn ghost" id="p_cancel">Cancel</button>
+        <button class="btn gold" id="p_savedraft">Save Draft</button>
+        <button class="btn" id="p_publish">Publish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="fsia-config.js"></script>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const cfg = window.FSIA_CONFIG || {};
+const configured = cfg.SUPABASE_URL && !cfg.SUPABASE_URL.includes("PASTE");
+let sb = configured ? createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY) : null;
+
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const toast = (msg,type="")=>{const t=$("#toast");t.textContent=msg;t.className="show "+type;setTimeout(()=>t.className="",2600);};
+const slugify = s => s.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70);
+
+// ---------- AUTH ----------
+async function initAuth(){
+  if(!configured){ $("#loginMsg").innerHTML="⚠️ Not connected yet. Open <b>fsia-config.js</b> and paste your Supabase URL &amp; key, then reload."; $("#loginBtn").disabled=true; return; }
+  const { data:{ session } } = await sb.auth.getSession();
+  if(session) showApp(session);
+}
+$("#loginBtn").onclick = async ()=>{
+  const email=$("#email").value.trim(), password=$("#password").value;
+  if(!email||!password){ $("#loginMsg").textContent="Enter your email and password."; return; }
+  $("#loginBtn").disabled=true; $("#loginBtn").innerHTML='<span class="spin"></span>';
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
+  $("#loginBtn").disabled=false; $("#loginBtn").textContent="Sign In";
+  if(error){ $("#loginMsg").textContent="❌ "+error.message; return; }
+  showApp(data.session);
+};
+$("#logoutBtn").onclick = async ()=>{ await sb.auth.signOut(); location.reload(); };
+
+function showApp(session){
+  $("#login").classList.add("hide");
+  $("#app").classList.remove("hide");
+  $("#whoami").textContent = session.user.email;
+  loadPosts(); loadBlocks(); loadMedia(); loadSettings();
+}
+
+// ---------- TABS ----------
+$$(".tab").forEach(t=>t.onclick=()=>{
+  $$(".tab").forEach(x=>x.classList.remove("active"));
+  t.classList.add("active");
+  const v=t.dataset.view;
+  ["posts","pages","media","settings"].forEach(id=>$("#view-"+id).classList.toggle("hide",id!==v));
+});
+
+// ---------- IMAGE UPLOAD HELPER ----------
+async function uploadImage(file){
+  const ext=(file.name.split(".").pop()||"jpg").toLowerCase();
+  const path=`uploads/${Date.now()}-${Math.random().toString(36).slice(2,8)}.${ext}`;
+  const { error } = await sb.storage.from("media").upload(path,file,{cacheControl:"3600",upsert:false});
+  if(error) throw error;
+  const { data } = sb.storage.from("media").getPublicUrl(path);
+  return data.publicUrl;
+}
+
+/* =================== POSTS =================== */
+let editingId=null;
+async function loadPosts(){
+  const { data, error } = await sb.from("posts").select("*").order("created_at",{ascending:false});
+  const box=$("#postList");
+  if(error){ box.innerHTML=`<div class="empty">${error.message}</div>`; return; }
+  if(!data.length){ box.innerHTML='<div class="empty">No posts yet. Click “New Post” to write your first one.</div>'; return; }
+  box.innerHTML="";
+  data.forEach(p=>{
+    const el=document.createElement("div"); el.className="list-item";
+    el.innerHTML=`
+      <img class="thumb" src="${p.cover_url||""}" onerror="this.style.visibility='hidden'">
+      <div class="meta">
+        <b>${esc(p.title)}</b>
+        <small>${p.category||"News"} · ${new Date(p.created_at).toLocaleDateString()} ·
+        <span class="badge ${p.status==='published'?'pub':'draft'}">${p.status}</span></small>
+      </div>
+      <div class="actions">
+        <button class="btn ghost sm" data-edit="${p.id}">Edit</button>
+      </div>`;
+    box.appendChild(el);
+  });
+  $$("[data-edit]",box).forEach(b=>b.onclick=()=>openPost(data.find(x=>x.id===b.dataset.edit)));
+}
+
+function openPost(p){
+  editingId = p?.id || null;
+  $("#postSheetTitle").textContent = p ? "Edit Post" : "New Post";
+  $("#p_title").value=p?.title||"";
+  $("#p_category").value=p?.category||"News";
+  $("#p_author").value=p?.author||"Forever Star India";
+  $("#p_excerpt").value=p?.excerpt||"";
+  $("#p_body").innerHTML=p?.body||"";
+  const cv=p?.cover_url||"";
+  $("#p_cover_preview").src=cv; $("#p_cover_preview").style.display=cv?"block":"none";
+  $("#p_cover_name").textContent=cv?"Cover set":"";
+  $("#p_delete").style.display=editingId?"inline-flex":"none";
+  $("#postSheet").classList.add("open");
+}
+$("#newPostBtn").onclick=()=>openPost(null);
+$("#p_cancel").onclick=()=>$("#postSheet").classList.remove("open");
+
+// cover upload
+$("#p_cover_btn").onclick=()=>{
+  const inp=document.createElement("input"); inp.type="file"; inp.accept="image/*";
+  inp.onchange=async()=>{
+    if(!inp.files[0])return;
+    $("#p_cover_btn").innerHTML='<span class="spin"></span>';
+    try{ const url=await uploadImage(inp.files[0]);
+      $("#p_cover_preview").src=url; $("#p_cover_preview").style.display="block";
+      $("#p_cover_preview").dataset.url=url; $("#p_cover_name").textContent="Cover uploaded ✓";
+    }catch(e){ toast(e.message,"bad"); }
+    $("#p_cover_btn").textContent="Upload cover";
+  };
+  inp.click();
+};
+
+// rich text toolbar
+$("#rtToolbar").onclick=async(e)=>{
+  const btn=e.target.closest("button"); if(!btn)return;
+  const cmd=btn.dataset.cmd; $("#p_body").focus();
+  if(cmd==="h2"||cmd==="h3"){ document.execCommand("formatBlock",false,cmd.toUpperCase()); }
+  else if(cmd==="createLink"){ const url=prompt("Link URL:","https://"); if(url)document.execCommand("createLink",false,url); }
+  else if(cmd==="image"){
+    const inp=document.createElement("input"); inp.type="file"; inp.accept="image/*";
+    inp.onchange=async()=>{ if(!inp.files[0])return; toast("Uploading image…");
+      try{ const url=await uploadImage(inp.files[0]); document.execCommand("insertHTML",false,`<img src="${url}" alt="">`); }
+      catch(e){ toast(e.message,"bad"); } };
+    inp.click();
+  }
+  else document.execCommand(cmd,false,null);
+};
+
+async function savePost(status){
+  const title=$("#p_title").value.trim();
+  if(!title){ toast("Please add a title","bad"); return; }
+  const payload={
+    title, slug:slugify(title)+"-"+Math.random().toString(36).slice(2,5),
+    category:$("#p_category").value, author:$("#p_author").value.trim(),
+    excerpt:$("#p_excerpt").value.trim(), body:$("#p_body").innerHTML,
+    cover_url:$("#p_cover_preview").dataset.url||$("#p_cover_preview").src||null,
+    status, updated_at:new Date().toISOString()
+  };
+  if(status==="published") payload.published_at=new Date().toISOString();
+  let res;
+  if(editingId){ delete payload.slug; res=await sb.from("posts").update(payload).eq("id",editingId); }
+  else res=await sb.from("posts").insert(payload);
+  if(res.error){ toast(res.error.message,"bad"); return; }
+  $("#postSheet").classList.remove("open");
+  toast(status==="published"?"Published ✓":"Draft saved ✓","ok");
+  loadPosts();
+}
+$("#p_savedraft").onclick=()=>savePost("draft");
+$("#p_publish").onclick=()=>savePost("published");
+$("#p_delete").onclick=async()=>{
+  if(!editingId||!confirm("Delete this post permanently?"))return;
+  const { error }=await sb.from("posts").delete().eq("id",editingId);
+  if(error){ toast(error.message,"bad"); return; }
+  $("#postSheet").classList.remove("open"); toast("Deleted","ok"); loadPosts();
+};
+
+/* =================== PAGE BLOCKS =================== */
+async function loadBlocks(){
+  const { data, error }=await sb.from("page_blocks").select("*").order("page");
+  const box=$("#blockList");
+  if(error){ box.innerHTML=`<div class="empty">${error.message}</div>`; return; }
+  if(!data.length){ box.innerHTML='<div class="empty">No editable blocks defined yet.</div>'; return; }
+  box.innerHTML="";
+  let currentPage="";
+  data.forEach(b=>{
+    if(b.page!==currentPage){ currentPage=b.page;
+      const h=document.createElement("h3"); h.style.cssText="margin:1rem 0 .6rem;color:var(--gold-deep);text-transform:capitalize;font-size:1rem"; h.textContent="📄 "+b.page+" page"; box.appendChild(h);
+    }
+    const f=document.createElement("div"); f.className="field";
+    const multiline=(b.value||"").length>60;
+    f.innerHTML=`<label>${esc(b.label||b.block_key)}</label>
+      ${multiline?`<textarea rows="3" data-block="${b.id}">${esc(b.value||"")}</textarea>`
+                 :`<input type="text" data-block="${b.id}" value="${esc(b.value||"")}">`}`;
+    box.appendChild(f);
+  });
+  const saveBar=document.createElement("div"); saveBar.style.cssText="margin-top:1rem;text-align:right";
+  saveBar.innerHTML='<button class="btn" id="saveBlocks">Save all changes</button>';
+  box.appendChild(saveBar);
+  $("#saveBlocks").onclick=async()=>{
+    const updates=$$("[data-block]",box).map(el=>sb.from("page_blocks").update({value:el.value,updated_at:new Date().toISOString()}).eq("id",el.dataset.block));
+    const results=await Promise.all(updates);
+    const err=results.find(r=>r.error);
+    toast(err?err.error.message:"All page text saved ✓",err?"bad":"ok");
+  };
+}
+
+/* =================== MEDIA =================== */
+async function loadMedia(){
+  const { data, error }=await sb.from("media").select("*").order("created_at",{ascending:false});
+  const grid=$("#mediaGrid");
+  if(error){ grid.innerHTML=`<div class="empty">${error.message}</div>`; return; }
+  if(!data.length){ grid.innerHTML='<div class="empty">No images yet. Upload some above.</div>'; return; }
+  grid.innerHTML="";
+  data.forEach(m=>{
+    const t=document.createElement("div"); t.className="media-tile";
+    t.innerHTML=`<img src="${m.url}" alt="${esc(m.alt||"")}">
+      <div class="mt-body"><small>${esc(m.title||"image")}</small></div>
+      <div class="mt-actions"><button class="copy-url" data-url="${m.url}">Copy URL</button></div>
+      <div class="mt-actions"><button class="copy-url" style="color:var(--bad)" data-del="${m.id}">Delete</button></div>`;
+    grid.appendChild(t);
+  });
+  $$("[data-url]",grid).forEach(b=>b.onclick=()=>{navigator.clipboard.writeText(b.dataset.url);toast("URL copied ✓","ok");});
+  $$("[data-del]",grid).forEach(b=>b.onclick=async()=>{
+    if(!confirm("Delete this image?"))return;
+    await sb.from("media").delete().eq("id",b.dataset.del); toast("Deleted","ok"); loadMedia();
+  });
+}
+async function handleFiles(files){
+  for(const file of files){
+    toast("Uploading "+file.name+"…");
+    try{ const url=await uploadImage(file);
+      await sb.from("media").insert({url,title:file.name,alt:file.name.replace(/\.[^.]+$/,"")});
+    }catch(e){ toast(e.message,"bad"); }
+  }
+  toast("Upload complete ✓","ok"); loadMedia();
+}
+$("#dropzone").onclick=()=>$("#fileInput").click();
+$("#fileInput").onchange=e=>handleFiles([...e.target.files]);
+$("#dropzone").ondragover=e=>{e.preventDefault();};
+$("#dropzone").ondrop=e=>{e.preventDefault();handleFiles([...e.dataTransfer.files]);};
+
+/* =================== SETTINGS =================== */
+async function loadSettings(){
+  const { data, error }=await sb.from("settings").select("*").order("key");
+  const box=$("#settingsForm");
+  if(error){ box.innerHTML=`<div class="empty">${error.message}</div>`; return; }
+  const labels={phone_primary:"Primary phone",phone_secondary:"Secondary phone",email:"Email address",whatsapp:"WhatsApp number (digits only)"};
+  box.innerHTML="";
+  data.forEach(s=>{
+    const f=document.createElement("div"); f.className="field";
+    f.innerHTML=`<label>${labels[s.key]||s.key}</label><input type="text" data-key="${s.key}" value="${esc(s.value||"")}">`;
+    box.appendChild(f);
+  });
+  const bar=document.createElement("div"); bar.style.cssText="text-align:right;margin-top:.6rem";
+  bar.innerHTML='<button class="btn" id="saveSettings">Save settings</button>'; box.appendChild(bar);
+  $("#saveSettings").onclick=async()=>{
+    const ups=$$("[data-key]",box).map(el=>sb.from("settings").update({value:el.value,updated_at:new Date().toISOString()}).eq("key",el.dataset.key));
+    const r=await Promise.all(ups); const err=r.find(x=>x.error);
+    toast(err?err.error.message:"Settings saved ✓",err?"bad":"ok");
+  };
+}
+
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+initAuth();
+</script>
+</body>
+</html>

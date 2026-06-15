@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog &amp; News — Forever Star India</title>
+<meta name="description" content="Latest news, updates, and stories from Forever Star India beauty pageants and award shows.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--crimson:#A6093D;--crimson-deep:#7E0B30;--gold:#D4AF37;--gold-deep:#B8962E;--ivory:#FFFCF6;--blush-soft:#FCEFF2;--champagne:#F8EDD8;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1140px,92%);margin:0 auto}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,252,246,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,9,61,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-weight:700;color:var(--crimson)}
+.logo img{width:50px;height:50px;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(166,9,61,.18)}
+.nav a.home{font-size:.9rem;font-weight:500;color:var(--ink-soft)}
+
+.hero{background:linear-gradient(160deg,var(--blush-soft),var(--champagne) 70%,var(--ivory));padding:60px 0 50px;text-align:center}
+.hero h1{font-size:clamp(1.9rem,5vw,3rem);margin-bottom:.6rem}
+.hero p{color:var(--ink-soft);max-width:540px;margin:0 auto}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;padding:50px 0 70px}
+.post-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(166,9,61,.1);border:1px solid rgba(212,160,76,.16);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(184,134,47,.2)}
+.post-cover{height:190px;background:linear-gradient(140deg,var(--blush-soft),var(--champagne));display:flex;align-items:center;justify-content:center;font-size:2.6rem;color:var(--gold-deep);overflow:hidden}
+.post-cover img{width:100%;height:100%;object-fit:cover}
+.post-body{padding:1.2rem 1.3rem 1.5rem;flex:1;display:flex;flex-direction:column}
+.post-cat{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--crimson);margin-bottom:.5rem}
+.post-body h2{font-size:1.15rem;margin-bottom:.5rem}
+.post-body p{font-size:.88rem;color:var(--ink-soft);flex:1}
+.post-meta{font-size:.76rem;color:var(--ink-soft);margin-top:1rem;display:flex;justify-content:space-between;align-items:center}
+.read{color:var(--gold-deep);font-weight:600}
+
+.empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:4rem 1rem}
+
+footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:2.4rem 0;text-align:center;color:var(--ink-soft);font-size:.85rem}
+footer a{color:var(--crimson);font-weight:600}
+
+@media(max-width:860px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){
+  .blog-grid{grid-template-columns:1fr;padding:36px 0 50px;gap:1.2rem}
+  .hero{padding:40px 0 32px}
+  .post-cover{height:200px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA" onerror="this.style.display='none'"> Forever Star India</a>
+    <a href="index.html" class="home">← Back to site</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Blog &amp; News</h1>
+    <p>Latest updates, winner stories, and announcements from Forever Star India.</p>
+  </div>
+</section>
+
+<main class="container">
+  <div class="blog-grid" id="grid">
+    <div class="empty">Loading latest posts…</div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Forever Star India Pvt. Ltd. · <a href="index.html">Home</a> · <a href="contact.html">Contact</a></p>
+  </div>
+</footer>
+
+<script src="admin/fsia-config.js"></script>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const cfg=window.FSIA_CONFIG||{};
+const grid=document.getElementById("grid");
+const icons={News:"📰",Events:"🎉",Winners:"👑",Press:"📣",Blog:"✍️"};
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+(async()=>{
+  if(!cfg.SUPABASE_URL||cfg.SUPABASE_URL.includes("PASTE")){
+    grid.innerHTML='<div class="empty">Blog isn’t connected yet. Add your Supabase keys in <b>admin/fsia-config.js</b>.</div>';return;
+  }
+  const sb=createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);
+  const { data, error }=await sb.from("posts").select("*").eq("status","published").order("published_at",{ascending:false});
+  if(error){ grid.innerHTML=`<div class="empty">${error.message}</div>`; return; }
+  if(!data.length){ grid.innerHTML='<div class="empty">No posts published yet. Check back soon!</div>'; return; }
+  grid.innerHTML="";
+  data.forEach(p=>{
+    const a=document.createElement("a"); a.className="post-card"; a.href="blog-post.html?slug="+encodeURIComponent(p.slug);
+    a.innerHTML=`
+      <div class="post-cover">${p.cover_url?`<img src="${p.cover_url}" alt="${esc(p.title)}">`:(icons[p.category]||"✨")}</div>
+      <div class="post-body">
+        <div class="post-cat">${esc(p.category||"News")}</div>
+        <h2>${esc(p.title)}</h2>
+        <p>${esc(p.excerpt||"")}</p>
+        <div class="post-meta">
+          <span>${p.published_at?new Date(p.published_at).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):""}</span>
+          <span class="read">Read →</span>
+        </div>
+      </div>`;
+    grid.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>

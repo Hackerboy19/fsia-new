@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading… — Forever Star India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--crimson:#A6093D;--crimson-deep:#7E0B30;--gold:#D4AF37;--gold-deep:#B8962E;--ivory:#FFFCF6;--blush-soft:#FCEFF2;--champagne:#F8EDD8;--ink:#3A2226;--ink-soft:#7A5E63}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.7;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.25}
+a{color:var(--crimson)}
+img{max-width:100%;display:block}
+.container{width:min(760px,92%);margin:0 auto}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,252,246,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,9,61,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0;width:min(1140px,92%);margin:0 auto}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-weight:700;color:var(--crimson)}
+.logo img{width:50px;height:50px;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(166,9,61,.18)}
+.nav a.back{font-size:.9rem;font-weight:500;color:var(--ink-soft)}
+
+article{padding:42px 0 70px}
+.cat{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);margin-bottom:.7rem}
+.title{font-size:clamp(1.8rem,5vw,2.7rem);margin-bottom:.8rem}
+.meta{color:var(--ink-soft);font-size:.86rem;margin-bottom:1.8rem;border-bottom:1px solid rgba(212,160,76,.25);padding-bottom:1.2rem}
+.cover{width:100%;border-radius:16px;margin-bottom:1.8rem;max-height:420px;object-fit:cover}
+.content{font-size:1.05rem;color:#43383a}
+.content p{margin-bottom:1.1rem}
+.content h2{font-size:1.6rem;color:var(--crimson);margin:1.8rem 0 .7rem}
+.content h3{font-size:1.3rem;margin:1.5rem 0 .6rem}
+.content img{border-radius:12px;margin:1.2rem 0}
+.content ul,.content ol{margin:0 0 1.1rem 1.4rem}
+.content li{margin-bottom:.4rem}
+.content a{text-decoration:underline}
+.backlink{display:inline-block;margin-top:2.4rem;font-weight:600;color:var(--gold-deep)}
+
+.loading,.notfound{text-align:center;padding:5rem 1rem;color:var(--ink-soft)}
+
+footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:2.4rem 0;text-align:center;color:var(--ink-soft);font-size:.85rem}
+footer a{color:var(--crimson);font-weight:600}
+
+@media(max-width:560px){
+  article{padding:28px 0 50px}
+  .content{font-size:1rem}
+  .cover{max-height:260px;border-radius:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA" onerror="this.style.display='none'"> Forever Star India</a>
+    <a href="blog.html" class="back">← All posts</a>
+  </div>
+</header>
+
+<main class="container">
+  <article id="post"><div class="loading">Loading…</div></article>
+</main>
+
+<footer>
+  <p>© 2026 Forever Star India Pvt. Ltd. · <a href="blog.html">Blog</a> · <a href="index.html">Home</a></p>
+</footer>
+
+<script src="admin/fsia-config.js"></script>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const cfg=window.FSIA_CONFIG||{};
+const box=document.getElementById("post");
+const slug=new URLSearchParams(location.search).get("slug");
+
+(async()=>{
+  if(!cfg.SUPABASE_URL||cfg.SUPABASE_URL.includes("PASTE")){ box.innerHTML='<div class="notfound">Blog isn’t connected yet.</div>'; return; }
+  if(!slug){ box.innerHTML='<div class="notfound">No post specified. <a href="blog.html">Back to blog</a>.</div>'; return; }
+  const sb=createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);
+  const { data, error }=await sb.from("posts").select("*").eq("slug",slug).eq("status","published").single();
+  if(error||!data){ box.innerHTML='<div class="notfound">Post not found or unpublished. <a href="blog.html">Back to blog</a>.</div>'; return; }
+  document.title=data.title+" — Forever Star India";
+  const date=data.published_at?new Date(data.published_at).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}):"";
+  box.innerHTML=`
+    <div class="cat">${escAttr(data.category||"News")}</div>
+    <h1 class="title">${escAttr(data.title)}</h1>
+    <div class="meta">By ${escAttr(data.author||"Forever Star India")}${date?" · "+date:""}</div>
+    ${data.cover_url?`<img class="cover" src="${data.cover_url}" alt="${escAttr(data.title)}">`:""}
+    <div class="content">${data.body||""}</div>
+    <a class="backlink" href="blog.html">← Back to all posts</a>`;
+})();
+function escAttr(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+</script>
+</body>
+</html>
