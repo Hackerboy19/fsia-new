@@ -28,6 +28,15 @@
   .form-container{padding:1.3rem 1rem}
   .hero-stats{gap:1rem;flex-wrap:wrap}
 }
+/* ===== animated hero banner ===== */
+.banner-wrap{position:relative;width:100%;max-width:1100px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.15);animation:bannerIn .9s cubic-bezier(.2,.7,.2,1) both;line-height:0;background:rgba(255,255,255,.06)}
+.banner-img{width:100%;height:auto;display:block;transform-origin:center;animation:bannerKen 24s ease-in-out infinite alternate}
+.banner-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.38) 48%,transparent 66%);transform:translateX(-130%) skewX(-12deg);animation:bannerShine 2.8s ease .7s 1}
+@keyframes bannerIn{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes bannerKen{from{transform:scale(1)}to{transform:scale(1.06)}}
+@keyframes bannerShine{to{transform:translateX(130%) skewX(-12deg)}}
+@media(prefers-reduced-motion:reduce){.banner-img{animation:none}.banner-shine{display:none}}
+@media(max-width:640px){.banner-wrap{border-radius:12px}}
 /* ===== themed hero emblem (added) ===== */
 .hero-emblem{width:118px;height:118px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.18),inset 0 0 0 2px rgba(255,255,255,.35);color:var(--accent);animation:emblemPop .8s cubic-bezier(.34,1.56,.64,1) both}
 .hero-emblem svg{filter:drop-shadow(0 4px 8px rgba(0,0,0,.2))}
@@ -36,6 +45,14 @@
 
 
 /* ===== FSIA site footer v2 ===== */
+.site-footer .ft-dropdown{margin:0}
+.site-footer .ft-dropdown summary{font-family:'Playfair Display',serif;color:#A6093D;font-size:1.04rem;margin-bottom:1rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:.5rem}
+.site-footer .ft-dropdown summary::-webkit-details-marker{display:none}
+.site-footer .ft-dropdown summary::after{content:'\25BE';margin-left:auto;color:#D4AF37;transition:transform .25s}
+.site-footer .ft-dropdown[open] summary::after{transform:rotate(180deg)}
+.site-footer .ft-dropdown .ft-reglist{animation:ftReg .25s ease}
+@keyframes ftReg{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
 .site-footer{background:#fff;border-top:3px solid #D4AF37;padding:3rem 0 1.4rem;margin-top:4rem;font-family:'Poppins',sans-serif}
 .site-footer .ft-wrap{width:min(1140px,92%);margin:0 auto}
 .site-footer .ft-grid{display:grid;grid-template-columns:1.4fr 1.1fr 1fr 1.1fr;gap:2rem;margin-bottom:2rem}
@@ -53,7 +70,17 @@
 @media(max-width:880px){.site-footer .ft-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.site-footer .ft-grid{grid-template-columns:1fr;text-align:center}.site-footer .ft-social{justify-content:center}.site-footer .ft-brand img{margin-left:auto;margin-right:auto}}
 
-</style></head><body><header><div class="container"><a href="index.html" class="logo"><img src="logo.gif"><span>Forever Star</span></a></div></header><section class="hero"><div class="container"><div class="hero-emblem"><svg viewBox="0 0 120 120" width="118" height="118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60 30c-10 0-16 8-16 16 0 12 16 30 16 30s16-18 16-30c0-8-6-16-16-16z" fill="#fff"/><path d="M60 76v18M60 88c8 0 14-4 18-10M60 88c-8 0-14-4-18-10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></svg></div><h1>🌹 Mrs World 2026</h1><p>Elegance & Sophistication</p><div class="hero-stats"><div class="stat"><span class="stat-number">100+</span><span class="stat-label">Contestants</span></div><div class="stat"><span class="stat-number">50+</span><span class="stat-label">Countries</span></div><div class="stat"><span class="stat-number">∞</span><span class="stat-label">Grace</span></div></div></div></section><section class="form-section"><div class="container"><h2 class="section-title">✨ Register Now</h2><div class="form-container"><div class="form-header"><h2>Mrs World Registration</h2><p>Celebrate Elegance</p></div><form id="registrationForm" onsubmit="submitForm(event)"><h3 class="section-header">👤 Personal Details</h3><div class="form-row"><div class="form-group"><label>First Name <span class="required">*</span></label><input type="text" name="firstName" required></div><div class="form-group"><label>Last Name</label><input type="text" name="lastName"></div></div><div class="form-row"><div class="form-group"><label>Age</label><input type="number" name="age"></div><div class="form-group"><label>Height</label><input type="text" name="height"></div></div><h3 class="section-header">👨‍👩‍👧‍👦 Family Status</h3><div class="form-group"><label>Spouse Name</label><input type="text" name="spouse"></div><div class="form-group"><label>Children (if any)</label><input type="text" name="children" placeholder="Number and ages"></div><h3 class="section-header">📍 Location</h3><div class="form-row"><div class="form-group"><label>City</label><input type="text" name="city"></div><div class="form-group"><label>Country</label><input type="text" name="country"></div></div><h3 class="section-header">📱 Contact</h3><div class="form-row"><div class="form-group"><label>WhatsApp <span class="required">*</span></label><input type="tel" name="phone" maxlength="10" required></div><div class="form-group"><label>Email <span class="required">*</span></label><input type="email" name="email" required></div></div><div class="requirements"><h3>✓ Eligibility</h3><ul class="req-list"><li>Married or in a committed relationship</li><li>Age 21 and above</li><li>Valid ID/Passport</li></ul></div><div class="checkbox-group"><input type="checkbox" name="agree" id="agree" required><label for="agree">I agree to terms</label></div><button type="submit" class="submit-btn">🌹 Register - ₹2,999</button></form><div class="info-box"><h3>📞 Help</h3><p><a href="https://wa.me/919983286999">WhatsApp</a></p></div></div></div></section><footer class="site-footer">
+
+/* ===== hero legibility + image polish (added) ===== */
+.hero{background:linear-gradient(135deg,rgba(8,5,12,.55),rgba(8,5,12,.28)),linear-gradient(135deg,var(--primary),var(--accent))!important}
+.hero h1{animation:none!important;text-shadow:0 2px 16px rgba(0,0,0,.6),0 1px 4px rgba(0,0,0,.65);color:#fff!important;letter-spacing:.5px}
+.hero p{text-shadow:0 1px 10px rgba(0,0,0,.6);opacity:1!important;color:#fff!important}
+.hero-stats .stat-number{text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero-stats .stat-label{text-shadow:0 1px 8px rgba(0,0,0,.55);opacity:1!important;color:#fff!important}
+.banner-wrap{max-width:760px;border:3px solid rgba(255,255,255,.92);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(212,175,55,.6)!important}
+.hero-portrait{width:210px!important;height:210px!important;box-shadow:0 14px 40px rgba(0,0,0,.4),0 0 0 5px rgba(212,175,55,.95),0 0 0 11px rgba(255,255,255,.16)!important}
+@media(max-width:640px){.banner-wrap{max-width:100%}.hero-portrait{width:150px!important;height:150px!important}}
+</style></head><body><header><div class="container"><a href="index.html" class="logo"><img src="logo.gif"><span>Forever Star</span></a></div></header><section class="hero"><div class="container"><div class="banner-wrap"><img class="banner-img" src="banners/mrs-world.jpg" alt="Mrs World 2026 — registrations open" loading="eager" onerror="this.closest('.banner-wrap').style.display='none'"><span class="banner-shine"></span></div><h1>🌹 Mrs World 2026</h1><p>Elegance & Sophistication</p><div class="hero-stats"><div class="stat"><span class="stat-number">100+</span><span class="stat-label">Contestants</span></div><div class="stat"><span class="stat-number">50+</span><span class="stat-label">Countries</span></div><div class="stat"><span class="stat-number">∞</span><span class="stat-label">Grace</span></div></div></div></section><section class="form-section"><div class="container"><h2 class="section-title">✨ Register Now</h2><div class="form-container"><div class="form-header"><h2>Mrs World Registration</h2><p>Celebrate Elegance</p></div><form id="registrationForm" onsubmit="submitForm(event)"><h3 class="section-header">👤 Personal Details</h3><div class="form-row"><div class="form-group"><label>First Name <span class="required">*</span></label><input type="text" name="firstName" required></div><div class="form-group"><label>Last Name</label><input type="text" name="lastName"></div></div><div class="form-row"><div class="form-group"><label>Age</label><input type="number" name="age"></div><div class="form-group"><label>Height</label><input type="text" name="height"></div></div><h3 class="section-header">👨‍👩‍👧‍👦 Family Status</h3><div class="form-group"><label>Spouse Name</label><input type="text" name="spouse"></div><div class="form-group"><label>Children (if any)</label><input type="text" name="children" placeholder="Number and ages"></div><h3 class="section-header">📍 Location</h3><div class="form-row"><div class="form-group"><label>City</label><input type="text" name="city"></div><div class="form-group"><label>Country</label><input type="text" name="country"></div></div><h3 class="section-header">📱 Contact</h3><div class="form-row"><div class="form-group"><label>WhatsApp <span class="required">*</span></label><input type="tel" name="phone" maxlength="10" required></div><div class="form-group"><label>Email <span class="required">*</span></label><input type="email" name="email" required></div></div><div class="requirements"><h3>✓ Eligibility</h3><ul class="req-list"><li>Married or in a committed relationship</li><li>Age 21 and above</li><li>Valid ID/Passport</li></ul></div><div class="checkbox-group"><input type="checkbox" name="agree" id="agree" required><label for="agree">I agree to terms</label></div><button type="submit" class="submit-btn">🌹 Register - ₹2,999</button></form><div class="info-box"><h3>📞 Help</h3><p><a href="https://wa.me/919983286999">WhatsApp</a></p></div></div></div></section><footer class="site-footer">
   <div class="ft-wrap">
     <div class="ft-grid">
       <div class="ft-brand">
@@ -68,8 +95,7 @@
         </div>
       </div>
       <div>
-        <h4>Registration</h4>
-        <div class="ft-reglist">
+        <details class="ft-dropdown"><summary>Registration</summary><div class="ft-reglist">
         <a href="register-super-hero.html">Super Hero Award 2026</a>
         <a href="register-super-woman.html">Super Woman Award 2026</a>
         <a href="register-business.html">Business Awards 2026</a>
@@ -92,7 +118,7 @@
         <a href="register-bharat-national.html">Bharat National Awards 2026</a>
         <a href="register-forever-achievers.html">Forever Achievers 2026</a>
         <a href="register-nominate.html">Nominate Yourself 2026</a>
-        </div>
+        </div></details>
       </div>
       <div>
         <h4>Quick Links</h4>
