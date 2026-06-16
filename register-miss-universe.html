@@ -36,7 +36,7 @@ img{max-width:100%;display:block}
 @keyframes starGlow{starGlow_KEYFRAMES}
 @keyframes slideInGraceful{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cascadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes customGlow{0%,100%{text-shadow:0 0 15px var(--primary)30%}50%{text-shadow:0 0 30px var(--primary)80%}}
+@keyframes customGlow{0%,100%{text-shadow:0 2px 16px rgba(0,0,0,.6)}50%{text-shadow:0 2px 24px rgba(0,0,0,.7)}}
 @keyframes hoverLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 header{
@@ -419,13 +419,25 @@ footer a{color:var(--accent);font-weight:600}
 @media(max-width:880px){.site-footer .ft-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.site-footer .ft-grid{grid-template-columns:1fr;text-align:center}.site-footer .ft-social{justify-content:center}.site-footer .ft-brand img{margin-left:auto;margin-right:auto}}
 
-/* ===== hero portrait (added) ===== */
-.hero-portrait{width:180px;height:180px;margin:0 auto 1.2rem;border-radius:50%;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.32),0 0 0 4px rgba(212,175,55,.9),0 0 0 9px rgba(255,255,255,.14);animation:portIn .9s cubic-bezier(.2,.7,.2,1) both}
-.hero-portrait img{width:100%;height:100%;object-fit:cover;display:block;animation:portKen 20s ease-in-out infinite alternate}
-@keyframes portIn{from{opacity:0;transform:translateY(18px) scale(.85)}to{opacity:1;transform:none}}
-@keyframes portKen{from{transform:scale(1)}to{transform:scale(1.08)}}
-@media(prefers-reduced-motion:reduce){.hero-portrait img{animation:none}}
-@media(max-width:640px){.hero-portrait{width:140px;height:140px}}
+/* ===== hero legibility + image polish (added) ===== */
+.hero{background:linear-gradient(135deg,rgba(8,5,12,.55),rgba(8,5,12,.28)),linear-gradient(135deg,var(--primary),var(--accent))!important}
+.hero h1{animation:none!important;text-shadow:0 2px 16px rgba(0,0,0,.6),0 1px 4px rgba(0,0,0,.65);color:#fff!important;letter-spacing:.5px}
+.hero p{text-shadow:0 1px 10px rgba(0,0,0,.6);opacity:1!important;color:#fff!important}
+.hero-stats .stat-number{text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero-stats .stat-label{text-shadow:0 1px 8px rgba(0,0,0,.55);opacity:1!important;color:#fff!important}
+.banner-wrap{max-width:760px;border:3px solid rgba(255,255,255,.92);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(212,175,55,.6)!important}
+
+@media(max-width:640px){.banner-wrap{max-width:100%}}
+/* ===== miss universe poster (added) ===== */
+.poster-wrap{position:relative;width:100%;max-width:840px;margin:0 auto 1.4rem;border-radius:18px;overflow:hidden;box-shadow:0 26px 64px rgba(0,0,0,.55),0 0 0 3px rgba(212,175,55,.7);animation:posterIn 1s cubic-bezier(.2,.7,.2,1) both;line-height:0}
+.poster-wrap svg{width:100%;height:auto;display:block}
+.poster-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-130%) skewX(-12deg);animation:posterShine 3s ease 1s 1}
+.poster-wrap .tw{animation:twinkle 3.5s ease-in-out infinite}
+@keyframes posterIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes posterShine{to{transform:translateX(130%) skewX(-12deg)}}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.poster-shine{display:none}.poster-wrap .tw{animation:none}}
+@media(max-width:640px){.poster-wrap{border-radius:12px;max-width:100%}}
 </style>
 </head>
 <body>
@@ -450,7 +462,40 @@ footer a{color:var(--accent);font-weight:600}
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-portrait"><img src="data:image/jpeg;base64,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" alt="Miss Universe India contestant" loading="eager"></div>
+      <div class="poster-wrap"><svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forever Miss Universe 2026 — Registrations Open, audition from every city of India">
+<defs>
+<radialGradient id="neb" cx="50%" cy="38%" r="75%">
+<stop offset="0%" stop-color="#33215f"/><stop offset="50%" stop-color="#0c1030"/><stop offset="100%" stop-color="#05060f"/>
+</radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FCE7AC"/><stop offset="45%" stop-color="#E9C46A"/><stop offset="100%" stop-color="#B07F12"/>
+</linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#E9C46A" stop-opacity=".35"/><stop offset="100%" stop-color="#E9C46A" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="1200" height="620" fill="url(#neb)"/>
+<ellipse cx="600" cy="300" rx="520" ry="220" fill="url(#glow)"/>
+<g fill="#fff">
+<circle cx="60" cy="70" r="2.4" opacity=".6" class="tw"/><circle cx="150" cy="44" r="1.6" opacity=".4"/><circle cx="240" cy="92" r="2.8" opacity=".8" class="tw"/><circle cx="320" cy="52" r="1.8" opacity=".5"/><circle cx="400" cy="34" r="2.2" opacity=".7" class="tw"/><circle cx="520" cy="40" r="1.6" opacity=".5"/><circle cx="660" cy="36" r="2" opacity=".6"/><circle cx="780" cy="42" r="1.8" opacity=".5" class="tw"/><circle cx="900" cy="64" r="2.6" opacity=".7"/><circle cx="980" cy="44" r="1.6" opacity=".5"/><circle cx="1060" cy="92" r="2.8" opacity=".8" class="tw"/><circle cx="1140" cy="56" r="2" opacity=".6"/><circle cx="1165" cy="130" r="1.6" opacity=".4"/><circle cx="70" cy="210" r="2" opacity=".5" class="tw"/><circle cx="44" cy="330" r="2.4" opacity=".6"/><circle cx="120" cy="430" r="1.8" opacity=".4"/><circle cx="1085" cy="300" r="2" opacity=".5"/><circle cx="1150" cy="430" r="2.6" opacity=".6" class="tw"/><circle cx="1020" cy="490" r="1.8" opacity=".4"/><circle cx="210" cy="510" r="2" opacity=".5"/><circle cx="70" cy="480" r="2.4" opacity=".6" class="tw"/><circle cx="450" cy="486" r="1.6" opacity=".4"/><circle cx="760" cy="498" r="2" opacity=".5"/></g>
+<g fill="url(#gold)">
+<path d="M540 132 L549 82 L576 112 L600 68 L624 112 L651 82 L660 132 Z"/>
+<rect x="538" y="132" width="124" height="15" rx="4"/>
+</g>
+<circle cx="549" cy="80" r="6" fill="#fff"/><circle cx="600" cy="66" r="7" fill="#fff"/><circle cx="651" cy="80" r="6" fill="#fff"/>
+<circle cx="572" cy="121" r="4" fill="#7E0B30"/><circle cx="600" cy="119" r="4.5" fill="#7E0B30"/><circle cx="628" cy="121" r="4" fill="#7E0B30"/>
+<text x="600" y="212" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="30" letter-spacing="16" fill="#E9C46A" font-weight="600">FOREVER</text>
+<text x="600" y="305" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="92" letter-spacing="2" fill="url(#gold)" font-weight="700">MISS UNIVERSE</text>
+<text x="600" y="372" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="46" letter-spacing="14" fill="#ffffff">2026</text>
+<g stroke="url(#gold)" stroke-width="2"><line x1="420" y1="402" x2="585" y2="402"/><line x1="615" y1="402" x2="780" y2="402"/></g>
+<path d="M600 390 L605 400 L600 410 L595 400 Z" fill="#E9C46A"/>
+<path d="M250 300 l4 -14 4 14 14 4 -14 4 -4 14 -4 -14 -14 -4 z" fill="#E9C46A" opacity=".8"/>
+<path d="M950 330 l3.5 -12 3.5 12 12 3.5 -12 3.5 -3.5 12 -3.5 -12 -12 -3.5 z" fill="#E9C46A" opacity=".7"/>
+<rect x="0" y="506" width="1200" height="114" fill="#7E0B30" opacity=".6"/>
+<rect x="0" y="506" width="1200" height="3" fill="url(#gold)"/>
+<text x="600" y="556" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="32" letter-spacing="5" fill="#ffffff" font-weight="700">REGISTRATIONS OPEN</text>
+<text x="600" y="592" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="20" letter-spacing="5" fill="#FCE7AC">AUDITION FROM EVERY CITY OF INDIA</text>
+</svg><span class="poster-shine"></span></div>
       <h1>✨ Miss Universe 2026</h1>
       <p>Fill in the form below to begin your registration.</p>
       <div class="hero-stats">
