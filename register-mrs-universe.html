@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miss India 2026 2026</title>
+<title>Mrs Universe by Forever Star India 2026 Registration | Forever Star India</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -32,11 +32,11 @@ img{max-width:100%;display:block}
 .container{width:min(1100px,94%);margin:0 auto}
 
 /* CUSTOM ANIMATIONS - UNIQUE PER CATEGORY */
-@keyframes diamondShimmer{diamondShimmer_KEYFRAMES}
+@keyframes diamondShimmer{0%,100%{filter:brightness(1) drop-shadow(0 0 0 rgba(212,175,55,0))}50%{filter:brightness(1.12) drop-shadow(0 0 6px rgba(212,175,55,.5))}}
 @keyframes shimmerFlow{shimmerFlow_KEYFRAMES}
 @keyframes slideInGraceful{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
 @keyframes cascadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes customGlow{0%,100%{text-shadow:0 0 15px var(--primary)30%}50%{text-shadow:0 0 30px var(--primary)80%}}
+@keyframes customGlow{0%,100%{text-shadow:0 2px 16px rgba(0,0,0,.6)}50%{text-shadow:0 2px 24px rgba(0,0,0,.7)}}
 @keyframes hoverLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 header{
@@ -394,6 +394,14 @@ footer a{color:var(--accent);font-weight:600}
 
 
 /* ===== FSIA site footer v2 ===== */
+.site-footer .ft-dropdown{margin:0}
+.site-footer .ft-dropdown summary{font-family:'Playfair Display',serif;color:#A6093D;font-size:1.04rem;margin-bottom:1rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:.5rem}
+.site-footer .ft-dropdown summary::-webkit-details-marker{display:none}
+.site-footer .ft-dropdown summary::after{content:'\25BE';margin-left:auto;color:#D4AF37;transition:transform .25s}
+.site-footer .ft-dropdown[open] summary::after{transform:rotate(180deg)}
+.site-footer .ft-dropdown .ft-reglist{animation:ftReg .25s ease}
+@keyframes ftReg{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
 .site-footer{background:#fff;border-top:3px solid #D4AF37;padding:3rem 0 1.4rem;margin-top:4rem;font-family:'Poppins',sans-serif}
 .site-footer .ft-wrap{width:min(1140px,92%);margin:0 auto}
 .site-footer .ft-grid{display:grid;grid-template-columns:1.4fr 1.1fr 1fr 1.1fr;gap:2rem;margin-bottom:2rem}
@@ -411,7 +419,64 @@ footer a{color:var(--accent);font-weight:600}
 @media(max-width:880px){.site-footer .ft-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.site-footer .ft-grid{grid-template-columns:1fr;text-align:center}.site-footer .ft-social{justify-content:center}.site-footer .ft-brand img{margin-left:auto;margin-right:auto}}
 
+
+/* ===== hero legibility + image polish (added) ===== */
+.hero{background:linear-gradient(135deg,rgba(8,5,12,.55),rgba(8,5,12,.28)),linear-gradient(135deg,var(--primary),var(--accent))!important}
+.hero h1{animation:none!important;text-shadow:0 2px 16px rgba(0,0,0,.6),0 1px 4px rgba(0,0,0,.65);color:#fff!important;letter-spacing:.5px}
+.hero p{text-shadow:0 1px 10px rgba(0,0,0,.6);opacity:1!important;color:#fff!important}
+.hero-stats .stat-number{text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.hero-stats .stat-label{text-shadow:0 1px 8px rgba(0,0,0,.55);opacity:1!important;color:#fff!important}
+.banner-wrap{max-width:760px;border:3px solid rgba(255,255,255,.92);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(212,175,55,.6)!important}
+.hero-portrait{width:210px!important;height:210px!important;box-shadow:0 14px 40px rgba(0,0,0,.4),0 0 0 5px rgba(212,175,55,.95),0 0 0 11px rgba(255,255,255,.16)!important}
+@media(max-width:640px){.banner-wrap{max-width:100%}.hero-portrait{width:150px!important;height:150px!important}}
+/* ===== mrs universe poster (added) ===== */
+.poster-wrap{position:relative;width:100%;max-width:840px;margin:0 auto 1.4rem;border-radius:18px;overflow:hidden;box-shadow:0 26px 64px rgba(0,0,0,.55),0 0 0 3px rgba(212,175,55,.7);animation:posterIn 1s cubic-bezier(.2,.7,.2,1) both;line-height:0}
+.poster-wrap svg{width:100%;height:auto;display:block}
+.poster-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);transform:translateX(-130%) skewX(-12deg);animation:posterShine 3s ease 1s 1}
+.poster-wrap .tw{animation:twinkle 3.5s ease-in-out infinite}
+@keyframes posterIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes posterShine{to{transform:translateX(130%) skewX(-12deg)}}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.poster-shine{display:none}.poster-wrap .tw{animation:none}}
+@media(max-width:640px){.poster-wrap{border-radius:12px;max-width:100%}}
+
+/* ===== form design upgrade v2 (added) ===== */
+.form-container{border:1px solid rgba(166,9,61,.1)!important;box-shadow:0 24px 60px rgba(166,9,61,.13),0 2px 10px rgba(0,0,0,.04)!important;padding:2.6rem 2.4rem 2.8rem!important;border-radius:20px!important;animation:formRise .6s ease both!important}
+.form-container::before{animation:none!important}
+.form-header{border-bottom:1px solid rgba(166,9,61,.12)!important;padding-bottom:1.3rem!important;margin-bottom:2rem!important}
+.form-header h2{font-family:'Playfair Display',Georgia,serif!important;font-size:1.75rem!important;color:var(--primary)!important;font-weight:700!important}
+.form-header p{color:#7A5E63!important;font-size:.95rem!important;margin-top:.35rem!important}
+.section-header{border-bottom:1px solid rgba(212,175,55,.4)!important;font-size:1.05rem!important;padding-bottom:.55rem!important;margin:2.2rem 0 1.3rem!important;animation:none!important;letter-spacing:.2px!important}
+.form-group{animation:none!important;margin-bottom:1.4rem!important}
+.form-group label{color:#3A2226!important;font-weight:600!important;font-size:.9rem!important;margin-bottom:.5rem!important;letter-spacing:0!important}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid #e6ddd9!important;border-radius:10px!important;padding:.9rem 1rem!important;background:#fdfbfa!important;transition:border-color .2s,box-shadow .2s!important;box-shadow:none!important}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent)!important;background:#fff!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%,transparent)!important;transform:none!important}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#b9aeb0!important}
+.form-group select{-webkit-appearance:none!important;appearance:none!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A5E63' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 1rem center!important;padding-right:2.6rem!important}
+.required{color:var(--accent)!important}
+.submit-btn{text-transform:none!important;letter-spacing:.3px!important;border-radius:12px!important;padding:1.15rem!important;margin-top:1.8rem!important;box-shadow:0 10px 28px rgba(166,9,61,.28)!important;animation:none!important}
+.submit-btn::before{animation:none!important;left:-150%!important;transition:left .6s ease!important}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(166,9,61,.36)!important}
+.submit-btn:hover::before{left:150%!important}
+.checkbox-group{background:rgba(212,175,55,.08)!important;border-left:3px solid var(--accent)!important;border-radius:10px!important;align-items:flex-start!important;padding:1.1rem 1.2rem!important;margin-top:1.6rem!important}
+.checkbox-group label{color:#3A2226!important;font-weight:500!important}
+@keyframes formRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media(max-width:640px){.form-container{padding:1.5rem 1.2rem 1.8rem!important}.form-header h2{font-size:1.45rem!important}}
 </style>
+<meta name="description" content="Register for Mrs Universe by Forever Star India 2026 with Forever Star India (FSIA). India's biggest beauty pageant platform. Apply online — auditions & nominations open from every city of India.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.fsia.in/register-mrs-universe.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Forever Star India">
+<meta property="og:title" content="Mrs Universe by Forever Star India 2026 Registration | Forever Star India">
+<meta property="og:description" content="Register for Mrs Universe by Forever Star India 2026 with Forever Star India (FSIA). India's biggest beauty pageant platform. Apply online — auditions & nominations open from every city of India.">
+<meta property="og:url" content="https://www.fsia.in/register-mrs-universe.html">
+<meta property="og:image" content="https://www.fsia.in/uploads/718Step-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mrs Universe by Forever Star India 2026 Registration | Forever Star India">
+<meta name="twitter:description" content="Register for Mrs Universe by Forever Star India 2026 with Forever Star India (FSIA). India's biggest beauty pageant platform. Apply online — auditions & nominations open from every city of India.">
+<meta name="twitter:image" content="https://www.fsia.in/uploads/718Step-1.webp">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
 </head>
 <body>
 
@@ -435,7 +500,43 @@ footer a{color:var(--accent);font-weight:600}
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-emblem"><svg viewBox="0 0 120 120" width="118" height="118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="60" cy="60" r="10" fill="#fff"/><ellipse cx="60" cy="60" rx="46" ry="17" stroke="#fff" stroke-width="4" fill="none"/><ellipse cx="60" cy="60" rx="46" ry="17" stroke="#fff" stroke-width="4" fill="none" transform="rotate(60 60 60)"/><ellipse cx="60" cy="60" rx="46" ry="17" stroke="#fff" stroke-width="4" fill="none" transform="rotate(120 60 60)"/></svg></div>
+      <div class="poster-wrap"><svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forever Mrs Universe 2026 — Registrations Open for married women, audition from every city of India">
+<defs>
+<radialGradient id="neb2" cx="50%" cy="38%" r="78%">
+<stop offset="0%" stop-color="#5a1f86"/><stop offset="48%" stop-color="#27103f"/><stop offset="100%" stop-color="#0c0518"/>
+</radialGradient>
+<linearGradient id="gold2" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#FCE7AC"/><stop offset="45%" stop-color="#E9C46A"/><stop offset="100%" stop-color="#B07F12"/>
+</linearGradient>
+<linearGradient id="silver2" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#E6E2EF"/><stop offset="100%" stop-color="#AfA7C0"/>
+</linearGradient>
+<radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+<stop offset="0%" stop-color="#C9A6E8" stop-opacity=".35"/><stop offset="100%" stop-color="#C9A6E8" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="1200" height="620" fill="url(#neb2)"/>
+<ellipse cx="600" cy="300" rx="540" ry="230" fill="url(#glow2)"/>
+<g fill="#fff">
+<circle cx="60" cy="70" r="2.4" opacity=".6" class="tw"/><circle cx="150" cy="44" r="1.6" opacity=".4"/><circle cx="240" cy="92" r="2.8" opacity=".8" class="tw"/><circle cx="320" cy="52" r="1.8" opacity=".5"/><circle cx="400" cy="34" r="2.2" opacity=".7" class="tw"/><circle cx="520" cy="40" r="1.6" opacity=".5"/><circle cx="660" cy="36" r="2" opacity=".6"/><circle cx="780" cy="42" r="1.8" opacity=".5" class="tw"/><circle cx="900" cy="64" r="2.6" opacity=".7"/><circle cx="980" cy="44" r="1.6" opacity=".5"/><circle cx="1060" cy="92" r="2.8" opacity=".8" class="tw"/><circle cx="1140" cy="56" r="2" opacity=".6"/><circle cx="1165" cy="130" r="1.6" opacity=".4"/><circle cx="70" cy="210" r="2" opacity=".5" class="tw"/><circle cx="44" cy="330" r="2.4" opacity=".6"/><circle cx="120" cy="430" r="1.8" opacity=".4"/><circle cx="1085" cy="300" r="2" opacity=".5"/><circle cx="1150" cy="430" r="2.6" opacity=".6" class="tw"/><circle cx="1020" cy="490" r="1.8" opacity=".4"/><circle cx="210" cy="510" r="2" opacity=".5"/><circle cx="70" cy="480" r="2.4" opacity=".6" class="tw"/><circle cx="450" cy="486" r="1.6" opacity=".4"/><circle cx="760" cy="498" r="2" opacity=".5"/></g>
+<g fill="url(#gold2)">
+<path d="M540 132 L549 82 L576 112 L600 68 L624 112 L651 82 L660 132 Z"/>
+<rect x="538" y="132" width="124" height="15" rx="4"/>
+</g>
+<circle cx="549" cy="80" r="6" fill="#fff"/><circle cx="600" cy="66" r="7" fill="#fff"/><circle cx="651" cy="80" r="6" fill="#fff"/>
+<circle cx="572" cy="121" r="4" fill="#5a1f86"/><circle cx="600" cy="119" r="4.5" fill="#5a1f86"/><circle cx="628" cy="121" r="4" fill="#5a1f86"/>
+<text x="600" y="212" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="30" letter-spacing="16" fill="#E9C46A" font-weight="600">FOREVER</text>
+<text x="600" y="305" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="92" letter-spacing="2" fill="url(#gold2)" font-weight="700">MRS UNIVERSE</text>
+<text x="600" y="372" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="46" letter-spacing="14" fill="url(#silver2)">2026</text>
+<g stroke="url(#gold2)" stroke-width="2"><line x1="420" y1="402" x2="585" y2="402"/><line x1="615" y1="402" x2="780" y2="402"/></g>
+<path d="M600 390 L605 400 L600 410 L595 400 Z" fill="#E9C46A"/>
+<path d="M250 300 l4 -14 4 14 14 4 -14 4 -4 14 -4 -14 -14 -4 z" fill="#C9A6E8" opacity=".8"/>
+<path d="M950 330 l3.5 -12 3.5 12 12 3.5 -12 3.5 -3.5 12 -3.5 -12 -12 -3.5 z" fill="#E9C46A" opacity=".7"/>
+<rect x="0" y="506" width="1200" height="114" fill="#3a1860" opacity=".7"/>
+<rect x="0" y="506" width="1200" height="3" fill="url(#gold2)"/>
+<text x="600" y="556" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="32" letter-spacing="5" fill="#ffffff" font-weight="700">REGISTRATIONS OPEN</text>
+<text x="600" y="592" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="19" letter-spacing="4" fill="#E9C46A">FOR MARRIED WOMEN — AUDITION FROM EVERY CITY OF INDIA</text>
+</svg><span class="poster-shine"></span></div>
       <h1>🌌 Mrs Universe 2026</h1>
       <p>Fill in the form below to begin your registration.</p>
       <div class="hero-stats">
@@ -581,8 +682,7 @@ footer a{color:var(--accent);font-weight:600}
         </div>
       </div>
       <div>
-        <h4>Registration</h4>
-        <div class="ft-reglist">
+        <details class="ft-dropdown"><summary>Registration</summary><div class="ft-reglist">
         <a href="register-super-hero.html">Super Hero Award 2026</a>
         <a href="register-super-woman.html">Super Woman Award 2026</a>
         <a href="register-business.html">Business Awards 2026</a>
@@ -605,7 +705,7 @@ footer a{color:var(--accent);font-weight:600}
         <a href="register-bharat-national.html">Bharat National Awards 2026</a>
         <a href="register-forever-achievers.html">Forever Achievers 2026</a>
         <a href="register-nominate.html">Nominate Yourself 2026</a>
-        </div>
+        </div></details>
       </div>
       <div>
         <h4>Quick Links</h4>
