@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /payment.html
+Disallow: /payment-success.html
+Disallow: /registration-success.html
+
+Sitemap: https://www.fsia.in/sitemap.xml
