@@ -461,6 +461,44 @@ footer a{color:var(--accent);font-weight:600}
 .checkbox-group label{color:#3A2226!important;font-weight:500!important}
 @keyframes formRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @media(max-width:640px){.form-container{padding:1.5rem 1.2rem 1.8rem!important}.form-header h2{font-size:1.45rem!important}}
+
+/* ===== site header v2 ===== */
+.site-header{background:#fff;border-bottom:2px solid var(--primary);padding:.7rem 0;position:sticky;top:0;z-index:60;box-shadow:0 2px 18px rgba(0,0,0,.08)}
+.site-header .container{width:min(1140px,92%);margin:0 auto}
+.header-nav{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo img{width:46px;height:46px;border-radius:50%;object-fit:contain;background:#fff;padding:3px;box-shadow:0 3px 10px rgba(166,9,61,.2)}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-text strong{font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:var(--primary);font-weight:700}
+.logo-text span{font-size:.65rem;color:#B8962E;font-weight:600;letter-spacing:.18em}
+.header-socials{display:flex;gap:.4rem}
+.header-socials a{width:34px;height:34px;border-radius:50%;border:1.5px solid #e5e0e0;display:flex;align-items:center;justify-content:center;color:#7A5E63;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .2s}
+.header-socials a:hover{background:var(--primary);border-color:var(--primary);color:#fff}
+.header-right{display:flex;align-items:center;gap:.8rem}
+.site-header .hamburger{display:none;background:none;border:none;cursor:pointer;padding:.3rem;color:var(--primary)}
+.site-header .nav-links{display:flex;gap:1.8rem;align-items:center}
+.site-header .nav-links a{color:#3A2226;font-weight:500;font-size:.88rem;text-decoration:none}
+.site-header .nav-links a:hover{color:var(--primary)}
+.header-register{background:linear-gradient(120deg,var(--primary),#7E0B30);color:#fff!important;padding:.5rem 1.1rem;border-radius:99px;font-weight:600!important;font-size:.82rem!important;white-space:nowrap;box-shadow:0 4px 12px rgba(166,9,61,.3)}
+@media(max-width:900px){
+  .site-header .nav-links{display:none}
+  .site-header .hamburger{display:block}
+  .header-socials{display:none}
+}
+@media(max-width:480px){
+  .logo-text strong{font-size:.9rem}
+}
+
+.site-header .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(166,9,61,.12);padding:1rem 5%;gap:0;box-shadow:0 12px 24px rgba(0,0,0,.12);z-index:100}
+.site-header .nav-links.open a{padding:.85rem 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:.95rem}
+
+
+/* ===== Registration Form title fix ===== */
+.section-title{font-family:'Playfair Display',Georgia,serif!important;text-align:center!important;font-size:clamp(1.6rem,5vw,2.2rem)!important;color:var(--primary)!important;font-weight:700!important;letter-spacing:.5px!important;margin-bottom:2.4rem!important;animation:none!important;position:relative;display:block}
+.section-title::after{content:'';display:block;width:72px;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px;margin:.6rem auto 0}
+
+.section-header{color:var(--primary)!important;font-size:1.05rem!important;font-weight:600!important;border-bottom:1.5px solid rgba(212,175,55,.5)!important;padding-bottom:.55rem!important;margin:2.2rem 0 1.3rem!important;animation:none!important;letter-spacing:.2px!important;font-family:'Poppins',sans-serif!important}
+
 </style>
 <meta name="description" content="Register for Business Awards 2026 with Forever Star India (FSIA). Honouring achievers across 70+ categories. Apply online — auditions & nominations open from every city of India.">
 <meta name="robots" content="index,follow">
@@ -479,19 +517,34 @@ footer a{color:var(--accent);font-weight:600}
 </head>
 <body>
 
-<header>
+<header class="site-header">
   <div class="container">
     <div class="header-nav">
       <a href="index.html" class="logo">
-        <img src="logo.gif" alt="FSIA">
-        <span>Forever Star India</span>
+        <img src="logo.gif" alt="Forever Star India" onerror="this.style.display='none'">
+        <div class="logo-text">
+          <strong>FOREVER</strong>
+          <span>STAR INDIA</span>
+        </div>
       </a>
-      <nav class="nav-links">
+      <div class="header-socials">
+        <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+        <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      </div>
+      <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
+        <a href="winners.html">Winners</a>
       </nav>
+      <div class="header-right">
+        <a href="index.html#register" class="header-register">Register</a>
+        <button class="hamburger" onclick="this.closest('.site-header').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </header>
