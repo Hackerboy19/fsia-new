@@ -577,42 +577,85 @@ footer a{color:var(--accent);font-weight:600}
   .crown-pulse{width:48px;height:48px}
 }
 
-/* ===== site header v2 ===== */
-.site-header{background:#fff;border-bottom:2px solid var(--primary);padding:.7rem 0;position:sticky;top:0;z-index:60;box-shadow:0 2px 18px rgba(0,0,0,.08)}
-.site-header .container{width:min(1140px,92%);margin:0 auto}
-.header-nav{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
-.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
-.logo img{width:46px;height:46px;border-radius:50%;object-fit:contain;background:#fff;padding:3px;box-shadow:0 3px 10px rgba(166,9,61,.2)}
-.logo-text{display:flex;flex-direction:column;line-height:1.1}
-.logo-text strong{font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:var(--primary);font-weight:700}
-.logo-text span{font-size:.65rem;color:#B8962E;font-weight:600;letter-spacing:.18em}
-.header-socials{display:flex;gap:.4rem}
-.header-socials a{width:34px;height:34px;border-radius:50%;border:1.5px solid #e5e0e0;display:flex;align-items:center;justify-content:center;color:#7A5E63;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .2s}
-.header-socials a:hover{background:var(--primary);border-color:var(--primary);color:#fff}
-.header-right{display:flex;align-items:center;gap:.8rem}
-.site-header .hamburger{display:none;background:none;border:none;cursor:pointer;padding:.3rem;color:var(--primary)}
-.site-header .nav-links{display:flex;gap:1.8rem;align-items:center}
-.site-header .nav-links a{color:#3A2226;font-weight:500;font-size:.88rem;text-decoration:none}
-.site-header .nav-links a:hover{color:var(--primary)}
-.header-register{background:linear-gradient(120deg,var(--primary),#7E0B30);color:#fff!important;padding:.5rem 1.1rem;border-radius:99px;font-weight:600!important;font-size:.82rem!important;white-space:nowrap;box-shadow:0 4px 12px rgba(166,9,61,.3)}
-@media(max-width:900px){
-  .site-header .nav-links{display:none}
-  .site-header .hamburger{display:block}
-  .header-socials{display:none}
-}
-@media(max-width:480px){
-  .logo-text strong{font-size:.9rem}
-}
-
-.site-header .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid rgba(166,9,61,.12);padding:1rem 5%;gap:0;box-shadow:0 12px 24px rgba(0,0,0,.12);z-index:100}
-.site-header .nav-links.open a{padding:.85rem 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:.95rem}
-
-
 /* ===== Registration Form title fix ===== */
 .section-title{font-family:'Playfair Display',Georgia,serif!important;text-align:center!important;font-size:clamp(1.6rem,5vw,2.2rem)!important;color:var(--primary)!important;font-weight:700!important;letter-spacing:.5px!important;margin-bottom:2.4rem!important;animation:none!important;position:relative;display:block}
 .section-title::after{content:'';display:block;width:72px;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px;margin:.6rem auto 0}
 
 .section-header{color:var(--primary)!important;font-size:1.05rem!important;font-weight:600!important;border-bottom:1.5px solid rgba(212,175,55,.5)!important;padding-bottom:.55rem!important;margin:2.2rem 0 1.3rem!important;animation:none!important;letter-spacing:.2px!important;font-family:'Poppins',sans-serif!important}
+
+
+/* ===== FSIA live-site header v3 ===== */
+.fsia-announce{background:#1a0a0f;color:#fff;padding:.55rem 1rem;text-align:center;font-size:.76rem;font-weight:600;letter-spacing:.02em;line-height:1.4}
+.fsia-announce a{color:#D4AF37;text-decoration:none}
+.fsia-announce a:hover{text-decoration:underline}
+
+.fsia-topbar{background:#f8f9fa;border-bottom:1px solid #e8e3e3;padding:.6rem 0}
+.fsia-topbar .tb-wrap{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.fsia-topbar .tb-contact{display:flex;gap:1.4rem}
+.fsia-topbar .tb-contact a{display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;color:#3A2226;text-decoration:none}
+.fsia-topbar .tb-contact a:hover{color:#A6093D}
+.fsia-topbar .tb-contact .ic{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem}
+.fsia-topbar .tb-contact .ic-phone{background:#A6093D;color:#fff}
+.fsia-topbar .tb-contact .ic-mail{background:#D4AF37;color:#fff}
+.fsia-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex-shrink:0}
+.fsia-logo img{width:54px;height:54px;border-radius:50%;object-fit:contain;background:#fff;padding:3px;box-shadow:0 4px 12px rgba(166,9,61,.2)}
+.fsia-logo .lg-text strong{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:#A6093D;font-weight:700;display:block;line-height:1.1}
+.fsia-logo .lg-text span{font-size:.62rem;color:#B8962E;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.fsia-topbar .tb-socials{display:flex;gap:.45rem}
+.fsia-topbar .tb-socials a{width:34px;height:34px;border-radius:50%;border:1.5px solid #ddd;display:flex;align-items:center;justify-content:center;color:#7A5E63;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .2s}
+.fsia-topbar .tb-socials a:hover{background:#A6093D;border-color:#A6093D;color:#fff}
+/* hide topbar on mobile */
+@media(max-width:860px){.fsia-topbar .tb-contact,.fsia-topbar .tb-socials{display:none}}
+
+.fsia-nav-wrap{background:#fff;border-bottom:2px solid #A6093D;position:sticky;top:0;z-index:70;box-shadow:0 2px 16px rgba(0,0,0,.08)}
+.fsia-nav{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;gap:.2rem;height:52px}
+.fsia-nav-logo{display:none}
+.fsia-nav a,.fsia-nav button.nav-item{color:#3A2226;font-weight:600;font-size:.84rem;padding:.3rem .7rem;border:none;background:none;cursor:pointer;text-decoration:none;white-space:nowrap;position:relative;font-family:'Poppins',sans-serif;transition:color .2s}
+.fsia-nav a:hover,.fsia-nav button.nav-item:hover{color:#A6093D}
+.fsia-nav a::after,.fsia-nav button.nav-item::after{content:'';position:absolute;bottom:-18px;left:0;right:0;height:2px;background:#A6093D;transform:scaleX(0);transition:transform .2s}
+.fsia-nav a:hover::after,.fsia-nav button.nav-item:hover::after{transform:scaleX(1)}
+/* Registration dropdown */
+.fsia-reg{position:relative}
+.fsia-reg-btn{display:flex;align-items:center;gap:.3rem}
+.fsia-reg-btn svg{transition:transform .25s}
+.fsia-reg:hover .fsia-reg-btn svg,.fsia-reg:focus-within .fsia-reg-btn svg{transform:rotate(180deg)}
+.fsia-reg-menu{display:none;position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.18);padding:1rem;width:620px;display:none;grid-template-columns:1fr 1fr;gap:.2rem;z-index:100}
+.fsia-reg:hover .fsia-reg-menu,.fsia-reg:focus-within .fsia-reg-menu{display:grid}
+.fsia-reg-menu a{color:#3A2226;font-size:.8rem;font-weight:500;padding:.55rem .8rem;border-radius:8px;text-decoration:none;display:block;transition:all .15s}
+.fsia-reg-menu a:hover{background:#FEF0F4;color:#A6093D}
+.fsia-reg-menu .rm-head{grid-column:1/-1;font-size:.68rem;font-weight:700;color:#B8962E;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem .6rem;border-bottom:1px solid rgba(212,175,55,.3);margin-bottom:.2rem}
+/* CTA button */
+.fsia-cta-btn{margin-left:auto;background:linear-gradient(120deg,#A6093D,#7E0B30);color:#fff!important;padding:.52rem 1.2rem;border-radius:99px;font-size:.82rem;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(166,9,61,.32);transition:all .2s;flex-shrink:0}
+.fsia-cta-btn:hover{transform:translateY(-1px);box-shadow:0 7px 20px rgba(166,9,61,.4)}
+.fsia-cta-btn::after{display:none!important}
+/* Hamburger */
+.fsia-hamburger{display:none;background:none;border:none;cursor:pointer;color:#A6093D;margin-left:auto;padding:.3rem;flex-shrink:0}
+@media(max-width:900px){
+  .fsia-hamburger{display:block}
+  .fsia-nav-logo{display:flex}
+  .fsia-nav-links{display:none;position:absolute;top:52px;left:0;right:0;background:#fff;border-top:1px solid rgba(166,9,61,.12);padding:.8rem 5%;flex-direction:column;gap:0;box-shadow:0 16px 30px rgba(0,0,0,.12);max-height:80vh;overflow-y:auto}
+  .fsia-nav-links.open{display:flex}
+  .fsia-nav-links a,.fsia-nav-links button.nav-item{padding:.9rem 0;border-bottom:1px solid rgba(0,0,0,.06);text-align:left;font-size:.92rem;width:100%}
+  .fsia-reg-menu{position:static;transform:none;width:100%;border:none;box-shadow:none;border-radius:0;padding:.4rem 1rem;background:#fef9fb;grid-template-columns:1fr}
+  .fsia-reg:hover .fsia-reg-menu,.fsia-reg:focus-within .fsia-reg-menu{display:grid}
+  .fsia-cta-btn{display:none}
+}
+
+/* Search + quick-nav strip */
+.fsia-strip{background:#fff;border-bottom:1px solid #eee;padding:.6rem 0}
+.fsia-strip .st-wrap{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;gap:1rem}
+.fsia-search{position:relative;flex-shrink:0;width:min(240px,100%)}
+.fsia-search input{width:100%;padding:.5rem .9rem .5rem 2.2rem;border:1.5px solid #e0d9d9;border-radius:99px;font-size:.8rem;background:#f9f7f7;outline:none;font-family:inherit;transition:border .2s}
+.fsia-search input:focus{border-color:#D4AF37;background:#fff}
+.fsia-search svg{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:#9a8a8a;pointer-events:none}
+.fsia-quicknav{flex:1;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.fsia-quicknav::-webkit-scrollbar{display:none}
+.fsia-quicknav-inner{display:flex;gap:.5rem;white-space:nowrap;padding:.1rem 0}
+.fsia-quicknav-inner a{display:inline-flex;padding:.38rem .85rem;border-radius:99px;font-size:.74rem;font-weight:600;border:1.5px solid #e0d9d9;color:#3A2226;text-decoration:none;transition:all .18s;flex-shrink:0}
+.fsia-quicknav-inner a:hover,.fsia-quicknav-inner a.active{background:#A6093D;border-color:#A6093D;color:#fff}
+.fsia-quicknav-inner a.gold{border-color:#D4AF37;color:#B8962E}
+.fsia-quicknav-inner a.gold:hover{background:#D4AF37;color:#fff}
+@media(max-width:640px){.fsia-search{width:100%}.fsia-strip .st-wrap{flex-direction:column;align-items:stretch;gap:.7rem}.fsia-quicknav-inner a{font-size:.7rem;padding:.34rem .7rem}}
 
 </style>
 <meta name="description" content="Register for Miss Universe by Forever Star India 2026 with Forever Star India (FSIA). India's biggest beauty pageant platform. Apply online — auditions & nominations open from every city of India.">
@@ -632,37 +675,150 @@ footer a{color:var(--accent);font-weight:600}
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <div class="header-nav">
-      <a href="index.html" class="logo">
-        <img src="logo.gif" alt="Forever Star India" onerror="this.style.display='none'">
-        <div class="logo-text">
-          <strong>FOREVER</strong>
-          <span>STAR INDIA</span>
-        </div>
+<!-- ===== FSIA live-site header v3 ===== -->
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3674CM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- 1. ANNOUNCEMENT BAR -->
+<div class="fsia-announce">
+  Applications are Invited for <strong>Super Hero Award 2026</strong>, <strong>Super Woman Award 2026</strong>, and <strong>Business Award 2026</strong> from PAN India — Only 1 Entry per Category per City.
+  &nbsp;<a href="register-miss-india.html">Register Now →</a>
+</div>
+
+<!-- 2. TOP UTILITY BAR: contact | logo | socials -->
+<div class="fsia-topbar">
+  <div class="tb-wrap">
+    <div class="tb-contact">
+      <a href="tel:+919983286999">
+        <span class="ic ic-phone">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        +91-99832-86999
       </a>
-      <div class="header-socials">
-        <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
-        <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+      <a href="tel:+919983599666">
+        <span class="ic ic-phone">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        +91-99835-99666
+      </a>
+      <a href="mailto:starindiaaward@gmail.com">
+        <span class="ic ic-mail">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </span>
+        starindiaaward@gmail.com
+      </a>
+    </div>
+    <a href="index.html" class="fsia-logo">
+      <img src="logo.gif" alt="Forever Star India" onerror="this.style.display='none'">
+      <div class="lg-text">
+        <strong>FOREVER STAR INDIA</strong>
+        <span>Beauty Pageants &amp; Awards</span>
       </div>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="winners.html">Winners</a>
-      </nav>
-      <div class="header-right">
-        <a href="index.html#register" class="header-register">Register</a>
-        <button class="hamburger" onclick="this.closest('.site-header').querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-      </div>
+    </a>
+    <div class="tb-socials">
+      <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+      </a>
+      <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://wa.me/919983286999" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 32 32" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.83 1.47 5.5L4.9 27.2l6.84-1.79c1.61.88 3.43 1.34 5.28 1.34h.01c6.08 0 11.02-4.94 11.02-11.02C28.05 8.94 23.11 4 16.04 4zm0 20.2h-.01c-1.65 0-3.27-.44-4.68-1.28l-.34-.2-3.55.93.95-3.46-.22-.36a9.13 9.13 0 0 1-1.4-4.86c0-5.05 4.11-9.16 9.17-9.16 2.45 0 4.75.96 6.48 2.69a9.1 9.1 0 0 1 2.68 6.48c0 5.05-4.11 9.16-9.16 9.16zm5.03-6.86c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.74.35-.25.28-.96.94-.96 2.3 0 1.36.99 2.67 1.12 2.85.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z"/></svg>
+      </a>
     </div>
   </div>
-</header>
+</div>
+
+<!-- 3. MAIN NAV -->
+<nav class="fsia-nav-wrap" aria-label="Main navigation">
+  <div class="fsia-nav" id="fsiaNav">
+    <!-- Mobile: logo inside nav -->
+    <a href="index.html" class="fsia-logo fsia-nav-logo" style="flex-shrink:0;margin-right:.5rem">
+      <img src="logo.gif" alt="FSIA" style="width:38px;height:38px;border-radius:50%;object-fit:contain;padding:2px;background:#fff;box-shadow:0 2px 8px rgba(166,9,61,.2)" onerror="this.style.display='none'">
+      <div class="lg-text"><strong style="font-family:serif;font-size:.9rem;color:#A6093D">FOREVER STAR INDIA</strong></div>
+    </a>
+
+    <div class="fsia-nav-links" id="fsiaNavLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+
+      <!-- Registration mega-dropdown -->
+      <div class="fsia-reg" tabindex="0">
+        <button class="nav-item fsia-reg-btn" aria-haspopup="true" aria-expanded="false">
+          Registration
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="fsia-reg-menu" role="menu">
+          <div class="rm-head">All Events &amp; Awards 2026</div>
+          <a href="register-super-hero.html"     role="menuitem">⚡ Super Hero Award 2026</a>
+          <a href="register-super-woman.html"    role="menuitem">💪 Super Woman Award 2026</a>
+          <a href="register-business.html"       role="menuitem">📈 Business Awards 2026</a>
+          <a href="register-miss-india.html"     role="menuitem">👑 Forever Miss India 2026</a>
+          <a href="register-mrs-india.html"      role="menuitem">👑 Forever Mrs India 2026</a>
+          <a href="register-miss-teen.html"      role="menuitem">🎉 Forever Miss Teen India 2026</a>
+          <a href="register-miss-fsia-intl.html" role="menuitem">✨ Miss FSIA International 2026</a>
+          <a href="register-mrs-fsia-intl.html"  role="menuitem">✨ Mrs FSIA International 2026</a>
+          <a href="register-star-kids.html"      role="menuitem">🌟 Forever Star Kids 2026</a>
+          <a href="register-designer.html"       role="menuitem">👗 Forever Fashion Designers 2026</a>
+          <a href="register-makeup.html"         role="menuitem">💄 Forever Makeup Artist 2026</a>
+          <a href="register-partner.html"        role="menuitem">🤝 Channel Partner</a>
+          <a href="register-intl-award.html"     role="menuitem">🌐 International Award 2026</a>
+          <a href="register-miss-world.html"     role="menuitem">🌍 Miss World 2026</a>
+          <a href="register-mrs-world.html"      role="menuitem">🌹 Mrs World 2026</a>
+          <a href="register-miss-universe.html"  role="menuitem">🌌 Miss Universe 2026</a>
+          <a href="register-mrs-universe.html"   role="menuitem">🌌 Mrs Universe 2026</a>
+          <a href="register-bharat-couture.html" role="menuitem">👗 Bharat Couture Week 2026</a>
+          <a href="register-bharat-national.html" role="menuitem">🇮🇳 Bharat National Awards 2026</a>
+          <a href="register-intl-achievers.html" role="menuitem">🏅 International Achievers Award</a>
+          <a href="register-nominate.html"       role="menuitem">🏅 Nominate Yourself for Award</a>
+        </div>
+      </div>
+
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="our-team.html">Our Team</a>
+      <a href="news.html">News Coverages</a>
+      <a href="winners.html">Contestant</a>
+      <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Franchise</a>
+    </div>
+
+    <a href="register-miss-india.html" class="fsia-cta-btn">Apply Now</a>
+    <button class="fsia-hamburger" id="fsiaHamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- 4. SEARCH + QUICK-NAV STRIP -->
+<div class="fsia-strip">
+  <div class="st-wrap">
+    <div class="fsia-search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" placeholder="F-sia Search…" aria-label="Search Forever Star India">
+    </div>
+    <nav class="fsia-quicknav" aria-label="Quick navigation">
+      <div class="fsia-quicknav-inner">
+        <a href="https://www.fsia.in/best-achievers-in-india"        target="_blank" rel="noopener" class="active">Achievers</a>
+        <a href="https://www.fsia.in/all-india-pageant-contestant"   target="_blank" rel="noopener">Contestant</a>
+        <a href="https://www.fsia.in/top-awardee-in-india"          target="_blank" rel="noopener">Awardee</a>
+        <a href="https://www.fsia.in/model-gallery"                  target="_blank" rel="noopener">Gallery</a>
+        <a href="https://www.fsia.in/national-award"                 target="_blank" rel="noopener">National Award</a>
+        <a href="https://www.fsia.in/fashion-gallery"                target="_blank" rel="noopener">Fashion Gallery</a>
+        <a href="https://www.fsia.in/pageant-winner"                 target="_blank" rel="noopener" class="gold">Winners</a>
+        <a href="#"                                                   >Finalist</a>
+        <a href="https://www.fsia.in/achievers-gallery"              target="_blank" rel="noopener">Achievers Gallery</a>
+        <a href="https://www.fsia.in/international-award-gallery"    target="_blank" rel="noopener">International Award Gallery</a>
+        <a href="https://www.fsia.in/miss-india-fashion-designer"    target="_blank" rel="noopener">Miss India Fashion Designers</a>
+        <a href="https://www.fsia.in/miss-india-makeup-artist"       target="_blank" rel="noopener">Miss India Makeup Artists</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== end FSIA header v3 ===== -->
 
 <section class="hero">
   <div class="container">
@@ -899,6 +1055,30 @@ function submitForm(event){
   });
   window.location.href='registration-success.html?'+params.toString();
 }
+</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('fsiaHamburger');
+  var links=document.getElementById('fsiaNavLinks');
+  if(btn&&links){
+    btn.addEventListener('click',function(){
+      var open=links.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('#fsiaNav'))links.classList.remove('open');
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape')links.classList.remove('open');
+    });
+  }
+  // GTM
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T3674CM');
+})();
 </script>
 </body>
 </html>
