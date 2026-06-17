@@ -603,6 +603,103 @@ footer a{color:var(--accent);font-weight:600}
   .fsia-nav-links a.fsia-cta-btn { display:none!important; }
 }
 
+
+/* Hide entire topbar on mobile — nav bar has its own logo */
+@media(max-width:900px){
+  .fsia-topbar{ display:none!important; }
+  .fsia-announce{ font-size:.7rem!important; padding:.5rem .8rem!important; line-height:1.5!important; }
+  .fsia-strip .st-wrap{ flex-direction:column!important; gap:.55rem!important; }
+  .fsia-search{ width:100%!important; }
+  .fsia-search input{ width:100%!important; }
+}
+/* Fix hero on mobile — remove large padding that causes the colour gap */
+@media(max-width:640px){
+  .hero{ padding:24px 0 20px!important; animation:none!important; }
+  .hero-content{ padding:0!important; }
+  /* poster/crown wraps should not add extra vertical space */
+  .poster-wrap,.crown-scene,.banner-wrap{ margin-bottom:.6rem!important; }
+  /* section title spacing */
+  .section-title{ margin-top:1.2rem!important; margin-bottom:1.4rem!important; font-size:1.5rem!important; }
+}
+
+
+/* ===== MOBILE HEADER — matches live site ===== */
+@media(max-width:900px){
+
+  /* ── Announcement: compact ticker ── */
+  .fsia-announce{font-size:.72rem!important;padding:.45rem .7rem!important;line-height:1.4!important}
+
+  /* ── Hide the utility topbar entirely ── */
+  .fsia-topbar{display:none!important}
+
+  /* ── Nav bar: single row logo | socials | hamburger ── */
+  .fsia-nav-wrap{position:sticky!important;top:0!important;z-index:70!important;background:#fff!important;border-bottom:1px solid #eee!important;box-shadow:0 1px 8px rgba(0,0,0,.08)!important}
+  .fsia-nav{height:auto!important;padding:.55rem 4%!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.5rem!important}
+
+  /* Logo in nav — show on mobile */
+  .fsia-nav-logo{display:flex!important;align-items:center!important;gap:.5rem!important;text-decoration:none!important;flex-shrink:0!important}
+  .fsia-nav-logo img{width:40px!important;height:40px!important;border-radius:50%!important;object-fit:contain!important;padding:2px!important;background:#fff!important;box-shadow:0 2px 8px rgba(166,9,61,.18)!important}
+  .fsia-nav-logo .lg-text strong{font-family:'Playfair Display',Georgia,serif!important;font-size:.88rem!important;color:#A6093D!important;font-weight:700!important;display:block!important;line-height:1.1!important;white-space:nowrap!important}
+  .fsia-nav-logo .lg-text span{display:none!important}
+
+  /* Social icons inside nav on mobile — show FB/YT/IG as colored circles */
+  .fsia-nav-socials{display:flex!important;align-items:center!important;gap:.4rem!important;margin-left:auto!important}
+  .fsia-nav-socials a{width:34px!important;height:34px!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;text-decoration:none!important;flex-shrink:0!important}
+  .fsia-nav-socials .soc-fb{background:#1877F2!important;color:#fff!important}
+  .fsia-nav-socials .soc-yt{background:#FF0000!important;color:#fff!important}
+  .fsia-nav-socials .soc-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)!important;color:#fff!important}
+
+  /* Hamburger */
+  .fsia-hamburger{display:flex!important;align-items:center!important;justify-content:center!important;padding:.3rem!important;flex-shrink:0!important}
+
+  /* Hide desktop nav links (shown only when .open) */
+  .fsia-nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;background:#fff!important;border-top:2px solid #A6093D!important;padding:.6rem 4%!important;flex-direction:column!important;gap:0!important;box-shadow:0 16px 30px rgba(0,0,0,.14)!important;max-height:80vh!important;overflow-y:auto!important;z-index:200!important}
+  .fsia-nav-links.open{display:flex!important}
+  .fsia-nav-links a,.fsia-nav-links button.nav-item{height:auto!important;padding:.88rem 0!important;border-bottom:1px solid rgba(0,0,0,.07)!important;font-size:.9rem!important;width:100%!important;justify-content:flex-start!important;color:#3A2226!important;background:none!important;border-radius:0!important}
+  .fsia-nav-links a::after,.fsia-nav-links button.nav-item::after{display:none!important}
+  .fsia-reg{height:auto!important;width:100%!important}
+  .fsia-reg-menu{position:static!important;transform:none!important;min-width:0!important;width:100%!important;border:none!important;box-shadow:none!important;border-radius:8px!important;padding:.3rem 0 .3rem .8rem!important;background:#fef9fb!important;grid-template-columns:1fr!important;margin-top:0!important;display:none!important}
+  .fsia-reg:focus-within .fsia-reg-menu,.fsia-reg-menu.mob-open{display:grid!important}
+
+  /* Hide CTA */
+  .fsia-cta-btn{display:none!important}
+
+  /* ── Strip: search full width + pills scroll ── */
+  .fsia-strip{padding:.5rem 0!important}
+  .fsia-strip .st-wrap{flex-direction:column!important;gap:.5rem!important;padding:0 4%!important}
+  .fsia-search{width:100%!important}
+  .fsia-search input{width:100%!important;font-size:14px!important}
+
+  /* ── Hero: flush, no padding gap ── */
+  .hero{padding:0!important;animation:none!important}
+  .hero-content{padding:0!important}
+  .banner-wrap{border-radius:0!important;margin:0!important;box-shadow:none!important;border:none!important;max-width:100%!important}
+  .banner-img{width:100%!important;height:auto!important;display:block!important}
+  .crown-scene{border-radius:0!important;margin:0!important;max-width:100%!important}
+  .crown-wrap{border-radius:0!important;box-shadow:none!important}
+  .poster-wrap{border-radius:0!important;margin:0!important;max-width:100%!important;box-shadow:none!important}
+
+  /* hero-stats below banner */
+  .hero-stats{padding:1rem 4% .6rem!important;background:#fff!important}
+
+  /* ── Section title + content ── */
+  .section-title{font-size:1.6rem!important;margin:1.4rem 0 .6rem!important}
+}
+
+/* Extra small phones */
+@media(max-width:380px){
+  .fsia-nav-logo .lg-text strong{font-size:.78rem!important}
+  .fsia-nav-socials a{width:30px!important;height:30px!important}
+}
+
+
+/* ===== Contact Account Manager bar ===== */
+.contact-manager-bar{display:none}
+@media(max-width:900px){
+  .contact-manager-bar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#2d7a1f;color:#fff;font-weight:700;font-size:.95rem;justify-content:center;align-items:center;padding:.95rem 1rem;z-index:60;text-decoration:none;letter-spacing:.02em}
+  body{padding-bottom:56px} /* prevent content hiding behind bar */
+}
+
 </style>
 <meta name="description" content="Register for Business Awards 2026 with Forever Star India (FSIA). Honouring achievers across 70+ categories. Apply online — auditions & nominations open from every city of India.">
 <meta name="robots" content="index,follow">
@@ -730,6 +827,18 @@ footer a{color:var(--accent);font-weight:600}
       <a href="winners.html">Contestant</a>
       <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Franchise</a>
     </div>
+    <div class="fsia-nav-socials">
+      <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook" class="soc-fb">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube" class="soc-yt">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+      </a>
+      <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram" class="soc-ig">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+
 
     <a href="register-miss-india.html" class="fsia-cta-btn">Apply Now</a>
     <button class="fsia-hamburger" id="fsiaHamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -1017,5 +1126,7 @@ function submitForm(event){
   })(window,document,'script','dataLayer','GTM-T3674CM');
 })();
 </script>
+
+<a href="tel:+919983286999" class="contact-manager-bar">Contact Account Manager</a>
 </body>
 </html>
