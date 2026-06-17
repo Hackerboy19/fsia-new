@@ -470,77 +470,138 @@ footer a{color:var(--accent);font-weight:600}
 
 
 /* ===== FSIA live-site header v3 ===== */
-.fsia-announce{background:#1a0a0f;color:#fff;padding:.55rem 1rem;text-align:center;font-size:.76rem;font-weight:600;letter-spacing:.02em;line-height:1.4}
+.fsia-announce{background:#1a0a0f;color:#fff;padding:.5rem 1rem;text-align:center;font-size:.75rem;font-weight:600;letter-spacing:.02em;line-height:1.4}
 .fsia-announce a{color:#D4AF37;text-decoration:none}
 .fsia-announce a:hover{text-decoration:underline}
 
-.fsia-topbar{background:#f8f9fa;border-bottom:1px solid #e8e3e3;padding:.6rem 0}
-.fsia-topbar .tb-wrap{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.fsia-topbar .tb-contact{display:flex;gap:1.4rem}
-.fsia-topbar .tb-contact a{display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;color:#3A2226;text-decoration:none}
-.fsia-topbar .tb-contact a:hover{color:#A6093D}
-.fsia-topbar .tb-contact .ic{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem}
-.fsia-topbar .tb-contact .ic-phone{background:#A6093D;color:#fff}
-.fsia-topbar .tb-contact .ic-mail{background:#D4AF37;color:#fff}
-.fsia-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex-shrink:0}
-.fsia-logo img{width:54px;height:54px;border-radius:50%;object-fit:contain;background:#fff;padding:3px;box-shadow:0 4px 12px rgba(166,9,61,.2)}
-.fsia-logo .lg-text strong{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:#A6093D;font-weight:700;display:block;line-height:1.1}
-.fsia-logo .lg-text span{font-size:.62rem;color:#B8962E;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
-.fsia-topbar .tb-socials{display:flex;gap:.45rem}
-.fsia-topbar .tb-socials a{width:34px;height:34px;border-radius:50%;border:1.5px solid #ddd;display:flex;align-items:center;justify-content:center;color:#7A5E63;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .2s}
-.fsia-topbar .tb-socials a:hover{background:#A6093D;border-color:#A6093D;color:#fff}
-/* hide topbar on mobile */
-@media(max-width:860px){.fsia-topbar .tb-contact,.fsia-topbar .tb-socials{display:none}}
+/* ── top utility bar ── */
+.fsia-topbar{background:#f8f9fa;border-bottom:1px solid #e8e3e3;padding:.55rem 0}
+.fsia-topbar .tb-wrap{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:nowrap}
+.tb-contact{display:flex;gap:1.2rem;flex-shrink:0}
+.tb-contact a{display:flex;align-items:center;gap:.4rem;font-size:.76rem;font-weight:600;color:#3A2226;text-decoration:none;white-space:nowrap}
+.tb-contact a:hover{color:#A6093D}
+.tb-contact .ic{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tb-contact .ic-phone{background:#A6093D;color:#fff}
+.tb-contact .ic-mail{background:#D4AF37;color:#fff}
+.fsia-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
+.fsia-logo img{width:50px;height:50px;border-radius:50%;object-fit:contain;background:#fff;padding:3px;box-shadow:0 4px 12px rgba(166,9,61,.2)}
+.fsia-logo .lg-text strong{font-family:'Playfair Display',Georgia,serif;font-size:.95rem;color:#A6093D;font-weight:700;display:block;line-height:1.15;white-space:nowrap}
+.fsia-logo .lg-text span{font-size:.58rem;color:#B8962E;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.tb-socials{display:flex;gap:.4rem;flex-shrink:0}
+.tb-socials a{width:32px;height:32px;border-radius:50%;border:1.5px solid #ddd;display:flex;align-items:center;justify-content:center;color:#7A5E63;text-decoration:none;transition:all .2s;flex-shrink:0}
+.tb-socials a:hover{background:#A6093D;border-color:#A6093D;color:#fff}
 
+/* ── main sticky nav ── */
 .fsia-nav-wrap{background:#fff;border-bottom:2px solid #A6093D;position:sticky;top:0;z-index:70;box-shadow:0 2px 16px rgba(0,0,0,.08)}
-.fsia-nav{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;gap:.2rem;height:52px}
-.fsia-nav-logo{display:none}
-.fsia-nav a,.fsia-nav button.nav-item{color:#3A2226;font-weight:600;font-size:.84rem;padding:.3rem .7rem;border:none;background:none;cursor:pointer;text-decoration:none;white-space:nowrap;position:relative;font-family:'Poppins',sans-serif;transition:color .2s}
-.fsia-nav a:hover,.fsia-nav button.nav-item:hover{color:#A6093D}
-.fsia-nav a::after,.fsia-nav button.nav-item::after{content:'';position:absolute;bottom:-18px;left:0;right:0;height:2px;background:#A6093D;transform:scaleX(0);transition:transform .2s}
-.fsia-nav a:hover::after,.fsia-nav button.nav-item:hover::after{transform:scaleX(1)}
+.fsia-nav{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;height:50px;gap:0;overflow:visible}
+.fsia-nav-logo{display:none;flex-shrink:0}
+/* The links container — KEY FIX: flex row, nowrap, overflow visible */
+.fsia-nav-links{display:flex;flex-direction:row;align-items:center;gap:0;flex:1;overflow:visible;flex-wrap:nowrap}
+.fsia-nav-links a,.fsia-nav-links button.nav-item{color:#3A2226;font-weight:600;font-size:.8rem;padding:.3rem .55rem;border:none;background:none;cursor:pointer;text-decoration:none;white-space:nowrap;position:relative;font-family:'Poppins',sans-serif;transition:color .2s;height:50px;display:flex;align-items:center;line-height:1}
+.fsia-nav-links a:hover,.fsia-nav-links button.nav-item:hover{color:#A6093D}
+/* underline on hover — fixed bottom value */
+.fsia-nav-links a::after,.fsia-nav-links button.nav-item::after{content:'';position:absolute;bottom:0;left:.55rem;right:.55rem;height:2px;background:#A6093D;transform:scaleX(0);transition:transform .2s;transform-origin:center}
+.fsia-nav-links a:hover::after,.fsia-nav-links button.nav-item:hover::after{transform:scaleX(1)}
+
 /* Registration dropdown */
-.fsia-reg{position:relative}
-.fsia-reg-btn{display:flex;align-items:center;gap:.3rem}
-.fsia-reg-btn svg{transition:transform .25s}
+.fsia-reg{position:relative;height:50px;display:flex;align-items:center}
+.fsia-reg-btn{display:flex;align-items:center;gap:.25rem;height:50px}
+.fsia-reg-btn svg{transition:transform .25s;flex-shrink:0}
 .fsia-reg:hover .fsia-reg-btn svg,.fsia-reg:focus-within .fsia-reg-btn svg{transform:rotate(180deg)}
-.fsia-reg-menu{display:none;position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.18);padding:1rem;width:620px;display:none;grid-template-columns:1fr 1fr;gap:.2rem;z-index:100}
+.fsia-reg-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.18);padding:1rem;min-width:620px;grid-template-columns:1fr 1fr;gap:.15rem;z-index:200;margin-top:2px}
 .fsia-reg:hover .fsia-reg-menu,.fsia-reg:focus-within .fsia-reg-menu{display:grid}
-.fsia-reg-menu a{color:#3A2226;font-size:.8rem;font-weight:500;padding:.55rem .8rem;border-radius:8px;text-decoration:none;display:block;transition:all .15s}
+.fsia-reg-menu a{color:#3A2226;font-size:.78rem;font-weight:500;padding:.5rem .75rem;border-radius:8px;text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:all .15s;white-space:nowrap;height:auto;line-height:1.4}
+.fsia-reg-menu a::after{display:none!important}
 .fsia-reg-menu a:hover{background:#FEF0F4;color:#A6093D}
-.fsia-reg-menu .rm-head{grid-column:1/-1;font-size:.68rem;font-weight:700;color:#B8962E;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem .6rem;border-bottom:1px solid rgba(212,175,55,.3);margin-bottom:.2rem}
-/* CTA button */
-.fsia-cta-btn{margin-left:auto;background:linear-gradient(120deg,#A6093D,#7E0B30);color:#fff!important;padding:.52rem 1.2rem;border-radius:99px;font-size:.82rem;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(166,9,61,.32);transition:all .2s;flex-shrink:0}
+.fsia-reg-menu .rm-head{grid-column:1/-1;font-size:.67rem;font-weight:700;color:#B8962E;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .75rem .5rem;border-bottom:1px solid rgba(212,175,55,.3);margin-bottom:.2rem}
+
+/* Apply Now CTA */
+.fsia-cta-btn{margin-left:auto;background:linear-gradient(120deg,#A6093D,#7E0B30);color:#fff!important;padding:.48rem 1.1rem;border-radius:99px;font-size:.78rem;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(166,9,61,.32);transition:all .2s;flex-shrink:0;display:flex;align-items:center;line-height:1}
 .fsia-cta-btn:hover{transform:translateY(-1px);box-shadow:0 7px 20px rgba(166,9,61,.4)}
 .fsia-cta-btn::after{display:none!important}
-/* Hamburger */
-.fsia-hamburger{display:none;background:none;border:none;cursor:pointer;color:#A6093D;margin-left:auto;padding:.3rem;flex-shrink:0}
-@media(max-width:900px){
-  .fsia-hamburger{display:block}
-  .fsia-nav-logo{display:flex}
-  .fsia-nav-links{display:none;position:absolute;top:52px;left:0;right:0;background:#fff;border-top:1px solid rgba(166,9,61,.12);padding:.8rem 5%;flex-direction:column;gap:0;box-shadow:0 16px 30px rgba(0,0,0,.12);max-height:80vh;overflow-y:auto}
-  .fsia-nav-links.open{display:flex}
-  .fsia-nav-links a,.fsia-nav-links button.nav-item{padding:.9rem 0;border-bottom:1px solid rgba(0,0,0,.06);text-align:left;font-size:.92rem;width:100%}
-  .fsia-reg-menu{position:static;transform:none;width:100%;border:none;box-shadow:none;border-radius:0;padding:.4rem 1rem;background:#fef9fb;grid-template-columns:1fr}
-  .fsia-reg:hover .fsia-reg-menu,.fsia-reg:focus-within .fsia-reg-menu{display:grid}
-  .fsia-cta-btn{display:none}
-}
+.fsia-hamburger{display:none;background:none;border:none;cursor:pointer;color:#A6093D;padding:.3rem;flex-shrink:0;margin-left:.5rem}
 
-/* Search + quick-nav strip */
-.fsia-strip{background:#fff;border-bottom:1px solid #eee;padding:.6rem 0}
-.fsia-strip .st-wrap{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;gap:1rem}
-.fsia-search{position:relative;flex-shrink:0;width:min(240px,100%)}
-.fsia-search input{width:100%;padding:.5rem .9rem .5rem 2.2rem;border:1.5px solid #e0d9d9;border-radius:99px;font-size:.8rem;background:#f9f7f7;outline:none;font-family:inherit;transition:border .2s}
+/* ── search + quick-nav strip ── */
+.fsia-strip{background:#fff;border-bottom:1px solid #eeebeb;padding:.55rem 0}
+.fsia-strip .st-wrap{width:min(1200px,94%);margin:0 auto;display:flex;align-items:center;gap:1rem;flex-wrap:nowrap}
+.fsia-search{position:relative;flex-shrink:0;width:210px}
+.fsia-search input{width:100%;padding:.45rem .85rem .45rem 2rem;border:1.5px solid #e0d9d9;border-radius:99px;font-size:.78rem;background:#f9f7f7;outline:none;font-family:inherit;transition:border .2s}
 .fsia-search input:focus{border-color:#D4AF37;background:#fff}
-.fsia-search svg{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:#9a8a8a;pointer-events:none}
-.fsia-quicknav{flex:1;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.fsia-search svg{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:#9a8a8a;pointer-events:none}
+.fsia-quicknav{flex:1;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;min-width:0}
 .fsia-quicknav::-webkit-scrollbar{display:none}
-.fsia-quicknav-inner{display:flex;gap:.5rem;white-space:nowrap;padding:.1rem 0}
-.fsia-quicknav-inner a{display:inline-flex;padding:.38rem .85rem;border-radius:99px;font-size:.74rem;font-weight:600;border:1.5px solid #e0d9d9;color:#3A2226;text-decoration:none;transition:all .18s;flex-shrink:0}
+.fsia-quicknav-inner{display:flex;gap:.45rem;white-space:nowrap;padding:.05rem 0}
+.fsia-quicknav-inner a{display:inline-flex;align-items:center;padding:.34rem .8rem;border-radius:99px;font-size:.72rem;font-weight:600;border:1.5px solid #e0d9d9;color:#3A2226;text-decoration:none;transition:all .18s;flex-shrink:0;white-space:nowrap}
 .fsia-quicknav-inner a:hover,.fsia-quicknav-inner a.active{background:#A6093D;border-color:#A6093D;color:#fff}
 .fsia-quicknav-inner a.gold{border-color:#D4AF37;color:#B8962E}
-.fsia-quicknav-inner a.gold:hover{background:#D4AF37;color:#fff}
-@media(max-width:640px){.fsia-search{width:100%}.fsia-strip .st-wrap{flex-direction:column;align-items:stretch;gap:.7rem}.fsia-quicknav-inner a{font-size:.7rem;padding:.34rem .7rem}}
+.fsia-quicknav-inner a.gold:hover{background:#D4AF37;border-color:#D4AF37;color:#fff}
+
+/* ── responsive ── */
+@media(max-width:1100px){
+  /* shrink font slightly so everything fits one row */
+  .fsia-nav-links a,.fsia-nav-links button.nav-item{font-size:.75rem;padding:.3rem .42rem}
+  .tb-contact a{font-size:.72rem}
+}
+@media(max-width:900px){
+  /* mobile: hamburger mode */
+  .fsia-hamburger{display:flex;align-items:center;justify-content:center}
+  .fsia-nav-logo{display:flex}
+  .fsia-nav-links{display:none;flex-direction:column;position:absolute;top:50px;left:0;right:0;background:#fff;border-top:1px solid rgba(166,9,61,.12);padding:.8rem 5%;gap:0;box-shadow:0 16px 30px rgba(0,0,0,.12);max-height:80vh;overflow-y:auto;z-index:200}
+  .fsia-nav-links.open{display:flex}
+  .fsia-nav-links a,.fsia-nav-links button.nav-item{height:auto;padding:.9rem 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:.9rem;width:100%;justify-content:flex-start}
+  .fsia-nav-links a::after,.fsia-nav-links button.nav-item::after{display:none}
+  .fsia-reg{height:auto;width:100%}
+  .fsia-reg-menu{position:static;transform:none;min-width:0;width:100%;border:none;box-shadow:none;border-radius:8px;padding:.3rem .8rem;background:#fef9fb;display:none;grid-template-columns:1fr;margin-top:0}
+  .fsia-reg:focus-within .fsia-reg-menu,.fsia-reg-menu.mob-open{display:grid}
+  .fsia-cta-btn{display:none}
+  .tb-contact,.tb-socials{display:none}
+  .fsia-search{width:100%}
+  .fsia-strip .st-wrap{flex-direction:column;align-items:stretch;gap:.6rem}
+}
+@media(max-width:480px){
+  .fsia-quicknav-inner a{font-size:.68rem;padding:.3rem .65rem}
+}
+
+/* ===== fsia header specificity fix ===== */
+/* Beat the global a{color:inherit} rule on all header link elements */
+.fsia-nav-links a,
+.fsia-nav-links button.nav-item,
+.fsia-reg-menu a,
+.fsia-quicknav-inner a,
+.fsia-topbar .tb-contact a,
+.fsia-topbar .tb-socials a,
+.fsia-cta-btn,
+.fsia-announce a { color: inherit; }   /* reset first, then re-set below */
+
+.fsia-nav-links a { color:#3A2226!important; border:none!important; border-radius:0!important; background:none!important; padding:.3rem .55rem!important; display:flex!important; align-items:center!important; height:50px!important; font-size:.8rem!important; font-weight:600!important; white-space:nowrap!important; text-decoration:none!important; }
+.fsia-nav-links a:hover,.fsia-nav-links button.nav-item:hover { color:#A6093D!important; }
+.fsia-reg-menu a { color:#3A2226!important; background:none!important; border:none!important; border-radius:8px!important; padding:.5rem .75rem!important; font-size:.78rem!important; display:flex!important; align-items:center!important; gap:.4rem!important; text-decoration:none!important; height:auto!important; }
+.fsia-reg-menu a:hover { background:#FEF0F4!important; color:#A6093D!important; }
+.fsia-topbar .tb-contact a { color:#3A2226!important; text-decoration:none!important; font-size:.76rem!important; font-weight:600!important; }
+.fsia-topbar .tb-contact a:hover { color:#A6093D!important; }
+.fsia-topbar .tb-socials a { color:#7A5E63!important; text-decoration:none!important; }
+.fsia-topbar .tb-socials a:hover { color:#fff!important; background:#A6093D!important; }
+.fsia-announce a { color:#D4AF37!important; text-decoration:none!important; }
+.fsia-announce a:hover { text-decoration:underline!important; }
+.fsia-cta-btn { color:#fff!important; text-decoration:none!important; background:linear-gradient(120deg,#A6093D,#7E0B30)!important; }
+
+/* Quicknav pills — needs !important to beat a{color:inherit} */
+.fsia-quicknav-inner a { display:inline-flex!important; align-items:center!important; padding:.36rem .85rem!important; border-radius:99px!important; font-size:.73rem!important; font-weight:600!important; border:1.5px solid #d8d0d0!important; color:#3A2226!important; text-decoration:none!important; background:#fff!important; transition:all .18s!important; flex-shrink:0!important; white-space:nowrap!important; }
+.fsia-quicknav-inner a:hover,.fsia-quicknav-inner a.active { background:#A6093D!important; border-color:#A6093D!important; color:#fff!important; }
+.fsia-quicknav-inner a.gold { border-color:#D4AF37!important; color:#B8962E!important; background:#fff!important; }
+.fsia-quicknav-inner a.gold:hover { background:#D4AF37!important; border-color:#D4AF37!important; color:#fff!important; }
+
+/* Nav bar - white background with crimson underline, overriding any old header gradient */
+.fsia-nav-wrap { background:#fff!important; border-bottom:2px solid #A6093D!important; position:sticky!important; top:0!important; z-index:70!important; }
+.fsia-topbar { background:#f8f9fa!important; }
+.fsia-strip { background:#fff!important; }
+@media(max-width:1100px){
+  .fsia-nav-links a { font-size:.75rem!important; padding:.3rem .42rem!important; }
+}
+@media(max-width:900px){
+  .fsia-nav-links a { height:auto!important; padding:.9rem 0!important; font-size:.9rem!important; border-bottom:1px solid rgba(0,0,0,.06)!important; width:100%!important; }
+  .fsia-nav-links a.fsia-cta-btn { display:none!important; }
+}
 
 </style>
 <meta name="description" content="Register for Super Woman Award 2026 with Forever Star India (FSIA). Honouring achievers across 70+ categories. Apply online — auditions & nominations open from every city of India.">

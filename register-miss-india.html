@@ -561,6 +561,48 @@ footer a{color:var(--accent);font-weight:600}
 @media(max-width:480px){
   .fsia-quicknav-inner a{font-size:.68rem;padding:.3rem .65rem}
 }
+
+/* ===== fsia header specificity fix ===== */
+/* Beat the global a{color:inherit} rule on all header link elements */
+.fsia-nav-links a,
+.fsia-nav-links button.nav-item,
+.fsia-reg-menu a,
+.fsia-quicknav-inner a,
+.fsia-topbar .tb-contact a,
+.fsia-topbar .tb-socials a,
+.fsia-cta-btn,
+.fsia-announce a { color: inherit; }   /* reset first, then re-set below */
+
+.fsia-nav-links a { color:#3A2226!important; border:none!important; border-radius:0!important; background:none!important; padding:.3rem .55rem!important; display:flex!important; align-items:center!important; height:50px!important; font-size:.8rem!important; font-weight:600!important; white-space:nowrap!important; text-decoration:none!important; }
+.fsia-nav-links a:hover,.fsia-nav-links button.nav-item:hover { color:#A6093D!important; }
+.fsia-reg-menu a { color:#3A2226!important; background:none!important; border:none!important; border-radius:8px!important; padding:.5rem .75rem!important; font-size:.78rem!important; display:flex!important; align-items:center!important; gap:.4rem!important; text-decoration:none!important; height:auto!important; }
+.fsia-reg-menu a:hover { background:#FEF0F4!important; color:#A6093D!important; }
+.fsia-topbar .tb-contact a { color:#3A2226!important; text-decoration:none!important; font-size:.76rem!important; font-weight:600!important; }
+.fsia-topbar .tb-contact a:hover { color:#A6093D!important; }
+.fsia-topbar .tb-socials a { color:#7A5E63!important; text-decoration:none!important; }
+.fsia-topbar .tb-socials a:hover { color:#fff!important; background:#A6093D!important; }
+.fsia-announce a { color:#D4AF37!important; text-decoration:none!important; }
+.fsia-announce a:hover { text-decoration:underline!important; }
+.fsia-cta-btn { color:#fff!important; text-decoration:none!important; background:linear-gradient(120deg,#A6093D,#7E0B30)!important; }
+
+/* Quicknav pills — needs !important to beat a{color:inherit} */
+.fsia-quicknav-inner a { display:inline-flex!important; align-items:center!important; padding:.36rem .85rem!important; border-radius:99px!important; font-size:.73rem!important; font-weight:600!important; border:1.5px solid #d8d0d0!important; color:#3A2226!important; text-decoration:none!important; background:#fff!important; transition:all .18s!important; flex-shrink:0!important; white-space:nowrap!important; }
+.fsia-quicknav-inner a:hover,.fsia-quicknav-inner a.active { background:#A6093D!important; border-color:#A6093D!important; color:#fff!important; }
+.fsia-quicknav-inner a.gold { border-color:#D4AF37!important; color:#B8962E!important; background:#fff!important; }
+.fsia-quicknav-inner a.gold:hover { background:#D4AF37!important; border-color:#D4AF37!important; color:#fff!important; }
+
+/* Nav bar - white background with crimson underline, overriding any old header gradient */
+.fsia-nav-wrap { background:#fff!important; border-bottom:2px solid #A6093D!important; position:sticky!important; top:0!important; z-index:70!important; }
+.fsia-topbar { background:#f8f9fa!important; }
+.fsia-strip { background:#fff!important; }
+@media(max-width:1100px){
+  .fsia-nav-links a { font-size:.75rem!important; padding:.3rem .42rem!important; }
+}
+@media(max-width:900px){
+  .fsia-nav-links a { height:auto!important; padding:.9rem 0!important; font-size:.9rem!important; border-bottom:1px solid rgba(0,0,0,.06)!important; width:100%!important; }
+  .fsia-nav-links a.fsia-cta-btn { display:none!important; }
+}
+
 </style>
 <meta name="description" content="Register for Forever Miss India 2026 with Forever Star India (FSIA). India's biggest beauty pageant platform. Apply online — auditions & nominations open from every city of India.">
 <meta name="robots" content="index,follow">
