@@ -1,336 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registration Successful - Forever Star India</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--ivory:#FFFCF6;--gold:#D4AF37;--crimson:#A6093D;--crimson-deep:#7E0B30;--blush:#F2C4CF;--blush-soft:#FCEFF2;--ink:#3A2226;--ink-soft:#7A5E63;--success:#27ae60}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--blush-soft),var(--ivory));color:var(--ink);min-height:100vh}
-h1,h2,h3{font-family:'Playfair Display',serif}
-a{text-decoration:none;color:inherit}
-.container{width:min(900px,92%);margin:0 auto}
-
-@keyframes slideDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
-@keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
-@keyframes checkmark{0%{transform:scale(0) rotate(-45deg)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(39,174,96,.7)}70%{box-shadow:0 0 0 20px rgba(39,174,96,0)}100%{box-shadow:0 0 0 0 rgba(39,174,96,0)}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes confetti{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(600px) rotate(720deg)}}
-
-header{background:#fff;border-bottom:2px solid var(--gold);padding:1rem 0}
-.nav{display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:.5rem;font-weight:700}
-.logo img{width:45px}
-
-.success-container{padding:60px 0;animation:slideDown .8s ease-out}
-
-.success-card{background:#fff;border-radius:20px;padding:3rem;box-shadow:0 20px 60px rgba(39,174,96,.15);text-align:center;animation:scaleIn .6s ease-out}
-
-.checkmark-circle{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--success),#2ecc71);margin:0 auto 2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(39,174,96,.3);animation:pulse 2s infinite}
-
-.checkmark{width:50px;height:50px;position:relative;animation:checkmark .6s ease-out 0.3s both}
-
-.checkmark::after{content:'';position:absolute;width:15px;height:30px;border:solid white;border-width:0 3px 3px 0;transform:rotate(45deg);left:17px;top:5px}
-
-.success-title{font-size:2.2rem;color:var(--success);margin-bottom:.5rem;animation:slideDown .7s ease-out}
-
-.success-subtitle{font-size:1.05rem;color:var(--ink-soft);margin-bottom:3rem;animation:slideDown .8s ease-out 0.1s both}
-
-.app-summary{background:var(--blush-soft);border-radius:16px;padding:2.5rem;margin:2rem 0;text-align:left;animation:slideDown .8s ease-out 0.2s both}
-
-.app-summary h3{color:var(--crimson);font-size:1.2rem;margin-bottom:1.5rem;text-align:center}
-
-.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-
-.summary-item{background:#fff;padding:1.5rem;border-radius:12px;border-left:4px solid var(--gold)}
-
-.summary-item label{color:var(--ink-soft);font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:.5rem;font-weight:600}
-
-.summary-item .value{color:var(--ink);font-size:1.1rem;font-weight:700}
-
-.next-steps{background:#f0f8f5;border-left:5px solid var(--success);padding:2rem;border-radius:12px;margin:2rem 0;text-align:left;animation:slideDown .8s ease-out 0.3s both}
-
-.next-steps h3{color:var(--success);font-size:1.15rem;margin-bottom:1.5rem}
-
-.next-steps ol{list-style:none;counter-reset:step;padding:0}
-
-.next-steps li{counter-increment:step;padding:1rem 0;padding-left:2.5rem;position:relative;color:var(--ink-soft);line-height:1.6}
-
-.next-steps li:before{content:counter(step);position:absolute;left:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--success),#2ecc71);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
-
-.cta-buttons{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:3rem 0;animation:slideDown .8s ease-out 0.4s both}
-
-.btn{padding:1.2rem 2rem;border:none;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;text-align:center;letter-spacing:.5px}
-
-.btn-primary{background:linear-gradient(120deg,var(--crimson),var(--gold));color:#fff;box-shadow:0 8px 24px rgba(166,9,61,.3);animation:bounce 2s infinite}
-
-.btn-primary:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(166,9,61,.4)}
-
-.btn-secondary{background:linear-gradient(120deg,var(--success),#2ecc71);color:#fff;box-shadow:0 8px 24px rgba(39,174,96,.3)}
-
-.btn-secondary:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(39,174,96,.4)}
-
-.info-box{background:linear-gradient(135deg,var(--blush-soft),var(--ivory));border-radius:12px;padding:2rem;margin:2rem 0;text-align:center;animation:slideDown .8s ease-out 0.5s both}
-
-.info-box h4{color:var(--crimson);margin-bottom:1rem;font-size:1.1rem}
-
-.info-box p{color:var(--ink-soft);margin-bottom:.5rem;line-height:1.6}
-
-.info-box a{color:var(--crimson);font-weight:700;transition:color .2s}
-
-.info-box a:hover{color:var(--gold)}
-
-.confetti-piece{position:fixed;pointer-events:none;animation:confetti 3s ease-in forwards}
-
-footer{background:#fff;border-top:2px solid var(--blush);padding:2rem 0;margin-top:4rem;text-align:center;color:var(--ink-soft);font-size:.85rem}
-
-@media(max-width:768px){
-  .summary-grid{grid-template-columns:1fr}
-  .cta-buttons{grid-template-columns:1fr}
-  .success-card{padding:2rem}
-  .success-title{font-size:1.8rem}
-}
-
-/* ===== FSIA site footer v2 ===== */
-.site-footer .ft-dropdown{margin:0}
-.site-footer .ft-dropdown summary{font-family:'Playfair Display',serif;color:#A6093D;font-size:1.04rem;margin-bottom:1rem;cursor:pointer;list-style:none;display:flex;align-items:center;gap:.5rem}
-.site-footer .ft-dropdown summary::-webkit-details-marker{display:none}
-.site-footer .ft-dropdown summary::after{content:'\25BE';margin-left:auto;color:#D4AF37;transition:transform .25s}
-.site-footer .ft-dropdown[open] summary::after{transform:rotate(180deg)}
-.site-footer .ft-dropdown .ft-reglist{animation:ftReg .25s ease}
-@keyframes ftReg{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-
-.site-footer{background:#fff;border-top:3px solid #D4AF37;padding:3rem 0 1.4rem;margin-top:4rem;font-family:'Poppins',sans-serif}
-.site-footer .ft-wrap{width:min(1140px,92%);margin:0 auto}
-.site-footer .ft-grid{display:grid;grid-template-columns:1.4fr 1.1fr 1fr 1.1fr;gap:2rem;margin-bottom:2rem}
-.site-footer h4{font-family:'Playfair Display',serif;color:#A6093D;margin-bottom:1rem;font-size:1.04rem}
-.site-footer a,.site-footer p{display:block;font-size:.82rem;color:#7A5E63;margin-bottom:.5rem;text-decoration:none;line-height:1.5}
-.site-footer .ft-grid a:hover{color:#B8962E}
-.site-footer .ft-brand img{width:66px;height:66px;border-radius:50%;background:#fff;padding:5px;margin-bottom:.8rem;display:block;box-shadow:0 4px 14px rgba(166,9,61,.16),0 0 0 3px rgba(166,9,61,.1)}
-.site-footer .ft-reglist a{margin-bottom:.34rem;font-size:.8rem}
-.site-footer .ft-contact{margin-top:1.1rem}
-.site-footer .ft-social{display:flex;gap:.55rem;margin-top:.9rem;flex-wrap:wrap}
-.site-footer .ft-social a{width:38px;height:38px;border-radius:50%;border:1px solid #D4AF37;display:flex;align-items:center;justify-content:center;color:#B8962E;margin:0;font-size:.92rem;font-weight:700}
-.site-footer .ft-social a:hover{background:#D4AF37;color:#fff}
-.site-footer .ft-copy{text-align:center;border-top:1px solid rgba(212,175,55,.3);padding-top:1.3rem;font-size:.8rem;color:#7A5E63}
-.site-footer .ft-copy a{display:inline;color:#A6093D;font-weight:600}
-@media(max-width:880px){.site-footer .ft-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.site-footer .ft-grid{grid-template-columns:1fr;text-align:center}.site-footer .ft-social{justify-content:center}.site-footer .ft-brand img{margin-left:auto;margin-right:auto}}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Successful | Forever Star India</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <meta name="description" content="Your registration was successful.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://www.fsia.in/registration-success.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Forever Star India">
+  <meta property="og:title" content="Registration Successful | Forever Star India">
+  <meta property="og:description" content="Your registration was successful.">
+  <meta property="og:url" content="https://www.fsia.in/registration-success.html">
+  <meta property="og:image" content="https://www.fsia.in/uploads/718Step-1.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Registration Successful | Forever Star India">
+  <meta name="twitter:description" content="Your registration was successful.">
+  <meta name="twitter:image" content="https://www.fsia.in/uploads/718Step-1.webp">
+  <script
+    type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
+  <link rel="stylesheet" href="assets-new/css/main.css">
+  <link rel="stylesheet" href="assets-new/css/pages/registration-success.css">
+  <link rel="stylesheet" href="assets-new/css/forms-master.css">
 </head>
+
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
-    <div><a href="index.html" style="color:var(--ink-soft);font-size:.9rem">← Back to Home</a></div>
-  </div>
-</header>
-
-<section class="success-container">
-  <div class="container">
-    <div class="success-card">
-      
-      <div class="checkmark-circle">
-        <div class="checkmark"></div>
-      </div>
-
-      <h1 class="success-title">✓ Registration Received! 🎉</h1>
-      <p class="success-subtitle">Your application has been submitted successfully</p>
-
-      <!-- APPLICATION SUMMARY -->
-      <div class="app-summary">
-        <h3>📋 Your Application Summary</h3>
-        <div class="summary-grid">
-          <div class="summary-item">
-            <label>Full Name</label>
-            <div class="value" id="summaryName">-</div>
-          </div>
-          <div class="summary-item">
-            <label>Category</label>
-            <div class="value" id="summaryCategory">-</div>
-          </div>
-          <div class="summary-item">
-            <label>City</label>
-            <div class="value" id="summaryCity">-</div>
-          </div>
-          <div class="summary-item">
-            <label>Phone</label>
-            <div class="value" id="summaryPhone">-</div>
-          </div>
-          <div class="summary-item">
-            <label>Email</label>
-            <div class="value" id="summaryEmail">-</div>
-          </div>
-          <div class="summary-item">
-            <label>Application ID</label>
-            <div class="value" id="summaryId">-</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NEXT STEPS -->
-      <div class="next-steps">
-        <h3>ℹ️ What Happens Next?</h3>
-        <ol>
-          <li><strong>WhatsApp Contact (24 Hours):</strong> Our team will reach out on WhatsApp with audition details and training schedule</li>
-          <li><strong>Payment Confirmation:</strong> Complete payment of ₹2,999 to secure your spot and receive registration certificate</li>
-          <li><strong>Confirmation & Instructions:</strong> You'll get audition schedule, grooming session dates, and official confirmation</li>
-          <li><strong>Auditions & Training:</strong> Participate in online auditions and receive professional training from our experts</li>
-        </ol>
-      </div>
-
-      <!-- INFO BOX -->
-      <div class="info-box">
-        <h4>💬 Questions or Need Help?</h4>
-        <p>📞 <a href="tel:+919983286999">Call: +91-99832-86999</a></p>
-        <p>✉️ <a href="mailto:starindiaaward@gmail.com">Email: starindiaaward@gmail.com</a></p>
-        <p>💬 <a href="#" id="whatsappLink">Chat on WhatsApp</a></p>
-      </div>
-
-      <!-- CTA BUTTONS -->
-      <div class="cta-buttons">
-        <a href="payment.html" class="btn btn-primary" id="paymentBtn">
-          💳 Step 2 — Complete Payment
-        </a>
-        <a href="#" id="whatsappShareBtn" class="btn btn-secondary" onclick="shareOnWhatsApp(); return false">
-          💬 Share Update on WhatsApp
-        </a>
-      </div>
-
-      <!-- IMPORTANT NOTICE -->
-      <div style="background:#fff3cd;border-left:5px solid #ffc107;padding:1.5rem;border-radius:8px;margin:2rem 0;text-align:left">
-        <p style="color:#856404;margin:0;font-weight:600;margin-bottom:.5rem">⏰ Important Reminder:</p>
-        <p style="color:#856404;margin:0;line-height:1.6">Payment must be completed within 48 hours to confirm your registration. After that, your slot may be released.</p>
-      </div>
-
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo"><img src="logo.gif" alt="FSIA"><span>Forever Star India</span></a>
+      <div><a href="index.html" style="color:var(--ink-soft);font-size:.9rem">← Back to Home</a></div>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer class="site-footer">
-  <div class="ft-wrap">
-    <div class="ft-grid">
-      <div class="ft-brand">
-        <img src="logo.gif" alt="Forever Star India" onerror="this.style.display='none'">
-        <p>India's most prestigious platform for beauty pageants and award shows — empowering talent from every city to the national and international stage.</p>
-        <div class="ft-social">
-          <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-          <a href="https://twitter.com/FsiaAward" target="_blank" rel="noopener" aria-label="Twitter">&#120143;</a>
-          <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram">&#9678;</a>
-          <a href="https://in.pinterest.com/fsiaaward/" target="_blank" rel="noopener" aria-label="Pinterest">P</a>
-          <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube">&#9654;</a>
+  <section class="success-container">
+    <div class="container">
+      <div class="success-card">
+
+        <div class="checkmark-circle">
+          <div class="checkmark"></div>
         </div>
+
+        <h1 class="success-title">✓ Registration Received! 🎉</h1>
+        <p class="success-subtitle">Your application has been submitted successfully</p>
+
+        <!-- APPLICATION SUMMARY -->
+        <div class="app-summary">
+          <h3>📋 Your Application Summary</h3>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <label>Full Name</label>
+              <div class="value" id="summaryName">-</div>
+            </div>
+            <div class="summary-item">
+              <label>Category</label>
+              <div class="value" id="summaryCategory">-</div>
+            </div>
+            <div class="summary-item">
+              <label>City</label>
+              <div class="value" id="summaryCity">-</div>
+            </div>
+            <div class="summary-item">
+              <label>Phone</label>
+              <div class="value" id="summaryPhone">-</div>
+            </div>
+            <div class="summary-item">
+              <label>Email</label>
+              <div class="value" id="summaryEmail">-</div>
+            </div>
+            <div class="summary-item">
+              <label>Application ID</label>
+              <div class="value" id="summaryId">-</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="next-steps">
+          <h3>ℹ️ What Happens Next?</h3>
+          <ol>
+            <li><strong>WhatsApp Contact (24 Hours):</strong> Our team will reach out on WhatsApp with audition details
+              and training schedule</li>
+            <li><strong>Payment Confirmation:</strong> Complete payment of ₹1,999 to secure your spot and receive
+              registration certificate</li>
+            <li><strong>Confirmation & Instructions:</strong> You'll get audition schedule, grooming session dates, and
+              official confirmation</li>
+            <li><strong>Auditions & Training:</strong> Participate in online auditions and receive professional training
+              from our experts</li>
+          </ol>
+        </div>
+
+        <!-- INFO BOX -->
+        <div class="info-box">
+          <h4>💬 Questions or Need Help?</h4>
+          <p>📞 <a href="tel:+919983286999">Call: +91-99832-86999</a></p>
+          <p>✉️ <a href="mailto:starindiaaward@gmail.com">Email: starindiaaward@gmail.com</a></p>
+          <p>💬 <a href="#" id="whatsappLink">Chat on WhatsApp</a></p>
+        </div>
+
+        <!-- CTA BUTTONS -->
+        <div class="cta-buttons">
+          <a href="payment.html" class="btn btn-primary" id="paymentBtn">
+            💳 Step 2 — Complete Payment
+          </a>
+          <a href="#" id="whatsappShareBtn" class="btn btn-secondary" onclick="shareOnWhatsApp(); return false">
+            💬 Share Update on WhatsApp
+          </a>
+        </div>
+
+        <!-- IMPORTANT NOTICE -->
+        <div
+          style="background:#fff3cd;border-left:5px solid #ffc107;padding:1.5rem;border-radius:8px;margin:2rem 0;text-align:left">
+          <p style="color:#856404;margin:0;font-weight:600;margin-bottom:.5rem">⏰ Important Reminder:</p>
+          <p style="color:#856404;margin:0;line-height:1.6">Payment must be completed within 48 hours to confirm your
+            registration. After that, your slot may be released.</p>
+        </div>
+
       </div>
-      <div>
-        <details class="ft-dropdown"><summary>Registration</summary><div class="ft-reglist">
-        <a href="register-super-hero.html">Super Hero Award 2026</a>
-        <a href="register-super-woman.html">Super Woman Award 2026</a>
-        <a href="register-business.html">Business Awards 2026</a>
-        <a href="register-miss-india.html">Forever Miss India 2026</a>
-        <a href="register-mrs-india.html">Forever Mrs India 2026</a>
-        <a href="register-miss-teen.html">Forever Miss Teen India 2026</a>
-        <a href="register-miss-fsia-intl.html">Miss FSIA International 2026</a>
-        <a href="register-mrs-fsia-intl.html">Mrs FSIA International 2026</a>
-        <a href="register-star-kids.html">Forever Star Kids 2026</a>
-        <a href="register-designer.html">Forever Fashion Designers 2026</a>
-        <a href="register-makeup.html">Forever Makeup Artist 2026</a>
-        <a href="register-partner.html">Channel Partner</a>
-        <a href="register-intl-award.html">International Award 2026</a>
-        <a href="register-intl-achievers.html">International Achievers Award</a>
-        <a href="register-miss-world.html">Miss World 2026</a>
-        <a href="register-mrs-world.html">Mrs World 2026</a>
-        <a href="register-miss-universe.html">Miss Universe 2026</a>
-        <a href="register-mrs-universe.html">Mrs Universe 2026</a>
-        <a href="register-bharat-couture.html">Bharat Couture Week 2026</a>
-        <a href="register-bharat-national.html">Bharat National Awards 2026</a>
-        <a href="register-forever-achievers.html">Forever Achievers 2026</a>
-        <a href="register-nominate.html">Nominate Yourself 2026</a>
-        </div></details>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="https://www.fsia.in/special-news-coverage.php" target="_blank" rel="noopener">Special News Coverage</a>
-        <a href="https://www.fsia.in/termscondition.php" target="_blank" rel="noopener">Terms &amp; Conditions</a>
-        <a href="https://www.fsia.in/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
-        <a href="https://www.fsia.in/refund-policy" target="_blank" rel="noopener">Refund Policy</a>
-        <a href="https://www.fsia.in/sponsors.php" target="_blank" rel="noopener">Sponsors</a>
-        <a href="https://www.fsia.in/sitemap.php" target="_blank" rel="noopener">Sitemap</a>
-        <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Apply for Franchise</a>
-        <a href="https://www.fsia.in/quickapply" target="_blank" rel="noopener">Quick Apply</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About FSIA</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="faq.html">FAQ</a>
-        <a href="our-team.html">Our Team</a>
-        <a href="news.html">News Coverage</a>
-        <div class="ft-contact">
+    </div>
+  </section>
+
+  <footer class="fsia-footer">
+    <div class="ft-inner">
+      <div class="ft-grid">
+
+        <!-- Registration dropdown -->
+        <div class="ft-col-reg">
+          <details class="ft-dropdown" open>
+            <summary>Registration</summary>
+            <div>
+              <a href="forever-miss-india-new.php">Forever Miss India 2026</a>
+              <a href="forever-mrs-india-new.php">Forever Mrs India 2026</a>
+              <a href="forever-miss-teen-india-new.php">Forever Miss Teen India 2026</a>
+              <a href="super-hero-award.php">Super Hero Award 2026</a>
+              <a href="super-woman-award.php">Super Woman Award 2026</a>
+              <a href="business-awards.php">Business Awards 2026</a>
+              <a href="miss-universe-beauty-pageant.php">Miss Universe 2026</a>
+              <a href="mrs-universe-beauty-pageant.php">Mrs Universe 2026</a>
+              <a href="miss-world-beauty-pageant.php">Miss World 2026</a>
+              <a href="mrs-world-beauty-pageant.php">Mrs World 2026</a>
+              <a href="register-star-kids.php">Forever Star Kids 2026</a>
+              <a href="register-nominate.php">Nominate Yourself 2026</a>
+            </div>
+          </details>
+        </div>
+
+        <!-- Single Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <a href="about.html">About FSIA</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="our-team.html">Our Team</a>
+          <a href="news.html">News Coverage</a>
+          <a href="winners.html">Winners</a>
+          <a href="https://www.fsia.in/termscondition.php" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+          <a href="https://www.fsia.in/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://www.fsia.in/refund-policy" target="_blank" rel="noopener">Refund Policy</a>
+          <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Apply For
+            Franchise</a>
+        </div>
+
+        <!-- Get In Touch -->
+        <div>
           <h4>Get In Touch</h4>
-          <a href="tel:+919983286999">&#128222; +91-99832-86999</a>
-          <a href="tel:+919983599666">&#128222; +91-99835-99666</a>
-          <a href="mailto:starindiaaward@gmail.com">&#9993; starindiaaward@gmail.com</a>
-          <a href="https://wa.me/919983286999" target="_blank" rel="noopener">&#128172; WhatsApp us</a>
+          <div class="ft-contact">
+            <a href="tel:+919983286999">
+              <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +91-99832-86999
+            </a>
+            <a href="mailto:care@fsia.in">
+              <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M2 7l10 7 10-7" />
+              </svg>
+              care@fsia.in
+            </a>
+          </div>
         </div>
+
+        <!-- Social Links -->
+        <div>
+          <h4>Social Links</h4>
+          <div class="ft-socials">
+            <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener"
+              aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="https://twitter.com/FsiaAward" target="_blank" rel="noopener" aria-label="Twitter"><svg width="12"
+                height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg></a>
+            <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram"><svg
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a>
+            <a href="https://in.pinterest.com/fsiaaward/" target="_blank" rel="noopener" aria-label="Pinterest"><svg
+                width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+              </svg></a>
+            <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener"
+              aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+              </svg></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="ft-copy">
+        &copy; 2026, <a href="index.html">Forever Star India Pvt. Ltd.</a> All rights reserved.
       </div>
     </div>
-    <div class="ft-copy">&copy; 2026 <a href="index.html">Forever Star India Pvt. Ltd.</a> All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-function loadSummary(){
-  const params=new URLSearchParams(window.location.search);
-  const data={
-    name:params.get('name')||localStorage.getItem('lastRegName')||'Guest',
-    category:params.get('category')||localStorage.getItem('lastRegCategory')||'Forever Miss India 2026',
-    city:params.get('city')||localStorage.getItem('lastRegCity')||'City Name',
-    phone:params.get('phone')||localStorage.getItem('lastRegPhone')||'9999999999',
-    email:params.get('email')||localStorage.getItem('lastRegEmail')||'email@example.com',
-    id:params.get('id')||localStorage.getItem('lastRegId')||'REG'+Date.now()
-  };
-
-  document.getElementById('summaryName').textContent=data.name;
-  document.getElementById('summaryCategory').textContent=data.category;
-  document.getElementById('summaryCity').textContent=data.city;
-  document.getElementById('summaryPhone').textContent='+91 '+data.phone;
-  document.getElementById('summaryEmail').textContent=data.email;
-  document.getElementById('summaryId').textContent=data.id;
-
-  document.getElementById('whatsappLink').href='https://wa.me/919983286999?text=Hi! I registered for '+data.category;
-  document.getElementById('whatsappShareBtn').href='https://wa.me/?text=I just registered for '+data.category+' on Forever Star India!';
-}
-
-function shareOnWhatsApp(){
-  const name=document.getElementById('summaryName').textContent;
-  const category=document.getElementById('summaryCategory').textContent;
-  window.open('https://wa.me/?text=I just registered for '+category+' on Forever Star India! 🎉','_blank');
-}
-
-function createConfetti(){
-  const colors=['#A6093D','#D4AF37','#F2C4CF','#FFFCF6'];
-  for(let i=0;i<30;i++){
-    setTimeout(()=>{
-      const confetti=document.createElement('div');
-      confetti.className='confetti-piece';
-      confetti.style.left=Math.random()*100+'%';
-      confetti.style.top='-10px';
-      confetti.innerHTML='✨';
-      confetti.style.color=colors[Math.floor(Math.random()*colors.length)];
-      confetti.style.fontSize=(Math.random()*20+15)+'px';
-      document.body.appendChild(confetti);
-      setTimeout(()=>confetti.remove(),3000);
-    },i*50);
-  }
-}
-
-loadSummary();
-createConfetti();
-</script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/forms-handler.js"></script>
 </body>
+
 </html>

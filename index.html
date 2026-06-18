@@ -1,1219 +1,783 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forever Star India | Miss India, Mrs India & Beauty Pageants 2026 — Register Now</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  /* FSIA brand palette — crimson red + rich gold from the FSIA logo & banners */
-  --ivory:#FFFCF6;
-  --gold:#D4AF37;
-  --gold-deep:#B8962E;
-  --crimson:#A6093D;
-  --crimson-deep:#7E0B30;
-  --blush:#F2C4CF;          /* soft tint of the brand crimson */
-  --blush-soft:#FCEFF2;
-  --champagne:#F8EDD8;
-  --ink:#3A2226;
-  --ink-soft:#7A5E63;
-  --white:#FFFFFF;
-  --shadow:0 10px 30px rgba(166,9,61,.10);
-  --radius:20px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6;overflow-x:hidden}
-h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.2}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-.container{width:min(1140px,92%);margin:0 auto}
-.eyebrow{display:inline-block;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);font-weight:600;margin-bottom:.8rem}
-.section{padding:84px 0}
-.section-title{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:.5rem}
-.section-sub{color:var(--ink-soft);max-width:560px;margin-bottom:2.6rem}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  *{animation:none!important;transition:none!important}
-}
-
-/* ---------- announcement bar ---------- */
-.announce{background:linear-gradient(90deg,var(--crimson-deep),var(--crimson) 45%,var(--gold-deep));background-size:200% 100%;animation:bargrad 8s ease infinite;color:#fff;text-align:center;font-size:.82rem;padding:.55rem 2.4rem;position:relative;font-weight:500}
-@keyframes bargrad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.announce button{position:absolute;right:.8rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:1rem;cursor:pointer;opacity:.85}
-
-/* ---------- header ---------- */
-header{position:sticky;top:0;z-index:60;background:rgba(255,252,246,.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(166,9,61,.14)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
-.logo{display:flex;align-items:center;gap:.65rem;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;letter-spacing:.02em}
-.logo img{width:48px;height:48px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(166,9,61,.18)}
-.logo span{color:var(--crimson)}
-.logo small{display:block;font-family:'Poppins',sans-serif;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
-.nav-links{display:flex;gap:1.9rem;font-size:.88rem;font-weight:500;align-items:center;flex:1;padding:0 1rem;position:relative;z-index:50}
-.nav-links a{color:var(--ink-soft);transition:color .25s}
-.nav-links a:hover{color:var(--crimson)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;justify-content:center;background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-deep) 45%,var(--gold-deep) 130%);background-size:180% 100%;color:#fff;font-weight:600;font-size:.9rem;padding:.78rem 1.7rem;border-radius:999px;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(166,9,61,.32);transition:transform .25s,box-shadow .25s,background-position .4s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(166,9,61,.42);background-position:100% 0}
-.btn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-deep));box-shadow:0 8px 22px rgba(184,150,46,.35)}
-.btn.ghost{background:transparent;color:var(--crimson);border:1.5px solid var(--crimson);box-shadow:none}
-.hamburger{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);cursor:pointer}
-
-/* ---------- hero ---------- */
-.hero{position:relative;background:linear-gradient(160deg,var(--blush-soft) 0%,var(--champagne) 55%,var(--ivory) 100%);padding:90px 0 110px;text-align:center;overflow:hidden}
-.hero::after{content:"";position:absolute;inset:auto 0 -2px 0;height:90px;background:linear-gradient(transparent,var(--ivory))}
-.sparkle{position:absolute;width:8px;height:8px;background:radial-gradient(circle,#fff 0%,var(--gold) 55%,transparent 75%);border-radius:50%;opacity:0;animation:twinkle 4.5s linear infinite}
-@keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}50%{opacity:.9;transform:scale(1.15)}}
-.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);max-width:840px;margin:0 auto 1.1rem}
-.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--crimson),var(--gold-deep),var(--crimson));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 5s linear infinite}
-@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
-.hero p.lead{color:var(--ink-soft);max-width:560px;margin:0 auto 1rem;font-size:1.02rem}
-.trustline{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson);font-weight:600;margin-bottom:2rem}
-.hero .btn.big{font-size:1.02rem;padding:1rem 2.4rem;animation:pulse 2.6s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 8px 22px rgba(166,9,61,.32)}50%{box-shadow:0 8px 22px rgba(166,9,61,.32),0 0 0 14px rgba(166,9,61,.07)}}
-.countdown-wrap{margin-top:2.6rem}
-.countdown-label{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.9rem}
-.countdown{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
-.count-box{background:#fff;border:1px solid rgba(212,175,55,.35);border-radius:16px;min-width:84px;padding:.9rem .6rem;box-shadow:var(--shadow)}
-.count-box b{display:block;font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--crimson)}
-.count-box span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
-
-/* ---------- categories ---------- */
-.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
-.cat-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform .3s,box-shadow .3s;border:1px solid rgba(212,160,76,.14);position:relative}
-.cat-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(184,134,47,.22)}
-.cat-thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;background:linear-gradient(140deg,var(--blush-soft),var(--champagne))}
-.cat-card:nth-child(even) .cat-thumb{background:linear-gradient(140deg,var(--champagne),var(--blush-soft))}
-.cat-body{padding:1.1rem 1.2rem 1.3rem}
-.cat-body h3{font-size:1.04rem;margin-bottom:.25rem}
-.cat-body p{font-size:.8rem;color:var(--ink-soft);margin-bottom:.7rem}
-.cat-body .apply{font-size:.8rem;font-weight:600;color:var(--gold-deep)}
-.cat-body .apply::after{content:" →";transition:margin .25s}
-.cat-card:hover .apply::after{margin-left:5px}
-
-/* ---------- stats ---------- */
-.stats{background:linear-gradient(120deg,var(--champagne),var(--blush-soft));border-radius:28px;padding:3rem 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;text-align:center;box-shadow:var(--shadow)}
-.stat b{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.4vw,2.7rem);color:var(--crimson);display:block}
-.stat span{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-.celeb-line{text-align:center;margin-top:1.9rem;color:var(--ink-soft);font-size:.9rem}
-.celeb-line .avatars{display:inline-flex;margin-right:.7rem;vertical-align:middle}
-.celeb-line .avatars i{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--blush));border:2px solid #fff;margin-left:-10px;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:1rem}
-.celeb-line .avatars i:first-child{margin-left:0}
-
-/* ---------- how it works ---------- */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;counter-reset:step}
-.step{background:#fff;border-radius:var(--radius);padding:1.7rem 1.4rem;box-shadow:var(--shadow);border:1px solid rgba(212,160,76,.14);position:relative}
-.step .num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--crimson),var(--gold-deep));color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;box-shadow:0 6px 16px rgba(166,9,61,.3)}
-.step h3{font-size:1rem;margin-bottom:.4rem}
-.step p{font-size:.82rem;color:var(--ink-soft)}
-
-/* ---------- winners ---------- */
-.winners{background:linear-gradient(180deg,var(--ivory),var(--blush-soft) 130%)}
-.win-track{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;-webkit-overflow-scrolling:touch}
-.win-track::-webkit-scrollbar{height:6px}
-.win-track::-webkit-scrollbar-thumb{background:var(--gold);border-radius:6px}
-.win-card{min-width:230px;scroll-snap-align:start;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(212,160,76,.14)}
-.win-photo{height:230px;background:linear-gradient(150deg,var(--blush),var(--champagne));display:flex;align-items:center;justify-content:center;font-size:3.2rem}
-.win-card:nth-child(odd) .win-photo{background:linear-gradient(150deg,var(--champagne),var(--blush))}
-.win-body{padding:1rem 1.1rem 1.25rem;text-align:center}
-.win-body h3{font-size:.98rem}
-.win-body span{font-size:.76rem;color:var(--crimson);font-weight:600;letter-spacing:.04em}
-
-/* ---------- testimonials ---------- */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.testi{background:#fff;border-radius:var(--radius);padding:1.8rem 1.6rem;box-shadow:var(--shadow);border:1px solid rgba(212,160,76,.14);position:relative}
-.testi::before{content:"“";font-family:'Playfair Display',serif;font-size:3.4rem;color:var(--blush);position:absolute;top:.4rem;left:1.1rem;line-height:1}
-.testi p{font-size:.88rem;color:var(--ink-soft);margin:1.4rem 0 1.2rem;font-style:italic}
-.testi .who{display:flex;align-items:center;gap:.7rem}
-.testi .who i{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--blush));display:flex;align-items:center;justify-content:center;font-style:normal}
-.testi .who b{font-size:.9rem}
-.testi .who small{display:block;font-size:.72rem;color:var(--ink-soft)}
-
-/* ---------- FAQ ---------- */
-.faq-item{background:#fff;border:1px solid rgba(212,160,76,.18);border-radius:16px;margin-bottom:.9rem;overflow:hidden;box-shadow:0 4px 14px rgba(184,134,47,.06)}
-.faq-q{width:100%;text-align:left;background:none;border:none;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;color:var(--ink);padding:1.1rem 1.3rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:"+";font-size:1.3rem;color:var(--gold-deep);transition:transform .3s}
-.faq-item.open .faq-q::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:.86rem;color:var(--ink-soft);padding:0 1.3rem}
-.faq-item.open .faq-a{max-height:200px;padding-bottom:1.1rem}
-
-/* ---------- final cta ---------- */
-.final-cta{background:linear-gradient(120deg,var(--crimson-deep),var(--crimson) 45%,var(--gold-deep) 130%);background-size:200% 100%;animation:bargrad 9s ease infinite;border-radius:30px;text-align:center;padding:4rem 2rem;color:#FBE8EE;position:relative;overflow:hidden}
-.final-cta h2{font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:.6rem;color:#fff}
-.final-cta p{margin-bottom:1.8rem;font-weight:500}
-.final-cta .btn{background:#fff;color:var(--crimson);box-shadow:0 10px 26px rgba(0,0,0,.18)}
-
-/* ---------- footer ---------- */
-footer{background:#fff;border-top:1px solid rgba(212,160,76,.2);padding:3.4rem 0 2rem;margin-top:84px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;margin-bottom:2.4rem}
-.foot-grid h4{font-family:'Playfair Display',serif;margin-bottom:.9rem;font-size:1.05rem}
-.foot-grid a,.foot-grid p{display:block;font-size:.84rem;color:var(--ink-soft);margin-bottom:.45rem}
-.foot-grid a:hover{color:var(--gold-deep)}
-.socials{display:flex;gap:.7rem;margin-top:.8rem}
-.socials a{width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);display:flex!important;align-items:center;justify-content:center;font-size:.9rem;color:var(--gold-deep);transition:.25s;margin:0!important}
-.socials a:hover{background:var(--gold);color:#fff}
-.copyright{text-align:center;font-size:.76rem;color:var(--ink-soft);border-top:1px solid rgba(212,160,76,.14);padding-top:1.4rem}
-
-/* ---------- floating buttons ---------- */
-.float-wa{position:fixed;right:18px;bottom:18px;z-index:70;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 24px rgba(37,211,102,.4)}
-.sticky-reg{position:fixed;left:50%;transform:translateX(-50%) translateY(90px);bottom:18px;z-index:70;display:none;transition:transform .4s}
-.sticky-reg.show{transform:translateX(-50%) translateY(0)}
-
-/* ---------- modal / smart form ---------- */
-.modal{position:fixed;inset:0;background:rgba(58,46,42,.5);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;z-index:100;padding:1rem}
-.modal.open{display:flex}
-.form-card{background:var(--ivory);width:min(640px,100%);max-height:92vh;overflow-y:auto;border-radius:24px;box-shadow:0 30px 80px rgba(58,46,42,.35);padding:2rem 2rem 2.2rem;position:relative;animation:popin .35s ease}
-@keyframes popin{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
-.form-close{position:absolute;top:.9rem;right:1rem;background:none;border:none;font-size:1.4rem;color:var(--ink-soft);cursor:pointer}
-.progress-wrap{margin:0.4rem 0 1.6rem}
-.progress-meta{display:flex;justify-content:space-between;font-size:.74rem;color:var(--ink-soft);margin-bottom:.45rem;letter-spacing:.08em;text-transform:uppercase}
-.progress-bar{height:6px;background:rgba(212,160,76,.18);border-radius:6px;overflow:hidden}
-.progress-fill{height:100%;width:20%;background:linear-gradient(90deg,var(--crimson),var(--gold));border-radius:6px;transition:width .45s ease}
-.fstep{display:none;animation:slidein .4s ease}
-.fstep.active{display:block}
-@keyframes slidein{from{opacity:0;transform:translateX(34px)}to{opacity:1;transform:none}}
-.fstep h3{font-size:1.35rem;margin-bottom:.3rem}
-.fstep .hint{font-size:.84rem;color:var(--ink-soft);margin-bottom:1.4rem}
-.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-.choice{background:#fff;border:1.5px solid rgba(212,160,76,.25);border-radius:16px;padding:1rem .7rem;text-align:center;cursor:pointer;transition:.25s;font-size:.8rem;font-weight:500}
-.choice .ic{font-size:1.6rem;display:block;margin-bottom:.4rem}
-.choice:hover{border-color:var(--gold);transform:translateY(-2px)}
-.choice.selected{border-color:var(--crimson);background:linear-gradient(140deg,#fff,var(--blush-soft));box-shadow:0 8px 20px rgba(166,9,61,.18)}
-.field{margin-bottom:1.1rem}
-.field label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem}
-.field label small{color:var(--ink-soft);font-weight:400}
-.field input,.field select,.field textarea{width:100%;padding:.78rem .95rem;border:1.5px solid rgba(212,160,76,.3);border-radius:12px;font-family:'Poppins',sans-serif;font-size:.9rem;background:#fff;color:var(--ink);transition:border .25s}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold-deep)}
-.field .err{color:#C2515F;font-size:.74rem;margin-top:.3rem;display:none}
-.field.invalid .err{display:block}
-.field.invalid input{border-color:#E2A2AB}
-.phone-row{display:flex;gap:.6rem}
-.phone-row .cc{flex:0 0 70px;display:flex;align-items:center;justify-content:center;background:var(--champagne);border-radius:12px;font-weight:600;font-size:.9rem;border:1.5px solid rgba(212,160,76,.3)}
-.suggest{display:none;background:linear-gradient(135deg,var(--blush-soft),var(--champagne));border:1px dashed var(--gold);border-radius:14px;padding:1rem 1.1rem;font-size:.84rem;margin-top:1rem;animation:slidein .4s ease}
-.suggest.show{display:block}
-.suggest button{margin-top:.6rem}
-.form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.8rem;gap:1rem}
-.btn.sm{padding:.65rem 1.4rem;font-size:.84rem}
-.skip{font-size:.8rem;color:var(--ink-soft);background:none;border:none;cursor:pointer;text-decoration:underline}
-.success-wrap{text-align:center;padding:1rem 0}
-.success-check{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--crimson),var(--gold-deep));color:#fff;font-size:2.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;animation:popcheck .5s ease}
-@keyframes popcheck{from{transform:scale(.3);opacity:0}60%{transform:scale(1.12)}to{transform:scale(1)}}
-.summary{background:#fff;border:1px solid rgba(212,160,76,.2);border-radius:14px;padding:1rem 1.2rem;font-size:.84rem;text-align:left;margin:1.3rem 0;color:var(--ink-soft)}
-.summary b{color:var(--ink)}
-.confetti{position:absolute;width:9px;height:14px;top:-20px;border-radius:3px;animation:fall linear forwards;z-index:5}
-@keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.2}}
-.reassure{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.72rem;color:var(--ink-soft);margin-top:1.4rem}
-
-/* ---------- dropdown menu ---------- */
-.dropdown-wrap{position:relative}
-.dropdown-wrap .dropdown-trigger{cursor:pointer}
-.dropdown-wrap:hover .dropdown-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;display:grid!important}
-.dropdown-menu{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s ease,visibility .3s ease}
-.dropdown-menu a{padding:.4rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;display:block;margin-bottom:.2rem;transition:.2s}
-.dropdown-menu a:hover{background:var(--blush-soft);color:var(--crimson)}
-.dropdown-open .dropdown-menu{opacity:1!important;visibility:visible!important;pointer-events:auto!important;display:grid!important}
-
-/* ---------- scroll progress bar ---------- */
-.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--crimson),var(--gold));z-index:90;transition:width .1s linear}
-
-/* ---------- button shine sweep ---------- */
-.btn{position:relative;overflow:hidden}
-.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3.4s ease-in-out infinite}
-@keyframes shine{0%,60%{left:-80%}100%{left:140%}}
-
-/* ---------- marquee ribbon ---------- */
-.ribbon{background:linear-gradient(90deg,var(--crimson-deep),var(--crimson));overflow:hidden;padding:.7rem 0;white-space:nowrap}
-.ribbon-track{display:inline-block;animation:ribbon 22s linear infinite}
-.ribbon span{color:#FBE8EE;font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0 1.2rem}
-.ribbon b{color:var(--gold)}
-@keyframes ribbon{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* ---------- season roadmap ---------- */
-.roadmap{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.roadmap::before{content:"";position:absolute;top:26px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--crimson));opacity:.4}
-.rm{position:relative;text-align:center;padding-top:0}
-.rm .dot{width:52px;height:52px;border-radius:50%;background:#fff;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .9rem;box-shadow:0 8px 20px rgba(166,9,61,.16);position:relative;z-index:1;animation:dotpulse 3s ease-in-out infinite}
-.rm:nth-child(2) .dot{animation-delay:.4s}.rm:nth-child(3) .dot{animation-delay:.8s}.rm:nth-child(4) .dot{animation-delay:1.2s}
-@keyframes dotpulse{0%,100%{box-shadow:0 8px 20px rgba(166,9,61,.16)}50%{box-shadow:0 8px 20px rgba(166,9,61,.16),0 0 0 10px rgba(212,175,55,.12)}}
-.rm h3{font-size:.98rem;margin-bottom:.25rem}
-.rm .when{font-size:.74rem;color:var(--crimson);font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem}
-.rm p{font-size:.78rem;color:var(--ink-soft)}
-
-/* ---------- celebrity cards ---------- */
-.celeb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.celeb{background:#fff;border:1px solid rgba(166,9,61,.1);border-radius:var(--radius);padding:1.6rem 1.2rem;text-align:center;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s}
-.celeb:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 18px 40px rgba(166,9,61,.18)}
-.celeb .ring{width:84px;height:84px;border-radius:50%;margin:0 auto 1rem;background:linear-gradient(135deg,var(--gold),var(--blush));display:flex;align-items:center;justify-content:center;font-size:2.1rem;position:relative}
-.celeb .ring::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px dashed var(--gold);animation:spin 14s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.celeb h3{font-size:1rem}
-.celeb small{font-size:.74rem;color:var(--ink-soft)}
-
-/* ---------- video section ---------- */
-.video-card{position:relative;border-radius:26px;overflow:hidden;background:linear-gradient(135deg,var(--crimson-deep),var(--crimson) 60%,var(--gold-deep) 160%);min-height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;color:#fff;text-align:center;box-shadow:var(--shadow)}
-.play{width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.7rem;cursor:pointer;transition:.3s;animation:playpulse 2.4s ease-in-out infinite}
-.play:hover{background:rgba(255,255,255,.3);transform:scale(1.06)}
-@keyframes playpulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.3)}50%{box-shadow:0 0 0 16px rgba(255,255,255,0)}}
-.video-card p{color:#FBE8EE;font-size:.9rem;max-width:480px;padding:0 1rem}
-
-/* ---------- partners strip ---------- */
-.partners{overflow:hidden;position:relative;padding:.6rem 0}
-.partners::before,.partners::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-.partners::before{left:0;background:linear-gradient(90deg,var(--ivory),transparent)}
-.partners::after{right:0;background:linear-gradient(-90deg,var(--ivory),transparent)}
-.partners-track{display:flex;gap:1rem;width:max-content;animation:ribbon 26s linear infinite}
-.partners:hover .partners-track{animation-play-state:paused}
-.p-logo{flex:0 0 auto;background:#fff;border:1px solid rgba(166,9,61,.12);border-radius:14px;padding:.9rem 1.6rem;font-size:.84rem;font-weight:600;color:var(--ink-soft);display:flex;align-items:center;gap:.5rem;box-shadow:0 4px 14px rgba(166,9,61,.06)}
-
-/* ---------- winners auto-scroll hint ---------- */
-.win-track{scroll-behavior:smooth}
-
-/* ---------- responsive ---------- */
-@media(max-width:920px){
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex:none;padding:.6rem 0;background:var(--ivory);flex-direction:column;gap:0;border-bottom:1px solid rgba(212,160,76,.2);max-height:80vh;overflow-y:auto;box-shadow:0 12px 28px rgba(166,9,61,.12)}
-  .nav-links.open{display:flex}
-  .nav-links a{padding:.85rem 6%;white-space:normal!important}
-  .hamburger{display:block}
-  .nav-register{display:none}
-  .nav-links .dropdown-menu{position:static!important;min-width:0!important;width:100%!important;left:0!important;top:0!important;box-shadow:none!important;border:none!important;border-radius:0!important;padding:.2rem 0 .4rem!important;grid-template-columns:1fr!important;gap:.4rem!important;display:grid!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
-  .dropdown-wrap{width:100%}
-  .dropdown-wrap>a{display:block;padding:.85rem 6%!important}
-  .cat-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .testi-grid{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .roadmap{grid-template-columns:1fr 1fr}
-  .roadmap::before{display:none}
-  .celeb-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  /* --- tighter section rhythm so content comes faster --- */
-  .section{padding:48px 0}
-  .section-sub{margin-bottom:1.8rem;font-size:.92rem}
-  .container{width:90%}
-
-  /* --- readable typography on small screens --- */
-  body{font-size:15px}
-  .hero h1{font-size:clamp(1.7rem,8vw,2.2rem);line-height:1.22}
-  .hero p.lead{font-size:.96rem}
-  .section-title{font-size:clamp(1.5rem,6vw,1.9rem)}
-
-  /* --- hero: trim height, full-width tappable CTA --- */
-  .hero{padding:46px 0 60px}
-  .trustline{font-size:.7rem;margin-bottom:1.4rem}
-  .hero .btn.big{width:100%;justify-content:center;font-size:1rem;padding:1.05rem 1rem}
-  .cta-tail{display:none}
-
-  /* --- compact one-row countdown --- */
-  .countdown-wrap{margin-top:1.8rem}
-  .countdown{gap:.5rem;flex-wrap:nowrap}
-  .count-box{min-width:0;flex:1;padding:.65rem .3rem;border-radius:12px}
-  .count-box b{font-size:1.35rem}
-  .count-box span{font-size:.58rem;letter-spacing:.08em}
-
-  /* --- comfortable tap targets (44px min) --- */
-  .nav-links a,.dropdown-wrap>a{min-height:46px;display:flex;align-items:center}
-  .nav-links .dropdown-menu a{min-height:42px;display:flex;align-items:center}
-  .faq-q{padding:1.15rem 1.2rem;min-height:54px}
-  .socials a{width:46px;height:46px;font-size:1.05rem}
-
-  /* --- single-column grids for easy scanning --- */
-  .cat-grid{grid-template-columns:1fr;gap:1rem}
-  .steps{grid-template-columns:1fr;gap:1rem}
-  .stats{grid-template-columns:1fr 1fr;padding:2.2rem 1.4rem;gap:1.4rem}
-  .choice-grid{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr;gap:1.8rem;text-align:center}
-  .socials{justify-content:center}
-  .final-cta{padding:3rem 1.4rem;border-radius:22px}
-
-  /* --- modal/form breathing room --- */
-  .form-card{padding:1.5rem 1.15rem 1.7rem;border-radius:18px}
-
-  /* --- stacked bottom buttons: WhatsApp ABOVE the register bar --- */
-  .sticky-reg{display:block;left:1rem;right:1rem;transform:translateY(120px);width:auto;font-size:1.02rem;padding:.95rem 1rem;box-shadow:0 8px 26px rgba(166,9,61,.4)}
-  .sticky-reg.show{transform:translateY(0)}
-  .float-wa{right:1rem;bottom:80px;width:52px;height:52px;font-size:1.45rem}
-
-  /* --- announcement bar: keep clear of close button --- */
-  .announce{font-size:.74rem;padding:.55rem 2.6rem;line-height:1.35}
-}
-
-/* avoid iOS auto-zoom on form inputs (<16px triggers zoom) */
-@media(max-width:640px){
-  input,select,textarea{font-size:16px!important}
-}
-
-/* very small phones (≤360px): keep countdown on one row */
-@media(max-width:360px){
-  .count-box b{font-size:1.15rem}
-  .count-box span{font-size:.52rem}
-  .hero h1{font-size:1.55rem}
-}
-
-/* offset sticky-header so in-page anchor links don't hide content */
-section[id],div[id]{scroll-margin-top:84px}
-
-
-
-/* ===== FSIA live footer v4 — matches fsia.in dark footer ===== */
-.fsia-footer{background:#1a1a2e;color:#ccc;padding:2.8rem 0 1.4rem;margin-top:3rem;font-family:'Poppins',sans-serif;position:relative}
-.fsia-footer::before{content:'';position:absolute;inset:0;background:url('') center/cover no-repeat;opacity:.12;pointer-events:none}
-.fsia-footer .ft-inner{width:min(1100px,92%);margin:0 auto}
-.fsia-footer .ft-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
-
-/* Column headings */
-.fsia-footer h4{color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid #A6093D;display:inline-block}
-
-/* Links */
-.fsia-footer a{display:flex;align-items:center;gap:.5rem;color:#bbb;text-decoration:none;font-size:.82rem;margin-bottom:.55rem;transition:color .2s}
-.fsia-footer a:hover{color:#fff}
-.fsia-footer a::before{content:'›';color:#A6093D;font-size:1rem;line-height:1;flex-shrink:0}
-
-/* Registration dropdown in footer */
-.fsia-footer .ft-dropdown summary{list-style:none;color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;margin-bottom:.6rem;padding-bottom:.5rem;border-bottom:2px solid #A6093D;display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;user-select:none}
-.fsia-footer .ft-dropdown summary::-webkit-details-marker{display:none}
-.fsia-footer .ft-dropdown summary::after{content:'▾';color:#D4AF37;transition:transform .25s;margin-left:.3rem}
-.fsia-footer .ft-dropdown[open] summary::after{transform:rotate(180deg)}
-.fsia-footer .ft-dropdown a{font-size:.78rem;margin-bottom:.4rem}
-
-/* Get in Touch */
-.fsia-footer .ft-contact a::before{display:none}
-.fsia-footer .ft-contact a{align-items:flex-start;gap:.6rem;color:#ccc;font-size:.82rem}
-.fsia-footer .ft-contact a:hover{color:#fff}
-.fsia-footer .ft-contact .ft-icon{width:18px;flex-shrink:0;margin-top:.1rem;color:#A6093D}
-
-/* Social links */
-.fsia-footer .ft-socials{display:flex;gap:.6rem;margin-top:.4rem;flex-wrap:wrap}
-.fsia-footer .ft-socials a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#ccc;margin:0;padding:0;font-size:.75rem}
-.fsia-footer .ft-socials a::before{display:none}
-.fsia-footer .ft-socials a:hover{background:#A6093D;border-color:#A6093D;color:#fff}
-.fsia-footer .ft-socials a svg{flex-shrink:0}
-
-/* Copyright */
-.fsia-footer .ft-copy{text-align:center;padding-top:1.2rem;font-size:.78rem;color:#888}
-.fsia-footer .ft-copy a{display:inline;color:#D4AF37;font-weight:600}
-.fsia-footer .ft-copy a::before{display:none}
-
-/* Mobile: 2 col quick-links, then 1 col rest */
-@media(max-width:760px){
-  .fsia-footer .ft-grid{grid-template-columns:1fr 1fr;gap:1.4rem}
-  .fsia-footer .ft-col-reg{grid-column:1/-1}
-}
-@media(max-width:480px){
-  .fsia-footer .ft-grid{grid-template-columns:1fr}
-  .fsia-footer .ft-col-reg{grid-column:auto}
-  .fsia-footer h4{font-size:.95rem}
-}
-
-</style>
-<meta name="description" content="Forever Star India (FSIA) is India's biggest beauty pageant & awards platform. Register for Miss India, Mrs India & Miss Teen 2026 — auditions open in every city.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.fsia.in/index.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Forever Star India">
-<meta property="og:title" content="Forever Star India | Miss India, Mrs India & Beauty Pageants 2026 — Register Now">
-<meta property="og:description" content="Forever Star India (FSIA) is India's biggest beauty pageant & awards platform. Register for Miss India, Mrs India & Miss Teen 2026 — auditions open in every city.">
-<meta property="og:url" content="https://www.fsia.in/index.html">
-<meta property="og:image" content="https://www.fsia.in/uploads/718Step-1.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Forever Star India | Miss India, Mrs India & Beauty Pageants 2026 — Register Now">
-<meta name="twitter:description" content="Forever Star India (FSIA) is India's biggest beauty pageant & awards platform. Register for Miss India, Mrs India & Miss Teen 2026 — auditions open in every city.">
-<meta name="twitter:image" content="https://www.fsia.in/uploads/718Step-1.webp">
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever Star India | Miss India, Mrs India & Beauty Pageants 2026 — Register Now</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <meta name="description"
+    content="Forever Star India (FSIA) is India's biggest beauty pageant & awards platform. Register for Miss India, Mrs India & Miss Teen 2026 — auditions open in every city.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.fsia.in/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Forever Star India">
+  <meta property="og:title" content="Forever Star India | Miss India, Mrs India & Beauty Pageants 2026 — Register Now">
+  <meta property="og:description"
+    content="Forever Star India (FSIA) is India's biggest beauty pageant & awards platform. Register for Miss India, Mrs India & Miss Teen 2026 — auditions open in every city.">
+  <meta property="og:url" content="https://www.fsia.in/index.html">
+  <meta property="og:image" content="https://www.fsia.in/uploads/718Step-1.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Forever Star India | Miss India, Mrs India & Beauty Pageants 2026 — Register Now">
+  <meta name="twitter:description"
+    content="Forever Star India (FSIA) is India's biggest beauty pageant & awards platform. Register for Miss India, Mrs India & Miss Teen 2026 — auditions open in every city.">
+  <meta name="twitter:image" content="https://www.fsia.in/uploads/718Step-1.webp">
+  <script
+    type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
+  <link rel="stylesheet" href="assets-new/css/main.css">
+  <link rel="stylesheet" href="assets-new/css/pages/index.css">
+  <link rel="stylesheet" href="assets-new/css/forms-master.css">
 </head>
+
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-<div class="announce" id="announce">
-  🔥 Registrations open for Miss India, Mrs India &amp; Miss Teen India 2026 — Limited Entries!
-  <button onclick="document.getElementById('announce').style.display='none'" aria-label="Close">✕</button>
-</div>
-
-<header style="background:#fff;border-bottom:1px solid rgba(166,9,61,.12);padding:.6rem 0 0;position:sticky;top:0;z-index:60">
-  <!-- TOP INFO BAR -->
-  <div style="background:linear-gradient(90deg,var(--crimson-deep),var(--crimson) 70%);color:#fff;padding:.45rem 0;font-size:.73rem;border-bottom:1px solid rgba(212,175,55,.2)">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
-      <span style="font-weight:500">Registrations Open for Miss India 2026 & Mrs India 2026 - Limited Entries!</span>
-      <span>📞 <a href="tel:+919983286999" style="color:#fff;text-decoration:none;font-weight:600">+91-99832-86999</a> · ✉️ <a href="mailto:starindiaaward@gmail.com" style="color:#fff;text-decoration:none;font-weight:600">starindiaaward@gmail.com</a></span>
-    </div>
+  <div class="announce" id="announce">
+    Registrations open for Miss India, Mrs India &amp; Miss Teen India 2026 — Limited Entries!
+    <button onclick="document.getElementById('announce').style.display='none'" aria-label="Close">✕</button>
   </div>
 
-  <!-- MAIN NAV BAR -->
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:.5rem 0;gap:1.5rem;flex-wrap:wrap">
-    <!-- LOGO -->
-    <a href="index.html" style="display:flex;align-items:center;gap:.6rem;flex-shrink:0">
-      <img src="logo.gif" alt="Forever Star India" style="width:58px;height:58px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(166,9,61,.18),0 0 0 3px rgba(212,175,55,.25)">
-      <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--crimson)">Forever<br><span style="color:var(--ink);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase">Star India</span></span>
-    </a>
-
-    <!-- MAIN NAVIGATION -->
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Home</a>
-      <a href="about.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">About</a>
-      
-      <!-- REGISTRATION MEGA DROPDOWN - ALL 20 CATEGORIES -->
-      <div class="dropdown-wrap" style="position:relative;cursor:pointer;overflow:visible;z-index:200">
-        <a href="#" onclick="return false" style="color:var(--crimson);white-space:nowrap;text-decoration:none;font-weight:600;transition:.25s;cursor:pointer">Registration ▼</a>
-        <div class="dropdown-menu" style="position:absolute;top:28px;left:-20px;min-width:850px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.4rem;grid-template-columns:1fr 1fr 1fr;gap:1.6rem;z-index:999;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;pointer-events:none">
-          
-          <!-- COL 1: PAGEANTS -->
-          <div>
-            <b style="color:var(--crimson);display:block;margin-bottom:.8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">👑 Beauty Pageants</b>
-            <a href="register-miss-india.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Miss India 2026</a>
-            <a href="register-mrs-india.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Mrs India 2026</a>
-            <a href="register-miss-teen.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Miss Teen India 2026</a>
-            <a href="register-star-kids.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Star Kids Contest 2026</a>
-            <a href="register-miss-fsia-intl.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Miss FSIA International 2026</a>
-            <a href="register-mrs-fsia-intl.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Mrs FSIA International 2026</a>
-          </div>
-
-          <!-- COL 2: INTERNATIONAL PAGEANTS & AWARDS -->
-          <div>
-            <b style="color:var(--crimson);display:block;margin-bottom:.8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">🌍 International</b>
-            <a href="register-miss-world.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Miss World 2026</a>
-            <a href="register-mrs-world.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Mrs World 2026</a>
-            <a href="register-miss-universe.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Miss Universe 2026</a>
-            <a href="register-mrs-universe.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Mrs Universe 2026</a>
-            <a href="register-intl-award.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">International Award 2026</a>
-
-            <b style="color:var(--crimson);display:block;margin:1rem 0 .8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">🏆 Achievement Awards</b>
-            <a href="register-intl-achievers.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">International Achievers Award</a>
-          </div>
-
-          <!-- COL 3: AWARDS & PROFESSIONAL -->
-          <div>
-            <b style="color:var(--crimson);display:block;margin-bottom:.8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">🎖️ Awards & Recognition</b>
-            <a href="register-super-woman.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Super Woman Award 2026</a>
-            <a href="register-super-hero.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Super Hero Award 2026</a>
-            <a href="register-business.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Business Awards 2026</a>
-            <a href="register-bharat-national.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Bharat National Award 2026</a>
-            <a href="register-forever-achievers.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Achievers 2026</a>
-            <a href="register-bharat-couture.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Bharat Couture Week 2026</a>
-
-            <b style="color:var(--crimson);display:block;margin:1rem 0 .8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">✨ Professional</b>
-            <a href="register-designer.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Fashion Designers 2026</a>
-            <a href="register-makeup.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever Makeup Artist 2026</a>
-            <a href="register-partner.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Channel Partner 2026</a>
-            <a href="register-nominate.html" style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Nominate Yourself 2026</a>
-          </div>
-        </div>
-      </div>
-
-      <a href="faq.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">FAQ</a>
-      <a href="contact.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Contact</a>
-      <a href="our-team.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Our Team</a>
-      <a href="news.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">News</a>
-    </nav>
-
-    <!-- REGISTER BUTTON -->
-    <button class="btn nav-register" onclick="openForm()" style="white-space:nowrap;flex-shrink:0">Register Now</button>
-
-    <!-- HAMBURGER (MOBILE) -->
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div id="sparkles"></div>
-  <div class="container">
-    <h1>India's Biggest <em>Beauty Pageant</em> &amp; Awards Platform</h1>
-    <p class="lead">From city auditions to the national crown — your journey to the spotlight starts here.</p>
-    <div class="trustline">10,000+ Participants · 4,000+ City Auditions · Winners from Every City</div>
-    <button class="btn big" onclick="openForm()">✨ Register Now<span class="cta-tail"> — Limited Entries</span></button>
-    <div class="countdown-wrap">
-      <div class="countdown-label">Registrations close in</div>
-      <div class="countdown" id="countdown">
-        <div class="count-box"><b id="cd-d">00</b><span>Days</span></div>
-        <div class="count-box"><b id="cd-h">00</b><span>Hours</span></div>
-        <div class="count-box"><b id="cd-m">00</b><span>Minutes</span></div>
-        <div class="count-box"><b id="cd-s">00</b><span>Seconds</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCROLLING RIBBON -->
-<div class="ribbon" aria-hidden="true">
-  <div class="ribbon-track" id="ribbonTrack">
-    <span>✦ Registrations Open <b>2026</b></span><span>✦ Forever Miss India</span><span>✦ Forever Mrs India</span><span>✦ Miss Teen India</span><span>✦ Star Kids Contest</span><span>✦ Super Woman Award</span><span>✦ Super Hero Award</span><span>✦ Business Awards</span><span>✦ Limited Entries</span>
-  </div>
-</div>
-
-<!-- STATS -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="stats reveal">
-      <div class="stat"><b data-count="10000">0</b><span>Participants</span></div>
-      <div class="stat"><b data-count="4000">0</b><span>City Auditions</span></div>
-      <div class="stat"><b data-count="900">0</b><span>Contestants</span></div>
-      <div class="stat"><b data-count="8">0</b><span>Seasons Completed</span></div>
-    </div>
-    <div class="celeb-line reveal" style="margin-top:1.9rem;margin-bottom:2.6rem">
-      Our ceremonies have been graced by leading Bollywood celebrities
-    </div>
-    <div class="celeb-grid">
-      <div class="celeb reveal"><div class="ring">🌹</div><h3>Bhagyashree</h3><small>Celebrity Guest · Grand Finale</small></div>
-      <div class="celeb reveal"><div class="ring">💃</div><h3>Malaika Arora</h3><small>Celebrity Guest · Award Night</small></div>
-      <div class="celeb reveal"><div class="ring">⭐</div><h3>[Celebrity Name]</h3><small>Add from your past events</small></div>
-      <div class="celeb reveal"><div class="ring">🎬</div><h3>[Celebrity Name]</h3><small>Add from your past events</small></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="how" style="padding-top:0">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">Your Journey</span>
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-sub">A clear, transparent path from registration to the grand finale.</p>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>Register Online</h3><p>Fill the simple form in under 2 minutes. Our team contacts you on WhatsApp.</p></div>
-      <div class="step reveal"><div class="num">2</div><h3>Audition &amp; Grooming</h3><p>Online auditions plus personality grooming and training sessions.</p></div>
-      <div class="step reveal"><div class="num">3</div><h3>Talent Rounds</h3><p>3 talent rounds to qualify — city winners compete at the state level.</p></div>
-      <div class="step reveal"><div class="num">4</div><h3>Grand Finale</h3><p>Shine on the national stage at the exclusive grand finale ceremony.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SEASON ROADMAP -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">Season 2026</span>
-      <h2 class="section-title">The Road to the Crown</h2>
-      <p class="section-sub">Key milestones of this season — plan your journey. <em>(Update the months to your real event dates.)</em></p>
-    </div>
-    <div class="roadmap">
-      <div class="rm reveal"><div class="dot">📝</div><span class="when">Now Open</span><h3>Registrations</h3><p>Apply online in under 2 minutes</p></div>
-      <div class="rm reveal"><div class="dot">🎤</div><span class="when">Ongoing</span><h3>Auditions &amp; Talent Rounds</h3><p>City-level rounds across India</p></div>
-      <div class="rm reveal"><div class="dot">🏆</div><span class="when">September 2026</span><h3>Finale</h3><p>State winners take the stage</p></div>
-      <div class="rm reveal"><div class="dot">👑</div><span class="when">December 2026</span><h3>Grand Finale</h3><p>The national crown is awarded</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WINNERS -->
-<section class="section winners" id="winners">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">India's Biggest Beauty Pageant</span>
-      <h2 class="section-title">Meet Our Winners of 2025</h2>
-      <p class="section-sub">This could be you. Swipe to meet the stars of last season.</p>
-    </div>
-    <div class="win-track reveal">
-      <div class="win-card"><div class="win-photo">👑</div><div class="win-body"><h3>Neeharika Bethanapalli</h3><span>Miss India 2025 Winner</span></div></div>
-      <div class="win-card"><div class="win-photo">👑</div><div class="win-body"><h3>Bhumika Songara</h3><span>Mrs India 2025 Winner</span></div></div>
-      <div class="win-card"><div class="win-photo">👑</div><div class="win-body"><h3>Anjali Sinha</h3><span>Mrs India 2025 Winner</span></div></div>
-      <div class="win-card"><div class="win-photo">👑</div><div class="win-body"><h3>Tanvi Yatin Khairnar</h3><span>Miss Teen India 2025 Winner</span></div></div>
-      <div class="win-card"><div class="win-photo">👑</div><div class="win-body"><h3>Dr Srujana Devi</h3><span>Miss Forever Universe India 2025</span></div></div>
-      <div class="win-card"><div class="win-photo">👑</div><div class="win-body"><h3>Gloria Kotwal</h3><span>Miss Teen Universe 2025 Winner</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">Real Stories</span>
-      <h2 class="section-title">What Our Contestants Say</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi reveal"><p>Thanks for this life-changing experience — support and guidance from the whole team. A great platform for new models.</p><div class="who"><i>💛</i><div><b>Yukti</b><small>Contestant</small></div></div></div>
-      <div class="testi reveal"><p>Crowned Miss South East 2021 — my journey was unforgettable and I learned so much about the fashion industry.</p><div class="who"><i>👑</i><div><b>Siddhi</b><small>Miss South East 2021</small></div></div></div>
-      <div class="testi reveal"><p>From auditions to the grand finale, the entire process was an amazing experience. A dream come true.</p><div class="who"><i>🌟</i><div><b>Nikita</b><small>Finalist</small></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">Watch</span>
-      <h2 class="section-title">Experience the FSIA Stage</h2>
-      <p class="section-sub">Highlights from our grand finales and award nights. <em>(Replace with your real YouTube video embed.)</em></p>
-    </div>
-    <div class="video-card reveal" onclick="window.open('https://www.youtube.com/c/foreverstarindiaaward','_blank')">
-      <div class="play">▶</div>
-      <h3 style="font-size:1.3rem">Grand Finale Highlights</h3>
-      <p>Click to watch on our official YouTube channel — or ask your developer to embed your finale video right here.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PARTNERS -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="eyebrow">Trusted By</span>
-      <h2 class="section-title">Our Partners &amp; Sponsors</h2>
-      <p class="section-sub" style="margin-left:auto;margin-right:auto"><em>Replace these placeholders with your real partner and sponsor logos.</em></p>
-    </div>
-    <div class="partners reveal">
-      <div class="partners-track" id="partnersTrack">
-        <div class="p-logo">🤝 [Partner Logo 1]</div>
-        <div class="p-logo">🏢 [Partner Logo 2]</div>
-        <div class="p-logo">💎 [Sponsor Logo 1]</div>
-        <div class="p-logo">📸 [Media Partner]</div>
-        <div class="p-logo">👗 [Fashion Partner]</div>
-        <div class="p-logo">💄 [Beauty Partner]</div>
-        <div class="p-logo">🏨 [Venue Partner]</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section" id="faq" style="padding-top:0">
-  <div class="container" style="max-width:760px">
-    <div class="reveal" style="text-align:center">
-      <span class="eyebrow">Good to Know</span>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-sub" style="margin-left:auto;margin-right:auto">Quick answers before you register.</p>
-    </div>
-    <div class="faq-item reveal"><button class="faq-q">Is there an entry fee?</button><div class="faq-a">Yes, there is a registration charge. Full details are shared by our team after you apply.</div></div>
-    <div class="faq-item reveal"><button class="faq-q">What happens after I submit my application?</button><div class="faq-a">Our team reviews your application and contacts you on your WhatsApp number with the next steps.</div></div>
-    <div class="faq-item reveal"><button class="faq-q">What if I don't clear the auditions?</button><div class="faq-a">You still receive your audition-level benefits and perks — every participant gains from the platform.</div></div>
-    <div class="faq-item reveal"><button class="faq-q">Can I participate again if I wasn't successful before?</button><div class="faq-a">Yes — you can register again with better preparation, as long as you don't already hold a winner title from a previous season.</div></div>
-    <div class="faq-item reveal"><button class="faq-q">Who can register?</button><div class="faq-a">Participants from every city in India. Each category has simple eligibility criteria shown right inside the registration form.</div></div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="final-cta reveal">
-      <h2>Your Crown Is Waiting. Shine Like a Star! ✨</h2>
-      <p>Limited entries for the 2026 season — register today and start your journey.</p>
-      <button class="btn" onclick="openForm()">Start My Registration</button>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="fsia-footer">
-  <div class="ft-inner">
-    <div class="ft-grid">
-
-      <!-- Registration dropdown -->
-      <div class="ft-col-reg">
-        <details class="ft-dropdown">
-          <summary>Registration</summary>
-          <div>
-            <a href="register-super-hero.html">Super Hero Award 2026</a>
-            <a href="register-super-woman.html">Super Woman Award 2026</a>
-            <a href="register-business.html">Business Awards 2026</a>
-            <a href="register-miss-india.html">Forever Miss India 2026</a>
-            <a href="register-mrs-india.html">Forever Mrs India 2026</a>
-            <a href="register-miss-teen.html">Forever Miss Teen India 2026</a>
-            <a href="register-miss-fsia-intl.html">Miss FSIA International 2026</a>
-            <a href="register-mrs-fsia-intl.html">Mrs FSIA International 2026</a>
-            <a href="register-star-kids.html">Forever Star Kids 2026</a>
-            <a href="register-designer.html">Forever Fashion Designers 2026</a>
-            <a href="register-makeup.html">Forever Makeup Artist 2026</a>
-            <a href="register-partner.html">Channel Partner</a>
-            <a href="register-intl-award.html">International Award 2026</a>
-            <a href="register-miss-world.html">Miss World 2026</a>
-            <a href="register-mrs-world.html">Mrs World 2026</a>
-            <a href="register-miss-universe.html">Miss Universe 2026</a>
-            <a href="register-mrs-universe.html">Mrs Universe 2026</a>
-            <a href="register-bharat-couture.html">Bharat Couture Week 2026</a>
-            <a href="register-bharat-national.html">Bharat National Awards 2026</a>
-            <a href="register-intl-achievers.html">International Achievers Award</a>
-            <a href="register-nominate.html">Nominate Yourself 2026</a>
-          </div>
-        </details>
-      </div>
-
-      <!-- Quick Links col 1 -->
-      <div>
-        <h4>Quick links</h4>
-        <a href="https://www.fsia.in/special-news-coverage.php" target="_blank" rel="noopener">Special News Coverage</a>
-        <a href="https://www.fsia.in/termscondition.php" target="_blank" rel="noopener">Terms And Conditions</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Apply For Franchise</a>
-        <a href="news.html">News Coverage</a>
-        <a href="https://www.fsia.in/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
-      </div>
-
-      <!-- Quick Links col 2 -->
-      <div>
-        <h4>Quick links</h4>
-        <a href="https://www.fsia.in/quickapply" target="_blank" rel="noopener">Quick Apply</a>
-        <a href="about.html">About</a>
-        <a href="https://www.fsia.in/refund-policy" target="_blank" rel="noopener">Refund Policy</a>
-        <a href="https://www.fsia.in/sponsors.php" target="_blank" rel="noopener">Sponsors</a>
-        <a href="faq.html">FAQ</a>
-        <a href="our-team.html">Our Team</a>
-        <a href="https://www.fsia.in/sitemap.php" target="_blank" rel="noopener">Sitemap</a>
-      </div>
-
-      <!-- Get In Touch + Socials -->
-      <div>
-        <h4>Get In Touch</h4>
-        <div class="ft-contact">
-          <a href="tel:+919983286999">
-            <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +91-9983286999
-          </a>
-          <a href="mailto:starindiaaward@gmail.com">
-            <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            starindiaaward@gmail.com
-          </a>
-        </div>
-        <h4 style="margin-top:1.2rem">Social Links</h4>
-        <div class="ft-socials">
-          <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://twitter.com/FsiaAward" target="_blank" rel="noopener" aria-label="Twitter"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="https://in.pinterest.com/fsiaaward/" target="_blank" rel="noopener" aria-label="Pinterest"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
-          <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
-        </div>
-      </div>
-
-    </div>
-    <div class="ft-copy">
-      &copy; 2026, <a href="index.html">Forever Star India Pvt. Ltd.</a> All rights reserved.
-    </div>
-  </div>
-</footer>
-
-<!-- floating buttons -->
-<a class="float-wa" href="https://wa.me/919983286999" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.83 1.47 5.5L4.9 27.2l6.84-1.79c1.61.88 3.43 1.34 5.28 1.34h.01c6.08 0 11.02-4.94 11.02-11.02C28.05 8.94 23.11 4 16.04 4zm0 20.2h-.01c-1.65 0-3.27-.44-4.68-1.28l-.34-.2-3.55.93.95-3.46-.22-.36a9.13 9.13 0 0 1-1.4-4.86c0-5.05 4.11-9.16 9.17-9.16 2.45 0 4.75.96 6.48 2.69a9.1 9.1 0 0 1 2.68 6.48c0 5.05-4.11 9.16-9.16 9.16zm5.03-6.86c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.74.35-.25.28-.96.94-.96 2.3 0 1.36.99 2.67 1.12 2.85.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z"/></svg></a>
-<button class="btn sticky-reg" id="stickyReg" onclick="openForm()">✨ Register Now</button>
-
-<!-- ============ SMART FORM MODAL ============ -->
-<div class="modal" id="modal" role="dialog" aria-modal="true">
-  <div class="form-card" id="formCard">
-    <button class="form-close" onclick="closeForm()" aria-label="Close">✕</button>
-
-    <div class="progress-wrap" id="progressWrap">
-      <div class="progress-meta"><span id="stepLabel">Step 1 of 5</span><span>Registration 2026</span></div>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    </div>
-
-    <!-- STEP 1 -->
-    <div class="fstep active" data-step="1">
-      <h3>Who are you registering as?</h3>
-      <p class="hint">Choose your category to begin ✨</p>
-      <div class="choice-grid" id="catGrid">
-        <!-- Pageants -->
-        <div class="choice" data-cat="miss-india"><span class="ic">👸</span>Miss India</div>
-        <div class="choice" data-cat="mrs-india"><span class="ic">💍</span>Mrs India</div>
-        <div class="choice" data-cat="miss-teen"><span class="ic">🌟</span>Miss Teen</div>
-        <div class="choice" data-cat="kids"><span class="ic">🧒</span>Star Kids</div>
-        <div class="choice" data-cat="miss-fsia"><span class="ic">✨</span>Miss FSIA Intl</div>
-        <div class="choice" data-cat="mrs-fsia"><span class="ic">💫</span>Mrs FSIA Intl</div>
-        <!-- International -->
-        <div class="choice" data-cat="miss-world"><span class="ic">👑</span>Miss World</div>
-        <div class="choice" data-cat="mrs-world"><span class="ic">💎</span>Mrs World</div>
-        <div class="choice" data-cat="miss-universe"><span class="ic">🌍</span>Miss Universe</div>
-        <div class="choice" data-cat="mrs-universe"><span class="ic">🌸</span>Mrs Universe</div>
-        <div class="choice" data-cat="intl-award"><span class="ic">🌟</span>Intl Award</div>
-        <!-- Awards -->
-        <div class="choice" data-cat="super-woman"><span class="ic">🦸‍♀️</span>Super Woman</div>
-        <div class="choice" data-cat="super-hero"><span class="ic">🏅</span>Super Hero</div>
-        <div class="choice" data-cat="business"><span class="ic">💼</span>Business</div>
-        <div class="choice" data-cat="bharat-national"><span class="ic">🇮🇳</span>Bharat Award</div>
-        <div class="choice" data-cat="forever-achievers"><span class="ic">⭐</span>Forever Achievers</div>
-        <div class="choice" data-cat="bharat-couture"><span class="ic">👗</span>Couture Week</div>
-        <div class="choice" data-cat="intl-achievers"><span class="ic">🏆</span>Intl Achievers</div>
-        <!-- Professional -->
-        <div class="choice" data-cat="designer"><span class="ic">🎨</span>Designer</div>
-        <div class="choice" data-cat="makeup"><span class="ic">💄</span>Makeup Artist</div>
-        <div class="choice" data-cat="partner"><span class="ic">🤝</span>Partner</div>
-        <div class="choice" data-cat="nominate"><span class="ic">🎯</span>Nominate</div>
+  <header
+    style="background:#fff;border-bottom:1px solid rgba(166,9,61,.12);padding:.6rem 0 0;position:sticky;top:0;z-index:60">
+    <!-- TOP INFO BAR -->
+    <div
+      style="background:linear-gradient(90deg,var(--crimson-deep),var(--crimson) 70%);color:#fff;padding:.45rem 0;font-size:.73rem;border-bottom:1px solid rgba(212,175,55,.2)">
+      <div class="container"
+        style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+        <span style="font-weight:500">Registrations Open for Miss India 2026 & Mrs India 2026 - Limited Entries!</span>
+        <span>📞 <a href="tel:+919983286999" style="color:#fff;text-decoration:none;font-weight:600">+91-99832-86999</a>
+          · ✉️ <a href="mailto:starindiaaward@gmail.com"
+            style="color:#fff;text-decoration:none;font-weight:600">starindiaaward@gmail.com</a></span>
       </div>
     </div>
 
-    <!-- STEP 2 -->
-    <div class="fstep" data-step="2">
-      <h3>Quick eligibility check</h3>
-      <p class="hint" id="eligHint">A few details to match you to the right stage.</p>
-      <div class="field" id="fAge"><label id="ageLabel">Your age</label><input type="number" id="age" min="1" max="99" placeholder="e.g. 24"><div class="err" id="ageErr">Please enter a valid age.</div></div>
-      <div class="field" id="fMarital" style="display:none"><label>Marital status</label><select id="marital"><option value="">Select…</option><option value="single">Single</option><option value="married">Married</option></select></div>
-      <div class="field" id="fProfession" style="display:none"><label>Your profession / field</label><input type="text" id="profession" placeholder="e.g. Entrepreneur, Doctor, Educator"></div>
-      <div class="field" id="fParent" style="display:none"><label>Parent / guardian name</label><input type="text" id="parent" placeholder="Full name"></div>
-      <div class="field" id="fPortfolio" style="display:none"><label>Instagram / portfolio link <small>(optional)</small></label><input type="text" id="portfolio" placeholder="https://instagram.com/yourwork"></div>
-      <div class="field"><label>State</label><input type="text" id="state" placeholder="e.g. Rajasthan"></div>
-      <div class="field"><label>City</label><input type="text" id="city" placeholder="e.g. Jaipur"><div class="err" id="cityErr">Please enter your city.</div></div>
-      <div class="suggest" id="suggestBox">💡 <b>You may be a perfect fit for <span id="suggestName"></span>!</b><br><span id="suggestWhy"></span><br><button class="btn sm" id="suggestBtn">Switch my category</button></div>
-      <div class="form-nav"><button class="btn ghost sm" onclick="goStep(1)">← Back</button><button class="btn sm" onclick="validateStep2()">Continue →</button></div>
-    </div>
+    <!-- MAIN NAV BAR -->
+    <div class="container"
+      style="display:flex;align-items:center;justify-content:space-between;padding:.5rem 0;gap:1.5rem;flex-wrap:wrap">
+      <!-- LOGO -->
+      <a href="index.html" style="display:flex;align-items:center;gap:.6rem;flex-shrink:0">
+        <img src="logo.gif" alt="Forever Star India"
+          style="width:58px;height:58px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(166,9,61,.18),0 0 0 3px rgba(212,175,55,.25)">
+        <span
+          style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--crimson)">Forever<br><span
+            style="color:var(--ink);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase">Star
+            India</span></span>
+      </a>
 
-    <!-- STEP 3 -->
-    <div class="fstep" data-step="3">
-      <h3>Your contact details</h3>
-      <p class="hint">Our team will reach you on WhatsApp within 24 hours.</p>
-      <div class="field" id="fName"><label>Full name</label><input type="text" id="name" placeholder="Your full name"><div class="err">Please enter your name.</div></div>
-      <div class="field" id="fPhone"><label>WhatsApp number</label>
-        <div class="phone-row"><div class="cc">+91</div><input type="tel" id="phone" maxlength="10" placeholder="10-digit mobile number" inputmode="numeric"></div>
-        <div class="err">Please enter a valid 10-digit number.</div>
-      </div>
-      <div class="field"><label>Email <small>(optional)</small></label><input type="email" id="email" placeholder="you@example.com"></div>
-      <div class="field"><label>Instagram handle <small>(optional)</small></label><input type="text" id="insta" placeholder="@yourhandle"></div>
-      <div class="form-nav"><button class="btn ghost sm" onclick="goStep(2)">← Back</button><button class="btn sm" onclick="validateStep3()">Continue →</button></div>
-    </div>
+      <!-- MAIN NAVIGATION -->
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Home</a>
+        <a href="about.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">About</a>
 
-    <!-- STEP 4 -->
-    <div class="fstep" data-step="4">
-      <h3>Tell us about you <small style="font-family:'Poppins';font-size:.75rem;color:var(--ink-soft)">(optional)</small></h3>
-      <p class="hint">Help our jury know you better — or skip for now.</p>
-      <div class="field"><label>Upload a recent photo <small>(optional)</small></label><input type="file" id="photo" accept="image/*"></div>
-      <div class="field"><label>About yourself / your talent <small>(optional)</small></label><textarea id="about" rows="4" placeholder="A few lines about you, your talent, your dream…"></textarea></div>
-      <div class="form-nav">
-        <button class="btn ghost sm" onclick="goStep(3)">← Back</button>
-        <div><button class="skip" onclick="finishForm()">Skip this step</button>&nbsp;&nbsp;<button class="btn sm" onclick="finishForm()">Submit ✨</button></div>
-      </div>
-    </div>
+        <!-- REGISTRATION MEGA DROPDOWN - ALL 20 CATEGORIES -->
+        <div class="dropdown-wrap" style="position:relative;cursor:pointer;overflow:visible;z-index:200">
+          <a href="#" onclick="return false"
+            style="color:var(--crimson);white-space:nowrap;text-decoration:none;font-weight:600;transition:.25s;cursor:pointer">Registration
+            ▼</a>
+          <div class="dropdown-menu"
+            style="position:absolute;top:28px;left:-20px;min-width:850px;background:#fff;border:1px solid rgba(166,9,61,.15);border-radius:12px;box-shadow:0 12px 48px rgba(166,9,61,.15);padding:1.4rem;grid-template-columns:1fr 1fr 1fr;gap:1.6rem;z-index:999;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;pointer-events:none">
 
-    <!-- STEP 5 -->
-    <div class="fstep" data-step="5">
-      <div style="text-align:center;padding:1rem 0">
-        <div class="success-check">✓</div>
-        <h3 style="font-size:1.4rem;margin-bottom:.4rem">Registration Received! 🎉</h3>
-        <p class="hint" style="color:var(--ink-soft);margin-bottom:1.8rem">Your application for <b id="succCat"></b> has been submitted successfully.</p>
-        
-        <div style="background:var(--blush-soft);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:1.4rem 1.2rem;margin-bottom:1.8rem;text-align:left;font-size:.85rem">
-          <b style="display:block;color:var(--crimson);margin-bottom:.8rem">📋 Your Application Summary:</b>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;color:var(--ink-soft)">
-            <div><small>Name:</small><br><b style="color:var(--ink);" id="succName"></b></div>
-            <div><small>Category:</small><br><b style="color:var(--ink);" id="succCat2"></b></div>
-            <div><small>City:</small><br><b style="color:var(--ink);" id="succCity"></b></div>
-            <div><small>Phone:</small><br><b style="color:var(--ink);letter-spacing:.05em">+91 <span id="succPhone"></span></b></div>
+            <!-- COL 1: PAGEANTS -->
+            <div>
+              <b
+                style="color:var(--crimson);display:block;margin-bottom:.8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">
+                Beauty Pageants</b>
+              <a href="forever-miss-india-new.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Miss India 2026</a>
+              <a href="forever-mrs-india-new.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Mrs India 2026</a>
+              <a href="forever-miss-teen-india-new.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Miss Teen India 2026</a>
+              <a href="register-star-kids.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Star Kids Contest 2026</a>
+              <a href="register-miss-fsia-intl.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Miss
+                FSIA International 2026</a>
+              <a href="register-mrs-fsia-intl.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Mrs
+                FSIA International 2026</a>
+            </div>
+
+            <!-- COL 2: INTERNATIONAL PAGEANTS & AWARDS -->
+            <div>
+              <b
+                style="color:var(--crimson);display:block;margin-bottom:.8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">
+                International</b>
+              <a href="miss-world-beauty-pageant.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Miss
+                World 2026</a>
+              <a href="mrs-world-beauty-pageant.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Mrs
+                World 2026</a>
+              <a href="miss-universe-beauty-pageant.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Miss
+                Universe 2026</a>
+              <a href="mrs-universe-beauty-pageant.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Mrs
+                Universe 2026</a>
+              <a href="international-award.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">International
+                Award 2026</a>
+
+              <b
+                style="color:var(--crimson);display:block;margin:1rem 0 .8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">
+                Achievement Awards</b>
+              <a href="infinity-achievers.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">International
+                Achievers Award</a>
+            </div>
+
+            <!-- COL 3: AWARDS & PROFESSIONAL -->
+            <div>
+              <b
+                style="color:var(--crimson);display:block;margin-bottom:.8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">
+                Awards & Recognition</b>
+              <a href="super-woman-award.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Super
+                Woman Award 2026</a>
+              <a href="super-hero-award.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Super
+                Hero Award 2026</a>
+              <a href="business-awards.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Business
+                Awards 2026</a>
+              <a href="bharat-national-awards.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Bharat
+                National Award 2026</a>
+              <a href="forever-achievers.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Achievers 2026</a>
+              <a href="register-bharat-couture.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Bharat
+                Couture Week 2026</a>
+
+              <b
+                style="color:var(--crimson);display:block;margin:1rem 0 .8rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--gold);padding-bottom:.4rem">
+                Professional</b>
+              <a href="register-designer.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Fashion Designers 2026</a>
+              <a href="register-makeup.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Forever
+                Makeup Artist 2026</a>
+              <a href="register-partner.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;margin-bottom:.3rem;transition:.2s;cursor:pointer">Channel
+                Partner 2026</a>
+              <a href="register-nominate.php"
+                style="display:block;padding:.5rem .6rem;font-size:.82rem;color:var(--ink-soft);text-decoration:none;border-radius:6px;transition:.2s;cursor:pointer">Nominate
+                Yourself 2026</a>
+            </div>
           </div>
         </div>
 
-        <div style="background:linear-gradient(120deg,rgba(166,9,61,.06),rgba(212,175,55,.06));border-left:3px solid var(--crimson);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.8rem;text-align:left;font-size:.8rem;color:var(--ink-soft)">
-          <b style="color:var(--crimson);display:block;margin-bottom:.4rem">ℹ️ What Happens Next:</b>
-          <p style="margin-bottom:.5rem">1. Our team will contact you on WhatsApp within <b>24 hours</b></p>
-          <p style="margin-bottom:.5rem">2. Complete your payment to confirm your registration</p>
-          <p>3. You'll receive a confirmation & instructions for auditions</p>
+        <a href="faq.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">FAQ</a>
+        <a href="contact.html"
+          style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Contact</a>
+        <a href="our-team.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">Our
+          Team</a>
+        <a href="news.html" style="color:var(--ink);white-space:nowrap;text-decoration:none;transition:.25s">News</a>
+      </nav>
+
+      <!-- REGISTER BUTTON -->
+      <button class="btn nav-register" onclick="openForm()" style="white-space:nowrap;flex-shrink:0">Register
+        Now</button>
+
+      <!-- HAMBURGER (MOBILE) -->
+      <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"
+        aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div id="sparkles"></div>
+    <div class="container">
+      <h1>India's Biggest <em>Beauty Pageant</em> &amp; Awards Platform</h1>
+      <p class="lead">From city auditions to the national crown — your journey to the spotlight starts here.</p>
+      <div class="trustline">10,000+ Participants · 4,000+ City Auditions · Winners from Every City</div>
+      <button class="btn big" onclick="openForm()">Register Now<span class="cta-tail"> — Limited
+          Entries</span></button>
+      <div class="countdown-wrap">
+        <div class="countdown-label">Registrations close in</div>
+        <div class="countdown" id="countdown">
+          <div class="count-box"><b id="cd-d">00</b><span>Days</span></div>
+          <div class="count-box"><b id="cd-h">00</b><span>Hours</span></div>
+          <div class="count-box"><b id="cd-m">00</b><span>Minutes</span></div>
+          <div class="count-box"><b id="cd-s">00</b><span>Seconds</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLLING RIBBON -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track" id="ribbonTrack">
+      <span>Registrations Open <b>2026</b></span><span>Forever Miss India</span><span>Forever Mrs
+        India</span><span>Miss Teen India</span><span>Star Kids Contest</span><span>Super Woman
+        Award</span><span>Super Hero Award</span><span>Business Awards</span><span>Limited Entries</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat"><b data-count="10000">0</b><span>Participants</span></div>
+        <div class="stat"><b data-count="4000">0</b><span>City Auditions</span></div>
+        <div class="stat"><b data-count="900">0</b><span>Contestants</span></div>
+        <div class="stat"><b data-count="8">0</b><span>Seasons Completed</span></div>
+      </div>
+      <div class="celeb-line reveal" style="margin-top:1.9rem;margin-bottom:2.6rem">
+        Our ceremonies have been graced by leading Bollywood celebrities
+      </div>
+      <div class="celeb-grid">
+        <div class="celeb reveal">
+          <div class="ring"></div>
+          <h3>Bhagyashree</h3><small>Celebrity Guest · Grand Finale</small>
+        </div>
+        <div class="celeb reveal">
+          <div class="ring"></div>
+          <h3>Malaika Arora</h3><small>Celebrity Guest · Award Night</small>
+        </div>
+        <div class="celeb reveal">
+          <div class="ring"></div>
+          <h3>[Celebrity Name]</h3><small>Add from your past events</small>
+        </div>
+        <div class="celeb reveal">
+          <div class="ring"></div>
+          <h3>[Celebrity Name]</h3><small>Add from your past events</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how" style="padding-top:0">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Your Journey</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-sub">A clear, transparent path from registration to the grand finale.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">1</div>
+          <h3>Register Online</h3>
+          <p>Fill the simple form in under 2 minutes. Our team contacts you on WhatsApp.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">2</div>
+          <h3>Audition &amp; Grooming</h3>
+          <p>Online auditions plus personality grooming and training sessions.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">3</div>
+          <h3>Talent Rounds</h3>
+          <p>3 talent rounds to qualify — city winners compete at the state level.</p>
+        </div>
+        <div class="step reveal">
+          <div class="num">4</div>
+          <h3>Grand Finale</h3>
+          <p>Shine on the national stage at the exclusive grand finale ceremony.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON ROADMAP -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Season 2026</span>
+        <h2 class="section-title">The Road to the Crown</h2>
+        <p class="section-sub">Key milestones of this season — plan your journey. <em>(Update the months to your real
+            event dates.)</em></p>
+      </div>
+      <div class="roadmap">
+        <div class="rm reveal">
+          <div class="dot"></div><span class="when">Now Open</span>
+          <h3>Registrations</h3>
+          <p>Apply online in under 2 minutes</p>
+        </div>
+        <div class="rm reveal">
+          <div class="dot"></div><span class="when">Ongoing</span>
+          <h3>Auditions &amp; Talent Rounds</h3>
+          <p>City-level rounds across India</p>
+        </div>
+        <div class="rm reveal">
+          <div class="dot"></div><span class="when">September 2026</span>
+          <h3>Finale</h3>
+          <p>State winners take the stage</p>
+        </div>
+        <div class="rm reveal">
+          <div class="dot"></div><span class="when">December 2026</span>
+          <h3>Grand Finale</h3>
+          <p>The national crown is awarded</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WINNERS -->
+  <section class="section winners" id="winners">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">India's Biggest Beauty Pageant</span>
+        <h2 class="section-title">Meet Our Winners of 2025</h2>
+        <p class="section-sub">This could be you. Swipe to meet the stars of last season.</p>
+      </div>
+      <div class="win-track reveal">
+        <div class="win-card">
+          <div class="win-photo"></div>
+          <div class="win-body">
+            <h3>Neeharika Bethanapalli</h3><span>Miss India 2025 Winner</span>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-photo"></div>
+          <div class="win-body">
+            <h3>Bhumika Songara</h3><span>Mrs India 2025 Winner</span>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-photo"></div>
+          <div class="win-body">
+            <h3>Anjali Sinha</h3><span>Mrs India 2025 Winner</span>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-photo"></div>
+          <div class="win-body">
+            <h3>Tanvi Yatin Khairnar</h3><span>Miss Teen India 2025 Winner</span>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-photo"></div>
+          <div class="win-body">
+            <h3>Dr Srujana Devi</h3><span>Miss Forever Universe India 2025</span>
+          </div>
+        </div>
+        <div class="win-card">
+          <div class="win-photo"></div>
+          <div class="win-body">
+            <h3>Gloria Kotwal</h3><span>Miss Teen Universe 2025 Winner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Real Stories</span>
+        <h2 class="section-title">What Our Contestants Say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi reveal">
+          <p>Thanks for this life-changing experience — support and guidance from the whole team. A great platform for
+            new models.</p>
+          <div class="who"><i></i>
+            <div><b>Yukti</b><small>Contestant</small></div>
+          </div>
+        </div>
+        <div class="testi reveal">
+          <p>Crowned Miss South East 2021 — my journey was unforgettable and I learned so much about the fashion
+            industry.</p>
+          <div class="who"><i></i>
+            <div><b>Siddhi</b><small>Miss South East 2021</small></div>
+          </div>
+        </div>
+        <div class="testi reveal">
+          <p>From auditions to the grand finale, the entire process was an amazing experience. A dream come true.</p>
+          <div class="who"><i></i>
+            <div><b>Nikita</b><small>Finalist</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Watch</span>
+        <h2 class="section-title">Experience the FSIA Stage</h2>
+        <p class="section-sub">Highlights from our grand finales and award nights. <em>(Replace with your real YouTube
+            video embed.)</em></p>
+      </div>
+      <div class="video-card reveal" onclick="window.open('https://www.youtube.com/c/foreverstarindiaaward','_blank')">
+        <div class="play">▶</div>
+        <h3 style="font-size:1.3rem">Grand Finale Highlights</h3>
+        <p>Click to watch on our official YouTube channel — or ask your developer to embed your finale video right here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="reveal" style="text-align:center">
+        <span class="eyebrow">Trusted By</span>
+        <h2 class="section-title">Our Partners &amp; Sponsors</h2>
+        <p class="section-sub" style="margin-left:auto;margin-right:auto"><em>Replace these placeholders with your real
+            partner and sponsor logos.</em></p>
+      </div>
+      <div class="partners reveal">
+        <div class="partners-track" id="partnersTrack">
+          <div class="p-logo">[Partner Logo 1]</div>
+          <div class="p-logo">[Partner Logo 2]</div>
+          <div class="p-logo">[Sponsor Logo 1]</div>
+          <div class="p-logo">[Media Partner]</div>
+          <div class="p-logo">[Fashion Partner]</div>
+          <div class="p-logo">[Beauty Partner]</div>
+          <div class="p-logo">[Venue Partner]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" style="padding-top:0">
+    <div class="container" style="max-width:760px">
+      <div class="reveal" style="text-align:center">
+        <span class="eyebrow">Good to Know</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub" style="margin-left:auto;margin-right:auto">Quick answers before you register.</p>
+      </div>
+      <div class="faq-item reveal"><button class="faq-q">Is there an entry fee?</button>
+        <div class="faq-a">Yes, there is a registration charge. Full details are shared by our team after you apply.
+        </div>
+      </div>
+      <div class="faq-item reveal"><button class="faq-q">What happens after I submit my application?</button>
+        <div class="faq-a">Our team reviews your application and contacts you on your WhatsApp number with the next
+          steps.</div>
+      </div>
+      <div class="faq-item reveal"><button class="faq-q">What if I don't clear the auditions?</button>
+        <div class="faq-a">You still receive your audition-level benefits and perks — every participant gains from the
+          platform.</div>
+      </div>
+      <div class="faq-item reveal"><button class="faq-q">Can I participate again if I wasn't successful before?</button>
+        <div class="faq-a">Yes — you can register again with better preparation, as long as you don't already hold a
+          winner title from a previous season.</div>
+      </div>
+      <div class="faq-item reveal"><button class="faq-q">Who can register?</button>
+        <div class="faq-a">Participants from every city in India. Each category has simple eligibility criteria shown
+          right inside the registration form.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="final-cta reveal">
+        <h2>Your Crown Is Waiting. Shine Like a Star!</h2>
+        <p>Limited entries for the 2026 season — register today and start your journey.</p>
+        <button class="btn" onclick="openForm()">Start My Registration</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fsia-footer">
+    <div class="ft-inner">
+      <div class="ft-grid">
+
+        <!-- Registration dropdown -->
+        <div class="ft-col-reg">
+          <details class="ft-dropdown" open>
+            <summary>Registration</summary>
+            <div>
+              <a href="forever-miss-india-new.php">Forever Miss India 2026</a>
+              <a href="forever-mrs-india-new.php">Forever Mrs India 2026</a>
+              <a href="forever-miss-teen-india-new.php">Forever Miss Teen India 2026</a>
+              <a href="super-hero-award.php">Super Hero Award 2026</a>
+              <a href="super-woman-award.php">Super Woman Award 2026</a>
+              <a href="business-awards.php">Business Awards 2026</a>
+              <a href="miss-universe-beauty-pageant.php">Miss Universe 2026</a>
+              <a href="mrs-universe-beauty-pageant.php">Mrs Universe 2026</a>
+              <a href="miss-world-beauty-pageant.php">Miss World 2026</a>
+              <a href="mrs-world-beauty-pageant.php">Mrs World 2026</a>
+              <a href="register-star-kids.php">Forever Star Kids 2026</a>
+              <a href="register-nominate.php">Nominate Yourself 2026</a>
+            </div>
+          </details>
         </div>
 
-        <button class="btn" style="background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-deep) 45%,var(--gold-deep) 130%);margin-bottom:.8rem;font-size:.98rem;padding:1rem" onclick="goToPayment()">
-          💳 Step 2 — Complete Payment
-        </button>
+        <!-- Single Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <a href="about.html">About FSIA</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="our-team.html">Our Team</a>
+          <a href="news.html">News Coverage</a>
+          <a href="winners.html">Winners</a>
+          <a href="https://www.fsia.in/termscondition.php" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+          <a href="https://www.fsia.in/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="https://www.fsia.in/refund-policy" target="_blank" rel="noopener">Refund Policy</a>
+          <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Apply For
+            Franchise</a>
+        </div>
 
-        <p style="font-size:.8rem;color:var(--ink-soft);margin-bottom:1rem">Payment secures your spot in the pageant</p>
+        <!-- Get In Touch -->
+        <div>
+          <h4>Get In Touch</h4>
+          <div class="ft-contact">
+            <a href="tel:+919983286999">
+              <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +91-99832-86999
+            </a>
+            <a href="mailto:care@fsia.in">
+              <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M2 7l10 7 10-7" />
+              </svg>
+              care@fsia.in
+            </a>
+          </div>
+        </div>
 
-        <button class="btn ghost" style="border:1.5px solid var(--crimson);background:transparent;color:var(--crimson)" onclick="shareWhatsApp()">
-          💬 Share Update on WhatsApp
-        </button>
+        <!-- Social Links -->
+        <div>
+          <h4>Social Links</h4>
+          <div class="ft-socials">
+            <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener"
+              aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg></a>
+            <a href="https://twitter.com/FsiaAward" target="_blank" rel="noopener" aria-label="Twitter"><svg width="12"
+                height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg></a>
+            <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram"><svg
+                width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg></a>
+            <a href="https://in.pinterest.com/fsiaaward/" target="_blank" rel="noopener" aria-label="Pinterest"><svg
+                width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+              </svg></a>
+            <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener"
+              aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+              </svg></a>
+          </div>
+        </div>
 
-        <div style="margin-top:1.4rem;padding-top:1.4rem;border-top:1px dashed rgba(166,9,61,.2)">
-          <p style="font-size:.76rem;color:var(--ink-soft);margin-bottom:.6rem">Questions? We're here to help</p>
-          <a class="link-more" href="https://wa.me/919983286999" style="font-size:.85rem;color:var(--crimson);font-weight:600">💬 Chat on WhatsApp</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-          <a class="link-more" href="tel:+919983286999" style="font-size:.85rem;color:var(--crimson);font-weight:600">📞 Call Us</a>
+      </div>
+      <div class="ft-copy">
+        &copy; 2026, <a href="index.html">Forever Star India Pvt. Ltd.</a> All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- floating buttons -->
+  <a class="float-wa" href="https://wa.me/919983286999" rel="noopener" aria-label="Chat on WhatsApp"><svg
+      viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
+      <path
+        d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.83 1.47 5.5L4.9 27.2l6.84-1.79c1.61.88 3.43 1.34 5.28 1.34h.01c6.08 0 11.02-4.94 11.02-11.02C28.05 8.94 23.11 4 16.04 4zm0 20.2h-.01c-1.65 0-3.27-.44-4.68-1.28l-.34-.2-3.55.93.95-3.46-.22-.36a9.13 9.13 0 0 1-1.4-4.86c0-5.05 4.11-9.16 9.17-9.16 2.45 0 4.75.96 6.48 2.69a9.1 9.1 0 0 1 2.68 6.48c0 5.05-4.11 9.16-9.16 9.16zm5.03-6.86c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.74.35-.25.28-.96.94-.96 2.3 0 1.36.99 2.67 1.12 2.85.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z" />
+    </svg></a>
+  <button class="btn sticky-reg" id="stickyReg" onclick="openForm()">Register Now</button>
+
+  <!-- ============ SMART FORM MODAL ============ -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="form-card" id="formCard">
+      <button class="form-close" onclick="closeForm()" aria-label="Close">✕</button>
+
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-meta"><span id="stepLabel">Step 1 of 5</span><span>Registration 2026</span></div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="fstep active" data-step="1">
+        <h3>Who are you registering as?</h3>
+        <p class="hint">Choose your category to begin</p>
+        <div class="choice-grid" id="catGrid">
+          <!-- Pageants -->
+          <div class="choice" data-cat="miss-india"><span class="ic"></span>Miss India</div>
+          <div class="choice" data-cat="mrs-india"><span class="ic"></span>Mrs India</div>
+          <div class="choice" data-cat="miss-teen"><span class="ic"></span>Miss Teen</div>
+          <div class="choice" data-cat="kids"><span class="ic"></span>Star Kids</div>
+          <div class="choice" data-cat="miss-fsia"><span class="ic"></span>Miss FSIA Intl</div>
+          <div class="choice" data-cat="mrs-fsia"><span class="ic"></span>Mrs FSIA Intl</div>
+          <!-- International -->
+          <div class="choice" data-cat="miss-world"><span class="ic"></span>Miss World</div>
+          <div class="choice" data-cat="mrs-world"><span class="ic"></span>Mrs World</div>
+          <div class="choice" data-cat="miss-universe"><span class="ic"></span>Miss Universe</div>
+          <div class="choice" data-cat="mrs-universe"><span class="ic"></span>Mrs Universe</div>
+          <div class="choice" data-cat="intl-award"><span class="ic"></span>Intl Award</div>
+          <!-- Awards -->
+          <div class="choice" data-cat="super-woman"><span class="ic"></span>Super Woman</div>
+          <div class="choice" data-cat="super-hero"><span class="ic"></span>Super Hero</div>
+          <div class="choice" data-cat="business"><span class="ic"></span>Business</div>
+          <div class="choice" data-cat="bharat-national"><span class="ic"></span>Bharat Award</div>
+          <div class="choice" data-cat="forever-achievers"><span class="ic"></span>Forever Achievers</div>
+          <div class="choice" data-cat="bharat-couture"><span class="ic"></span>Couture Week</div>
+          <div class="choice" data-cat="intl-achievers"><span class="ic"></span>Intl Achievers</div>
+          <!-- Professional -->
+          <div class="choice" data-cat="designer"><span class="ic"></span>Designer</div>
+          <div class="choice" data-cat="makeup"><span class="ic"></span>Makeup Artist</div>
+          <div class="choice" data-cat="partner"><span class="ic"></span>Partner</div>
+          <div class="choice" data-cat="nominate"><span class="ic"></span>Nominate</div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="fstep" data-step="2">
+        <h3>Quick eligibility check</h3>
+        <p class="hint" id="eligHint">A few details to match you to the right stage.</p>
+        <div class="field" id="fAge"><label id="ageLabel">Your age</label><input type="number" id="age" min="1" max="99"
+            placeholder="e.g. 24">
+          <div class="err" id="ageErr">Please enter a valid age.</div>
+        </div>
+        <div class="field" id="fMarital" style="display:none"><label>Marital status</label><select id="marital">
+            <option value="">Select…</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+          </select></div>
+        <div class="field" id="fProfession" style="display:none"><label>Your profession / field</label><input
+            type="text" id="profession" placeholder="e.g. Entrepreneur, Doctor, Educator"></div>
+        <div class="field" id="fParent" style="display:none"><label>Parent / guardian name</label><input type="text"
+            id="parent" placeholder="Full name"></div>
+        <div class="field" id="fPortfolio" style="display:none"><label>Instagram / portfolio link
+            <small>(optional)</small></label><input type="text" id="portfolio"
+            placeholder="https://instagram.com/yourwork"></div>
+        <div class="field"><label>State</label><input type="text" id="state" placeholder="e.g. Rajasthan"></div>
+        <div class="field"><label>City</label><input type="text" id="city" placeholder="e.g. Jaipur">
+          <div class="err" id="cityErr">Please enter your city.</div>
+        </div>
+        <div class="suggest" id="suggestBox"><b>You may be a perfect fit for <span
+              id="suggestName"></span>!</b><br><span id="suggestWhy"></span><br><button class="btn sm"
+            id="suggestBtn">Switch my category</button></div>
+        <div class="form-nav"><button class="btn ghost sm" onclick="goStep(1)">← Back</button><button class="btn sm"
+            onclick="validateStep2()">Continue →</button></div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="fstep" data-step="3">
+        <h3>Your contact details</h3>
+        <p class="hint">Our team will reach you on WhatsApp within 24 hours.</p>
+        <div class="field" id="fName"><label>Full name</label><input type="text" id="name" placeholder="Your full name">
+          <div class="err">Please enter your name.</div>
+        </div>
+        <div class="field" id="fPhone"><label>WhatsApp number</label>
+          <div class="phone-row">
+            <div class="cc">+91</div><input type="tel" id="phone" maxlength="10" placeholder="10-digit mobile number"
+              inputmode="numeric">
+          </div>
+          <div class="err">Please enter a valid 10-digit number.</div>
+        </div>
+        <div class="field"><label>Email <small>(optional)</small></label><input type="email" id="email"
+            placeholder="you@example.com"></div>
+        <div class="field"><label>Instagram handle <small>(optional)</small></label><input type="text" id="insta"
+            placeholder="@yourhandle"></div>
+        <div class="form-nav"><button class="btn ghost sm" onclick="goStep(2)">← Back</button><button class="btn sm"
+            onclick="validateStep3()">Continue →</button></div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="fstep" data-step="4">
+        <h3>Tell us about you <small
+            style="font-family:'Poppins';font-size:.75rem;color:var(--ink-soft)">(optional)</small></h3>
+        <p class="hint">Help our jury know you better — or skip for now.</p>
+        <div class="field"><label>Upload a recent photo <small>(optional)</small></label><input type="file" id="photo"
+            accept="image/*"></div>
+        <div class="field"><label>About yourself / your talent <small>(optional)</small></label><textarea id="about"
+            rows="4" placeholder="A few lines about you, your talent, your dream…"></textarea></div>
+        <div class="form-nav">
+          <button class="btn ghost sm" onclick="goStep(3)">← Back</button>
+          <div><button class="skip" onclick="finishForm()">Skip this step</button>&nbsp;&nbsp;<button class="btn sm"
+              onclick="finishForm()">Submit</button></div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="fstep" data-step="5">
+        <div style="text-align:center;padding:1rem 0">
+          <div class="success-check">✓</div>
+          <h3 style="font-size:1.4rem;margin-bottom:.4rem">Registration Received!</h3>
+          <p class="hint" style="color:var(--ink-soft);margin-bottom:1.8rem">Your application for <b id="succCat"></b>
+            has been submitted successfully.</p>
+
+          <div
+            style="background:var(--blush-soft);border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:1.4rem 1.2rem;margin-bottom:1.8rem;text-align:left;font-size:.85rem">
+            <b style="display:block;color:var(--crimson);margin-bottom:.8rem">Your Application Summary:</b>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;color:var(--ink-soft)">
+              <div><small>Name:</small><br><b style="color:var(--ink);" id="succName"></b></div>
+              <div><small>Category:</small><br><b style="color:var(--ink);" id="succCat2"></b></div>
+              <div><small>City:</small><br><b style="color:var(--ink);" id="succCity"></b></div>
+              <div><small>Phone:</small><br><b style="color:var(--ink);letter-spacing:.05em">+91 <span
+                    id="succPhone"></span></b></div>
+            </div>
+          </div>
+
+          <div
+            style="background:linear-gradient(120deg,rgba(166,9,61,.06),rgba(212,175,55,.06));border-left:3px solid var(--crimson);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.8rem;text-align:left;font-size:.8rem;color:var(--ink-soft)">
+            <b style="color:var(--crimson);display:block;margin-bottom:.4rem">What Happens Next:</b>
+            <p style="margin-bottom:.5rem">1. Our team will contact you on WhatsApp within <b>24 hours</b></p>
+            <p style="margin-bottom:.5rem">2. Complete your payment to confirm your registration</p>
+            <p>3. You'll receive a confirmation & instructions for auditions</p>
+          </div>
+
+          <button class="btn"
+            style="background:linear-gradient(120deg,var(--crimson) 0%,var(--crimson-deep) 45%,var(--gold-deep) 130%);margin-bottom:.8rem;font-size:.98rem;padding:1rem"
+            onclick="goToPayment()">
+            Step 2 — Complete Payment
+          </button>
+
+          <p style="font-size:.8rem;color:var(--ink-soft);margin-bottom:1rem">Payment secures your spot in the pageant
+          </p>
+
+          <button class="btn ghost"
+            style="border:1.5px solid var(--crimson);background:transparent;color:var(--crimson)"
+            onclick="shareWhatsApp()">
+            Share Update on WhatsApp
+          </button>
+
+          <div style="margin-top:1.4rem;padding-top:1.4rem;border-top:1px dashed rgba(166,9,61,.2)">
+            <p style="font-size:.76rem;color:var(--ink-soft);margin-bottom:.6rem">Questions? We're here to help</p>
+            <a class="link-more" href="https://wa.me/919983286999"
+              style="font-size:.85rem;color:var(--crimson);font-weight:600">Chat on
+              WhatsApp</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a class="link-more" href="tel:+919983286999"
+              style="font-size:.85rem;color:var(--crimson);font-weight:600">Call Us</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-/* ====== CONFIG — change deadline here ====== */
-const REG_DEADLINE = new Date('2026-08-31T23:59:59+05:30');
-const WA_NUMBER = '919983286999';
-
-/* ---------- countdown ---------- */
-function tick(){
-  let diff = REG_DEADLINE - new Date();
-  if(diff < 0) diff = 0;
-  const d = Math.floor(diff/86400000), h = Math.floor(diff/3600000)%24,
-        m = Math.floor(diff/60000)%60, s = Math.floor(diff/1000)%60;
-  cdD.textContent = String(d).padStart(2,'0'); cdH.textContent = String(h).padStart(2,'0');
-  cdM.textContent = String(m).padStart(2,'0'); cdS.textContent = String(s).padStart(2,'0');
-}
-const cdD=document.getElementById('cd-d'),cdH=document.getElementById('cd-h'),cdM=document.getElementById('cd-m'),cdS=document.getElementById('cd-s');
-tick(); setInterval(tick,1000);
-
-/* ---------- hero sparkles ---------- */
-const sp = document.getElementById('sparkles');
-for(let i=0;i<22;i++){
-  const s=document.createElement('div'); s.className='sparkle';
-  s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*85+'%';
-  s.style.animationDelay=(Math.random()*4.5)+'s';
-  s.style.animationDuration=(3.5+Math.random()*3)+'s';
-  sp.appendChild(s);
-}
-
-/* ---------- reveal on scroll ---------- */
-const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ---------- count-up stats ---------- */
-const statIO = new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting) return; statIO.unobserve(e.target);
-  e.target.querySelectorAll('[data-count]').forEach(el=>{
-    const target=+el.dataset.count, dur=1600, t0=performance.now();
-    (function step(t){const p=Math.min((t-t0)/dur,1);
-      el.textContent=Math.floor(target*(1-Math.pow(1-p,3))).toLocaleString()+(p===1?'+':'');
-      if(p<1)requestAnimationFrame(step);})(t0);
-  });
-}),{threshold:.4});
-document.querySelectorAll('.stats').forEach(el=>statIO.observe(el));
-
-/* ---------- sticky register (mobile) ---------- */
-const sticky=document.getElementById('stickyReg');
-window.addEventListener('scroll',()=>{ sticky.classList.toggle('show', window.scrollY>520); },{passive:true});
-
-/* ---------- FAQ ---------- */
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-
-/* ================= SMART FORM ================= */
-const CATS={
-  'miss-india':{name:'Forever Miss India 2026',url:'register-miss-india.html',age:[18,35],marital:true},
-  'mrs-india':{name:'Forever Mrs India 2026',url:'register-mrs-india.html',age:[18,60]},
-  'miss-teen':{name:'Forever Miss Teen India 2026',url:'register-miss-teen.html',age:[13,19]},
-  'kids':{name:'Forever Star Kids Contest 2026',url:'register-star-kids.html',age:[4,12],parent:true},
-  'miss-fsia':{name:'Miss FSIA International 2026',url:'register-miss-fsia-intl.html',age:[18,35],marital:true},
-  'mrs-fsia':{name:'Mrs FSIA International 2026',url:'register-mrs-fsia-intl.html',age:[18,60]},
-  'miss-world':{name:'Miss World 2026',url:'register-miss-world.html',age:[18,35],marital:true},
-  'mrs-world':{name:'Mrs World 2026',url:'register-mrs-world.html',age:[18,60]},
-  'miss-universe':{name:'Miss Universe 2026',url:'register-miss-universe.html',age:[18,35],marital:true},
-  'mrs-universe':{name:'Mrs Universe 2026',url:'register-mrs-universe.html',age:[18,60]},
-  'intl-award':{name:'International Award 2026',url:'register-intl-award.html',profession:true},
-  'super-woman':{name:'Super Woman Award 2026',url:'register-super-woman.html',profession:true},
-  'super-hero':{name:'Super Hero Award 2026',url:'register-super-hero.html',profession:true},
-  'business':{name:'Business Awards 2026',url:'register-business.html',profession:true},
-  'bharat-national':{name:'Bharat National Award 2026',url:'register-bharat-national.html',profession:true},
-  'forever-achievers':{name:'Forever Achievers 2026',url:'register-forever-achievers.html',profession:true},
-  'bharat-couture':{name:'Bharat Couture Week 2026',url:'register-bharat-couture.html',profession:true,portfolio:true},
-  'intl-achievers':{name:'International Achievers Award',url:'register-intl-achievers.html',profession:true},
-  'designer':{name:'Forever Fashion Designers 2026',url:'register-designer.html',profession:true,portfolio:true},
-  'makeup':{name:'Forever Makeup Artist 2026',url:'register-makeup.html',profession:true,portfolio:true},
-  'partner':{name:'Channel Partner 2026',url:'register-partner.html',profession:true},
-  'nominate':{name:'Nominate Yourself for Award 2026',url:'register-nominate.html',profession:true}
-};
-let data={category:null}, currentStep=1;
-const modal=document.getElementById('modal');
-
-function openForm(cat){
-  modal.classList.add('open'); document.body.style.overflow='hidden';
-  if(cat && CATS[cat]){ selectCategory(cat,false); goStep(2); }
-  else goStep(1);
-}
-function closeForm(){ modal.classList.remove('open'); document.body.style.overflow=''; }
-modal.addEventListener('click',e=>{ if(e.target===modal) closeForm(); });
-
-function goStep(n){
-  currentStep=n;
-  document.querySelectorAll('.fstep').forEach(s=>s.classList.toggle('active',+s.dataset.step===n));
-  document.getElementById('progressFill').style.width=(n/5*100)+'%';
-  document.getElementById('stepLabel').textContent='Step '+n+' of 5';
-  document.getElementById('progressWrap').style.display = n===5 ? 'none' : '';
-  document.getElementById('formCard').scrollTop=0;
-}
-
-/* step 1: category cards */
-document.getElementById('catGrid').addEventListener('click',e=>{
-  const c=e.target.closest('.choice'); if(!c) return;
-  selectCategory(c.dataset.cat,true);
-});
-function selectCategory(cat,auto){
-  data.category=cat;
-  document.querySelectorAll('#catGrid .choice').forEach(c=>c.classList.toggle('selected',c.dataset.cat===cat));
-  configStep2(cat);
-  if(auto) setTimeout(()=>goStep(2),400);
-}
-function configStep2(cat){
-  const cfg=CATS[cat];
-  document.getElementById('eligHint').textContent='Registering for '+cfg.name;
-  document.getElementById('fAge').style.display = cfg.age?'':'none';
-  document.getElementById('ageLabel').textContent = cat==='kids'?"Child's age":'Your age';
-  document.getElementById('fMarital').style.display = cfg.marital?'':'none';
-  document.getElementById('fProfession').style.display = cfg.profession?'':'none';
-  document.getElementById('fParent').style.display = cfg.parent?'':'none';
-  document.getElementById('fPortfolio').style.display = cfg.portfolio?'':'none';
-  document.getElementById('suggestBox').classList.remove('show');
-}
-/* friendly redirect logic */
-function suggest(catKey,why){
-  const box=document.getElementById('suggestBox');
-  document.getElementById('suggestName').textContent=CATS[catKey].name;
-  document.getElementById('suggestWhy').textContent=why;
-  document.getElementById('suggestBtn').onclick=()=>{ selectCategory(catKey,false); box.classList.remove('show'); };
-  box.classList.add('show');
-}
-function validateStep2(){
-  const cfg=CATS[data.category]; let ok=true;
-  const ageF=document.getElementById('fAge'), age=+document.getElementById('age').value;
-  ageF.classList.remove('invalid');
-  if(cfg.age){
-    if(!age){ ageF.classList.add('invalid'); document.getElementById('ageErr').textContent='Please enter a valid age.'; ok=false; }
-    else if(age<cfg.age[0]||age>cfg.age[1]){
-      ageF.classList.add('invalid');
-      document.getElementById('ageErr').textContent='For '+cfg.name+' the age range is '+cfg.age[0]+'–'+cfg.age[1]+'.';
-      if(data.category==='miss-teen'&&age>19) suggest('miss-india','Based on your age, Miss India may be the right stage for you.');
-      if(data.category==='miss-teen'&&age<13) suggest('kids','Based on the age entered, the Star Kids Contest may be the right fit.');
-      ok=false;
-    }
-  }
-  if(cfg.marital && document.getElementById('marital').value==='married'){
-    suggest('mrs-india','Forever Mrs India celebrates married women on the national stage — switch in one tap.');
-    ok=false;
-  }
-  const cityF=document.getElementById('fCity')||document.getElementById('city').parentElement;
-  cityF.classList.remove('invalid');
-  if(!document.getElementById('city').value.trim()){ cityF.classList.add('invalid'); ok=false; }
-  if(ok){
-    data.age=age||''; data.marital=document.getElementById('marital').value;
-    data.profession=document.getElementById('profession').value; data.parent=document.getElementById('parent').value;
-    data.state=document.getElementById('state').value; data.city=document.getElementById('city').value;
-    goStep(3);
-  }
-}
-function validateStep3(){
-  let ok=true;
-  const nF=document.getElementById('fName'), pF=document.getElementById('fPhone');
-  nF.classList.remove('invalid'); pF.classList.remove('invalid');
-  const name=document.getElementById('name').value.trim();
-  const phone=document.getElementById('phone').value.replace(/\D/g,'');
-  if(name.length<2){ nF.classList.add('invalid'); ok=false; }
-  if(!/^[6-9]\d{9}$/.test(phone)){ pF.classList.add('invalid'); ok=false; }
-  if(ok){
-    data.name=name; data.phone=phone;
-    data.email=document.getElementById('email').value; data.insta=document.getElementById('insta').value;
-    /* DEVELOPER NOTE: partial lead capture — POST {category, name, phone, status:'incomplete'} to your backend here */
-    goStep(4);
-  }
-}
-function finishForm(){
-  data.about=document.getElementById('about').value;
-  const cfg=CATS[data.category];
-  
-  // Populate success screen
-  document.getElementById('succCat').textContent=cfg.name;
-  document.getElementById('succCat2').textContent=cfg.name;
-  document.getElementById('succName').textContent=data.name;
-  document.getElementById('succCity').textContent=data.city;
-  document.getElementById('succPhone').textContent=data.phone;
-  
-  // DEVELOPER NOTE: POST full `data` object (status:'complete') to your backend here, e.g. /api/register.php
-  // For now, save to sessionStorage so payment page can access it
-  sessionStorage.setItem('fsiaReg',JSON.stringify({
-    category:cfg.name,
-    name:data.name,
-    phone:data.phone,
-    email:data.email,
-    city:data.city,
-    state:data.state,
-    insta:data.insta,
-    timestamp:new Date().toISOString()
-  }));
-  
-  goStep(5); 
-  confetti();
-}
-
-function goToPayment(){
-  const cfg=CATS[data.category];
-  if(cfg && cfg.url){
-    window.open(cfg.url,'_blank');
-  } else {
-    window.location.href='payment.html';
-  }
-}
-
-function shareWhatsApp(){
-  const cfg=CATS[data.category];
-  const msg='Hi! I just registered for '+cfg.name+' with Forever Star India 🎉 Excited to begin this journey!';
-  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
-}
-function confetti(){
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const colors=['#D4AF37','#A6093D','#F2C4CF','#B8962E','#fff'];
-  const card=document.getElementById('formCard');
-  for(let i=0;i<46;i++){
-    const c=document.createElement('div'); c.className='confetti';
-    c.style.left=Math.random()*100+'%';
-    c.style.background=colors[Math.floor(Math.random()*colors.length)];
-    c.style.animationDuration=(1.8+Math.random()*1.6)+'s';
-    c.style.animationDelay=(Math.random()*.5)+'s';
-    card.appendChild(c); setTimeout(()=>c.remove(),4200);
-  }
-}
-/* close on Escape */
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeForm(); });
-
-/* scroll progress bar */
-const prog=document.getElementById('scrollProgress');
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
-},{passive:true});
-
-/* seamless infinite loops: duplicate ribbon + partners content */
-['ribbonTrack','partnersTrack'].forEach(id=>{
-  const t=document.getElementById(id); if(t) t.innerHTML+=t.innerHTML;
-});
-
-/* winners carousel auto-scroll (pauses on touch/hover) */
-const wt=document.querySelector('.win-track');
-if(wt && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-  let paused=false;
-  ['mouseenter','touchstart'].forEach(ev=>wt.addEventListener(ev,()=>paused=true,{passive:true}));
-  ['mouseleave','touchend'].forEach(ev=>wt.addEventListener(ev,()=>setTimeout(()=>paused=false,2500),{passive:true}));
-  setInterval(()=>{
-    if(paused) return;
-    if(wt.scrollLeft+wt.clientWidth>=wt.scrollWidth-4) wt.scrollTo({left:0});
-    else wt.scrollBy({left:246});
-  },2800);
-}
-
-/* auto-open form when arriving with ?register=1 or ?category=slug */
-const params=new URLSearchParams(location.search);
-if(params.get('register')==='1') openForm();
-else if(params.get('category') && CATS[params.get('category')]) openForm(params.get('category'));
-
-/* Dropdown menu toggle (simplified - CSS handles most of it now) */
-function openDropdown(){} /* CSS hover handles this */
-function closeDropdown(){} /* CSS hover handles this */
-
-/* Open form with specific category */
-function openFormWithCat(e,cat){
-  e.preventDefault();
-  openForm(cat);
-}
-</script>
-<script>
-// Dropdown click & hover handler
-document.addEventListener('DOMContentLoaded', function(){
-  const dropdownWrap = document.querySelector('.dropdown-wrap');
-  const dropdownTrigger = dropdownWrap.querySelector('a[onclick="return false"]');
-  
-  // Toggle on click
-  dropdownTrigger.addEventListener('click', function(e){
-    e.preventDefault();
-    dropdownWrap.classList.toggle('dropdown-open');
-  });
-  
-  // Close when clicking elsewhere
-  document.addEventListener('click', function(e){
-    if(!dropdownWrap.contains(e.target)){
-      dropdownWrap.classList.remove('dropdown-open');
-    }
-  });
-  
-  // Close when item is clicked
-  const dropdownItems = dropdownWrap.querySelectorAll('.dropdown-menu a');
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', function(){
-      dropdownWrap.classList.remove('dropdown-open');
-    });
-  });
-});
-</script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/forms-handler.js"></script>
 </body>
+
 </html>

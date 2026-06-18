@@ -9,43 +9,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <meta name="description" content="Frequently asked questions about Forever Star India pageants, auditions, fees, eligibility and the registration process for 2026.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.fsia.in/faq.html">
+<link rel="canonical" href="https://www.fsia.in/faq.php">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Forever Star India">
 <meta property="og:title" content="FAQ | Forever Star India Beauty Pageants & Awards 2026">
 <meta property="og:description" content="Frequently asked questions about Forever Star India pageants, auditions, fees, eligibility and the registration process for 2026.">
-<meta property="og:url" content="https://www.fsia.in/faq.html">
+<meta property="og:url" content="https://www.fsia.in/faq.php">
 <meta property="og:image" content="https://www.fsia.in/uploads/718Step-1.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FAQ | Forever Star India Beauty Pageants & Awards 2026">
 <meta name="twitter:description" content="Frequently asked questions about Forever Star India pageants, auditions, fees, eligibility and the registration process for 2026.">
 <meta name="twitter:image" content="https://www.fsia.in/uploads/718Step-1.webp">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/pages/faq.css">
-  <link rel="stylesheet" href="/assets/css/forms-master.css">
+  <link rel="stylesheet" href="../assets-new/css/main.css">
+  <link rel="stylesheet" href="../assets-new/css/pages/faq.css">
+  <link rel="stylesheet" href="../assets-new/css/forms-master.css">
 </head>
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="index.html" class="logo">
-      <img src="logo.gif" alt="Forever Star India logo">
-      <div>Forever <span>Star</span> India<small>FSIA · Shine Like a Star</small></div>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="winners.html">Winners</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="faq.html" class="active">FAQ</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="btn" href="index.html?register=1">Register Now</a>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
-  </div>
-</header>
+<?php include '../layout/header1806.php'; ?>
 
 <section class="page-hero">
   <div class="container">
@@ -84,90 +66,18 @@
     <div class="help-cta reveal">
       <h2>Still have a question?</h2>
       <p>Our team is one message away — get answers on WhatsApp or give us a call.</p>
-      <a class="btn" href="contact.html">Contact Us</a>
+      <a class="btn" href="contact.php">Contact Us</a>
       &nbsp;
-      <a class="btn" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.5)" href="index.html?register=1">Register Now</a>
+      <a class="btn" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.5)" href="index.php?register=1">Register Now</a>
     </div>
   </div>
 </section>
 
-<footer class="fsia-footer">
-  <div class="ft-inner">
-    <div class="ft-grid">
-
-      <!-- Registration dropdown -->
-      <div class="ft-col-reg">
-        <details class="ft-dropdown" open>
-          <summary>Registration</summary>
-          <div>
-            <a href="/forms/register-miss-india.html">Forever Miss India 2026</a>
-            <a href="/forms/register-mrs-india.html">Forever Mrs India 2026</a>
-            <a href="/forms/register-miss-teen.html">Forever Miss Teen India 2026</a>
-            <a href="/forms/register-super-hero.html">Super Hero Award 2026</a>
-            <a href="/forms/register-super-woman.html">Super Woman Award 2026</a>
-            <a href="/forms/register-business.html">Business Awards 2026</a>
-            <a href="/forms/register-miss-universe.html">Miss Universe 2026</a>
-            <a href="/forms/register-mrs-universe.html">Mrs Universe 2026</a>
-            <a href="/forms/register-miss-world.html">Miss World 2026</a>
-            <a href="/forms/register-mrs-world.html">Mrs World 2026</a>
-            <a href="/forms/register-star-kids.html">Forever Star Kids 2026</a>
-            <a href="/forms/register-nominate.html">Nominate Yourself 2026</a>
-          </div>
-        </details>
-      </div>
-
-      <!-- Single Quick Links -->
-      <div>
-        <h4>Quick Links</h4>
-        <a href="about.html">About FSIA</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="faq.html">FAQ</a>
-        <a href="our-team.html">Our Team</a>
-        <a href="news.html">News Coverage</a>
-        <a href="winners.html">Winners</a>
-        <a href="https://www.fsia.in/termscondition.php" target="_blank" rel="noopener">Terms &amp; Conditions</a>
-        <a href="https://www.fsia.in/privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
-        <a href="https://www.fsia.in/refund-policy" target="_blank" rel="noopener">Refund Policy</a>
-        <a href="https://www.fsia.in/online-franchise-application" target="_blank" rel="noopener">Apply For Franchise</a>
-      </div>
-
-      <!-- Get In Touch -->
-      <div>
-        <h4>Get In Touch</h4>
-        <div class="ft-contact">
-          <a href="tel:+919983286999">
-            <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +91-99832-86999
-          </a>
-          <a href="mailto:care@fsia.in">
-            <svg class="ft-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            care@fsia.in
-          </a>
-        </div>
-      </div>
-
-      <!-- Social Links -->
-      <div>
-        <h4>Social Links</h4>
-        <div class="ft-socials">
-          <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://twitter.com/FsiaAward" target="_blank" rel="noopener" aria-label="Twitter"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-          <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="https://in.pinterest.com/fsiaaward/" target="_blank" rel="noopener" aria-label="Pinterest"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
-          <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
-        </div>
-      </div>
-
-    </div>
-    <div class="ft-copy">
-      &copy; 2026, <a href="index.html">Forever Star India Pvt. Ltd.</a> All rights reserved.
-    </div>
-  </div>
-</footer>
+<?php include '../layout/footer1806.php'; ?>
 
 <a class="float-wa" href="https://wa.me/919983286999" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.04 4C9.96 4 5.02 8.94 5.02 15.02c0 1.94.51 3.83 1.47 5.5L4.9 27.2l6.84-1.79c1.61.88 3.43 1.34 5.28 1.34h.01c6.08 0 11.02-4.94 11.02-11.02C28.05 8.94 23.11 4 16.04 4zm0 20.2h-.01c-1.65 0-3.27-.44-4.68-1.28l-.34-.2-3.55.93.95-3.46-.22-.36a9.13 9.13 0 0 1-1.4-4.86c0-5.05 4.11-9.16 9.17-9.16 2.45 0 4.75.96 6.48 2.69a9.1 9.1 0 0 1 2.68 6.48c0 5.05-4.11 9.16-9.16 9.16zm5.03-6.86c-.28-.14-1.63-.8-1.88-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.16-.43-2.21-1.36-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.47-.62-.48l-.53-.01c-.18 0-.48.07-.74.35-.25.28-.96.94-.96 2.3 0 1.36.99 2.67 1.12 2.85.14.18 1.95 2.98 4.73 4.18.66.28 1.18.45 1.58.58.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.25-.18-.53-.32z"/></svg></a>
 
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/forms-handler.js"></script>
+<script src="../assets-new/js/main.js"></script>
+<script src="../assets-new/js/forms-handler.js"></script>
 </body>
 </html>
