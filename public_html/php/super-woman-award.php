@@ -27,38 +27,14 @@
 
 <?php include '../layout/header1806.php'; ?>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="banner-wrap"><img class="banner-img" src="../assets-new/media/banners/super-woman.webp" alt="Super Woman Award 2026 — applications open" loading="eager" onerror="this.closest('.banner-wrap').style.display='none'"><span class="banner-shine"></span></div>
-      <h1>💪 Super Woman Award 2026</h1>
-      <p>Fill in the form below to begin your registration.</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">70+</span>
-          <span class="stat-label">Categories</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">5000+</span>
-          <span class="stat-label">Winners</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">₹50L+</span>
-          <span class="stat-label">Prizes</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="form-section">
   <div class="container">
     <h2 class="section-title">✨ Register Now</h2>
     
     <div class="form-container">
       <div class="form-header">
+        <span style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); display: block; margin-bottom: 0.5rem;">Forever</span>
         <h2>Super Woman Registration</h2>
-        <p>Join us now!</p>
       </div>
 
       <form id="registrationForm" onsubmit="submitForm(event)" data-category="Super Woman Award 2026">

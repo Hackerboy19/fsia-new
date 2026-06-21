@@ -27,38 +27,14 @@
 
 <?php include '../layout/header1806.php'; ?>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-emblem"><svg viewBox="0 0 120 120" width="118" height="118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M40 24h40v18c0 14-9 24-20 24S40 56 40 42z" fill="#fff"/><path d="M40 30H26c0 12 6 18 16 19M80 30h14c0 12-6 18-16 19" stroke="#fff" stroke-width="5" fill="none"/><path d="M54 66h12v14H54z" fill="#fff"/><path d="M40 86h40v8H40z" fill="#fff"/></svg></div>
-      <h1>Forever Achievers 2026</h1>
-      <p>Fill in the form below to begin your registration.</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">10,000+</span>
-          <span class="stat-label">Contestants</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">4,000+</span>
-          <span class="stat-label">Cities</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Winners</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="form-section">
   <div class="container">
     <h2 class="section-title">Register Now</h2>
     
     <div class="form-container">
       <div class="form-header">
+        <span style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); display: block; margin-bottom: 0.5rem;">Forever</span>
         <h2>Forever Achievers Registration</h2>
-        <p>Join us now!</p>
       </div>
 
       <form id="registrationForm" onsubmit="submitForm(event)" data-category="Forever Achievers 2026">

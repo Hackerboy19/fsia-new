@@ -27,47 +27,14 @@
 
 <?php include '../layout/header1806.php'; ?>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="crown-scene">
-  <div class="crown-stage">
-    <div class="crown-wrap">
-      <img class="crown-img"
-           src="../assets-new/media/banners/crown-forever.jpg"
-           alt="The FOREVER Crown — Miss Universe 2026"
-           loading="eager"
-           onerror="this.closest('.crown-scene').style.display='none'">
-      <div class="crown-shine"></div>
-      <div class="crown-glow"></div>
-      <div class="crown-pulse"></div>
-      <div class="crown-sparks">
-        <span class="spark" style="left:15%;top:70%;--dur:3.8s;--del:0s;  --rise:-80px"></span>
-        <span class="spark" style="left:28%;top:60%;--dur:4.4s;--del:.6s; --rise:-70px;width:3px;height:3px"></span>
-        <span class="spark" style="left:42%;top:50%;--dur:3.2s;--del:.2s; --rise:-90px"></span>
-        <span class="spark" style="left:55%;top:55%;--dur:5.0s;--del:1.0s;--rise:-75px;width:3px;height:3px"></span>
-        <span class="spark" style="left:68%;top:65%;--dur:3.6s;--del:.4s; --rise:-85px"></span>
-        <span class="spark" style="left:80%;top:58%;--dur:4.1s;--del:.8s; --rise:-68px;width:3px;height:3px"></span>
-        <span class="spark" style="left:22%;top:40%;--dur:4.8s;--del:1.4s;--rise:-60px"></span>
-        <span class="spark" style="left:75%;top:42%;--dur:3.4s;--del:.3s; --rise:-78px"></span>
-        <span class="spark" style="left:50%;top:30%;--dur:4.6s;--del:.9s; --rise:-55px;width:3px;height:3px"></span>
-        <span class="spark" style="left:35%;top:75%;--dur:3.9s;--del:1.2s;--rise:-82px"></span>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</section>
-
 <section class="form-section">
   <div class="container">
     <h2 class="section-title">Register Now</h2>
     
     <div class="form-container">
       <div class="form-header">
+        <span style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); display: block; margin-bottom: 0.5rem;">Forever</span>
         <h2>Mrs Universe Registration</h2>
-        <p>Join us now!</p>
       </div>
 
       <form id="registrationForm" onsubmit="submitForm(event)" data-category="Mrs Universe 2026">

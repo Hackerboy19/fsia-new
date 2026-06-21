@@ -27,38 +27,14 @@
 
 <?php include '../layout/header1806.php'; ?>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="banner-wrap"><img class="banner-img" src="../assets-new/media/banners/nominate.webp" alt="Nominate Yourself for Award 2026" loading="eager" onerror="this.closest('.banner-wrap').style.display='none'"><span class="banner-shine"></span></div>
-      <h1>🏅 Nominate Yourself 2026</h1>
-      <p>Fill in the form below to begin your registration.</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">10,000+</span>
-          <span class="stat-label">Contestants</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">4,000+</span>
-          <span class="stat-label">Cities</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Winners</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="form-section">
   <div class="container">
     <h2 class="section-title">✨ Register Now</h2>
     
     <div class="form-container">
       <div class="form-header">
+        <span style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); display: block; margin-bottom: 0.5rem;">Forever</span>
         <h2>Nominate Yourself Registration</h2>
-        <p>Join us now!</p>
       </div>
 
       <form id="registrationForm" onsubmit="submitForm(event)" data-category="Nominate Yourself 2026">
