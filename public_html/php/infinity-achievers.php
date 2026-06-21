@@ -140,6 +140,8 @@
             <li>Clear background check required</li>
             <li>Professional photographs needed</li>
             <li>Agree to competition rules</li>
+          
+            <li>Enjoy a special discounted registration fee of <span class="line-through" style="text-decoration: line-through; color: #64748b;">₹3,999</span> <span class="font-semibold" style="font-weight: 600; color: #10b981;">₹1,999</span> once your application is accepted.</li>
           </ul>
         </div>
 
@@ -148,7 +150,7 @@
           <label for="agree">I agree to the <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></label>
         </div>
 
-        <button type="submit" class="submit-btn">Register Now - ₹1,999</button>
+        <button type="submit" class="submit-btn">Register Now</button>
       </form>
 
       <div class="info-box">

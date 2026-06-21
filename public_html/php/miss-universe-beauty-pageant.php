@@ -175,7 +175,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_reg'])) {
             </div>
             <div class="flex items-start space-x-3 text-slate-900/90">
               <span class="flex-shrink-0 w-6 h-6 rounded-full bg-slate-950/20 text-slate-950 flex items-center justify-center text-xs font-bold font-mono">3</span>
-              <p class="leading-relaxed">please fill out your basic details below.</p>
+              <p class="leading-relaxed">Enjoy a special discounted registration fee of 
+                <span class="line-through text-slate-500">₹5,999</span> 
+                <span class="font-semibold text-emerald-600">₹2,999</span> 
+                once your application is accepted.</p>
             </div>
           </div>
         </div>
@@ -333,8 +336,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_reg'])) {
           <div class="pt-4">
             <button type="submit" 
                     class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-4 px-6 rounded-xl shadow-md hover:shadow-amber-500/25 transition duration-150 flex items-center justify-center space-x-2 text-lg">
-              <span>✨ Register Now - ₹2,999</span>
-              <span class="text-sm font-normal line-through text-slate-950/60 ml-2">₹5,999</span>
+              <span>Register Now</span>
             </button>
           </div>
         </form>
