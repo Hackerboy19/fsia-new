@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<?php include '../layout/header1806.php'; ?>
+<?php include 'header1806.php'; ?>
 
 <section class="form-section">
   <div class="container">
@@ -139,7 +139,7 @@
   </div>
 </section>
 
-<?php include '../layout/footer1806.php'; ?>
+<?php include 'footer1806.php'; ?>
 
 
 
