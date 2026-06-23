@@ -1873,3 +1873,41 @@ footer a {
     display: flex !important
   }
 }
+
+/* --- mobile view navigation fixes --- */
+.fsia-mobile-cta-btn {
+  display: none !important;
+}
+
+@media(max-width:900px) {
+  .fsia-mobile-cta-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #A6093D, #7E0B30) !important;
+    color: #fff !important;
+    padding: .85rem 1.4rem !important;
+    border-radius: 99px !important;
+    font-weight: 700 !important;
+    font-size: .82rem !important;
+    text-align: center !important;
+    margin: 1.1rem 0 .5rem 0 !important;
+    box-shadow: 0 4px 14px rgba(166, 9, 61, 0.28) !important;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    transition: all .2s;
+  }
+  .fsia-mobile-cta-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+}
+
+/* Hide social icons inside header on extremely narrow viewports (e.g. <360px) to prevent layout wrapping */
+@media(max-width:360px) {
+  .fsia-nav-socials {
+    display: none !important;
+  }
+}

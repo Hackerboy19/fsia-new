@@ -28,25 +28,29 @@
     const WA_NUMBER = '919983286999';
 
     /* ---------- countdown ---------- */
-    function tick() {
-      let diff = REG_DEADLINE - new Date();
-      if (diff < 0) diff = 0;
-      const d = Math.floor(diff / 86400000), h = Math.floor(diff / 3600000) % 24,
-        m = Math.floor(diff / 60000) % 60, s = Math.floor(diff / 1000) % 60;
-      cdD.textContent = String(d).padStart(2, '0'); cdH.textContent = String(h).padStart(2, '0');
-      cdM.textContent = String(m).padStart(2, '0'); cdS.textContent = String(s).padStart(2, '0');
-    }
     const cdD = document.getElementById('cd-d'), cdH = document.getElementById('cd-h'), cdM = document.getElementById('cd-m'), cdS = document.getElementById('cd-s');
-    tick(); setInterval(tick, 1000);
+    if (cdD && cdH && cdM && cdS) {
+      function tick() {
+        let diff = REG_DEADLINE - new Date();
+        if (diff < 0) diff = 0;
+        const d = Math.floor(diff / 86400000), h = Math.floor(diff / 3600000) % 24,
+          m = Math.floor(diff / 60000) % 60, s = Math.floor(diff / 1000) % 60;
+        cdD.textContent = String(d).padStart(2, '0'); cdH.textContent = String(h).padStart(2, '0');
+        cdM.textContent = String(m).padStart(2, '0'); cdS.textContent = String(s).padStart(2, '0');
+      }
+      tick(); setInterval(tick, 1000);
+    }
 
     /* ---------- hero sparkles ---------- */
     const sp = document.getElementById('sparkles');
-    for (let i = 0; i < 22; i++) {
-      const s = document.createElement('div'); s.className = 'sparkle';
-      s.style.left = Math.random() * 100 + '%'; s.style.top = Math.random() * 85 + '%';
-      s.style.animationDelay = (Math.random() * 4.5) + 's';
-      s.style.animationDuration = (3.5 + Math.random() * 3) + 's';
-      sp.appendChild(s);
+    if (sp) {
+      for (let i = 0; i < 22; i++) {
+        const s = document.createElement('div'); s.className = 'sparkle';
+        s.style.left = Math.random() * 100 + '%'; s.style.top = Math.random() * 85 + '%';
+        s.style.animationDelay = (Math.random() * 4.5) + 's';
+        s.style.animationDuration = (3.5 + Math.random() * 3) + 's';
+        sp.appendChild(s);
+      }
     }
 
     /* ---------- reveal on scroll ---------- */
@@ -69,17 +73,21 @@
 
     /* ---------- sticky register (mobile) ---------- */
     const sticky = document.getElementById('stickyReg');
-    window.addEventListener('scroll', () => { sticky.classList.toggle('show', window.scrollY > 520); }, { passive: true });
+    if (sticky) {
+      window.addEventListener('scroll', () => { sticky.classList.toggle('show', window.scrollY > 520); }, { passive: true });
+    }
 
     /* ---------- FAQ ---------- */
     document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
 
     /* scroll progress bar */
     const prog = document.getElementById('scrollProgress');
-    window.addEventListener('scroll', () => {
-      const h = document.documentElement;
-      prog.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
-    }, { passive: true });
+    if (prog) {
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        prog.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+      }, { passive: true });
+    }
 
     /* seamless infinite loops: duplicate ribbon + partners content */
     ['ribbonTrack', 'partnersTrack'].forEach(id => {
@@ -129,27 +137,40 @@
     const modal = document.getElementById('modal');
 
     function openForm(cat) {
+      if (!modal) return;
       modal.classList.add('open'); document.body.style.overflow = 'hidden';
       if (cat && CATS[cat]) { selectCategory(cat, false); goStep(2); }
       else goStep(1);
     }
-    function closeForm() { modal.classList.remove('open'); document.body.style.overflow = ''; }
-    modal.addEventListener('click', e => { if (e.target === modal) closeForm(); });
+    function closeForm() { 
+      if (!modal) return;
+      modal.classList.remove('open'); document.body.style.overflow = ''; 
+    }
+    if (modal) {
+      modal.addEventListener('click', e => { if (e.target === modal) closeForm(); });
+    }
 
     function goStep(n) {
       currentStep = n;
       document.querySelectorAll('.fstep').forEach(s => s.classList.toggle('active', +s.dataset.step === n));
-      document.getElementById('progressFill').style.width = (n / 5 * 100) + '%';
-      document.getElementById('stepLabel').textContent = 'Step ' + n + ' of 5';
-      document.getElementById('progressWrap').style.display = n === 5 ? 'none' : '';
-      document.getElementById('formCard').scrollTop = 0;
+      const progressFill = document.getElementById('progressFill');
+      if (progressFill) progressFill.style.width = (n / 5 * 100) + '%';
+      const stepLabel = document.getElementById('stepLabel');
+      if (stepLabel) stepLabel.textContent = 'Step ' + n + ' of 5';
+      const progressWrap = document.getElementById('progressWrap');
+      if (progressWrap) progressWrap.style.display = n === 5 ? 'none' : '';
+      const formCard = document.getElementById('formCard');
+      if (formCard) formCard.scrollTop = 0;
     }
 
     /* step 1: category cards */
-    document.getElementById('catGrid').addEventListener('click', e => {
-      const c = e.target.closest('.choice'); if (!c) return;
-      selectCategory(c.dataset.cat, true);
-    });
+    const catGrid = document.getElementById('catGrid');
+    if (catGrid) {
+      catGrid.addEventListener('click', e => {
+        const c = e.target.closest('.choice'); if (!c) return;
+        selectCategory(c.dataset.cat, true);
+      });
+    }
     function selectCategory(cat, auto) {
       data.category = cat;
       document.querySelectorAll('#catGrid .choice').forEach(c => c.classList.toggle('selected', c.dataset.cat === cat));
@@ -158,76 +179,119 @@
     }
     function configStep2(cat) {
       const cfg = CATS[cat];
-      document.getElementById('eligHint').textContent = 'Registering for ' + cfg.name;
-      document.getElementById('fAge').style.display = cfg.age ? '' : 'none';
-      document.getElementById('ageLabel').textContent = cat === 'kids' ? "Child's age" : 'Your age';
-      document.getElementById('fMarital').style.display = cfg.marital ? '' : 'none';
-      document.getElementById('fProfession').style.display = cfg.profession ? '' : 'none';
-      document.getElementById('fParent').style.display = cfg.parent ? '' : 'none';
-      document.getElementById('fPortfolio').style.display = cfg.portfolio ? '' : 'none';
-      document.getElementById('suggestBox').classList.remove('show');
+      const eligHint = document.getElementById('eligHint');
+      if (eligHint) eligHint.textContent = 'Registering for ' + cfg.name;
+      const fAge = document.getElementById('fAge');
+      if (fAge) fAge.style.display = cfg.age ? '' : 'none';
+      const ageLabel = document.getElementById('ageLabel');
+      if (ageLabel) ageLabel.textContent = cat === 'kids' ? "Child's age" : 'Your age';
+      const fMarital = document.getElementById('fMarital');
+      if (fMarital) fMarital.style.display = cfg.marital ? '' : 'none';
+      const fProfession = document.getElementById('fProfession');
+      if (fProfession) fProfession.style.display = cfg.profession ? '' : 'none';
+      const fParent = document.getElementById('fParent');
+      if (fParent) fParent.style.display = cfg.parent ? '' : 'none';
+      const fPortfolio = document.getElementById('fPortfolio');
+      if (fPortfolio) fPortfolio.style.display = cfg.portfolio ? '' : 'none';
+      const suggestBox = document.getElementById('suggestBox');
+      if (suggestBox) suggestBox.classList.remove('show');
     }
     /* friendly redirect logic */
     function suggest(catKey, why) {
       const box = document.getElementById('suggestBox');
-      document.getElementById('suggestName').textContent = CATS[catKey].name;
-      document.getElementById('suggestWhy').textContent = why;
-      document.getElementById('suggestBtn').onclick = () => { selectCategory(catKey, false); box.classList.remove('show'); };
+      if (!box) return;
+      const suggestName = document.getElementById('suggestName');
+      if (suggestName) suggestName.textContent = CATS[catKey].name;
+      const suggestWhy = document.getElementById('suggestWhy');
+      if (suggestWhy) suggestWhy.textContent = why;
+      const suggestBtn = document.getElementById('suggestBtn');
+      if (suggestBtn) suggestBtn.onclick = () => { selectCategory(catKey, false); box.classList.remove('show'); };
       box.classList.add('show');
     }
     function validateStep2() {
       const cfg = CATS[data.category]; let ok = true;
-      const ageF = document.getElementById('fAge'), age = +document.getElementById('age').value;
-      ageF.classList.remove('invalid');
+      const ageF = document.getElementById('fAge');
+      const ageEl = document.getElementById('age');
+      const age = ageEl ? +ageEl.value : 0;
+      if (ageF) ageF.classList.remove('invalid');
       if (cfg.age) {
-        if (!age) { ageF.classList.add('invalid'); document.getElementById('ageErr').textContent = 'Please enter a valid age.'; ok = false; }
+        if (!age) { 
+          if (ageF) ageF.classList.add('invalid'); 
+          const ageErr = document.getElementById('ageErr');
+          if (ageErr) ageErr.textContent = 'Please enter a valid age.'; 
+          ok = false; 
+        }
         else if (age < cfg.age[0] || age > cfg.age[1]) {
-          ageF.classList.add('invalid');
-          document.getElementById('ageErr').textContent = 'For ' + cfg.name + ' the age range is ' + cfg.age[0] + '–' + cfg.age[1] + '.';
+          if (ageF) ageF.classList.add('invalid');
+          const ageErr = document.getElementById('ageErr');
+          if (ageErr) ageErr.textContent = 'For ' + cfg.name + ' the age range is ' + cfg.age[0] + '–' + cfg.age[1] + '.';
           if (data.category === 'miss-teen' && age > 19) suggest('miss-india', 'Based on your age, Miss India may be the right stage for you.');
           if (data.category === 'miss-teen' && age < 13) suggest('kids', 'Based on the age entered, the Star Kids Contest may be the right fit.');
           ok = false;
         }
       }
-      if (cfg.marital && document.getElementById('marital').value === 'married') {
+      const maritalEl = document.getElementById('marital');
+      if (cfg.marital && maritalEl && maritalEl.value === 'married') {
         suggest('mrs-india', 'Forever Mrs India celebrates married women on the national stage — switch in one tap.');
         ok = false;
       }
-      const cityF = document.getElementById('fCity') || document.getElementById('city').parentElement;
-      cityF.classList.remove('invalid');
-      if (!document.getElementById('city').value.trim()) { cityF.classList.add('invalid'); ok = false; }
+      const cityEl = document.getElementById('city');
+      const cityF = document.getElementById('fCity') || (cityEl ? cityEl.parentElement : null);
+      if (cityF) cityF.classList.remove('invalid');
+      if (cityEl && !cityEl.value.trim()) { 
+        if (cityF) cityF.classList.add('invalid'); 
+        ok = false; 
+      }
       if (ok) {
-        data.age = age || ''; data.marital = document.getElementById('marital').value;
-        data.profession = document.getElementById('profession').value; data.parent = document.getElementById('parent').value;
-        data.state = document.getElementById('state').value; data.city = document.getElementById('city').value;
+        const stateEl = document.getElementById('state');
+        const professionEl = document.getElementById('profession');
+        const parentEl = document.getElementById('parent');
+        data.age = age || ''; 
+        data.marital = maritalEl ? maritalEl.value : '';
+        data.profession = professionEl ? professionEl.value : ''; 
+        data.parent = parentEl ? parentEl.value : '';
+        data.state = stateEl ? stateEl.value : ''; 
+        data.city = cityEl ? cityEl.value : '';
         goStep(3);
       }
     }
     function validateStep3() {
       let ok = true;
       const nF = document.getElementById('fName'), pF = document.getElementById('fPhone');
-      nF.classList.remove('invalid'); pF.classList.remove('invalid');
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.replace(/\D/g, '');
-      if (name.length < 2) { nF.classList.add('invalid'); ok = false; }
-      if (!/^[6-9]\d{9}$/.test(phone)) { pF.classList.add('invalid'); ok = false; }
+      if (nF) nF.classList.remove('invalid'); 
+      if (pF) pF.classList.remove('invalid');
+      const nameEl = document.getElementById('name');
+      const phoneEl = document.getElementById('phone');
+      const name = nameEl ? nameEl.value.trim() : '';
+      const phone = phoneEl ? phoneEl.value.replace(/\D/g, '') : '';
+      if (name.length < 2) { if (nF) nF.classList.add('invalid'); ok = false; }
+      if (!/^[6-9]\d{9}$/.test(phone)) { if (pF) pF.classList.add('invalid'); ok = false; }
       if (ok) {
+        const emailEl = document.getElementById('email');
+        const instaEl = document.getElementById('insta');
         data.name = name; data.phone = phone;
-        data.email = document.getElementById('email').value; data.insta = document.getElementById('insta').value;
+        data.email = emailEl ? emailEl.value : ''; 
+        data.insta = instaEl ? instaEl.value : '';
         /* DEVELOPER NOTE: partial lead capture — POST {category, name, phone, status:'incomplete'} to your backend here */
         goStep(4);
       }
     }
     function finishForm() {
-      data.about = document.getElementById('about').value;
+      const aboutEl = document.getElementById('about');
+      data.about = aboutEl ? aboutEl.value : '';
       const cfg = CATS[data.category];
 
       // Populate success screen
-      document.getElementById('succCat').textContent = cfg.name;
-      document.getElementById('succCat2').textContent = cfg.name;
-      document.getElementById('succName').textContent = data.name;
-      document.getElementById('succCity').textContent = data.city;
-      document.getElementById('succPhone').textContent = data.phone;
+      const succCat = document.getElementById('succCat');
+      if (succCat) succCat.textContent = cfg.name;
+      const succCat2 = document.getElementById('succCat2');
+      if (succCat2) succCat2.textContent = cfg.name;
+      const succName = document.getElementById('succName');
+      if (succName) succName.textContent = data.name;
+      const succCity = document.getElementById('succCity');
+      if (succCity) succCity.textContent = data.city;
+      const succPhone = document.getElementById('succPhone');
+      if (succPhone) succPhone.textContent = data.phone;
 
       // DEVELOPER NOTE: POST full `data` object (status:'complete') to your backend here, e.g. api/register.php
       // For now, save to sessionStorage so payment page can access it
@@ -264,6 +328,7 @@
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const colors = ['#D4AF37', '#A6093D', '#F2C4CF', '#B8962E', '#fff'];
       const card = document.getElementById('formCard');
+      if (!card) return;
       for (let i = 0; i < 46; i++) {
         const c = document.createElement('div'); c.className = 'confetti';
         c.style.left = Math.random() * 100 + '%';
@@ -290,6 +355,17 @@
       e.preventDefault();
       openForm(cat);
     }
+
+    // Expose functions globally for inline HTML event handlers
+    window.openForm = openForm;
+    window.closeForm = closeForm;
+    window.goStep = goStep;
+    window.validateStep2 = validateStep2;
+    window.validateStep3 = validateStep3;
+    window.finishForm = finishForm;
+    window.goToPayment = goToPayment;
+    window.shareWhatsApp = shareWhatsApp;
+    window.openFormWithCat = openFormWithCat;
 
   }); /* end ready */
 })();
