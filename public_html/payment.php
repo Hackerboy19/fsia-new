@@ -19,9 +19,9 @@
 <meta name="twitter:description" content="Secure payment for Forever Star India registration.">
 <meta name="twitter:image" content="https://www.fsia.in/uploads/718Step-1.webp">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
-  <link rel="stylesheet" href="../assets-new/css/main.css">
-  <link rel="stylesheet" href="../assets-new/css/pages/payment.css">
-  <link rel="stylesheet" href="../assets-new/css/forms-master.css">
+  <link rel="stylesheet" href="/assets-new/css/main.css">
+  <link rel="stylesheet" href="/assets-new/css/pages/payment.css">
+  <link rel="stylesheet" href="/assets-new/css/forms-master.css">
 </head>
 <body>
 
@@ -177,7 +177,7 @@
 
 <?php include 'footer1806.php'; ?>
 
-<script src="../assets-new/js/main.js"></script>
-<script src="../assets-new/js/forms-handler.js"></script>
+<script src="/assets-new/js/main.js"></script>
+<script src="/assets-new/js/forms-handler.js"></script>
 </body>
 </html>

@@ -1,11 +1,6 @@
 <?php
 include("config.php");
 
-$asset_path = 'assets-new';
-if (!is_dir($asset_path)) {
-    $asset_path = '../assets-new';
-}
-
 $token = $_GET['token'] ?? '';
 $ires = null;
 
@@ -80,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete_payment'])) 
   <title>HDFC Secure Checkout | Forever Star India</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo $asset_path; ?>/css/main.css">
+  <link rel="stylesheet" href="/assets-new/css/main.css">
   <script>
     tailwind.config = {
       theme: {
@@ -374,6 +369,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete_payment'])) 
   </script>
 
   <!-- Navigation/Layout Script -->
-  <script src="<?php echo $asset_path; ?>/js/main.js"></script>
+  <script src="/assets-new/js/main.js"></script>
 </body>
 </html>

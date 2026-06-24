@@ -1,5 +1,6 @@
 <?php
-include("config.php");
+// Use include_once to protect functions from being declared multiple times
+include_once("config.php");
 
 $year = date("Y");
 $error = '';
@@ -142,147 +143,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_reg'])) {
         $error = "Please fill in all required fields.";
     }
 }
-
-// Inline processing utility layout components
-function render_form_hero() {
-    $current_page = basename($_SERVER['SCRIPT_NAME']);
-    $title = "Miss Universe 2026";
-    
-    if ($current_page == 'mrs-universe-beauty-pageant.php') {
-        $title = "Mrs Universe 2026";
-    } elseif ($current_page == 'miss-world-beauty-pageant.php') {
-        $title = "Miss World 2026";
-    } elseif ($current_page == 'mrs-world-beauty-pageant.php') {
-        $title = "Mrs World 2026";
-    }
-    ?>
-    <div class="text-center max-w-3xl mx-auto mb-12 pt-4 px-4">
-        <!-- Prestige Badge Label -->
-        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-            <span class="text-[11px] font-bold text-amber-600 uppercase tracking-[0.25em] font-sans">
-                Official International Selection Framework
-            </span>
-        </div>
-        
-        <!-- Main Dynamic Title Heading -->
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 font-playfair tracking-tight mb-2">
-            <?= htmlspecialchars($title) ?>
-        </h1>
-        <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.4em] block mb-6">BY FOREVER STAR INDIA</p>
-        
-        <div class="w-20 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto rounded-full mb-8"></div>
-        
-        <!-- Enhanced Context Copy Grid -->
-        <div class="bg-gradient-to-r from-slate-900 to-slate-950 text-white rounded-2xl p-6 md:p-8 shadow-xl text-left border border-slate-800 relative overflow-hidden mb-8">
-            <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none text-7xl font-serif select-none translate-x-4 translate-y-4">👑</div>
-            <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                <div class="md:col-span-8 space-y-3">
-                    <h3 class="text-lg font-bold text-amber-400 font-playfair">Secure Your Place on the Global Stage</h3>
-                    <p class="text-slate-300 text-xs md:text-sm leading-relaxed font-light">
-                        As the globe's premier platform for world-class talent and pageantry, <span class="font-semibold text-white">Forever Star India</span> proudly hosts an elite international competition across <span class="text-amber-400 font-medium">139 nations</span>. Completing your secure participation profile below grants you immediate entry into our verified international selection ecosystem from anywhere in the world.
-                    </p>
-                </div>
-                <div class="md:col-span-4 flex flex-col justify-center items-stretch md:border-l border-slate-800 md:pl-6">
-                    <div class="text-center p-2.5 bg-white/5 rounded-xl border border-white/10">
-                        <span class="text-xl block mb-0.5">🌎</span>
-                        <span class="text-[9px] font-bold uppercase tracking-wider text-slate-400 block">Status Zone</span>
-                        <span class="text-xs font-semibold text-emerald-400">Applications Open Globally</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Trust Signal Metrics Row Layout -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white p-4 rounded-2xl border border-slate-200/60 shadow-sm text-left">
-            <div class="flex items-center space-x-3 p-2">
-                <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg shadow-inner">🌐</div>
-                <div>
-                    <h4 class="text-xs font-bold text-slate-800">139+ Nations Covered</h4>
-                    <p class="text-[10px] text-slate-400 font-medium">Global audition reach standards.</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-3 p-2 border-t sm:border-t-0 sm:border-x border-slate-100">
-                <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shadow-inner">🛡️</div>
-                <div>
-                    <h4 class="text-xs font-bold text-slate-800">ISO 9001:2015 Certified</h4>
-                    <p class="text-[10px] text-slate-400 font-medium">Secure profile data hosting.</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-3 p-2 border-t sm:border-t-0">
-                <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shadow-inner">👑</div>
-                <div>
-                    <h4 class="text-xs font-bold text-slate-800 flex items-center">
-                        45,000+ Verified
-                        <span class="ml-1.5 h-2 w-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-                    </h4>
-                    <p class="text-[10px] text-slate-400 font-medium">Active entries processed live.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-
-function render_emergency_support() {
-    ?>
-    <div class="pt-2">
-        <button type="button" onclick="toggleManagerPanel()"
-                class="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50
-                       text-slate-700 text-xs font-bold py-3 px-4 rounded-xl border border-slate-200/80
-                       shadow-sm transition duration-150 cursor-pointer select-none">
-            <span>📋 View Regional Account Managers / Resolve Queries</span>
-            <svg id="panelChevron" class="w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </button>
-        <div id="managerPanel" class="hidden mt-3 p-4 bg-white border border-slate-200 rounded-xl shadow-inner space-y-3">
-            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Assigned Support Desks</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div class="p-3 bg-slate-50 rounded-lg border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-xs font-bold text-slate-800">Northern Auditions</span>
-                            <span class="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">● Online</span>
-                        </div>
-                        <p class="text-[11px] text-slate-400">Documentation, Slots &amp; Verification Help Desk</p>
-                    </div>
-                    <a href="https://wa.me/919983286999?text=Hi+Northern+Desk+I+need+assistance+verifying+my+audition+form." target="_blank" rel="noopener"
-                       class="mt-2 text-center text-[11px] font-bold text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100/80 py-1.5 px-3 rounded-md transition">
-                        Connect with Desk 1
-                    </a>
-                </div>
-                <div class="p-3 bg-slate-50 rounded-lg border border-slate-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-xs font-bold text-slate-800">Global Nominations</span>
-                            <span class="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">● Online</span>
-                        </div>
-                        <p class="text-[11px] text-slate-400">Eligibility Evaluation &amp; International Processing Desk</p>
-                    </div>
-                    <a href="https://wa.me/919983286999?text=Hi+Global+Desk+I+have+a+question+regarding+my+eligibility+criteria." target="_blank" rel="noopener"
-                       class="mt-2 text-center text-[11px] font-bold text-amber-600 hover:text-amber-700 bg-amber-50 hover:bg-amber-100/80 py-1.5 px-3 rounded-md transition">
-                        Connect with Desk 2
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-    function toggleManagerPanel() {
-        const panel = document.getElementById('managerPanel');
-        const chevron = document.getElementById('panelChevron');
-        if (panel.classList.contains('hidden')) {
-            panel.classList.remove('hidden');
-            chevron.classList.add('rotate-180');
-        } else {
-            panel.classList.add('hidden');
-            chevron.classList.remove('rotate-180');
-        }
-    }
-    </script>
-    <?php
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -292,25 +152,20 @@ function render_emergency_support() {
 <title>Miss Universe by Forever Star India 2026 Registration | Forever Star India</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-  /* Fix custom conflicts where tailwind resets anchor displays */
-  .form-section a { display: inline; }
-</style>
+<link rel="stylesheet" href="/assets-new/css/main.css">
 </head>
-<body class="bg-slate-50">
+<body style="background-color: #f8fafc;">
 
 <?php include 'header1806.php'; ?>
 
-<!-- Wrapped layout context correctly to isolate header flows completely -->
-<div class="w-full clear-both block pt-6">
+<div class="tailwind-sandbox-container">
   <section class="form-section py-12 px-4 bg-slate-100/50">
     <div class="max-w-4xl mx-auto">
       
-      <?php render_form_hero(); ?>
+      <?php if (function_exists('render_form_hero')) { render_form_hero(); } ?>
 
       <div class="bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-slate-100 mt-8">
         
-        <!-- Status Column -->
         <div class="md:col-span-4 bg-gradient-to-b from-amber-500 to-amber-600 p-8 flex flex-col justify-between text-slate-950">
           <div>
             <div class="flex items-center space-x-2 font-bold mb-6">
@@ -337,7 +192,6 @@ function render_emergency_support() {
           </div>
         </div>
 
-        <!-- Main Fields Column -->
         <div class="md:col-span-8 p-8 md:p-10 bg-slate-50">
           <div class="mb-6 border-b border-slate-200 pb-4 text-center md:text-left">
             <span class="text-xs font-bold text-amber-500 uppercase tracking-widest block mb-1">Forever</span>
@@ -396,7 +250,6 @@ function render_emergency_support() {
               </div>
             </div>
 
-            <!-- 🛡️ INTERACTIVE LOCAL/LIVE OTP VERIFICATION ROW -->
             <div class="p-4 bg-slate-100 border border-slate-200 rounded-2xl space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -461,7 +314,7 @@ function render_emergency_support() {
               </button>
             </div>
 
-            <?php render_emergency_support(); ?>
+            <?php if (function_exists('render_emergency_support')) { render_emergency_support(); } ?>
           </form>
         </div>
 

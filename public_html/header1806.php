@@ -119,6 +119,8 @@
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 8px 15px !important;
+    height: 50px !important; /* Explicit height */
+    overflow: visible !important; /* Prevent dropdown clipping */
   }
   .fsia-master-header-isolation .fsia-nav-links {
     display: flex !important;
@@ -249,6 +251,76 @@
   .fsia-master-header-isolation .fsia-nav-socials {
     display: none !important;
   }
+
+  /* 5. Mobile Responsive Adjustments */
+  @media (max-width: 900px) {
+    .fsia-master-header-isolation .tb-contact,
+    .fsia-master-header-isolation .tb-socials,
+    .fsia-master-header-isolation .fsia-cta-btn,
+    .fsia-master-header-isolation .fsia-nav-links {
+      display: none !important;
+    }
+
+    .fsia-master-header-isolation .fsia-topbar .tb-wrap {
+        justify-content: center !important;
+    }
+
+    .fsia-master-header-isolation .fsia-hamburger,
+    .fsia-master-header-isolation .fsia-nav-logo,
+    .fsia-master-header-isolation .fsia-nav-socials {
+      display: flex !important;
+    }
+
+    .fsia-master-header-isolation .fsia-nav {
+      justify-content: space-between !important;
+    }
+
+    .fsia-master-header-isolation .fsia-nav-socials {
+      margin-left: auto !important;
+      margin-right: 10px !important;
+    }
+
+    .fsia-master-header-isolation .fsia-nav-links.open {
+      display: flex !important;
+      flex-direction: column !important;
+      position: absolute !important;
+      top: 100% !important; /* Position below the nav wrap */
+      left: 0 !important;
+      right: 0 !important;
+      background: #ffffff !important;
+      border-top: 1px solid #e2e8f0 !important;
+      padding: 10px 0 !important;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+      z-index: 999 !important;
+    }
+
+    .fsia-master-header-isolation .fsia-nav-links.open a,
+    .fsia-master-header-isolation .fsia-nav-links.open .fsia-reg-btn {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        justify-content: flex-start !important;
+        height: auto !important;
+    }
+
+    .fsia-master-header-isolation .fsia-reg-menu {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 5px 20px !important;
+        background: #f8fafc !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .fsia-master-header-isolation .fsia-reg:hover .fsia-reg-menu {
+        display: none !important; /* Disable hover on mobile */
+    }
+    .fsia-master-header-isolation .fsia-reg.reg-open .fsia-reg-menu {
+        display: grid !important;
+    }
+  }
 </style>
 
 <div class="fsia-master-header-isolation">
@@ -298,8 +370,15 @@
 
   <!-- 3. MAIN NAV -->
   <nav class="fsia-nav-wrap">
-    <div class="fsia-nav">
-      <div class="fsia-nav-links">
+    <div class="fsia-nav" id="fsiaNav">
+      <!-- Mobile-only Logo -->
+      <a href="/index.php" class="fsia-nav-logo">
+        <img src="/logo.gif" alt="FSIA" style="width:38px;height:38px;border-radius:50%;object-fit:contain;padding:2px;background:#fff;box-shadow:0 2px 8px rgba(166,9,61,.2)" onerror="this.style.display='none'">
+        <div class="lg-text">
+          <strong style="font-family:serif;font-size:.9rem;color:#A6093D">FOREVER STAR INDIA</strong>
+        </div>
+      </a>
+      <div class="fsia-nav-links" id="fsiaNavLinks">
         <a href="/index.php">Home</a>
         <a href="/about.php">About</a>
         <div class="fsia-reg">
@@ -308,11 +387,27 @@
           </button>
           <div class="fsia-reg-menu">
             <div class="rm-head">All Events &amp; Awards 2026</div>
-            <a href="/super-hero-award.php">Super Hero Award 2026</a>
-            <a href="/super-woman-award.php">Super Woman Award 2026</a>
-            <a href="/business-awards.php">Business Awards 2026</a>
-            <a href="/forever-miss-india-new.php">Forever Miss India 2026</a>
-            <a href="/forever-mrs-india-new.php">Forever Mrs India 2026</a>
+            <a href="/super-hero-award.php" role="menuitem">⚡ Super Hero Award 2026</a>
+            <a href="/real-super-women-awards-2020.php" role="menuitem">💪 Super Woman Award 2026</a>
+            <a href="/business-awards.php" role="menuitem">📈 Business Awards 2026</a>
+            <a href="/forever-miss-india-new.php" role="menuitem">👑 Forever Miss India 2026</a>
+            <a href="/forever-mrs-india-new.php" role="menuitem">👑 Forever Mrs India 2026</a>
+            <a href="/forever-miss-teen-india-new.php" role="menuitem">🎉 Forever Miss Teen India 2026</a>
+            <a href="/register-miss-fsia-intl.php" role="menuitem">✨ Miss FSIA International 2026</a>
+            <a href="/register-mrs-fsia-intl.php" role="menuitem">✨ Mrs FSIA International 2026</a>
+            <a href="/register-star-kids.php" role="menuitem">🌟 Forever Star Kids 2026</a>
+            <a href="/register-designer.php" role="menuitem">👗 Forever Fashion Designers 2026</a>
+            <a href="/register-makeup.php" role="menuitem">💄 Forever Makeup Artist 2026</a>
+            <a href="/register-partner.php" role="menuitem">🤝 Channel Partner</a>
+            <a href="/international-award.php" role="menuitem">🌐 International Award 2026</a>
+            <a href="/miss-world-beauty-pageant.php" role="menuitem">🌍 Miss World 2026</a>
+            <a href="/mrs-world-beauty-pageant.php" role="menuitem">🌹 Mrs World 2026</a>
+            <a href="/miss-universe-beauty-pageant.php" role="menuitem">🌌 Miss Universe 2026</a>
+            <a href="/mrs-universe-beauty-pageant.php" role="menuitem">🌌 Mrs Universe 2026</a>
+            <a href="/register-bharat-couture.php" role="menuitem">👗 Bharat Couture Week 2026</a>
+            <a href="/bharat-national-awards.php" role="menuitem">🇮🇳 Bharat National Awards 2026</a>
+            <a href="/infinity-achievers.php" role="menuitem">🏅 International Achievers Award</a>
+            <a href="/register-nominate.php" role="menuitem">🏅 Nominate Yourself for Award</a>
           </div>
         </div>
         <a href="/faq.php">FAQ</a>
@@ -323,6 +418,22 @@
         <a href="https://www.fsia.in/online-franchise-application" target="_blank">Franchise</a>
       </div>
       <a href="/forever-miss-india-new.php" class="fsia-cta-btn">Apply Now</a>
+      <!-- Mobile-only Socials -->
+      <div class="fsia-nav-socials">
+        <a href="https://www.facebook.com/Foreverstarindiaawards/" target="_blank" rel="noopener" aria-label="Facebook" class="soc-fb">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/c/foreverstarindiaaward" target="_blank" rel="noopener" aria-label="YouTube" class="soc-yt">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.96-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fsia_forever/" target="_blank" rel="noopener" aria-label="Instagram" class="soc-ig">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+      <!-- Mobile Hamburger Toggle -->
+      <button class="fsia-hamburger" id="fsiaHamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </nav>
 
@@ -331,7 +442,7 @@
     <div class="st-wrap">
       <div class="fsia-search">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" placeholder="F-sia Search…">
+      <input type="search" placeholder="F-sia Search…">
       </div>
       <nav class="fsia-quicknav">
         <div class="fsia-quicknav-inner">

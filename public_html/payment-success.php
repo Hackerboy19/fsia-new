@@ -1,11 +1,6 @@
 <?php
 include("config.php");
 
-$asset_path = 'assets-new';
-if (!is_dir($asset_path)) {
-    $asset_path = '../assets-new';
-}
-
 $token = $_GET['token'] ?? '';
 $ires = null;
 $meta_tag = ['pay' => '₹2,999'];
@@ -64,7 +59,7 @@ $wa_cert_url = "https://wa.me/919983286999?text=" . urlencode($wa_cert_msg);
   <title>Payment Successful | Forever Star India</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo $asset_path; ?>/css/main.css">
+  <link rel="stylesheet" href="/assets-new/css/main.css">
   <script>
     tailwind.config = {
       theme: {
@@ -178,7 +173,7 @@ $wa_cert_url = "https://wa.me/919983286999?text=" . urlencode($wa_cert_msg);
   <?php include 'footer1806.php'; ?>
 
   <!-- Navigation/Layout Script -->
-  <script src="<?php echo $asset_path; ?>/js/main.js"></script>
+  <script src="/assets-new/js/main.js"></script>
 
 </body>
 </html>

@@ -20,8 +20,8 @@
 <meta name="twitter:description" content="Register for Miss World by Forever Star India 2026 with Forever Star India (FSIA). India's biggest beauty pageant platform. Apply online — auditions & nominations open from every city of India.">
 <meta name="twitter:image" content="https://www.fsia.in/uploads/742mob-Miss-World-2024.jpg">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"Forever Star India","alternateName":"FSIA","url":"https://www.fsia.in/","logo":"https://www.fsia.in/logo.gif","description":"India's biggest platform for beauty pageants and award shows.","sameAs":["https://www.facebook.com/Foreverstarindiaawards/","https://twitter.com/FsiaAward","https://www.instagram.com/fsia_forever/","https://in.pinterest.com/fsiaaward/","https://www.youtube.com/c/foreverstarindiaaward"],"contactPoint":{"@type":"ContactPoint","telephone":"+91-99832-86999","email":"starindiaaward@gmail.com","contactType":"customer service","areaServed":"IN"}},{"@context":"https://schema.org","@type":"WebSite","name":"Forever Star India","url":"https://www.fsia.in/"}]</script>
-  <link rel="stylesheet" href="../assets-new/css/main.css">
-  <link rel="stylesheet" href="../assets-new/css/forms-master.css">
+  <link rel="stylesheet" href="/assets-new/css/main.css">
+  <link rel="stylesheet" href="/assets-new/css/forms-master.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -29,7 +29,7 @@
 
 <?php include 'header1806.php'; ?>
 
-i mean all form have field that is asked on orignal working forms<section class="form-section py-12 px-4 bg-slate-100/50">
+<section class="form-section py-12 px-4 bg-slate-100/50">
   <div class="max-w-4xl mx-auto">
     
     <!-- Visual Header Notice -->
@@ -97,7 +97,7 @@ i mean all form have field that is asked on orignal working forms<section class=
 
 
 <a href="tel:+919983286999" class="contact-manager-bar">Contact Account Manager</a>
-<script src="../assets-new/js/main.js"></script>
-<script src="../assets-new/js/forms-handler.js"></script>
+<script src="/assets-new/js/main.js"></script>
+<script src="/assets-new/js/forms-handler.js"></script>
 </body>
 </html>
